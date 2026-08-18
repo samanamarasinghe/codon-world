@@ -28,9 +28,22 @@ Shechi at USENIX Security 2025. The SDV published-survives rule does not transfe
 because neither is a version of the other. Two entries; the shared codebase is
 recorded by `derived_from`.
 
-## Open, awaiting a ruling
+## 5. Benchmark use is recorded as benchmark use
 
-- `codon_role`: added in the bioinformatics lane to separate repos that use Codon
-  to build something from repos that evaluate Codon against alternatives. Triton-Seq
-  is the case: Codon is one of six DSLs it benchmarks, not what it is built on.
-  Provisional values `implementation`, `evaluated_alternative`, `exploration`.
+A repo that uses Codon to benchmark is an entry like any other, and the fact is
+recorded rather than inferred away. `codon_role` closes as three values:
+
+| value | test |
+|---|---|
+| `implementation` | Codon builds the thing the repo is for |
+| `benchmark` | Codon is measured against alternatives, or used to run the measurement |
+| `exploration` | Codon is tried out with no comparison published |
+
+This replaces the provisional `evaluated_alternative`, which was renamed to
+`benchmark` across all existing entries.
+
+The `benchmark` / `exploration` line is drawn on whether a comparison is actually
+published, not on whether one could be made. tsp-solver has a Python counterpart to
+its single Codon file and reports no timings, so it is `exploration`; mce-sandbox
+names its three implementation technologies and labels what each Codon variant
+exercises, so it is `benchmark`.
