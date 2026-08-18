@@ -1,0 +1,35 @@
+name: Harvest citations
+
+# Manual only. The harvester calls OpenAlex and Semantic Scholar, so it should not
+# run on every push: both rate-limit, and the citing-work set changes on the scale of
+# weeks rather than commits.
+#
+# Run it from the Actions tab when the paper lane needs refreshing. It rewrites
+# data/papers-candidates.json and commits the result only if the harvest changed.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  harvest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Harvest citing works
+        run: python3 harvest/citations.py --write
+
+      - name: Commit if the harvest changed
+        run: |
+          if [ -n "$(git status --porcelain data/papers-candidates.json)" ]; then
+            git config user.name  "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add data/papers-candidates.json
+            git commit -m "CI: refresh data/papers-candidates.json"
+            git push
+          else
+            echo "citing-work set unchanged"
+          fi
