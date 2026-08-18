@@ -5,19 +5,26 @@
   var LABEL = {
     source: "Source", c_api_frontend: "C API frontend", jit_decorator: "JIT decorator",
     ir_plugin: "IR plugin", runtime_port: "Runtime port", vendored_install: "Vendored install",
-    docs_mirror: "Docs mirror", mention_only: "Mention only", false_positive: "False positive",
+    packaging: "Packaging", docs_mirror: "Docs mirror", mention_only: "Mention only",
+    false_positive: "False positive",
     implementation: "Implementation", benchmark: "Benchmark", exploration: "Exploration",
     direct: "Direct", plugin: "Via plugin", framework: "Via framework",
     paper_backed: "Paper-backed", production: "Production", research_prototype: "Research prototype",
     coursework: "Coursework", toy: "Toy", doc_mirror: "Docs mirror", excluded: "Excluded",
-    stated: "Stated by the repo", inferred: "Inferred",
+    stated: "Stated by the source", inferred: "Inferred",
+    repo: "Repository", paper: "Paper",
+    extends: "Extends Codon", uses: "Uses Codon", evaluates: "Evaluates Codon",
+    prior_art: "Cites as prior art",
+    published: "Published", preprint: "Preprint", thesis: "Thesis", survey: "Survey",
     static_typing: "Static typing", llvm_inline: "Inline LLVM", c_interop: "C interop",
     par: "@par", tuple: "@tuple", python_interop: "Python interop", numpy: "NumPy",
     gpu: "GPU", seq_plugin: "Seq plugin", pipeline: "Pipeline |>",
-    __none__: "Not recorded"
+    __none__: "Not recorded", __na__: "Not applicable"
   };
 
   var FACETS = [
+    ["kind", "Kind", "facet-kind"],
+    ["codon_relation", "How the paper relates", "facet-relation"],
     ["integration_mode", "Integration mode", "facet-mode"],
     ["codon_role", "Codon role", "facet-role"],
     ["codon_via", "How Codon is reached", "facet-via"],
@@ -35,6 +42,11 @@
 
   function valuesOf(e, facet) {
     if (facet === "feature") return Object.keys(e.codon_features || {});
+    // Fields that only exist on one kind of entry contribute nothing from the
+    // other, so a paper never shows up under Integration mode and a repository
+    // never shows up under How the paper relates.
+    if (facet === "codon_relation" && e.kind !== "paper") return [];
+    if (facet === "integration_mode" && e.kind !== "repo") return [];
     if (facet === "year") {
       var lc = (e.health || {}).last_commit;
       return [lc ? String(lc).slice(0, 4) : "__none__"];
@@ -54,6 +66,7 @@
       var sel = selected(f);
       if (!sel.length) continue;
       var vals = valuesOf(e, f);
+      if (!vals.length) return false;
       var hit = sel.some(function (s) { return vals.indexOf(s) >= 0; });
       if (!hit) return false;
     }
@@ -107,7 +120,8 @@
         return lb - la || (a.name || "").localeCompare(b.name || "");
       }
       if (s === "recent") {
-        var da = (a.health || {}).last_commit || "", db = (b.health || {}).last_commit || "";
+        var da = (a.health || {}).last_commit || String(a.year || ""),
+            db = (b.health || {}).last_commit || String(b.year || "");
         return db.localeCompare(da) || (a.name || "").localeCompare(b.name || "");
       }
       return (a.name || "").localeCompare(b.name || "");
@@ -132,17 +146,21 @@
     h.appendChild(a);
     var sc = (e.scale || {}).own_codon_loc;
     if (sc) h.appendChild(chip(sc.toLocaleString() + " Codon LOC", "chip-scale"));
+    if (e.kind === "paper" && e.venue) h.appendChild(chip(e.venue + (e.year ? " " + e.year : ""), "chip-scale"));
     d.appendChild(h);
 
     var meta = document.createElement("div");
     meta.className = "entry-chips";
-    [["integration_mode", ""], ["codon_role", "chip-role"], ["codon_via", ""],
+    [["kind", "chip-kind"], ["codon_relation", "chip-role"], ["integration_mode", ""],
+     ["codon_role", "chip-role"], ["codon_via", ""],
      ["provenance", ""], ["why_codon_source", "chip-ev"]].forEach(function (p) {
       var v = e[p[0]];
       if (v) meta.appendChild(chip(labelFor(v), p[1]));
     });
     if (e.integration_mode_secondary) meta.appendChild(chip("+ " + labelFor(e.integration_mode_secondary), ""));
     if (e.machine_authored) meta.appendChild(chip("Machine-authored", "chip-flag"));
+    if (e.needs) meta.appendChild(chip("Unresolved", "chip-flag"));
+    if (e.related_repo) meta.appendChild(chip("has a repository entry", "chip-dim"));
     if (e.codon_version_pinned) meta.appendChild(chip("Codon " + e.codon_version_pinned, ""));
     if ((e.health || {}).last_commit) meta.appendChild(chip("last commit " + e.health.last_commit, "chip-dim"));
     Object.keys(e.codon_features || {}).forEach(function (f) {
@@ -169,6 +187,12 @@
       n.textContent = e.note;
       d.appendChild(n);
     }
+    if (e.needs) {
+      var q = document.createElement("p");
+      q.className = "entry-note";
+      q.textContent = "Unresolved: " + e.needs;
+      d.appendChild(q);
+    }
     return d;
   }
 
@@ -184,9 +208,11 @@
     } else {
       var buckets = {};
       vis.forEach(function (e) {
-        valuesOf(e, state.group).forEach(function (v) {
-          (buckets[v] = buckets[v] || []).push(e);
-        });
+        // An entry with no value for the grouping facet -- a paper grouped by
+        // integration mode, say -- goes in its own bucket rather than vanishing.
+        var vals = valuesOf(e, state.group);
+        if (!vals.length) vals = ["__na__"];
+        vals.forEach(function (v) { (buckets[v] = buckets[v] || []).push(e); });
       });
       Object.keys(buckets).sort(function (a, b) {
         return buckets[b].length - buckets[a].length || a.localeCompare(b);
