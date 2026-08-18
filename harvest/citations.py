@@ -13,9 +13,15 @@ citing works and Semantic Scholar added 32 it does not have -- roughly a third o
 the total invisible to either source alone. Google Scholar is not queried here and
 usually exceeds both, so the result is a floor.
 
-Neither API needs a key from a normal network. OpenAlex rate-limits with a 429 on
-sustained cursor paging, so the fetch retries with a pause. OpenCitations, used in
-the Halide lane, now 301-redirects and is not consulted.
+Anchors are excluded from their own results. The Codon family papers cite each
+other, so an unfiltered harvest returns Codon CC 2023, both Seq papers, Sequre and
+Vectron as citing works -- five of the first run's 109, which would have become
+entries duplicating data/anchors.json. See docs/paper-triage.md.
+
+Neither API needs a key from a normal network. OpenAlex bills per request against a
+daily allowance and 429s on sustained paging, so the fetch retries with a pause; its
+?search= endpoint is limited separately and should be avoided in favour of
+/works/doi:. OpenCitations, used in the Halide lane, now 301-redirects.
 """
 import json, sys, time, urllib.request, collections
 
@@ -31,6 +37,9 @@ ANCHORS = {
     "sequre-gb-2023":     ("T2", "10.1186/s13059-022-02841-5"),
     "vectron-cgo-2025":   ("T2", "10.1145/3696443.3708963"),
 }
+
+# Anchor DOIs, lowercased, for self-citation exclusion.
+ANCHOR_DOIS = {doi.lower() for _tier, doi in ANCHORS.values()}
 
 
 def get(url, tries=3):
@@ -49,6 +58,10 @@ def norm(t):
     return (t or "").lower().strip()
 
 
+def is_anchor(doi):
+    return (doi or "").replace("https://doi.org/", "").lower() in ANCHOR_DOIS
+
+
 def openalex(label, doi, union, by_title):
     work = get("https://api.openalex.org/works/doi:" + doi)
     wid = work.get("id", "").split("/")[-1]
@@ -62,6 +75,8 @@ def openalex(label, doi, union, by_title):
             print("  %s: openalex %s" % (label, page["_err"][:50]))
             break
         for r in page.get("results", []):
+            if is_anchor(r.get("doi")):
+                continue
             key = norm(r.get("display_name"))
             e = by_title.get(key)
             if e is None:
@@ -85,12 +100,14 @@ def semantic_scholar(label, doi, union, by_title):
     seen = 0
     for c in page.get("data", []):
         p = c.get("citingPaper", {})
+        ext = p.get("externalIds") or {}
+        if is_anchor(ext.get("DOI")):
+            continue
         key = norm(p.get("title"))
         if not key:
             continue
         e = by_title.get(key)
         if e is None:
-            ext = p.get("externalIds") or {}
             e = {"doi": ("https://doi.org/" + ext["DOI"]) if ext.get("DOI") else None,
                  "title": p.get("title"), "year": p.get("year"),
                  "cites": [], "source": "semantic_scholar_only"}
@@ -120,7 +137,7 @@ def main():
         "phase": "paper lane, phase 0 sizing",
         "method": "Reverse citations for the Tier 1 anchors plus the Tier 2 Codon-family "
                   "papers, unioned across OpenAlex and Semantic Scholar, deduplicated on "
-                  "normalised title.",
+                  "normalised title. Anchors are excluded from their own results.",
         "floor_warning": "Google Scholar has not been consulted and usually exceeds both "
                          "sources. Treat the count as a floor.",
         "counts": {
