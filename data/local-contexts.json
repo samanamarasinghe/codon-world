@@ -1,0 +1,980 @@
+{
+ "generated": "2026-08-18",
+ "note": "Contexts extracted from full texts collected by hand through an institutional login. Kept apart from data/paper-contexts.json so that a --refetch cannot destroy them. The pdfs are not committed.",
+ "counts": {
+  "with_contexts": 27,
+  "needing_attention": 16
+ },
+ "problems": [
+  {
+   "file": "1-s2.0-S1359644623003367-main.pdf",
+   "kind": "ambiguous",
+   "detail": "10.1016/j.drudis.2023.103820, 10.1016/j.drudis.2023.103820"
+  },
+  {
+   "file": "978-3-031-34953-9.pdf",
+   "kind": "unidentified",
+   "detail": "no candidate doi or title found in the text"
+  },
+  {
+   "file": "978-3-031-89518-0.pdf",
+   "kind": "book-length",
+   "detail": "890299 chars and no page range; the reference numbers will come from the last bibliography in the volume"
+  },
+  {
+   "file": "978-981-95-4434-9.pdf",
+   "kind": "book-length",
+   "detail": "1631361 chars and no page range; the reference numbers will come from the last bibliography in the volume"
+  },
+  {
+   "file": "978-981-95-4434-9.pdf",
+   "kind": "no contexts",
+   "detail": "bibliography present but nothing matched the Codon family"
+  },
+  {
+   "file": "978-981-97-5603-2.pdf",
+   "kind": "unidentified",
+   "detail": "no candidate doi or title found in the text"
+  },
+  {
+   "file": "Design_of_an_English_Translation_Intelligent_Proofreading_System_Based_on_Bidirectional_Long_Short-term_Memory_Algorithm.pdf",
+   "kind": "no bibliography",
+   "detail": "reference-number route unavailable; body scan only"
+  },
+  {
+   "file": "MicroPython_Testbed_for_Federated_Learning_Algorithms.pdf",
+   "kind": "no contexts",
+   "detail": "bibliography present but nothing matched the Codon family"
+  },
+  {
+   "file": "bbae356.pdf",
+   "kind": "ambiguous",
+   "detail": "10.1093/bib/bbae356, 10.1101/2024.04.24.590989"
+  },
+  {
+   "file": "nwaa092.pdf",
+   "kind": "no contexts",
+   "detail": "bibliography present but nothing matched the Codon family"
+  },
+  {
+   "file": "paper1.pdf",
+   "kind": "no bibliography",
+   "detail": "reference-number route unavailable; body scan only"
+  },
+  {
+   "file": "paper2.pdf",
+   "kind": "ambiguous",
+   "detail": "10.1016/j.compbiomed.2024.108577, 10.1016/j.compbiomed.2024.108577"
+  },
+  {
+   "file": "paper3.pdf",
+   "kind": "no bibliography",
+   "detail": "reference-number route unavailable; body scan only"
+  },
+  {
+   "file": "paper4.pdf",
+   "kind": "no bibliography",
+   "detail": "reference-number route unavailable; body scan only"
+  },
+  {
+   "file": "paper5.pdf",
+   "kind": "no bibliography",
+   "detail": "reference-number route unavailable; body scan only"
+  },
+  {
+   "file": "paper6.pdf",
+   "kind": "ambiguous",
+   "detail": "10.1016/j.ymeth.2023.01.001, 10.1016/j.ymeth.2023.01.001"
+  }
+ ],
+ "works": [
+  {
+   "year": 2024,
+   "title": "High Performance Privacy Preserving AI",
+   "doi": "10.1561/9781638283454",
+   "cites": "sequre-gb-2023",
+   "chars": 168568,
+   "source_file": "978-1-63828-345-4en.pdf",
+   "matched_by": "doi",
+   "pages": null,
+   "bibliography_found": true,
+   "contexts": [
+    {
+     "kind": "inline",
+     "ref": "120",
+     "text": "io where MPC can be used. Multiple hospitals can train AI models collaboratively. Once trained, each hospital will have access to the trained model and can perform inference. These trained models benefit from the large number of patients that would otherwise be unavailable. While developing solutions for applications in areas like healthcare, it is essential that application development is made user-friendly. Sequre [120], an MPC com- piler framework, is one such effort in that direction while still being able to use opti- mized execution to achieve high performance. It follows "
+    },
+    {
+     "kind": "body",
+     "text": "l have access to the trained model and can perform inference. These trained models benefit from the large number of patients that would otherwise be unavailable. While developing solutions for applications in areas like healthcare, it is essential that application development is made user-friendly. Sequre [120], an MPC com- piler framework, is one such effort in that direction while still being able to use opti- mized execution to achieve high performance. It follows the principle that compile- time optimizations that utilize domain-specific knowledge can produce optimized Downloaded from www."
+    },
+    {
+     "kind": "body",
+     "text": "aph-pdf/\u200b10968480/\u200b978-1-63828-345-4en.\u200bpdf by guest on 18 August 2026 Applications in Healthcare 47 Figure 5.2. MPC can be used to train models across sites, without any sensitive data being exposed from each site to the other parties or anyone else. executables. By providing the Python decorator @sequre, Sequre automatically converts the enclosed function into an MPC function and also performs MPC related operations to reduce network utilization and runtime performance. It uses additive secret sharing in a four party setting with trusted dealer under honest- but-curious model and it supports"
+    },
+    {
+     "kind": "body",
+     "text": "\u200b10968480/\u200b978-1-63828-345-4en.\u200bpdf by guest on 18 August 2026 Applications in Healthcare 47 Figure 5.2. MPC can be used to train models across sites, without any sensitive data being exposed from each site to the other parties or anyone else. executables. By providing the Python decorator @sequre, Sequre automatically converts the enclosed function into an MPC function and also performs MPC related operations to reduce network utilization and runtime performance. It uses additive secret sharing in a four party setting with trusted dealer under honest- but-curious model and it supports common "
+    },
+    {
+     "kind": "body",
+     "text": "ts on usage of this framework on tasks such as genome-wide association studies, drug-target interaction prediction, and metagenomic binning, and report 3\u20134x increased speed over existing pipelines with 7-fold reduction in codebase size. Neural network functions are also supported and they find that Sequre is 2x faster when compared to PySyft [121] while performing inference on a drug-target interaction prediction model. When a disease is rare, a single hospital will not have enough data to train pre- dictive models for it. Spini et al. developed a proof-of-concept implementation to assist clin"
+    },
+    {
+     "kind": "bibliography",
+     "text": "vol. 48 of Proceedings of Machine Learning Research, (New York, New York, USA), pp. 201\u2013210, PMLR, 20\u201322 Jun 2016. Downloaded from www.\u200bemerald.\u200bcom/\u200bbooks/\u200boa-monograph-pdf/\u200b10968480/\u200b978-1-63828-345-4en.\u200bpdf by guest on 18 August 2026 76 References [120] H. Smajlovi \u00b4c, A. Shajii, B. Berger, H. Cho, and I. Numanagi \u00b4c, \u201cSequre: a high-performance framework for secure multiparty computation enables biomedical data sharing,\u201d Genome Biology, vol. 24, no. 1, p. 5, 2023. [121] A. Ziller, A. T rask, A. Lopardo, B. Szymkow, B. Wagner, E. Bluemke, J.-M. Nounah"
+    },
+    {
+     "kind": "bibliography",
+     "text": "edings of Machine Learning Research, (New York, New York, USA), pp. 201\u2013210, PMLR, 20\u201322 Jun 2016. Downloaded from www.\u200bemerald.\u200bcom/\u200bbooks/\u200boa-monograph-pdf/\u200b10968480/\u200b978-1-63828-345-4en.\u200bpdf by guest on 18 August 2026 76 References [120] H. Smajlovi \u00b4c, A. Shajii, B. Berger, H. Cho, and I. Numanagi \u00b4c, \u201cSequre: a high-performance framework for secure multiparty computation enables biomedical data sharing,\u201d Genome Biology, vol. 24, no. 1, p. 5, 2023. [121] A. Ziller, A. T rask, A. Lopardo, B. Szymkow, B. Wagner, E. Bluemke, J.-M. Nounahon, J. Passerat-"
+    },
+    {
+     "kind": "bibliography",
+     "text": "h, (New York, New York, USA), pp. 201\u2013210, PMLR, 20\u201322 Jun 2016. Downloaded from www.\u200bemerald.\u200bcom/\u200bbooks/\u200boa-monograph-pdf/\u200b10968480/\u200b978-1-63828-345-4en.\u200bpdf by guest on 18 August 2026 76 References [120] H. Smajlovi \u00b4c, A. Shajii, B. Berger, H. Cho, and I. Numanagi \u00b4c, \u201cSequre: a high-performance framework for secure multiparty computation enables biomedical data sharing,\u201d Genome Biology, vol. 24, no. 1, p. 5, 2023. [121] A. Ziller, A. T rask, A. Lopardo, B. Szymkow, B. Wagner, E. Bluemke, J.-M. Nounahon, J. Passerat-Palmbach, K. Prakash, N. Rose, et "
+    },
+    {
+     "kind": "bibliography",
+     "text": "New York, USA), pp. 201\u2013210, PMLR, 20\u201322 Jun 2016. Downloaded from www.\u200bemerald.\u200bcom/\u200bbooks/\u200boa-monograph-pdf/\u200b10968480/\u200b978-1-63828-345-4en.\u200bpdf by guest on 18 August 2026 76 References [120] H. Smajlovi \u00b4c, A. Shajii, B. Berger, H. Cho, and I. Numanagi \u00b4c, \u201cSequre: a high-performance framework for secure multiparty computation enables biomedical data sharing,\u201d Genome Biology, vol. 24, no. 1, p. 5, 2023. [121] A. Ziller, A. T rask, A. Lopardo, B. Szymkow, B. Wagner, E. Bluemke, J.-M. Nounahon, J. Passerat-Palmbach, K. Prakash, N. Rose, et al. , \u201cPysyft:"
+    }
+   ]
+  },
+  {
+   "year": 2025,
+   "title": "Secure Multi-party Querying Federated Graph Databases",
+   "doi": "10.1007/978-3-031-89518-0_2",
+   "cites": "sequre-gb-2023",
+   "chars": 890299,
+   "source_file": "978-3-031-89518-0.pdf",
+   "matched_by": "doi",
+   "pages": null,
+   "bibliography_found": true,
+   "contexts": [
+    {
+     "kind": "body",
+     "text": "ee non-colluding computing parties and empowers users to perform a range of SQL queries including fully functional join, group by, aggregation, and more, on the shared databases. Benchmark results validate the advantages of Scape, demonstrating it to be up to 25 times faster than Secrecy [ 23]. Sequre [ 33] is a Python-based framework designed for secure multiparty com- putation (SMPC) in the bioinformatics \ufb01eld. It o\ufb00ers high performance and incorporates automatic compile-time optimizations to improve the e\ufb03ciency and speed of SMPC applications. By utilizing the secret sharing method, S"
+    },
+    {
+     "kind": "body",
+     "text": " Sequre [ 33] is a Python-based framework designed for secure multiparty com- putation (SMPC) in the bioinformatics \ufb01eld. It o\ufb00ers high performance and incorporates automatic compile-time optimizations to improve the e\ufb03ciency and speed of SMPC applications. By utilizing the secret sharing method, Sequre enables secure computation of biomedical data while achieving faster execution of queries and analysis tasks. The evaluation results demonstrate the usability and performance of Sequre, showcasing signi\ufb01cant speed improvements compared to existing pipelines. On the other hand, the author"
+    },
+    {
+     "kind": "body",
+     "text": " optimizations to improve the e\ufb03ciency and speed of SMPC applications. By utilizing the secret sharing method, Sequre enables secure computation of biomedical data while achieving faster execution of queries and analysis tasks. The evaluation results demonstrate the usability and performance of Sequre, showcasing signi\ufb01cant speed improvements compared to existing pipelines. On the other hand, the authors of [ 19,37] and [ 10] propose systems that demonstrate the implementation of single-party querying using SMPC. The SDB system, discussed in [ 19,37], is a cloud database system designe"
+    },
+    {
+     "kind": "body",
+     "text": " C Waldo [12] 3 Repl.Secret Sharing MP-SPDZ No 3 Time-series DB MQL Yes C++ SecureYannakakis [36] 2 Garbled Circuits N/A No 2 Relational DB SQL Yes C++ VaultDB [30] 2 Garbled Circuits EMP-Toolkit No 2 Relational DB SQL No C++ Scape [ 18] 3 Repl.Secret Sharing Frigate No 3 Relational DB SQL No - Sequre [ 33] 3 Secret Sharing N/A Yes 3 Relational DB SQL Yes Python/C++ SDB [ 19, 37]a N/A Secret Sharing N/A No 1 Relational DB SQL No - GOOSE [ 10]b N/A Secret Sharing N/A No 1 GraphDB SPARQL Yes Python SMPQ >=2 Secret Sharing JIFF No >=2 GraphDB Cypher No Python *Both . and a . use SMPC as ba"
+    },
+    {
+     "kind": "body",
+     "text": ", A.: Comparisons of Relational Databases with Big Data: A Teaching Approach. South Dakota State University, Brookings (2017) 32. Shamir, A.: How to share a secret. Commun. ACM 22(11), 612\u2013613 (1979) 33. Smajlovi\u00b4c , H . ,S h a j i i , A . ,B e r g e r , B . ,C h o ,H . , N u m a n a g i \u00b4c, I.: Sequre: a high- performance framework for secure multiparty computation enables biomedical data sharing. Genome Biol. 24(1), 1\u201318 (2023) 34. Volgushev, N., Schwarzkopf, M., Getchell, B., Varia, M., Lapets, A., Bestavros, A.: Conclave: secure multi-party computation on big data. In: Proceedings of"
+    },
+    {
+     "kind": "bibliography",
+     "text": " arXiv preprint arXiv:2203.00146 (2022) 31. Salehnia, A.: Comparisons of Relational Databases with Big Data: A Teaching Approach. South Dakota State University, Brookings (2017) 32. Shamir, A.: How to share a secret. Commun. ACM 22(11), 612\u2013613 (1979) 33. Smajlovi\u00b4c , H . ,S h a j i i , A . ,B e r g e r , B . ,C h o ,H . , N u m a n a g i \u00b4c, I.: Sequre: a high- performance framework for secure multiparty computation enables biomedical data sharing. Genome Biol. 24(1), 1\u201318 (2023) 34. Volgushev, N., Schwarzkopf, M., Getchell, B., Varia, M., Lapets,"
+    },
+    {
+     "kind": "bibliography",
+     "text": "s with Big Data: A Teaching Approach. South Dakota State University, Brookings (2017) 32. Shamir, A.: How to share a secret. Commun. ACM 22(11), 612\u2013613 (1979) 33. Smajlovi\u00b4c , H . ,S h a j i i , A . ,B e r g e r , B . ,C h o ,H . , N u m a n a g i \u00b4c, I.: Sequre: a high- performance framework for secure multiparty computation enables biomedical data sharing. Genome Biol. 24(1), 1\u201318 (2023) 34. Volgushev, N., Schwarzkopf, M., Getchell, B., Varia, M., Lapets, A., Bestavros, A.: Conclave: secure multi-party computation on big data. In: Proceedings of"
+    }
+   ]
+  },
+  {
+   "year": 2025,
+   "title": "webSPDZ: Versatile MPC on the Web",
+   "doi": "10.1007/978-981-95-4434-9_11",
+   "cites": "sequre-ipdpsw-2022",
+   "chars": 1631361,
+   "source_file": "978-981-95-4434-9.pdf",
+   "matched_by": "doi",
+   "pages": null,
+   "bibliography_found": true,
+   "contexts": []
+  },
+  {
+   "year": 2025,
+   "title": "Astrampc: Asynchronous Data-Driven Framework for Multi-Party Secure Computation",
+   "doi": "10.1109/CSCloud66326.2025.00047",
+   "cites": "sequre-gb-2023",
+   "chars": 38588,
+   "source_file": "Astrampc_Asynchronous_Data-Driven_Framework_for_Multi-Party_Secure_Computation.pdf",
+   "matched_by": "doi",
+   "pages": null,
+   "bibliography_found": true,
+   "contexts": [
+    {
+     "kind": "inline",
+     "ref": "21",
+     "text": "nstances, process control, algorithm control, and interface modules, supplemented by an exception handling mechanism to ensure robustness and flexibility. and maintenance complexity, making the system more prone to human error. The absence of a generalized algorithm call abstraction and modular design also hinders code reusability across different scenarios, leading to higher development costs and reduced efficiency [21]. Another significant drawback is the exposure of low-level network communication details to algorithm developers [22]. Developers using current MPC technologie"
+    },
+    {
+     "kind": "inline",
+     "ref": "21",
+     "text": "s using current MPC technologies are typically required to manage intricate aspects such as data serialization, deserialization, and the conversion of synchronous operations to an asynchronous paradigm. This complexity diverts developer attention from the core cryptographic algorithm logic and increases the likelihood of communication-related errors, thereby slowing down develop- ment and increasing system fragility [21], [22]. Version compatibility issues also pose a considerable chal- lenge. The absence of systematic version negotiation mecha- nisms in existing MPC libraries "
+    },
+    {
+     "kind": "bibliography",
+     "text": "ns Security, 2007, pp. 261\u2013270. [20] M. Backes, M. Maffei, J. M \u00a8uller, and O. Tantsiura, \u201cSymphony: Expres- sive secure multiparty computation with coordination,\u201d arXiv preprint arXiv:2302.10076, 2023. [21] F. Demmler, P. Mohassel, P. Rindal, and P. Scholl, \u201cSequre: a high- performance framework for secure multiparty computation enables biomedical data sharing,\u201d Nature Communications, vol. 14, no. 1, p. 141, 2023. [22] P. Laud and L. Kamm, \u201cStateful abstractions of secure multiparty computation,\u201d in Secure Multi-Party Computation. IOS Press, 2015, pp. 1"
+    }
+   ]
+  },
+  {
+   "year": 2023,
+   "title": "Automatic Python code generation for Embedded/Cyber-Physical Systems",
+   "doi": "10.1109/yef-ece58420.2023.10209340",
+   "cites": "codon-cc-2023",
+   "chars": 30230,
+   "source_file": "Automatic_Python_code_generation_for_Embedded_Cyber-Physical_Systems.pdf",
+   "matched_by": "doi",
+   "pages": null,
+   "bibliography_found": true,
+   "contexts": [
+    {
+     "kind": "inline",
+     "ref": "15",
+     "text": "ems. Due to its popularity, Python has been chosen as the primary development language for many fields of applications. For example, didactic kits used for automation applications, such as the robotic arm used in this paper, usually contain code examples and libraries to control the hardware based on the Python language. Despite the fact that Python programs are usually run by an interpreter, recent Python compilers [15] provide performance levels comparable to C and C++, allowing Python to take advantage of all its features without any speed penalty. Due to this fact, the a"
+    },
+    {
+     "kind": "bibliography",
+     "text": "ronics Society (Vol. 1, pp. 5892-5897). DOI: 10.1109/IECON.2019.8927437. [14] MathWorks. (1984). Embedded Coder Generate C and C++ code optimized for embedded systems. URL: https://www.mathworks.com/products/embedded-coder.html (accessed on: 24-11) [15] Shajii, A., Ramirez, G., Smajlovi\u0107, H., Ray, J., Berger, B., Amarasinghe, S., & Numanagi\u0107, I. (2023, February). Codon: A Compiler for High-Performance Pythonic Applications and DSLs. In Proceedings of the 32nd ACM SIGPLAN International Conference on Compiler Construction (pp. 191-202). 55 Author"
+    },
+    {
+     "kind": "bibliography",
+     "text": "pp. 5892-5897). DOI: 10.1109/IECON.2019.8927437. [14] MathWorks. (1984). Embedded Coder Generate C and C++ code optimized for embedded systems. URL: https://www.mathworks.com/products/embedded-coder.html (accessed on: 24-11) [15] Shajii, A., Ramirez, G., Smajlovi\u0107, H., Ray, J., Berger, B., Amarasinghe, S., & Numanagi\u0107, I. (2023, February). Codon: A Compiler for High-Performance Pythonic Applications and DSLs. In Proceedings of the 32nd ACM SIGPLAN International Conference on Compiler Construction (pp. 191-202). 55 Authorized licensed use limited"
+    },
+    {
+     "kind": "bibliography",
+     "text": "thWorks. (1984). Embedded Coder Generate C and C++ code optimized for embedded systems. URL: https://www.mathworks.com/products/embedded-coder.html (accessed on: 24-11) [15] Shajii, A., Ramirez, G., Smajlovi\u0107, H., Ray, J., Berger, B., Amarasinghe, S., & Numanagi\u0107, I. (2023, February). Codon: A Compiler for High-Performance Pythonic Applications and DSLs. In Proceedings of the 32nd ACM SIGPLAN International Conference on Compiler Construction (pp. 191-202). 55 Authorized licensed use limited to: MIT. Downloaded on August 18,2026 at 20:33:27 UTC f"
+    }
+   ]
+  },
+  {
+   "year": 2023,
+   "title": "Comparing Python Code Parallelization Techniques for Spatial Transcriptomics Data",
+   "doi": "10.1109/telfor59449.2023.10372599",
+   "cites": "codon-cc-2023",
+   "chars": 23781,
+   "source_file": "Comparing_Python_Code_Parallelization_Techniques_for_Spatial_Transcriptomics_Data.pdf",
+   "matched_by": "doi",
+   "pages": null,
+   "bibliography_found": true,
+   "contexts": [
+    {
+     "kind": "inline",
+     "ref": "14",
+     "text": "ugh, it wasn\u2019t im- plemented in this paper it is worth mentioning as it can achieve orders-of-magnitude speedups. Codon, developed in- dependently, utilizes ahead-of-time compilation, bidirectional type checking, and a unique intermediate representation to Authorized licensed use limited to: MIT. Downloaded on August 18,2026 at 20:33:40 UTC from IEEE Xplore. Restrictions apply. enable easy integration with Python. [14] IV. R ESULTS AND DISCUSSION Performance evaluation was performed using AWS c6a.32xlarge instance with Ubuntu operating system. This instance is equipped with 1"
+    },
+    {
+     "kind": "body",
+     "text": "gh scalability, and high-level interface. Scoop Distributed task module Supports parallel programming in various environments, easy to use, and compatible with other libraries. Pyro Probabilistic programming language Supports flexible and expressive deep probabilistic modeling with PyTorch backend. Codon A compiler for high-performance pythonic applications Provides seamless integration with Python while achieving performance comparable to C/C++ parallel operations and collect the results [10]. The code did not complete successfully and led to the interruption of the Python kernel. This occurs"
+    },
+    {
+     "kind": "body",
+     "text": "y one instance was used. Asyncio is suitable for tasks related to input and output, which is not the case for the considered problem. For other methods, the focus is on distributed execution to achieve maximum parallelization, but as only one machine is available, this result could not be achieved. Codon is a new promising technique for parallelization of Python code developed by MIT. Although, it wasn\u2019t im- plemented in this paper it is worth mentioning as it can achieve orders-of-magnitude speedups. Codon, developed in- dependently, utilizes ahead-of-time compilation, bidirectional type chec"
+    },
+    {
+     "kind": "body",
+     "text": "um parallelization, but as only one machine is available, this result could not be achieved. Codon is a new promising technique for parallelization of Python code developed by MIT. Although, it wasn\u2019t im- plemented in this paper it is worth mentioning as it can achieve orders-of-magnitude speedups. Codon, developed in- dependently, utilizes ahead-of-time compilation, bidirectional type checking, and a unique intermediate representation to Authorized licensed use limited to: MIT. Downloaded on August 18,2026 at 20:33:40 UTC from IEEE Xplore. Restrictions apply. enable easy integration with Py"
+    },
+    {
+     "kind": "body",
+     "text": "tallation itself. There are several directions for future work. It would be useful to test identified frameworks and libraries on a distributed machine. The other direction is to implement and evaluate more complex bioinformatics algorithms with even more difficult workloads. New techniques such as Codon can be implemented and tested in the future. REFERENCES "
+    },
+    {
+     "kind": "bibliography",
+     "text": "th worlds,\u201d Computing in Science & Engineering, vol. 13, no. 2, pp. 31\u201339, 2010. [13] Y . Zhou, J. Liepe, X. Sheng, M. P. H. Stumpf, and C. Barnes, \u201cGPU accelerated biochemical network simulation,\u201d Bioinformatics, vol. 27, no. 6, pp. 874\u2013876, 01 2011. [14] A. Shajii, G. Ramirez, H. Smajlovi \u00b4c, J. Ray, B. Berger, S. Amarasinghe, and I. Numanagi \u00b4c, \u201cCodon: A compiler for high-performance pythonic applications and dsls,\u201d in Proceedings of the 32nd ACM SIGPLAN International Conference on Compiler Construction, 2023, pp. 191\u2013202. [15] S. H. Lee, \u201cReal-time "
+    },
+    {
+     "kind": "bibliography",
+     "text": "n Science & Engineering, vol. 13, no. 2, pp. 31\u201339, 2010. [13] Y . Zhou, J. Liepe, X. Sheng, M. P. H. Stumpf, and C. Barnes, \u201cGPU accelerated biochemical network simulation,\u201d Bioinformatics, vol. 27, no. 6, pp. 874\u2013876, 01 2011. [14] A. Shajii, G. Ramirez, H. Smajlovi \u00b4c, J. Ray, B. Berger, S. Amarasinghe, and I. Numanagi \u00b4c, \u201cCodon: A compiler for high-performance pythonic applications and dsls,\u201d in Proceedings of the 32nd ACM SIGPLAN International Conference on Compiler Construction, 2023, pp. 191\u2013202. [15] S. H. Lee, \u201cReal-time edge computing on multi"
+    },
+    {
+     "kind": "bibliography",
+     "text": "0. [13] Y . Zhou, J. Liepe, X. Sheng, M. P. H. Stumpf, and C. Barnes, \u201cGPU accelerated biochemical network simulation,\u201d Bioinformatics, vol. 27, no. 6, pp. 874\u2013876, 01 2011. [14] A. Shajii, G. Ramirez, H. Smajlovi \u00b4c, J. Ray, B. Berger, S. Amarasinghe, and I. Numanagi \u00b4c, \u201cCodon: A compiler for high-performance pythonic applications and dsls,\u201d in Proceedings of the 32nd ACM SIGPLAN International Conference on Compiler Construction, 2023, pp. 191\u2013202. [15] S. H. Lee, \u201cReal-time edge computing on multi-processes and multi- threading architectures for deep "
+    },
+    {
+     "kind": "bibliography",
+     "text": "ou, J. Liepe, X. Sheng, M. P. H. Stumpf, and C. Barnes, \u201cGPU accelerated biochemical network simulation,\u201d Bioinformatics, vol. 27, no. 6, pp. 874\u2013876, 01 2011. [14] A. Shajii, G. Ramirez, H. Smajlovi \u00b4c, J. Ray, B. Berger, S. Amarasinghe, and I. Numanagi \u00b4c, \u201cCodon: A compiler for high-performance pythonic applications and dsls,\u201d in Proceedings of the 32nd ACM SIGPLAN International Conference on Compiler Construction, 2023, pp. 191\u2013202. [15] S. H. Lee, \u201cReal-time edge computing on multi-processes and multi- threading architectures for deep learning appli"
+    }
+   ]
+  },
+  {
+   "year": 2026,
+   "title": "Decor: Delegated Computation on Randomness for Secure Evaluation of Nonlinear Functions",
+   "doi": "10.1109/sp63933.2026.00256",
+   "cites": "codon-cc-2023,sequre-gb-2023",
+   "chars": 99464,
+   "source_file": "Decor_Delegated_Computation_on_Randomness_for_Secure_Evaluation_of_Nonlinear_Functions.pdf",
+   "matched_by": "doi",
+   "pages": null,
+   "bibliography_found": true,
+   "contexts": [
+    {
+     "kind": "inline",
+     "ref": "29",
+     "text": "arying polynomial degrees from 5 to 70. Our performance metrics include total runtime (in seconds), the network bandwidth used by the trusted dealer for preprocessing, the cumulative network bandwidth used by the computing parties in the online phase (excluding the dealer), and the number of interactive rounds between the parties. All measurements were averaged over three runs. We implemented all protocols in Shechi [29], a Python compiler based on Codon [30] for developing MPC and homomorphic encryption protocols, which provided the nec- essary subroutines and utility function"
+    },
+    {
+     "kind": "inline",
+     "ref": "30",
+     "text": " Our performance metrics include total runtime (in seconds), the network bandwidth used by the trusted dealer for preprocessing, the cumulative network bandwidth used by the computing parties in the online phase (excluding the dealer), and the number of interactive rounds between the parties. All measurements were averaged over three runs. We implemented all protocols in Shechi [29], a Python compiler based on Codon [30] for developing MPC and homomorphic encryption protocols, which provided the nec- essary subroutines and utility functions for secret sharing that streamlined o"
+    },
+    {
+     "kind": "inline",
+     "ref": "52",
+     "text": "ies can access a non-colluding auxiliary entity, our framework remains broadly relevant to the MPC community. This is particularly true in domains where parties manage large volumes of sensitive data and are therefore willing to accept stronger security assumptions in exchange for significant performance gains, as demonstrated in prior work on practical MPC applications in biomedical settings [37], [49], [50], [51], [52]. Our contribution advances the state of nonlinear function evaluation in such contexts. A meaningful direction for future work is to remove the need for a trus"
+    },
+    {
+     "kind": "body",
+     "text": "preprocessing, the cumulative network bandwidth used by the computing parties in the online phase (excluding the dealer), and the number of interactive rounds between the parties. All measurements were averaged over three runs. We implemented all protocols in Shechi [29], a Python compiler based on Codon [30] for developing MPC and homomorphic encryption protocols, which provided the nec- essary subroutines and utility functions for secret sharing that streamlined our implementation of the Decor protocols. 4.2. Elementary Nonlinear Functions In Table 2, we present the accuracy evaluation resul"
+    },
+    {
+     "kind": "bibliography",
+     "text": "Decor: Delegated Computation on Randomness for Secure Evaluation of Nonlinear Functions Haris Smajlovi \u00b4c, Kyle Sheng, Timos Antonopoulos, Ruzica Piskac and Hyunghoon Cho Yale University, USA {haris.smajlovic, kyle.sheng, timos.antonopoulos, ruzica.piskac, hoon.cho}@yale.edu Abstract\u2014Secure multiparty computation (MPC) enables privacy-preserving data analysis across distributed computing par"
+    },
+    {
+     "kind": "bibliography",
+     "text": ", the exponential function, and the sigmoid function. Crucially, our method eliminates the need for polynomial or piecewise approxi- mations of these functions, delivering high accuracy with- 3301 2026 IEEE Symposium on Security and Privacy (SP) \u00a9 2026, Haris Smajlovi. Under license to IEEE. DOI 10.1109/SP63933.2026.00256 2026 IEEE Symposium on Security and Privacy (SP) | 979-8-3315-6065-2/26/$31.00 \u00a92026 IEEE | DOI: 10.1109/SP63933.2026.00256 Authorized licensed use limited to: MIT. Downloaded on August 18,2026 at 20:28:25 UTC from IEEE Xplore. Restric"
+    },
+    {
+     "kind": "bibliography",
+     "text": "structures,\u201d inACM Symposium on Cloud Computing (SoCC), 2021. [28] D. Froelicheret al., \u201cTruly privacy-preserving federated analytics for precision medicine with multiparty homomorphic encryption,\u201dNature communications, vol. 12, no. 1, pp. 1\u201310, 2021. [29] H. Smajlovi \u00b4cet al., \u201cShechi: A secure distributed computation compiler based on multiparty homomorphic encryption,\u201d inUSENIX Security \u201925, 2025. [Online]. Available: https://api.semanticscholar. org/CorpusID:278856705 [30] A. Shajiiet al., \u201cCodon: A compiler for high-performance pythonic applications"
+    },
+    {
+     "kind": "bibliography",
+     "text": "12, no. 1, pp. 1\u201310, 2021. [29] H. Smajlovi \u00b4cet al., \u201cShechi: A secure distributed computation compiler based on multiparty homomorphic encryption,\u201d inUSENIX Security \u201925, 2025. [Online]. Available: https://api.semanticscholar. org/CorpusID:278856705 [30] A. Shajiiet al., \u201cCodon: A compiler for high-performance pythonic applications and DSLs,\u201d inACM SIGPLAN CC, 2023, p. 191\u2013202. [31] J. Wollebet al., \u201cVidfuncta: Towards generalizable neural represen- tations for ultrasound videos,\u201d inSimplifying Medical Ultrasound. Cham: Springer Nature Switzerland, 202"
+    },
+    {
+     "kind": "bibliography",
+     "text": "1\u201310, 2021. [29] H. Smajlovi \u00b4cet al., \u201cShechi: A secure distributed computation compiler based on multiparty homomorphic encryption,\u201d inUSENIX Security \u201925, 2025. [Online]. Available: https://api.semanticscholar. org/CorpusID:278856705 [30] A. Shajiiet al., \u201cCodon: A compiler for high-performance pythonic applications and DSLs,\u201d inACM SIGPLAN CC, 2023, p. 191\u2013202. [31] J. Wollebet al., \u201cVidfuncta: Towards generalizable neural represen- tations for ultrasound videos,\u201d inSimplifying Medical Ultrasound. Cham: Springer Nature Switzerland, 2026, pp. 109\u2013119."
+    },
+    {
+     "kind": "bibliography",
+     "text": " genome-wide association studies for biobank-scale datasets,\u201dNature Genetics, vol. 57, no. 4, pp. 809\u2013 814, 2025. [51] B. Hieet al., \u201cRealizing private and practical pharmacological col- laboration,\u201dScience, vol. 362, no. 6412, pp. 347\u2013350, Oct. 2018. [52] H. Smajlovi \u00b4cet al., \u201cSequre: a high-performance framework for secure multiparty computation enables biomedical data sharing,\u201d Genome Biology, vol. 24, no. 1, p. 5, 2023. [Online]. Available: https://doi.org/10.1186/s13059-022-02841-5 [53] M. Kelleret al., \u201cMascot: Faster malicious arithmetic secure c"
+    },
+    {
+     "kind": "bibliography",
+     "text": "tion studies for biobank-scale datasets,\u201dNature Genetics, vol. 57, no. 4, pp. 809\u2013 814, 2025. [51] B. Hieet al., \u201cRealizing private and practical pharmacological col- laboration,\u201dScience, vol. 362, no. 6412, pp. 347\u2013350, Oct. 2018. [52] H. Smajlovi \u00b4cet al., \u201cSequre: a high-performance framework for secure multiparty computation enables biomedical data sharing,\u201d Genome Biology, vol. 24, no. 1, p. 5, 2023. [Online]. Available: https://doi.org/10.1186/s13059-022-02841-5 [53] M. Kelleret al., \u201cMascot: Faster malicious arithmetic secure computation with obli"
+    }
+   ]
+  },
+  {
+   "year": 2024,
+   "title": "Design of an English Translation Intelligent Proofreading System Based on Bidirectional Long Short-term Memory Algorithm",
+   "doi": "10.1109/ipec61310.2024.00084",
+   "cites": "seq-nbt-2021",
+   "chars": 30451,
+   "source_file": "Design_of_an_English_Translation_Intelligent_Proofreading_System_Based_on_Bidirectional_Long_Short-term_Memory_Algorithm.pdf",
+   "matched_by": "doi",
+   "pages": null,
+   "bibliography_found": false,
+   "contexts": []
+  },
+  {
+   "year": 2023,
+   "title": "Detecting Interpreter Bugs via Filling Function Calls in Skeletal Program Enumeration",
+   "doi": "10.1109/issre59848.2023.00066",
+   "cites": "codon-cc-2023",
+   "chars": 63889,
+   "source_file": "Detecting_Interpreter_Bugs_via_Filling_Function_Calls_in_Skeletal_Program_Enumeration.pdf",
+   "matched_by": "doi",
+   "pages": null,
+   "bibliography_found": true,
+   "contexts": [
+    {
+     "kind": "inline",
+     "ref": "35",
+     "text": "applied for developing software such as cloud computing [15], machine learning [25], and web application framework [34], while it still lacks a comprehensive study to investigate the quality of Python interpreters. Thus, in this paper, we conduct the experiments to test seven different implementations of Python interpreters, in- cluding CPython [8], IronPython [17], Pyston [33], PyPy [31], RustPython [32], and Codon [35]. CPython is the default and most widely used Python interpreter. It is implemented in C language, and it is the reference object for all other Python interpret"
+    },
+    {
+     "kind": "body",
+     "text": ", behavior bugs, and miscompila- tion bugs. To evaluate the effectiveness, we have implemented the proposed approach into an open-source tool, i.e., F CFUZZER ,f o r testing Python interpreters. The evaluation is conducted on seven Python interpreters: CPython, RustPython, IronPython, Pyston, PyPy, Codon, and GPython. Using the same seeds, F CFUZZER can detect, on average, 1.6 times more bugs than the state- of-the-art SPE technique. In a one-month fuzzing experiment, FCFUZZER successfully identi\ufb01ed 35 Python interpreter bugs, of which 16 were con\ufb01rmed to be unknown, and six have been \ufb01xed. In"
+    },
+    {
+     "kind": "body",
+     "text": "o the same equivalence class, potential interpreter bugs can be effectively identi\ufb01ed and isolated. To evaluate the effectiveness of our approach, we have im- plemented our algorithms into an automated tool FCFUZZER to test seven Python interpreters: CPython, RustPython, Iron- Python, Pyston, PyPy, Codon, and GPython. On average, using the same seeds, F CFUZZER is capable of detecting 1.6 times more bugs compared with the state-of-the-art SPE. In a one- month fuzzing experiment, FCFUZZER successfully identi\ufb01ed 35 Python interpreter bugs, of which 16 were con\ufb01rmed to be unknown, and six have al"
+    },
+    {
+     "kind": "body",
+     "text": " [34], while it still lacks a comprehensive study to investigate the quality of Python interpreters. Thus, in this paper, we conduct the experiments to test seven different implementations of Python interpreters, in- cluding CPython [8], IronPython [17], Pyston [33], PyPy [31], RustPython [32], and Codon [35]. CPython is the default and most widely used Python interpreter. It is implemented in C language, and it is the reference object for all other Python interpreters, owning the most active development community. We take CPython 3.9.0 as the reference Python interpreter and test the versions"
+    },
+    {
+     "kind": "body",
+     "text": "n-Time (JIT) compiler and a tracing garbage collector, enabling fast execution speeds. We choose to test version v7.3.11. RustPython is a Python interpreter written in Rust, which aims to provide a Python interpreter with improved performance and memory safety. The experi- ment uses version v0.2.0. Codon is a high-performance Python compiler that translates Python code into native machine code, enhancing the execution speed of Python programs. We choose version v0.15.5 for the experiment. B. Tool Implementation We implement the proposed approach into a tool named FCFUZZER to test Python interp"
+    },
+    {
+     "kind": "body",
+     "text": "thon 88881 Crash Unknown \u00d7 11 GPython 143 Crash Unknown \u00d7 12 IronPython 1251 Crash Unknown \u00d7 13 IronPython 1262 Crash Unknown \u2713 14 Pyston 291 Crash Unknown \u00d7 15 Pyston 296 Crash Unknown \u00d7 16 RustPython 4859 Crash Unknown \u2713 17 CPython 86928 Behavior Discussing \u00d7 18 PyPy 3505 Behavior Discussing \u00d7 19 Codon 240 Crash Discussing \u00d7 20 CPython 87247 Crash Discussing \u00d7 21 CPython 90273 Crash Discussing \u00d7 22 CPython 90369 Crash Discussing \u00d7 23 GPython 209 Crash Discussing \u00d7 24 Pyston 295 Crash Discussing \u00d7 25 RustPython 4313 Crash Discussing \u2713 26 Codon 366 Crash Known \u2713 27 CPython 86675 Crash Known \u00d7 "
+    },
+    {
+     "kind": "body",
+     "text": "ior Discussing \u00d7 18 PyPy 3505 Behavior Discussing \u00d7 19 Codon 240 Crash Discussing \u00d7 20 CPython 87247 Crash Discussing \u00d7 21 CPython 90273 Crash Discussing \u00d7 22 CPython 90369 Crash Discussing \u00d7 23 GPython 209 Crash Discussing \u00d7 24 Pyston 295 Crash Discussing \u00d7 25 RustPython 4313 Crash Discussing \u2713 26 Codon 366 Crash Known \u2713 27 CPython 86675 Crash Known \u00d7 28 CPython 87352 Crash Known \u00d7 29 CPython 87355 Crash Known \u00d7 30 CPython 87356 Crash Known \u00d7 31 IronPython 1263 Crash Known \u00d7 32 RustPython 4858 Crash Known \u2713 33 CPython 87116 Behavior Invalid \u00d7 34 CPython 87117 Behavior Invalid \u00d7 35 PyPy 3504 M"
+    },
+    {
+     "kind": "body",
+     "text": "with COMSPE. B. The One-month Fuzzing Experiment The second experiment aims to validate the bug-hunting capability. We feed F CFUZZER with all test seed programs in our dataset to hunt for unknown bugs in seven Python in- terpreters, i.e., CPython, IronPython, GPython, Pyston, PyPy, RustPython, and Codon. F CFUZZER automatically collects test programs triggering interpreter bugs. Then we manually analyze their root causes and report the possible unknown bugs to developers. To further demonstrate our approach\u2019s bene\ufb01ts in function call enumeration, we conduct a cross-comparison between FCFUZZER"
+    },
+    {
+     "kind": "bibliography",
+     "text": "] Pyston. https://www.pyston.org/. Last accessed on May. 5, 2023. [34] AL Sayeth Saabith, MMM Fareez, and T Vinothraj. Python current trend applications-an overview.International Journal of Advance Engineering and Research Development, 6(10), 2019. [35] Ariya Shajii, Gabriel Ramirez, Haris Smajlovi \u00b4c, Jessica Ray, Bonnie Berger, Saman Amarasinghe, and Ibrahim Numanagi \u00b4c. Codon: A compiler for high-performance pythonic applications and dsls. In Proceedings of the 32nd ACM SIGPLAN International Conference on Compiler Construction, pages 191\u2013202, 2023. [3"
+    },
+    {
+     "kind": "bibliography",
+     "text": "g/. Last accessed on May. 5, 2023. [34] AL Sayeth Saabith, MMM Fareez, and T Vinothraj. Python current trend applications-an overview.International Journal of Advance Engineering and Research Development, 6(10), 2019. [35] Ariya Shajii, Gabriel Ramirez, Haris Smajlovi \u00b4c, Jessica Ray, Bonnie Berger, Saman Amarasinghe, and Ibrahim Numanagi \u00b4c. Codon: A compiler for high-performance pythonic applications and dsls. In Proceedings of the 32nd ACM SIGPLAN International Conference on Compiler Construction, pages 191\u2013202, 2023. [36] Chengnian Sun, Vu Le, and Zh"
+    },
+    {
+     "kind": "bibliography",
+     "text": "nd T Vinothraj. Python current trend applications-an overview.International Journal of Advance Engineering and Research Development, 6(10), 2019. [35] Ariya Shajii, Gabriel Ramirez, Haris Smajlovi \u00b4c, Jessica Ray, Bonnie Berger, Saman Amarasinghe, and Ibrahim Numanagi \u00b4c. Codon: A compiler for high-performance pythonic applications and dsls. In Proceedings of the 32nd ACM SIGPLAN International Conference on Compiler Construction, pages 191\u2013202, 2023. [36] Chengnian Sun, Vu Le, and Zhendong Su. Finding and analyzing compiler warning defects. In 2016 IEEE/"
+    }
+   ]
+  },
+  {
+   "year": 2025,
+   "title": "GraphBLAS Mathematical Opportunities: Parallel Hypersparse, Matrix Based Graph Streaming, and Complex-Index Matrices",
+   "doi": "10.1109/hpec67600.2025.11196667",
+   "cites": "codon-cc-2023",
+   "chars": 59066,
+   "source_file": "GraphBLAS_Mathematical_Opportunities_Parallel_Hypersparse_Matrix_Based_Graph_Streaming_and_Complex-Index_Matrices.pdf",
+   "matched_by": "doi",
+   "pages": null,
+   "bibliography_found": true,
+   "contexts": [
+    {
+     "kind": "inline",
+     "ref": "44",
+     "text": "el computing with the inherent advantage of deriving concurrency from data locality. These distributed arrays (also referred to a PGAS\u2014partitioned global address spaces [37]) often leverage threading and message passing as underlying enabling technologies. Distributed ar- rays can be implemented effectively in low level languages [38], [39] and high level languages (e.g., Matlab [40], [41], Octave [42], Python [43], [44]) using both shared and dis- tributed memory hardware. Many message passing libraries present themselves to users as distributed arrays [45], [46]. Distributed "
+    },
+    {
+     "kind": "bibliography",
+     "text": "009. [43] C. Byun, W. Arcand, D. Bestor, B. Bergeron, V . Gadepally, M. Houle, M. Hubbell, H. Jananthan, M. Jones, A. Klein, et al., \u201cpPython per- formance study,\u201d in 2023 IEEE High Performance Extreme Computing Conference (HPEC), pp. 1\u20137, IEEE, 2023. [44] A. Shajii, G. Ramirez, H. Smajlovi \u00b4c, J. Ray, B. Berger, S. Amarasinghe, and I. Numanagi \u00b4c, \u201cCodon: A compiler for high-performance pythonic applications and dsls,\u201d in Proceedings of the 32nd ACM SIGPLAN International Conference on Compiler Construction, pp. 191\u2013202, 2023. [45] S. Balay, S. Abhyankar"
+    },
+    {
+     "kind": "bibliography",
+     "text": "rcand, D. Bestor, B. Bergeron, V . Gadepally, M. Houle, M. Hubbell, H. Jananthan, M. Jones, A. Klein, et al., \u201cpPython per- formance study,\u201d in 2023 IEEE High Performance Extreme Computing Conference (HPEC), pp. 1\u20137, IEEE, 2023. [44] A. Shajii, G. Ramirez, H. Smajlovi \u00b4c, J. Ray, B. Berger, S. Amarasinghe, and I. Numanagi \u00b4c, \u201cCodon: A compiler for high-performance pythonic applications and dsls,\u201d in Proceedings of the 32nd ACM SIGPLAN International Conference on Compiler Construction, pp. 191\u2013202, 2023. [45] S. Balay, S. Abhyankar, M. Adams, J. Brown, P"
+    },
+    {
+     "kind": "bibliography",
+     "text": " M. Hubbell, H. Jananthan, M. Jones, A. Klein, et al., \u201cpPython per- formance study,\u201d in 2023 IEEE High Performance Extreme Computing Conference (HPEC), pp. 1\u20137, IEEE, 2023. [44] A. Shajii, G. Ramirez, H. Smajlovi \u00b4c, J. Ray, B. Berger, S. Amarasinghe, and I. Numanagi \u00b4c, \u201cCodon: A compiler for high-performance pythonic applications and dsls,\u201d in Proceedings of the 32nd ACM SIGPLAN International Conference on Compiler Construction, pp. 191\u2013202, 2023. [45] S. Balay, S. Abhyankar, M. Adams, J. Brown, P. Brune, K. Buschelman, L. Dalcin, A. Dener, V . Eijkho"
+    },
+    {
+     "kind": "bibliography",
+     "text": ". Jananthan, M. Jones, A. Klein, et al., \u201cpPython per- formance study,\u201d in 2023 IEEE High Performance Extreme Computing Conference (HPEC), pp. 1\u20137, IEEE, 2023. [44] A. Shajii, G. Ramirez, H. Smajlovi \u00b4c, J. Ray, B. Berger, S. Amarasinghe, and I. Numanagi \u00b4c, \u201cCodon: A compiler for high-performance pythonic applications and dsls,\u201d in Proceedings of the 32nd ACM SIGPLAN International Conference on Compiler Construction, pp. 191\u2013202, 2023. [45] S. Balay, S. Abhyankar, M. Adams, J. Brown, P. Brune, K. Buschelman, L. Dalcin, A. Dener, V . Eijkhout, W. Gropp, "
+    }
+   ]
+  },
+  {
+   "year": 2024,
+   "title": "JACC: Leveraging HPC Meta-Programming and Performance Portability with the Just-in-Time and LLVM-based Julia Language",
+   "doi": "10.1109/scw63240.2024.00245",
+   "cites": "codon-cc-2023",
+   "chars": 54067,
+   "source_file": "JACC_Leveraging_HPC_Meta-Programming_and_Performance_Portability_with_the_Just-in-Time_and_LLVM-based_Julia_Language.pdf",
+   "matched_by": "doi",
+   "pages": null,
+   "bibliography_found": true,
+   "contexts": [
+    {
+     "kind": "inline",
+     "ref": "12",
+     "text": "ython [6], Julia [7], and R [8] and their current performance levels, especially because these languages and their ecosystems have been at the forefront of AI/ML and data analysis workflows [9]. Additionally, the widespread adoption of LLVM [10] allows for unifying efforts in the compiler back-end layers for several languages and programming models. Julia and other efforts that target Python (e.g., Numba [11], codon [12]) reuse LLVM\u2019s modularity by generating intermediate representa- tions (LLVM-IRs) to achieve improved performance from their high-level, just-in-time, and dynam"
+    },
+    {
+     "kind": "body",
+     "text": " ecosystems have been at the forefront of AI/ML and data analysis workflows [9]. Additionally, the widespread adoption of LLVM [10] allows for unifying efforts in the compiler back-end layers for several languages and programming models. Julia and other efforts that target Python (e.g., Numba [11], codon [12]) reuse LLVM\u2019s modularity by generating intermediate representa- tions (LLVM-IRs) to achieve improved performance from their high-level, just-in-time, and dynamic programming models. In this work, we focus on both programming productivity and performance portability and evaluate how to bri"
+    },
+    {
+     "kind": "bibliography",
+     "text": " Generation and Optimization, 2004. CGO 2004. IEEE, 2004, pp. 75\u201386. [11] S. K. Lam, A. Pitrou, and S. Seibert, \u201cNumba: A LLVM-based Python JIT compiler,\u201d in Proceedings of the Second Workshop on the LLVM Compiler Infrastructure in HPC, 2015, pp. 1\u20136. [12] A. Shajii, G. Ramirez, H. Smajlovi \u00b4c, J. Ray, B. Berger, S. Amarasinghe, and I. Numanagi \u00b4c, \u201cCodon: A compiler for high-performance pythonic applications and dsls,\u201d in Proceedings of the 32nd ACM SIGPLAN International Conference on Compiler Construction, ser. CC 2023. New York, NY , USA: Association "
+    },
+    {
+     "kind": "bibliography",
+     "text": "ation, 2004. CGO 2004. IEEE, 2004, pp. 75\u201386. [11] S. K. Lam, A. Pitrou, and S. Seibert, \u201cNumba: A LLVM-based Python JIT compiler,\u201d in Proceedings of the Second Workshop on the LLVM Compiler Infrastructure in HPC, 2015, pp. 1\u20136. [12] A. Shajii, G. Ramirez, H. Smajlovi \u00b4c, J. Ray, B. Berger, S. Amarasinghe, and I. Numanagi \u00b4c, \u201cCodon: A compiler for high-performance pythonic applications and dsls,\u201d in Proceedings of the 32nd ACM SIGPLAN International Conference on Compiler Construction, ser. CC 2023. New York, NY , USA: Association for Computing Machinery"
+    },
+    {
+     "kind": "bibliography",
+     "text": ". Lam, A. Pitrou, and S. Seibert, \u201cNumba: A LLVM-based Python JIT compiler,\u201d in Proceedings of the Second Workshop on the LLVM Compiler Infrastructure in HPC, 2015, pp. 1\u20136. [12] A. Shajii, G. Ramirez, H. Smajlovi \u00b4c, J. Ray, B. Berger, S. Amarasinghe, and I. Numanagi \u00b4c, \u201cCodon: A compiler for high-performance pythonic applications and dsls,\u201d in Proceedings of the 32nd ACM SIGPLAN International Conference on Compiler Construction, ser. CC 2023. New York, NY , USA: Association for Computing Machinery, 2023, p. 191\u2013202. [Online]. Available: https://doi.or"
+    },
+    {
+     "kind": "bibliography",
+     "text": "ou, and S. Seibert, \u201cNumba: A LLVM-based Python JIT compiler,\u201d in Proceedings of the Second Workshop on the LLVM Compiler Infrastructure in HPC, 2015, pp. 1\u20136. [12] A. Shajii, G. Ramirez, H. Smajlovi \u00b4c, J. Ray, B. Berger, S. Amarasinghe, and I. Numanagi \u00b4c, \u201cCodon: A compiler for high-performance pythonic applications and dsls,\u201d in Proceedings of the 32nd ACM SIGPLAN International Conference on Compiler Construction, ser. CC 2023. New York, NY , USA: Association for Computing Machinery, 2023, p. 191\u2013202. [Online]. Available: https://doi.org/10.1145/3578"
+    }
+   ]
+  },
+  {
+   "year": 2024,
+   "title": "MicroPython Testbed for Federated Learning Algorithms",
+   "doi": "10.1109/TELFOR63250.2024.10819071",
+   "cites": "codon-cc-2023",
+   "chars": 22915,
+   "source_file": "MicroPython_Testbed_for_Federated_Learning_Algorithms.pdf",
+   "matched_by": "doi",
+   "pages": null,
+   "bibliography_found": true,
+   "contexts": []
+  },
+  {
+   "year": 2025,
+   "title": "Privacy-Preserving Training and Inference of CNNs: A Medical Performance Case Study",
+   "doi": "10.1109/icsc65596.2025.11140461",
+   "cites": "sequre-gb-2023",
+   "chars": 46640,
+   "source_file": "Privacy-Preserving_Training_and_Inference_of_CNNs_A_Medical_Performance_Case_Study.pdf",
+   "matched_by": "doi",
+   "pages": null,
+   "bibliography_found": true,
+   "contexts": [
+    {
+     "kind": "inline",
+     "ref": "13",
+     "text": "lso, the amount of additional data that needs to be transferred is not speci\ufb01ed. Braun et al. [12] introduced MOTION, a general-purpose MPC framework, and compared its performance with existing works, including a CNN trained for handwriting recognition. Unlike our work, they do not discuss the speci\ufb01c CNN implementation, training runtime, or transferred data amount. Another general-purpose MPC framework is Sequre by [13], which the authors used to implement a neural network that determines drug-drug interactions based on text data. Similar to our work, the authors use a medical"
+    },
+    {
+     "kind": "inline",
+     "ref": "13",
+     "text": "I, several papers have already combined ML with MPC, but not in the way that is the subject of this paper. None of these works use a medical dataset with a CNN and analyze the runtime for training and inference and the amount of transmitted data. TABLE I: Differentiation from related work medical Training Inference Data CNN Dataset Time Time Transmission used [12] \u2717 \u2717 \u2713 \u2717 \u2713 [8] \u2717 \u2717 \u2713 \u2713 \u2717 [11] \u2717 \u2717 \u2713 \u2717 \u2713 [7] \u2717 \u2713 \u2713 \u2717 \u2717 [13] \u2713 \u2713 \u2713 \u2717 \u2717 [14] \u2713 \u2713 \u2717 \u2717 \u2713 [15] \u2713 \u2717 \u2717 \u2717 \u2713 Ours \u2713 \u2713 \u2713 \u2713 \u2713 IV. S OFTWARE , D ATA SET AND HARDWARE SELECTION To evaluate the performance overhead of MPC-based CNNs "
+    },
+    {
+     "kind": "body",
+     "text": "MOTION, a general-purpose MPC framework, and compared its performance with existing works, including a CNN trained for handwriting recognition. Unlike our work, they do not discuss the speci\ufb01c CNN implementation, training runtime, or transferred data amount. Another general-purpose MPC framework is Sequre by [13], which the authors used to implement a neural network that determines drug-drug interactions based on text data. Similar to our work, the authors use a medical dataset. However, the data set consists of text instead of images, and they don\u2019t 2025 5th Intelligent Cybersecurity Conferen"
+    },
+    {
+     "kind": "bibliography",
+     "text": " Demmler, T. Schneider, and O. Tkachenko, \u201cMOTION - a framework for mixed-protocol multi-party computation,\u201d Cryptology ePrint Archive, Paper 2020/1137, 2020, https://eprint .iacr.org/2020/ 1137. [Online]. Available: https://eprint .iacr.org/2020/1137 [13] H. Smajlovi \u00b4c, A. Shajii, B. Berger, H. Cho, and I. Numanagi \u00b4c, \u201cSequre: a high-performance framework for secure multiparty computation enables biomedical data sharing,\u201d 2023. [Online]. Available: https: //rdcu.be/dPzTV [14] F. Wibawa, F. O. Catak, S. Sarp, M. Kuzlu, and U. Cali, \u201cHomomorphic encrypt"
+    },
+    {
+     "kind": "bibliography",
+     "text": "neider, and O. Tkachenko, \u201cMOTION - a framework for mixed-protocol multi-party computation,\u201d Cryptology ePrint Archive, Paper 2020/1137, 2020, https://eprint .iacr.org/2020/ 1137. [Online]. Available: https://eprint .iacr.org/2020/1137 [13] H. Smajlovi \u00b4c, A. Shajii, B. Berger, H. Cho, and I. Numanagi \u00b4c, \u201cSequre: a high-performance framework for secure multiparty computation enables biomedical data sharing,\u201d 2023. [Online]. Available: https: //rdcu.be/dPzTV [14] F. Wibawa, F. O. Catak, S. Sarp, M. Kuzlu, and U. Cali, \u201cHomomorphic encryption and federate"
+    },
+    {
+     "kind": "bibliography",
+     "text": "- a framework for mixed-protocol multi-party computation,\u201d Cryptology ePrint Archive, Paper 2020/1137, 2020, https://eprint .iacr.org/2020/ 1137. [Online]. Available: https://eprint .iacr.org/2020/1137 [13] H. Smajlovi \u00b4c, A. Shajii, B. Berger, H. Cho, and I. Numanagi \u00b4c, \u201cSequre: a high-performance framework for secure multiparty computation enables biomedical data sharing,\u201d 2023. [Online]. Available: https: //rdcu.be/dPzTV [14] F. Wibawa, F. O. Catak, S. Sarp, M. Kuzlu, and U. Cali, \u201cHomomorphic encryption and federated learning based privacy- preservi"
+    },
+    {
+     "kind": "bibliography",
+     "text": "for mixed-protocol multi-party computation,\u201d Cryptology ePrint Archive, Paper 2020/1137, 2020, https://eprint .iacr.org/2020/ 1137. [Online]. Available: https://eprint .iacr.org/2020/1137 [13] H. Smajlovi \u00b4c, A. Shajii, B. Berger, H. Cho, and I. Numanagi \u00b4c, \u201cSequre: a high-performance framework for secure multiparty computation enables biomedical data sharing,\u201d 2023. [Online]. Available: https: //rdcu.be/dPzTV [14] F. Wibawa, F. O. Catak, S. Sarp, M. Kuzlu, and U. Cali, \u201cHomomorphic encryption and federated learning based privacy- preserving cnn trainin"
+    }
+   ]
+  },
+  {
+   "year": 2026,
+   "title": "Pyls: Enabling Python Hardware Synthesis with Dynamic Polymorphism via LCRS Encoding",
+   "doi": "10.1109/cgo68049.2026.11394843",
+   "cites": "codon-cc-2023",
+   "chars": 72394,
+   "source_file": "Pyls_Enabling_Python_Hardware_Synthesis_with_Dynamic_Polymorphism_via_LCRS_Encoding.pdf",
+   "matched_by": "doi",
+   "pages": null,
+   "bibliography_found": true,
+   "contexts": [
+    {
+     "kind": "inline",
+     "ref": "47",
+     "text": "rectly interface with hardware at the algorithm level. Automated compilation and scheduling strategies enable performance close to hand-optimized kernels while maintaining high productivity. HiPy [46] employs low-level messaging interfaces (MPI) or shared-memory models to manage data and task parallelism in Python, utilizing compile-time analysis or Just-In-Time (JIT) techniques to reduce interpreter overhead. Codon [47] \u201ccompiles Python as a static language,\u201d trans- lating Python code directly into efficient native executables. Using static type inference and compile-time opti"
+    },
+    {
+     "kind": "body",
+     "text": "ormance close to hand-optimized kernels while maintaining high productivity. HiPy [46] employs low-level messaging interfaces (MPI) or shared-memory models to manage data and task parallelism in Python, utilizing compile-time analysis or Just-In-Time (JIT) techniques to reduce interpreter overhead. Codon [47] \u201ccompiles Python as a static language,\u201d trans- lating Python code directly into efficient native executables. Using static type inference and compile-time optimization, Codon minimizes runtime interpretation and dynamic dispatch overhead. It performs global optimizations across functions "
+    },
+    {
+     "kind": "body",
+     "text": "parallelism in Python, utilizing compile-time analysis or Just-In-Time (JIT) techniques to reduce interpreter overhead. Codon [47] \u201ccompiles Python as a static language,\u201d trans- lating Python code directly into efficient native executables. Using static type inference and compile-time optimization, Codon minimizes runtime interpretation and dynamic dispatch overhead. It performs global optimizations across functions and modules, allowing compute-intensive These approaches each present unique strategies that sig- nificantly enhance Python\u2019s performance without sacrificing its high-level express"
+    },
+    {
+     "kind": "bibliography",
+     "text": "nd Implementation , 2022, pp. 703\u2013 718. [46] M. Jungmair, A. Engelke, and J. Giceva, \u201cHipy: Extracting high-level semantics from python code for data processing,\u201d Proceedings of the ACM on Programming Languages, vol. 8, no. OOPSLA2, pp. 736\u2013762, 2024. [47] A. Shajii, G. Ramirez, H. Smajlovi \u00b4c, J. Ray, B. Berger, S. Amarasinghe, and I. Numanagi \u00b4c, \u201cCodon: A compiler for high-performance pythonic applications and dsls,\u201d in Proceedings of the 32nd ACM SIGPLAN International Conference on Compiler Construction, 2023, pp. 191\u2013202. 135 Authorized licensed use"
+    },
+    {
+     "kind": "bibliography",
+     "text": "2, pp. 703\u2013 718. [46] M. Jungmair, A. Engelke, and J. Giceva, \u201cHipy: Extracting high-level semantics from python code for data processing,\u201d Proceedings of the ACM on Programming Languages, vol. 8, no. OOPSLA2, pp. 736\u2013762, 2024. [47] A. Shajii, G. Ramirez, H. Smajlovi \u00b4c, J. Ray, B. Berger, S. Amarasinghe, and I. Numanagi \u00b4c, \u201cCodon: A compiler for high-performance pythonic applications and dsls,\u201d in Proceedings of the 32nd ACM SIGPLAN International Conference on Compiler Construction, 2023, pp. 191\u2013202. 135 Authorized licensed use limited to: MIT. Downl"
+    },
+    {
+     "kind": "bibliography",
+     "text": "iceva, \u201cHipy: Extracting high-level semantics from python code for data processing,\u201d Proceedings of the ACM on Programming Languages, vol. 8, no. OOPSLA2, pp. 736\u2013762, 2024. [47] A. Shajii, G. Ramirez, H. Smajlovi \u00b4c, J. Ray, B. Berger, S. Amarasinghe, and I. Numanagi \u00b4c, \u201cCodon: A compiler for high-performance pythonic applications and dsls,\u201d in Proceedings of the 32nd ACM SIGPLAN International Conference on Compiler Construction, 2023, pp. 191\u2013202. 135 Authorized licensed use limited to: MIT. Downloaded on August 18,2026 at 20:28:45 UTC from IEEE Xplor"
+    },
+    {
+     "kind": "bibliography",
+     "text": "Extracting high-level semantics from python code for data processing,\u201d Proceedings of the ACM on Programming Languages, vol. 8, no. OOPSLA2, pp. 736\u2013762, 2024. [47] A. Shajii, G. Ramirez, H. Smajlovi \u00b4c, J. Ray, B. Berger, S. Amarasinghe, and I. Numanagi \u00b4c, \u201cCodon: A compiler for high-performance pythonic applications and dsls,\u201d in Proceedings of the 32nd ACM SIGPLAN International Conference on Compiler Construction, 2023, pp. 191\u2013202. 135 Authorized licensed use limited to: MIT. Downloaded on August 18,2026 at 20:28:45 UTC from IEEE Xplore. Restrictio"
+    }
+   ]
+  },
+  {
+   "year": 2022,
+   "title": "RabbitFX: Efficient Framework for FASTA/Q File Parsing on Modern Multi-Core Platforms",
+   "doi": "10.1109/tcbb.2022.3219114",
+   "cites": "seq-oopsla-2019",
+   "chars": 45989,
+   "source_file": "RabbitFX_Efficient_Framework_for_FASTA_Q_File_Parsing_on_Modern_Multi-Core_Platforms.pdf",
+   "matched_by": "doi",
+   "pages": null,
+   "bibliography_found": true,
+   "contexts": [
+    {
+     "kind": "inline",
+     "ref": "21",
+     "text": "d I/O modules for each applica- tion is time-consuming and ineffective. Bioinformatics tools often contain their own FASTQ/FASTA parser module, like urmap [18] and fastp [7]. However, such parser modules usually only implement the functions involved in the tool itself or only support a certain format, limiting their universal applicability. Other tools use third-party libraries such as klib [19], SeqAn [20], and Seq [21]. Unfortunately, these tools are often not able to meet performance requirements in multi-threading scenarios. For example, klib offers a highly tuned FASTA/FAS"
+    },
+    {
+     "kind": "bibliography",
+     "text": "Accessed: Jan. 20, 2021. [Online]. Available: https://github.com/attractivechaos/klib [20] A. D \u20acoring, D. Weese, T. Rausch, and K. Reinert, \u201cSeqAn an ef\ufb01cient, generic C++ library for sequence analysis,\u201d BMC Bioinf. ,v o l .9 ,n o .1 , pp. 1\u20139, 2008. [21] A. Shajii, I. Numanagi /C19c, R. Baghdadi, B. Berger, and S. Amarasinghe, \u201cSeq: A high-performance language for bioinformatics,\u201d Proc. ACM Program. Lang., vol. 3, no. OOPSLA, pp. 1\u201329, 2019. [22] \u00ba. Roguski and S. Deorowicz, \u201cDsrc 2\u2014industry-oriented compression of fastq \ufb01les,\u201d Bioinformatics, vol. 30,"
+    },
+    {
+     "kind": "bibliography",
+     "text": "an. 20, 2021. [Online]. Available: https://github.com/attractivechaos/klib [20] A. D \u20acoring, D. Weese, T. Rausch, and K. Reinert, \u201cSeqAn an ef\ufb01cient, generic C++ library for sequence analysis,\u201d BMC Bioinf. ,v o l .9 ,n o .1 , pp. 1\u20139, 2008. [21] A. Shajii, I. Numanagi /C19c, R. Baghdadi, B. Berger, and S. Amarasinghe, \u201cSeq: A high-performance language for bioinformatics,\u201d Proc. ACM Program. Lang., vol. 3, no. OOPSLA, pp. 1\u201329, 2019. [22] \u00ba. Roguski and S. Deorowicz, \u201cDsrc 2\u2014industry-oriented compression of fastq \ufb01les,\u201d Bioinformatics, vol. 30, no. 15, pp"
+    },
+    {
+     "kind": "bibliography",
+     "text": "ivechaos/klib [20] A. D \u20acoring, D. Weese, T. Rausch, and K. Reinert, \u201cSeqAn an ef\ufb01cient, generic C++ library for sequence analysis,\u201d BMC Bioinf. ,v o l .9 ,n o .1 , pp. 1\u20139, 2008. [21] A. Shajii, I. Numanagi /C19c, R. Baghdadi, B. Berger, and S. Amarasinghe, \u201cSeq: A high-performance language for bioinformatics,\u201d Proc. ACM Program. Lang., vol. 3, no. OOPSLA, pp. 1\u201329, 2019. [22] \u00ba. Roguski and S. Deorowicz, \u201cDsrc 2\u2014industry-oriented compression of fastq \ufb01les,\u201d Bioinformatics, vol. 30, no. 15, pp. 2213\u20132215, 2014. [23] Y. Xing, G. Li, Z. Wang, B. Feng, Z. "
+    }
+   ]
+  },
+  {
+   "year": 2025,
+   "title": "Streamlining C Compilation: Harnessing Different Optimization Techniques",
+   "doi": "10.1109/assic64892.2025.11158099",
+   "cites": "codon-cc-2023",
+   "chars": 31866,
+   "source_file": "Streamlining_C_Compilation_Harnessing_Different_Optimization_Techniques.pdf",
+   "matched_by": "doi",
+   "pages": null,
+   "bibliography_found": true,
+   "contexts": [
+    {
+     "kind": "inline",
+     "ref": "3",
+     "text": "This methodology shines in its ability to detect issues in loop-specific compiler functionalities, yet it reveals a critical gap in addressing floating-point operations and their compliance with IEEE FP standards. These limitations underscore the necessity of enhancing fuzzers to handle complex mathematical operations, thereby extending the robustness of optimization testing for modern compilers. Ariya Shajii et al. [3] introduces Codon, a domain- extensible compiler designed to achieve the high performance of low-level languages while maintaining Python\u2019s simplicity. The auth"
+    },
+    {
+     "kind": "body",
+     "text": "ressing floating-point operations and their compliance with IEEE FP standards. These limitations underscore the necessity of enhancing fuzzers to handle complex mathematical operations, thereby extending the robustness of optimization testing for modern compilers. Ariya Shajii et al. [3] introduces Codon, a domain- extensible compiler designed to achieve the high performance of low-level languages while maintaining Python\u2019s simplicity. The authors bridge a crucial gap, enabling Python develop- ers to leverage domain-specific languages (DSLs) for high- performance applications. Codon achieves C"
+    },
+    {
+     "kind": "body",
+     "text": " [3] introduces Codon, a domain- extensible compiler designed to achieve the high performance of low-level languages while maintaining Python\u2019s simplicity. The authors bridge a crucial gap, enabling Python develop- ers to leverage domain-specific languages (DSLs) for high- performance applications. Codon achieves C/C++ level per- formance, illustrating its potential in computationally inten- sive tasks. Despite its promise, the paper notes limitations in supporting Python\u2019s runtime polymorphism and standard library coverage. Addressing these gaps is essential for Codon to achieve seamless comp"
+    },
+    {
+     "kind": "body",
+     "text": "gh- performance applications. Codon achieves C/C++ level per- formance, illustrating its potential in computationally inten- sive tasks. Despite its promise, the paper notes limitations in supporting Python\u2019s runtime polymorphism and standard library coverage. Addressing these gaps is essential for Codon to achieve seamless compatibility and broader applicability in Pythonic high-performance computing. L\u00b4eo Gourdin et al. [4] propose a framework to enhance the optimization capabilities of the CompCert C compiler while ensuring formal correctness guarantees. The approach uses symbolic execution"
+    },
+    {
+     "kind": "bibliography",
+     "text": "ating-point operations and their compliance with IEEE FP standards. These limitations underscore the necessity of enhancing fuzzers to handle complex mathematical operations, thereby extending the robustness of optimization testing for modern compilers. Ariya Shajii et al. [3] introduces Codon, a domain- extensible compiler designed to achieve the high performance of low-level languages while maintaining Python\u2019s simplicity. The authors bridge a crucial gap, enabling Python develop- ers to leverage domain-specific languages (DSLs) for high- performance a"
+    },
+    {
+     "kind": "bibliography",
+     "text": "ler optimization. arXiv preprint arXiv:2309.07062. [2] Livinskii, V ., Babokin, D. and Regehr, J., 2023. Fuzzing loop optimiza- tions in compilers for C++ and data-parallel languages. Proceedings of the ACM on Programming Languages, 7(PLDI), pp.1826-1847. [3] Shajii, A., Ramirez, G., Smajlovi \u00b4c, H., Ray, J., Berger, B., Amarasinghe, S. and Numanagi \u00b4c, I., 2023, February. Codon: A compiler for high- performance pythonic applications and dsls. In Proceedings of the 32nd ACM SIGPLAN International Conference on Compiler Construction (pp. 191-202). [4] Gour"
+    },
+    {
+     "kind": "bibliography",
+     "text": "reprint arXiv:2309.07062. [2] Livinskii, V ., Babokin, D. and Regehr, J., 2023. Fuzzing loop optimiza- tions in compilers for C++ and data-parallel languages. Proceedings of the ACM on Programming Languages, 7(PLDI), pp.1826-1847. [3] Shajii, A., Ramirez, G., Smajlovi \u00b4c, H., Ray, J., Berger, B., Amarasinghe, S. and Numanagi \u00b4c, I., 2023, February. Codon: A compiler for high- performance pythonic applications and dsls. In Proceedings of the 32nd ACM SIGPLAN International Conference on Compiler Construction (pp. 191-202). [4] Gourdin, L., Bonneau, B., Bou"
+    },
+    {
+     "kind": "bibliography",
+     "text": "and Regehr, J., 2023. Fuzzing loop optimiza- tions in compilers for C++ and data-parallel languages. Proceedings of the ACM on Programming Languages, 7(PLDI), pp.1826-1847. [3] Shajii, A., Ramirez, G., Smajlovi \u00b4c, H., Ray, J., Berger, B., Amarasinghe, S. and Numanagi \u00b4c, I., 2023, February. Codon: A compiler for high- performance pythonic applications and dsls. In Proceedings of the 32nd ACM SIGPLAN International Conference on Compiler Construction (pp. 191-202). [4] Gourdin, L., Bonneau, B., Boulm \u00b4e, S., Monniaux, D. and B \u00b4erard, A., 2023. Formally V"
+    },
+    {
+     "kind": "bibliography",
+     "text": "p optimiza- tions in compilers for C++ and data-parallel languages. Proceedings of the ACM on Programming Languages, 7(PLDI), pp.1826-1847. [3] Shajii, A., Ramirez, G., Smajlovi \u00b4c, H., Ray, J., Berger, B., Amarasinghe, S. and Numanagi \u00b4c, I., 2023, February. Codon: A compiler for high- performance pythonic applications and dsls. In Proceedings of the 32nd ACM SIGPLAN International Conference on Compiler Construction (pp. 191-202). [4] Gourdin, L., Bonneau, B., Boulm \u00b4e, S., Monniaux, D. and B \u00b4erard, A., 2023. Formally Verifying Optimizations with Block"
+    }
+   ]
+  },
+  {
+   "year": 2026,
+   "title": "The Green Side of the Lua",
+   "doi": "10.1109/saner-c67878.2026.00033",
+   "cites": "codon-cc-2023",
+   "chars": 40758,
+   "source_file": "The_Green_Side_of_the_Lua.pdf",
+   "matched_by": "doi",
+   "pages": null,
+   "bibliography_found": true,
+   "contexts": [
+    {
+     "kind": "inline",
+     "ref": "12",
+     "text": "re energy than C, which ranks \ufb01rst and is consid- ered the most energy-ef\ufb01cient language in the study. It is no surprise that designers and developers of such interpreted languages are developing and applying powerful techniques to improve both the runtime and energy ef\ufb01ciency of the programming language. For example, compilers are developed for interpreted languages - see, for example, the Codon compiler for Python [12] or LuaAOT for Lua [13] that followed the old idea of using partial evaluation to produce a compiler based on the existing interpreter of Lua. Likewise, Just-In"
+    },
+    {
+     "kind": "body",
+     "text": "e study. It is no surprise that designers and developers of such interpreted languages are developing and applying powerful techniques to improve both the runtime and energy ef\ufb01ciency of the programming language. For example, compilers are developed for interpreted languages - see, for example, the Codon compiler for Python [12] or LuaAOT for Lua [13] that followed the old idea of using partial evaluation to produce a compiler based on the existing interpreter of Lua. Likewise, Just-In-Time (JIT) compilation techniques are being used to improve the ef\ufb01ciency of such interpreted languages [14]."
+    },
+    {
+     "kind": "bibliography",
+     "text": "surements,\u201d Software Quality Journal , vol. 32, no. 4, p. 1539\u20131580, Jul. 2024. [11] R. Ierusalimschy, L. H. de Figueiredo, and W. C. Filho, \u201cLua\u2014an extensible extension language,\u201d Software: Practice and Experience , vol. 26, no. 6, pp. 635\u2013652, 1996. [12] A. Shajii, G. Ramirez, H. Smajlovi \u00b4c, J. Ray, B. Berger, S. Amarasinghe, and I. Numanagi \u00b4c, \u201cCodon: A compiler for high-performance pythonic applications and dsls,\u201d in 32nd ACM SIGPLAN International Conference on Compiler Construction (CC\u201923) . ACM, 2023, p. 191\u2013202. [13] H. Musso Gualandi and R. Ier"
+    },
+    {
+     "kind": "bibliography",
+     "text": "ality Journal , vol. 32, no. 4, p. 1539\u20131580, Jul. 2024. [11] R. Ierusalimschy, L. H. de Figueiredo, and W. C. Filho, \u201cLua\u2014an extensible extension language,\u201d Software: Practice and Experience , vol. 26, no. 6, pp. 635\u2013652, 1996. [12] A. Shajii, G. Ramirez, H. Smajlovi \u00b4c, J. Ray, B. Berger, S. Amarasinghe, and I. Numanagi \u00b4c, \u201cCodon: A compiler for high-performance pythonic applications and dsls,\u201d in 32nd ACM SIGPLAN International Conference on Compiler Construction (CC\u201923) . ACM, 2023, p. 191\u2013202. [13] H. Musso Gualandi and R. Ierusalimschy, \u201cA surprisi"
+    },
+    {
+     "kind": "bibliography",
+     "text": ". [11] R. Ierusalimschy, L. H. de Figueiredo, and W. C. Filho, \u201cLua\u2014an extensible extension language,\u201d Software: Practice and Experience , vol. 26, no. 6, pp. 635\u2013652, 1996. [12] A. Shajii, G. Ramirez, H. Smajlovi \u00b4c, J. Ray, B. Berger, S. Amarasinghe, and I. Numanagi \u00b4c, \u201cCodon: A compiler for high-performance pythonic applications and dsls,\u201d in 32nd ACM SIGPLAN International Conference on Compiler Construction (CC\u201923) . ACM, 2023, p. 191\u2013202. [13] H. Musso Gualandi and R. Ierusalimschy, \u201cA surprisingly simple lua compiler,\u201d in Proceedings of the 25th B"
+    },
+    {
+     "kind": "bibliography",
+     "text": "salimschy, L. H. de Figueiredo, and W. C. Filho, \u201cLua\u2014an extensible extension language,\u201d Software: Practice and Experience , vol. 26, no. 6, pp. 635\u2013652, 1996. [12] A. Shajii, G. Ramirez, H. Smajlovi \u00b4c, J. Ray, B. Berger, S. Amarasinghe, and I. Numanagi \u00b4c, \u201cCodon: A compiler for high-performance pythonic applications and dsls,\u201d in 32nd ACM SIGPLAN International Conference on Compiler Construction (CC\u201923) . ACM, 2023, p. 191\u2013202. [13] H. Musso Gualandi and R. Ierusalimschy, \u201cA surprisingly simple lua compiler,\u201d in Proceedings of the 25th Brazilian Sympo"
+    }
+   ]
+  },
+  {
+   "year": 2024,
+   "title": "Transcribing Natural Language to Python Code: A Compiler Based Approach",
+   "doi": "10.1109/icccnt61001.2024.10725235",
+   "cites": "codon-cc-2023",
+   "chars": 28165,
+   "source_file": "Transcribing_Natural_Language_to_Python_Code_A_Compiler_Based_Approach.pdf",
+   "matched_by": "doi",
+   "pages": null,
+   "bibliography_found": true,
+   "contexts": [
+    {
+     "kind": "inline",
+     "ref": "10",
+     "text": "hanisms, which are important for creation and maintenance of parsers [7]. A compiler acts as the messenger or a facilitator between high - level languages and machine readable language. It performs a series of analysis, ranging from lex ical analysis, syntactical analysis and semantic analysis, followed by intermediate code generation, to make sure that the generated code is correct and free of errors [8] [9] [10]. Key Contributions of the Study are: 1) Introduce a compiler-based method to produce valid and error-free code in Python. 2) Bridge natural language and pro"
+    },
+    {
+     "kind": "bibliography",
+     "text": "chnologies (CONIT), pp. 1\u20135, IEEE, 2023. [8] T. \u00c6. Mogensen, \u201cLexical analysis,\u201d in Introduction to Compiler Design, pp. 1\u201339, Springer, 2024. [9] T. \u00c6. Mogensen, \u201cSyntax analysis,\u201d in Introduction to Compiler Design, pp. 41\u201398, Springer, 2024. [10] A. Shajii, G. Ramirez, H. Smajlovic\u00b4, J. Ray, B. Berger, S. Amarasinghe, and I. Numanagic\u00b4, \u201cCodon: A compiler for high -performance pythonic applications and dsls,\u201d in Proceedings of the 32nd ACM SIGPLAN International Conference on Compiler Construction, pp. 191\u2013202, 2023. [11] A. T. Imam and A"
+    },
+    {
+     "kind": "bibliography",
+     "text": " 1\u20135, IEEE, 2023. [8] T. \u00c6. Mogensen, \u201cLexical analysis,\u201d in Introduction to Compiler Design, pp. 1\u201339, Springer, 2024. [9] T. \u00c6. Mogensen, \u201cSyntax analysis,\u201d in Introduction to Compiler Design, pp. 41\u201398, Springer, 2024. [10] A. Shajii, G. Ramirez, H. Smajlovic\u00b4, J. Ray, B. Berger, S. Amarasinghe, and I. Numanagic\u00b4, \u201cCodon: A compiler for high -performance pythonic applications and dsls,\u201d in Proceedings of the 32nd ACM SIGPLAN International Conference on Compiler Construction, pp. 191\u2013202, 2023. [11] A. T. Imam and A. J. Alnsour, \u201cThe use "
+    },
+    {
+     "kind": "bibliography",
+     "text": "is,\u201d in Introduction to Compiler Design, pp. 1\u201339, Springer, 2024. [9] T. \u00c6. Mogensen, \u201cSyntax analysis,\u201d in Introduction to Compiler Design, pp. 41\u201398, Springer, 2024. [10] A. Shajii, G. Ramirez, H. Smajlovic\u00b4, J. Ray, B. Berger, S. Amarasinghe, and I. Numanagic\u00b4, \u201cCodon: A compiler for high -performance pythonic applications and dsls,\u201d in Proceedings of the 32nd ACM SIGPLAN International Conference on Compiler Construction, pp. 191\u2013202, 2023. [11] A. T. Imam and A. J. Alnsour, \u201cThe use of natural language processing approach for convertin"
+    },
+    {
+     "kind": "bibliography",
+     "text": "duction to Compiler Design, pp. 1\u201339, Springer, 2024. [9] T. \u00c6. Mogensen, \u201cSyntax analysis,\u201d in Introduction to Compiler Design, pp. 41\u201398, Springer, 2024. [10] A. Shajii, G. Ramirez, H. Smajlovic\u00b4, J. Ray, B. Berger, S. Amarasinghe, and I. Numanagic\u00b4, \u201cCodon: A compiler for high -performance pythonic applications and dsls,\u201d in Proceedings of the 32nd ACM SIGPLAN International Conference on Compiler Construction, pp. 191\u2013202, 2023. [11] A. T. Imam and A. J. Alnsour, \u201cThe use of natural language processing approach for converting pseudo code"
+    }
+   ]
+  },
+  {
+   "year": 2023,
+   "title": "Treating a different kind of patient: curing security weaknesses in digital health systems of the future",
+   "doi": "10.1109/iwasi58316.2023.10164581",
+   "cites": "sequre-gb-2023",
+   "chars": 26291,
+   "source_file": "Treating_a_different_kind_of_patient_curing_security_weaknesses_in_digital_health_systems_of_the_future.pdf",
+   "matched_by": "doi",
+   "pages": null,
+   "bibliography_found": true,
+   "contexts": [
+    {
+     "kind": "inline",
+     "ref": "13",
+     "text": "l using patient data from more than one patient is such a scenario. In such approaches there is obvious privacy concerns that cannot be overlooked (nor should be overlooked since it is against privacy related legislation). Secure multiparty computation (SMPC) schemes offer elegant solutions to the above collabo- rative processing scenarios and can be used in order to support privacy preserving ML/DL for medical data [13]. SMPC en- 101Authorized licensed use limited to: MIT. Downloaded on August 18,2026 at 20:34:06 UTC from IEEE Xplore. Restrictions apply. ables computation in"
+    },
+    {
+     "kind": "bibliography",
+     "text": "gens under the disguise of popular music,\u201d in ACM SIGSAC CCS 2022 , 2022, pp. 277\u2013291. [12] Y . Cao, L. Zhang, and C.-H. Chang, \u201cUsing image sensor puf as root of trust for birthmarking of perceptual image hash,\u201d in IEEE AsianHOST 2016, 2016, pp. 1\u20136. [13] H. Smajlovi \u00b4c, A. Shajii, B. Berger, H. Cho, and I. Numanagi\u00b4c, \u201cSequre: a high-performance framework for secure multiparty computation enables biomedical data sharing,\u201d Genome Biology , vol. 24, no. 1, pp. 1\u201318, 2023. [14] X. Yin, Y . Zhu, and J. Hu, \u201cA comprehensive survey of privacy- preserving fed"
+    },
+    {
+     "kind": "bibliography",
+     "text": "isguise of popular music,\u201d in ACM SIGSAC CCS 2022 , 2022, pp. 277\u2013291. [12] Y . Cao, L. Zhang, and C.-H. Chang, \u201cUsing image sensor puf as root of trust for birthmarking of perceptual image hash,\u201d in IEEE AsianHOST 2016, 2016, pp. 1\u20136. [13] H. Smajlovi \u00b4c, A. Shajii, B. Berger, H. Cho, and I. Numanagi\u00b4c, \u201cSequre: a high-performance framework for secure multiparty computation enables biomedical data sharing,\u201d Genome Biology , vol. 24, no. 1, pp. 1\u201318, 2023. [14] X. Yin, Y . Zhu, and J. Hu, \u201cA comprehensive survey of privacy- preserving federated learning:"
+    },
+    {
+     "kind": "bibliography",
+     "text": "SIGSAC CCS 2022 , 2022, pp. 277\u2013291. [12] Y . Cao, L. Zhang, and C.-H. Chang, \u201cUsing image sensor puf as root of trust for birthmarking of perceptual image hash,\u201d in IEEE AsianHOST 2016, 2016, pp. 1\u20136. [13] H. Smajlovi \u00b4c, A. Shajii, B. Berger, H. Cho, and I. Numanagi\u00b4c, \u201cSequre: a high-performance framework for secure multiparty computation enables biomedical data sharing,\u201d Genome Biology , vol. 24, no. 1, pp. 1\u201318, 2023. [14] X. Yin, Y . Zhu, and J. Hu, \u201cA comprehensive survey of privacy- preserving federated learning: A taxonomy, review, and future di"
+    }
+   ]
+  },
+  {
+   "year": 2026,
+   "title": "Machine-learning models integrating preoperative clinical factors and circulating tumor DNA features predict lymph node metastasis in esophageal carcinoma",
+   "doi": "10.4251/wjgo.v18.i6.117851",
+   "cites": "seq-oopsla-2019",
+   "chars": 57874,
+   "source_file": "WJGO-18-117851.pdf",
+   "matched_by": "doi",
+   "pages": null,
+   "bibliography_found": true,
+   "contexts": [
+    {
+     "kind": "bibliography",
+     "text": "shaw A, Shaw JA, Zimmermann BG; TRACERx consortium; PEACE consortium, Swanton C. Phylogenetic ctDNA analysis depicts early-stage lung cancer evolution. Nature 2017; 545: 446-451 [RCA] [PMID: 28445469 DOI: 10.1038/nature22364] [FullText] [Full Text(PDF)] 37 Shajii A, Numanagi\u0107 I, Baghdadi R, Berger B, Amarasinghe S; MIT CSAIL, USA. Seq: A High-Performance Language for Bioinformatics. Proc ACM Program Lang 2019; 3: 125 [RCA] [PMID: 35775031 DOI: 10.1145/3360551] [FullText] Gu RT et al. ML/CT/ctDNA predict LN metastasis in EC https://dx.doi.org/10.4251/"
+    },
+    {
+     "kind": "bibliography",
+     "text": "aw JA, Zimmermann BG; TRACERx consortium; PEACE consortium, Swanton C. Phylogenetic ctDNA analysis depicts early-stage lung cancer evolution. Nature 2017; 545: 446-451 [RCA] [PMID: 28445469 DOI: 10.1038/nature22364] [FullText] [Full Text(PDF)] 37 Shajii A, Numanagi\u0107 I, Baghdadi R, Berger B, Amarasinghe S; MIT CSAIL, USA. Seq: A High-Performance Language for Bioinformatics. Proc ACM Program Lang 2019; 3: 125 [RCA] [PMID: 35775031 DOI: 10.1145/3360551] [FullText] Gu RT et al. ML/CT/ctDNA predict LN metastasis in EC https://dx.doi.org/10.4251/wjgo.v18.i"
+    },
+    {
+     "kind": "bibliography",
+     "text": "ton C. Phylogenetic ctDNA analysis depicts early-stage lung cancer evolution. Nature 2017; 545: 446-451 [RCA] [PMID: 28445469 DOI: 10.1038/nature22364] [FullText] [Full Text(PDF)] 37 Shajii A, Numanagi\u0107 I, Baghdadi R, Berger B, Amarasinghe S; MIT CSAIL, USA. Seq: A High-Performance Language for Bioinformatics. Proc ACM Program Lang 2019; 3: 125 [RCA] [PMID: 35775031 DOI: 10.1145/3360551] [FullText] Gu RT et al. ML/CT/ctDNA predict LN metastasis in EC https://dx.doi.org/10.4251/wjgo.v18.i6.117851 14 June 15, 2026 Volume 18 Issue 6 FOOTNOTES Specialty ty"
+    }
+   ]
+  },
+  {
+   "year": 2020,
+   "title": "A constructive model for collective intelligence",
+   "doi": "10.1093/nsr/nwaa092",
+   "cites": "seq-oopsla-2019",
+   "chars": 25705,
+   "source_file": "nwaa092.pdf",
+   "matched_by": "doi",
+   "pages": null,
+   "bibliography_found": true,
+   "contexts": []
+  },
+  {
+   "year": 2025,
+   "title": "General-purpose multi-user privacy-preserving outsourced k-means clustering",
+   "doi": "10.1016/j.jisa.2025.103976",
+   "cites": "sequre-gb-2023",
+   "chars": 11960,
+   "source_file": "paper1.pdf",
+   "matched_by": "doi",
+   "pages": null,
+   "bibliography_found": false,
+   "contexts": [
+    {
+     "kind": "bibliography",
+     "text": "tion ACM Trans Sensor Netw (2023) \u2022 H. Cao et al. Evidence in hand: Passive vibration response-based continuous user authentication \u2022 H. Cao et al. MagSign: Harnessing dynamic magnetism for user authentication on IoT devices IEEE Trans Mob Comput (2022) \u2022 H. Smajlovi\u0107 et al. Sequre: a high-performance framework for secure multiparty computation enables biomedical data sharing Genome Biol (2023) There are more references available in the full text version of this article. "
+    },
+    {
+     "kind": "bibliography",
+     "text": "nsor Netw (2023) \u2022 H. Cao et al. Evidence in hand: Passive vibration response-based continuous user authentication \u2022 H. Cao et al. MagSign: Harnessing dynamic magnetism for user authentication on IoT devices IEEE Trans Mob Comput (2022) \u2022 H. Smajlovi\u0107 et al. Sequre: a high-performance framework for secure multiparty computation enables biomedical data sharing Genome Biol (2023) There are more references available in the full text version of this article. "
+    }
+   ]
+  },
+  {
+   "year": 2024,
+   "title": "Towards a type-based abstract semantics for Python",
+   "doi": "10.1016/j.jlamp.2024.101032",
+   "cites": "codon-cc-2023",
+   "chars": 71078,
+   "source_file": "paper3.pdf",
+   "matched_by": "doi",
+   "pages": null,
+   "bibliography_found": false,
+   "contexts": [
+    {
+     "kind": "body",
+     "text": "1], a Python-3 interpreter written entirely in the Rust programming language, and alternative Python implementations like PyPy [12] or Pyston [13]. Python compilers provide good examples of how to parse and interpret Python code. Furthermore, they have useful type inference mechanisms. Nuitka [14], Codon [15][16], and Cython [17] are well established projects that compile Python code. There are, however, other interesting projects on the same subject, like Pythran [18], Numba [19], Shed Skin [20], Pyjion [21] and even projects that have never gone past the state of theoretical research, like S"
+    },
+    {
+     "kind": "body",
+     "text": "py https://www.pypy.org/ (2023), Accessed 30th Aug 2023 Google Scholar 13. [13] Pyston \u2013 python performance https://www.pyston.org/ (2023), Accessed 30th Aug 2023 Google Scholar 14. [14] Nuitka the python compiler https://nuitka.net (2023), Accessed 30th Aug 2023 Google Scholar 15. [15] Welcome to codon - codon https://docs.exaloop.io/codon (2023), Accessed 2nd Sep 2023 Google Scholar 16. [16] A. "
+    },
+    {
+     "kind": "body",
+     "text": "://www.pypy.org/ (2023), Accessed 30th Aug 2023 Google Scholar 13. [13] Pyston \u2013 python performance https://www.pyston.org/ (2023), Accessed 30th Aug 2023 Google Scholar 14. [14] Nuitka the python compiler https://nuitka.net (2023), Accessed 30th Aug 2023 Google Scholar 15. [15] Welcome to codon - codon https://docs.exaloop.io/codon (2023), Accessed 2nd Sep 2023 Google Scholar 16. [16] A. "
+    },
+    {
+     "kind": "body",
+     "text": "023), Accessed 30th Aug 2023 Google Scholar 13. [13] Pyston \u2013 python performance https://www.pyston.org/ (2023), Accessed 30th Aug 2023 Google Scholar 14. [14] Nuitka the python compiler https://nuitka.net (2023), Accessed 30th Aug 2023 Google Scholar 15. [15] Welcome to codon - codon https://docs.exaloop.io/codon (2023), Accessed 2nd Sep 2023 Google Scholar 16. [16] A. "
+    },
+    {
+     "kind": "body",
+     "text": "sed 30th Aug 2023 Google Scholar 13. [13] Pyston \u2013 python performance https://www.pyston.org/ (2023), Accessed 30th Aug 2023 Google Scholar 14. [14] Nuitka the python compiler https://nuitka.net (2023), Accessed 30th Aug 2023 Google Scholar 15. [15] Welcome to codon - codon https://docs.exaloop.io/codon (2023), Accessed 2nd Sep 2023 Google Scholar 16. [16] A. "
+    },
+    {
+     "kind": "bibliography",
+     "text": "ccessed 30th Aug 2023 Google Scholar 14. [14] Nuitka the python compiler https://nuitka.net (2023), Accessed 30th Aug 2023 Google Scholar 15. [15] Welcome to codon - codon https://docs.exaloop.io/codon (2023), Accessed 2nd Sep 2023 Google Scholar 16. [16] A. Shajii, G. Ramirez, H. Smajlovi\u0107, J. Ray, B. Berger, S. Amarasinghe, I. Numanagi\u0107 Codon: a compiler for high-performance pythonic applications and dsls CC 2023: Proceedings of the 32nd ACM SIGPLAN International Conference on Compiler Construction (2023), pp. 191-202, 10.1145/3578360.3580275 View in "
+    },
+    {
+     "kind": "bibliography",
+     "text": "oogle Scholar 14. [14] Nuitka the python compiler https://nuitka.net (2023), Accessed 30th Aug 2023 Google Scholar 15. [15] Welcome to codon - codon https://docs.exaloop.io/codon (2023), Accessed 2nd Sep 2023 Google Scholar 16. [16] A. Shajii, G. Ramirez, H. Smajlovi\u0107, J. Ray, B. Berger, S. Amarasinghe, I. Numanagi\u0107 Codon: a compiler for high-performance pythonic applications and dsls CC 2023: Proceedings of the 32nd ACM SIGPLAN International Conference on Compiler Construction (2023), pp. 191-202, 10.1145/3578360.3580275 View in ScopusGoogle Scholar 17"
+    },
+    {
+     "kind": "bibliography",
+     "text": " https://nuitka.net (2023), Accessed 30th Aug 2023 Google Scholar 15. [15] Welcome to codon - codon https://docs.exaloop.io/codon (2023), Accessed 2nd Sep 2023 Google Scholar 16. [16] A. Shajii, G. Ramirez, H. Smajlovi\u0107, J. Ray, B. Berger, S. Amarasinghe, I. Numanagi\u0107 Codon: a compiler for high-performance pythonic applications and dsls CC 2023: Proceedings of the 32nd ACM SIGPLAN International Conference on Compiler Construction (2023), pp. 191-202, 10.1145/3578360.3580275 View in ScopusGoogle Scholar 17. [17] Cython C-extensions for python https://cyt"
+    },
+    {
+     "kind": "bibliography",
+     "text": "nuitka.net (2023), Accessed 30th Aug 2023 Google Scholar 15. [15] Welcome to codon - codon https://docs.exaloop.io/codon (2023), Accessed 2nd Sep 2023 Google Scholar 16. [16] A. Shajii, G. Ramirez, H. Smajlovi\u0107, J. Ray, B. Berger, S. Amarasinghe, I. Numanagi\u0107 Codon: a compiler for high-performance pythonic applications and dsls CC 2023: Proceedings of the 32nd ACM SIGPLAN International Conference on Compiler Construction (2023), pp. 191-202, 10.1145/3578360.3580275 View in ScopusGoogle Scholar 17. [17] Cython C-extensions for python https://cython.org/ ("
+    }
+   ]
+  },
+  {
+   "year": 2023,
+   "title": "A memory footprint optimization framework for Python applications targeting edge devices",
+   "doi": "10.1016/j.sysarc.2023.102936",
+   "cites": "seq-biorxiv-2020",
+   "chars": 12512,
+   "source_file": "paper4.pdf",
+   "matched_by": "doi",
+   "pages": null,
+   "bibliography_found": false,
+   "contexts": []
+  },
+  {
+   "year": 2023,
+   "title": "A memory footprint optimization framework for Python applications targeting edge devices",
+   "doi": "10.1016/j.sysarc.2023.102936",
+   "cites": "seq-biorxiv-2020",
+   "chars": 16227,
+   "source_file": "paper5.pdf",
+   "matched_by": "doi",
+   "pages": null,
+   "bibliography_found": false,
+   "contexts": []
+  },
+  {
+   "year": 2022,
+   "title": "Navigating bottlenecks and trade-offs in genomic data analysis",
+   "doi": "10.1038/s41576-022-00551-z",
+   "cites": "seq-nbt-2021",
+   "chars": 106957,
+   "source_file": "s41576-022-00551-z.pdf",
+   "matched_by": "doi",
+   "pages": null,
+   "bibliography_found": true,
+   "contexts": [
+    {
+     "kind": "bibliography",
+     "text": "log-2012-to-2019/ 2018-02-12-Run_the_germline_GATK_Best_Practices_Pipeline_for_%245_per_genome.md (2020). 15. Illumina. DRAGEN Complete Suite; latest version: 4.0.3. AWS Marketplace. https:// aws.amazon.com/marketplace/pp/prodview-ypz2tpzy6f5xq (2022). 16. Shajii, A., Yorukoglu, D., Yu, Y. W. & Berger, B. Fast genotyping of known SNPs through approximate k-mer matching. Bioinformatics 32, i538\u2013i544 (2016). 17. Ondov, B. D. et al. Mash: fast genome and metagenome distance estimation using MinHash. Genome Biol. 17, 1\u20134 (2016). 18. Stein, L. Genome ann"
+    },
+    {
+     "kind": "bibliography",
+     "text": " M. Standardization and quality management in next-generation sequencing. Appl. Transl. Genomics 10, 2\u20139 (2016). 71. Yorukoglu, D., Yu, Y. W., Peng, J. & Berger, B. Compressive mapping for next-generation sequencing. Nat. Biotechnol. 34, 374\u2013376 (2016). 72. Shajii, A. et al. A Python-based programming language for high-performance computational genomics. Nat. Biotechnol. 39, 1062\u20131064 (2021). 73. Berger, B., Peng, J. & Singh, M. Computational solutions for omics data. Nat. Rev. Genet 14, 333\u2013346 (2013). This work is an older review of computational"
+    },
+    {
+     "kind": "bibliography",
+     "text": "and quality management in next-generation sequencing. Appl. Transl. Genomics 10, 2\u20139 (2016). 71. Yorukoglu, D., Yu, Y. W., Peng, J. & Berger, B. Compressive mapping for next-generation sequencing. Nat. Biotechnol. 34, 374\u2013376 (2016). 72. Shajii, A. et al. A Python-based programming language for high-performance computational genomics. Nat. Biotechnol. 39, 1062\u20131064 (2021). 73. Berger, B., Peng, J. & Singh, M. Computational solutions for omics data. Nat. Rev. Genet 14, 333\u2013346 (2013). This work is an older review of computational challenges and solu"
+    },
+    {
+     "kind": "bibliography",
+     "text": "4\u2013740 (2011). 77. Bonfield, J. K. & Mahoney, M. V. Compression of FASTQ and SAM format sequencing data. PloS ONE 8, e59190 (2013). 78. Rahman, A., Chikhi, R. & Medvedev, P. Disk compression of k-mer sets. Algorithms Mol. Biol. 16, 1\u20134 (2021). 79. Hach, F., Numanagi\u0107, I., Alkan, C. & Sahinalp, S. C. SCALCE: boosting sequence compression algorithms using locally consistent encoding. Bioinformatics 28, 3051\u20133057 (2012). 80. Janin, L., Schulz-Trieglaff, O. & Cox, A. J. BEETL-fastq: a searchable compressed archive for DNA reads. Bioinformatics 30, 2796\u2013"
+    },
+    {
+     "kind": "bibliography",
+     "text": "d, B. Improved metagenomic analysis with Kraken 2. Genome Biol. 20, 1\u20133 (2019). 99. Jain, C., Koren, S., Dilthey, A., Phillippy, A. M. & Aluru, S. A fast adaptive algorithm for computing whole-genome homology maps. Bioinformatics 34, i748\u2013i756 (2018). 100. Numanagi\u0107, I. et al. Fast characterization of segmental duplications in genome assemblies. Bioinformatics 34, i706\u2013i714 (2018). 101. Ekim, B., Berger, B. & Chikhi, R. Minimizer-space de Bruijn graphs: whole-genome assembly of long reads in minutes on a personal computer. Cell Syst. 12, 958\u2013968 (20"
+    },
+    {
+     "kind": "bibliography",
+     "text": "ctural variants using read clouds. Nat. Methods 14, 915\u2013920 (2017). 159. Loose, M., Malla, S. & Stout, M. Real-time selective sequencing using nanopore technology. Nat. Methods 13, 751\u2013754 (2016). Acknowledgements The authors thank E. Banks, L. Cowen and I. Numanagi\u0107 for helpful discussions. Y.W.Y. is supported by the Natural Sciences and Engineering Research Council of Canada (NSERC) grant RGPIN-2022-03074 and B.B. is supported by US National Institutes of Health (NIH) grant 1R35GM141861. Author contributions The authors contributed equally to all "
+    }
+   ]
+  },
+  {
+   "year": 2025,
+   "title": "Collaborative genome-wide association analysis with cryptography",
+   "doi": "10.1038/s41588-025-02110-8",
+   "cites": "sequre-gb-2023",
+   "chars": 9278,
+   "source_file": "s41588-025-02110-8.pdf",
+   "matched_by": "title",
+   "pages": null,
+   "bibliography_found": true,
+   "contexts": [
+    {
+     "kind": "bibliography",
+     "text": "scale. 3. Mendelsohn, S. et al. sfkit: a web-based toolkit for secure and federated genomic analysis. Nucleic Acids Res. 51, W535\u2013W541 (2023). This paper presents a web-based toolkit for automating the deployment of secure federated analysis tools. 4. Smajlovi\u0107, H., Shajii, A., Berger, B., Cho, H. & Numanagi\u0107, I. Sequre: A high-performance framework for secure multiparty computation enables biomedical data sharing. Genome Biol. 24, 5 (2023). This paper presents a programming framework that turns Python-based code into efficient secure mu"
+    },
+    {
+     "kind": "bibliography",
+     "text": "lsohn, S. et al. sfkit: a web-based toolkit for secure and federated genomic analysis. Nucleic Acids Res. 51, W535\u2013W541 (2023). This paper presents a web-based toolkit for automating the deployment of secure federated analysis tools. 4. Smajlovi\u0107, H., Shajii, A., Berger, B., Cho, H. & Numanagi\u0107, I. Sequre: A high-performance framework for secure multiparty computation enables biomedical data sharing. Genome Biol. 24, 5 (2023). This paper presents a programming framework that turns Python-based code into efficient secure multiparty protoc"
+    },
+    {
+     "kind": "bibliography",
+     "text": " toolkit for secure and federated genomic analysis. Nucleic Acids Res. 51, W535\u2013W541 (2023). This paper presents a web-based toolkit for automating the deployment of secure federated analysis tools. 4. Smajlovi\u0107, H., Shajii, A., Berger, B., Cho, H. & Numanagi\u0107, I. Sequre: A high-performance framework for secure multiparty computation enables biomedical data sharing. Genome Biol. 24, 5 (2023). This paper presents a programming framework that turns Python-based code into efficient secure multiparty protocols. 5. Cho, H. et al. Privacy-enhan"
+    },
+    {
+     "kind": "bibliography",
+     "text": "ecure and federated genomic analysis. Nucleic Acids Res. 51, W535\u2013W541 (2023). This paper presents a web-based toolkit for automating the deployment of secure federated analysis tools. 4. Smajlovi\u0107, H., Shajii, A., Berger, B., Cho, H. & Numanagi\u0107, I. Sequre: A high-performance framework for secure multiparty computation enables biomedical data sharing. Genome Biol. 24, 5 (2023). This paper presents a programming framework that turns Python-based code into efficient secure multiparty protocols. 5. Cho, H. et al. Privacy-enhancing technolo"
+    }
+   ]
+  }
+ ]
+}
