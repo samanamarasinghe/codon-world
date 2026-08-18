@@ -1,9 +1,9 @@
 {
  "generated_from": "data/entries/*.json + data/pilot/*.json + data/papers/*.json",
- "entry_count": 131,
+ "entry_count": 140,
  "kind_counts": {
   "repo": 108,
-  "paper": 23
+  "paper": 32
  },
  "sidecar_counts": {
   "false_positive/genetics": 11,
@@ -4073,6 +4073,115 @@
    "kind": "paper"
   },
   {
+   "id": "paper-asnl-ir-design-2023",
+   "url": "https://doi.org/10.48550/arXiv.2307.06983",
+   "name": "IR Design for Application-Specific Natural Language: A Case Study on Traffic Data",
+   "venue": "arXiv",
+   "year": 2023,
+   "doi": "10.48550/arXiv.2307.06983",
+   "summary": "An intermediate representation for a natural-language interface over traffic data, surveying MLIR and LLVM as the general-purpose optimisation frameworks it positions itself against. Codon is cited once, and the sentence it supports is about LLVM IR rather than about Codon.",
+   "codon_relation": "prior_art",
+   "codon_role": "exploration",
+   "why_codon": "The single citation attaches to the claim that LLVM implements its code optimisation through LLVM IR. Codon is the reference given for that general statement about LLVM, and nothing about Codon itself is described or run.",
+   "why_codon_source": "stated",
+   "provenance": "preprint",
+   "cites_anchors": [
+    "codon-cc-2023"
+   ],
+   "found_in": "semantic_scholar_only",
+   "note": "The second miscitation found in the corpus, after the genomic inference survey cited Sequre for homomorphic encryption. Both are recorded as they stand, because how a work is cited is what an index of reception should show. Note also that this work is one Semantic Scholar holds and OpenAlex does not, which is the recall gap the paper lane was set up to expose.",
+   "confidence": "high",
+   "source_file": "data/papers/005-batch.json",
+   "kind": "paper"
+  },
+  {
+   "id": "paper-collagene-2023",
+   "url": "https://doi.org/10.1186/s13059-023-03039-z",
+   "name": "COLLAGENE enables privacy-aware federated and collaborative genomic data analysis",
+   "venue": "Genome Biology",
+   "year": 2023,
+   "doi": "10.1186/s13059-023-03039-z",
+   "summary": "A toolbase for collaborative genomic analysis across sites that will not pool their data, built on homomorphic encryption and deliberately usable from ordinary shell and R workflows. Sequre appears twice in the survey of alternatives and once as a row in the paper's table of existing tools, and both prose mentions turn on the same objection: that approaches built on a specialised programming language ask more of their users.",
+   "codon_relation": "prior_art",
+   "codon_role": "exploration",
+   "why_codon": "Sequre is described as an MPC pipeline-building effort that can benefit more advanced users because it uses a specialised programming language, and later as a library using a modified programming language which can optimise low-level implementations at the expense of complexity and maintainability. It is tabulated but never run.",
+   "why_codon_source": "stated",
+   "provenance": "published",
+   "cites_anchors": [
+    "sequre-ipdpsw-2022"
+   ],
+   "found_in": "openalex",
+   "note": "The first citation in the corpus that argues against the approach rather than merely reporting it, and it appears in Genome Biology, the venue that published Sequre. The cost it names -- complexity and maintainability -- is the cost of the compiler bet itself, so it is the sharpest external appraisal the index holds.",
+   "confidence": "high",
+   "source_file": "data/papers/005-batch.json",
+   "kind": "paper"
+  },
+  {
+   "id": "paper-d2x-2023",
+   "url": "https://doi.org/10.1145/3579990.3580014",
+   "name": "D2X: An eXtensible conteXtual Debugger for Modern DSLs",
+   "venue": "CC 2023",
+   "year": 2023,
+   "doi": "10.1145/3579990.3580014",
+   "summary": "A debugger that carries domain-specific state out of a DSL compiler and into the debugging session, on the argument that ordinary source-level debuggers show the generated code without the compiler's own inferred information. Seq is the motivating example of that problem: a dynamically typed genomics DSL whose statically inferred types exist in neither the source nor the binary.",
+   "codon_relation": "prior_art",
+   "codon_role": "exploration",
+   "why_codon": "Seq appears exactly once in the body, as the example of a DSL whose inferred type information is hidden inside the compiler. The paper's two case studies are GraphIt and BuildIt; Seq is not instrumented and not run.",
+   "why_codon_source": "stated",
+   "provenance": "published",
+   "cites_anchors": [
+    "seq-oopsla-2019"
+   ],
+   "found_in": "openalex",
+   "note": "Published at the same venue that would publish Codon the same year. The citation is unusual in being about what a Codon-family compiler KNOWS rather than how fast it is -- type information the compiler infers and then discards from view. Recovered through DSpace@MIT after the ACM Digital Library served a bot challenge, the third time an institutional repository has been the route to an MIT-authored closed paper.",
+   "confidence": "high",
+   "source_file": "data/papers/005-batch.json",
+   "kind": "paper"
+  },
+  {
+   "id": "paper-nelli-2023",
+   "url": "https://doi.org/10.48550/arXiv.2307.16080",
+   "name": "nelli: a lightweight frontend for MLIR",
+   "venue": "arXiv",
+   "year": 2023,
+   "doi": "10.48550/arXiv.2307.16080",
+   "summary": "A Python frontend for MLIR that leans on Python's own lexer and AST machinery rather than rebuilding a compiler frontend. Codon is one of three citations for the observation that building such a frontend for numerics-intensive Python has been attempted many times with varying success.",
+   "codon_relation": "prior_art",
+   "codon_role": "exploration",
+   "why_codon": "Codon is cited once, bracketed with two other works in a sentence about repeated attempts at Python frontends for numerics-intensive programs. Nothing is run.",
+   "why_codon_source": "stated",
+   "provenance": "preprint",
+   "cites_anchors": [
+    "codon-cc-2023"
+   ],
+   "found_in": "semantic_scholar_only",
+   "confidence": "high",
+   "source_file": "data/papers/005-batch.json",
+   "kind": "paper"
+  },
+  {
+   "id": "paper-opencilk-2023",
+   "url": "https://doi.org/10.1145/3572848.3577509",
+   "name": "OpenCilk: A Modular and Extensible Software Infrastructure for Fast Task-Parallel Code",
+   "venue": "PPoPP 2023",
+   "year": 2023,
+   "doi": "10.1145/3572848.3577509",
+   "summary": "An open-source task-parallel platform built around Tapir/LLVM, designed so that its compiler, runtime and tools can each be modified independently by researchers. Seq appears in the survey of work built on Tapir/LLVM, recorded there as compiling and running parallel tasks on a custom OpenMP back end.",
+   "codon_relation": "prior_art",
+   "codon_role": "exploration",
+   "why_codon": "The related-work section states that Shajii et al. introduce the Seq language for bioinformatics, which uses Tapir/LLVM to compile and run parallel tasks on a custom OpenMP back end. Nothing here builds on or runs Seq.",
+   "why_codon_source": "stated",
+   "provenance": "published",
+   "cites_anchors": [
+    "seq-oopsla-2019"
+   ],
+   "found_in": "openalex",
+   "note": "The only citation in the corpus that runs the other way along the lineage. Everywhere else a work cites Codon or Seq as something it might use; here Seq is named as a downstream consumer of the citing paper's own infrastructure. Worth holding alongside the parallelism findings from the repository half, where no `implementation` entry touches Codon's GPU support.",
+   "confidence": "high",
+   "source_file": "data/papers/005-batch.json",
+   "kind": "paper"
+  },
+  {
    "id": "paper-tardis-fl-paradigm-2023",
    "url": "https://doi.org/10.48550/arXiv.2310.05102",
    "name": "A Federated Learning Algorithms Development Paradigm",
@@ -4116,6 +4225,95 @@
    "note": "Second paper-to-repository join, after secure-mice. Unlike that one the paper does not upgrade the repository's reading: 0xTCG/biser was already recorded as Seq source and the paper says the same. Worth noting that this is a Numanagic-lab paper, so the author-name scan matches its own byline and its self-citations to SEDEF; the Seq citation is reference 24, not the reference 22 the extractor also surfaced.",
    "confidence": "high",
    "source_file": "data/papers/004-batch.json",
+   "kind": "paper"
+  },
+  {
+   "id": "paper-mapquik-2022",
+   "url": "https://doi.org/10.1101/2022.12.23.521809",
+   "name": "mapquik: Efficient low-divergence mapping of long reads in minimizer space",
+   "venue": "bioRxiv",
+   "year": 2022,
+   "doi": "10.1101/2022.12.23.521809",
+   "summary": "A long-read mapper that chains multiple matched minimizers rather than single seeds, reporting order-of-magnitude speedups on HiFi reads. Seq is cited for a specific published result: the two orders of magnitude it achieved on the homology table reconstruction of the CORA read mapper.",
+   "codon_relation": "prior_art",
+   "codon_role": "exploration",
+   "why_codon": "The paper states that the domain-specific language Seq was developed to speed up genomic sequence analysis and achieved two orders of magnitude improvement in CORA's homology table reconstruction. The figure is quoted from the Seq paper; Seq is not used here.",
+   "why_codon_source": "stated",
+   "provenance": "preprint",
+   "cites_anchors": [
+    "seq-nbt-2021"
+   ],
+   "found_in": "openalex",
+   "note": "One of the few citations in the corpus that carries a number across. Most works cite the Codon family for what it is; this one cites it for what it measured.",
+   "confidence": "high",
+   "source_file": "data/papers/005-batch.json",
+   "kind": "paper"
+  },
+  {
+   "id": "paper-new-language-survey-2022",
+   "url": "https://doi.org/10.22214/ijraset.2022.40949",
+   "name": "Design of a New Language Seeks Literature Survey",
+   "venue": "International Journal for Research in Applied Science and Engineering Technology",
+   "year": 2022,
+   "doi": "10.22214/ijraset.2022.40949",
+   "summary": "A literature survey of language and compiler projects aimed at making high-level code run fast, walking through each in turn and stating what it contributes. Seq is summarised in that sequence, described as a domain-specific language for computational biology, alongside Numba, the Wolfram Language compiler and a Python-to-FPGA prototype.",
+   "codon_relation": "prior_art",
+   "codon_role": "exploration",
+   "why_codon": "The survey names the Seq paper and its authors and summarises its contribution in a short numbered list. It reads published work and runs none of it.",
+   "why_codon_source": "stated",
+   "provenance": "survey",
+   "cites_anchors": [
+    "seq-oopsla-2019"
+   ],
+   "found_in": "openalex",
+   "note": "Second work filed as `survey`. It sets Seq among general-purpose Python accelerators rather than among bioinformatics tools, which is the framing the repository half found in the coursework and benchmark lanes rather than in the Numanagic lane.",
+   "confidence": "high",
+   "source_file": "data/papers/005-batch.json",
+   "kind": "paper"
+  },
+  {
+   "id": "paper-graphit-zoo-2021",
+   "url": "https://doi.org/10.1109/isca52012.2021.00041",
+   "name": "Taming the Zoo: The Unified GraphIt Compiler Framework for Novel Architectures",
+   "venue": "ISCA 2021",
+   "year": 2021,
+   "doi": "10.1109/isca52012.2021.00041",
+   "summary": "A unified compiler framework letting one graph DSL target CPUs, GPUs and novel graph accelerators from a single algorithm specification. Seq is one of several citations behind the observation that domain-specific languages have been used to abstract hardware across domains, standing in for bioinformatics in a list that also names machine learning, image processing, networking and tensor algebra.",
+   "codon_relation": "prior_art",
+   "codon_role": "exploration",
+   "why_codon": "Seq is cited once, as the bioinformatics entry in a bracketed list of domains where DSLs abstract hardware. No experiment involves it.",
+   "why_codon_source": "stated",
+   "provenance": "published",
+   "cites_anchors": [
+    "seq-oopsla-2019"
+   ],
+   "found_in": "openalex",
+   "note": "One of three works in this batch from the same research group as the anchors, alongside D2X and OpenCilk. All three cite Seq the same way -- as an established example of the DSL argument rather than as a tool they use.",
+   "confidence": "high",
+   "source_file": "data/papers/005-batch.json",
+   "kind": "paper"
+  },
+  {
+   "id": "paper-mdbg-2021",
+   "url": "https://doi.org/10.1016/j.cels.2021.08.009",
+   "name": "Minimizer-space de Bruijn graphs: Whole-genome assembly of long reads in minutes on a personal computer",
+   "venue": "Cell Systems",
+   "year": 2021,
+   "doi": "10.1016/j.cels.2021.08.009",
+   "summary": "De Bruijn graphs built over minimizers rather than bases, which assembles a human genome from HiFi reads in minutes on a personal computer where k-mer counting alone took a day. The Seq preprint is cited once, as one of two exemplars of read mapping in the opening survey of sequence-analysis advances.",
+   "codon_relation": "prior_art",
+   "codon_role": "exploration",
+   "why_codon": "The single inline citation places the Seq preprint in a bracketed pair given as examples of read mapping. Neither Seq nor Codon is named anywhere in the body, and neither is used.",
+   "why_codon_source": "stated",
+   "provenance": "published",
+   "cites_anchors": [
+    "seq-biorxiv-2020",
+    "seq-nbt-2021"
+   ],
+   "found_in": "openalex",
+   "note": "Read from the bioRxiv preprint, 10.1101/2021.06.09.447586, which the harvest holds as a separate candidate; the Cell Systems record is used as the entry because it is the published version. That pair is a preprint and its own published form rather than two works, unlike the Sequre and Shechi pair that ruling 4 kept separate, so they are collapsed here. Worth his confirmation that collapsing is right, and worth checking whether other preprint-and-published pairs are sitting in the candidate list unnoticed.",
+   "confidence": "high",
+   "source_file": "data/papers/005-batch.json",
    "kind": "paper"
   }
  ],
