@@ -57,6 +57,33 @@ import json, os, re, sys, io
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from fetch_contexts import contexts, BIB_HIT
 
+
+def require_pypdf():
+    """Fail once with the fix, rather than once per file with a mystery.
+
+    The first run of this against a real directory reported "No module named
+    'pypdf'" thirty-three times, once per pdf, filed under `unreadable` as though
+    the papers were at fault. A missing dependency is a setup problem and belongs
+    at the top of the run, said once.
+    """
+    try:
+        import pypdf  # noqa: F401
+    except ImportError:
+        sys.exit(
+            "pypdf is not installed, and it is what reads the pdfs.\n\n"
+            "    python3 -m pip install pypdf\n\n"
+            "If pip refuses because the environment is externally managed, either\n"
+            "    python3 -m pip install --break-system-packages pypdf\n"
+            "or work in a virtual environment:\n"
+            "    python3 -m venv .venv && . .venv/bin/activate && pip install pypdf")
+
+
+# A document this long is a book or proceedings volume, not an article. It will
+# carry many bibliographies, and contexts() reads the last "References" heading in
+# the document -- which in a book belongs to some other chapter. Saying so is the
+# difference between a wrong reference number and a question.
+BOOK_CHARS = 400000
+
 CAND = "data/papers-candidates.json"
 OUT = "data/local-contexts.json"
 EXTS = (".pdf", ".txt")
@@ -122,6 +149,7 @@ def main():
         for row in json.load(open(mpath)):
             manifest[os.path.basename(row["file"])] = row
 
+    require_pypdf()
     works = json.load(open(CAND))["works"]
     by_doi = {w[2].lower(): w for w in works if w[2]}
 
@@ -181,9 +209,16 @@ def main():
                         "chars": len(text), "source_file": name,
                         "matched_by": how, "pages": row.get("pages"),
                         "bibliography_found": bib, "contexts": cx})
+        booklike = len(text) > BOOK_CHARS and not row.get("pages")
         flag = "" if bib else "  NO-BIBLIOGRAPHY"
+        if booklike:
+            flag += "  BOOK-LENGTH"
         print("ok          %-44s %-32s %2d ctx  refs=%s%s"
               % (name[:44], doi[:32], len(cx), ",".join(refs) or "-", flag), flush=True)
+        if booklike:
+            problems.append((name, "book-length",
+                             "%d chars and no page range; the reference numbers will "
+                             "come from the last bibliography in the volume" % len(text)))
         if not bib:
             problems.append((name, "no bibliography",
                              "reference-number route unavailable; body scan only"))
