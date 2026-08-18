@@ -42,6 +42,8 @@ button:hover { background: #f0f0f0; }
 .chip { font-size: .7rem; padding: .1rem .4rem; border-radius: 3px;
   background: #f2f4f5; color: #333; white-space: nowrap; }
 .chip-role { background: #e4eef0; color: var(--accent); }
+.chip-kind { background: #ececf4; color: #444; text-transform: uppercase;
+  letter-spacing: .04em; font-size: .64rem; }
 .chip-scale { background: none; color: var(--dim); font-size: .78rem; padding: 0; }
 .chip-feat { background: #f7f4ec; color: #5a4a2a; }
 .chip-flag { background: #f6e8d8; color: var(--flag); }

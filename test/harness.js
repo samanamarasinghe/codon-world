@@ -5,16 +5,11 @@
 // A filter regression shows up in the header count and nothing else in the repo
 // checks it: build.py validates DATA, not what the page displays. This runs the
 // real site JS against the real data in node, with about forty lines of fake
-// document and fetch, and prints the counts to compare.
+// document and fetch, and compares every rendered count against the data itself.
 //
-// Expected, as of 87 entries:
-//   default                73 -> see EXPECTED below, regenerated when entries change
-//   codon_role=benchmark   the benchmark count
-//   why_codon_source=stated the stated count
-//   feature=gpu            the gpu count
-// The script computes each expected value from the data itself and fails loudly
-// if the rendered count disagrees, so it does not need updating when entries are
-// added -- only when the filtering semantics change on purpose.
+// Every expectation is computed from data/codon-index.json, so this does not need
+// updating when entries are added -- only when the filtering semantics change on
+// purpose. Exits non-zero on any mismatch.
 
 const fs = require('fs'), vm = require('vm'), path = require('path');
 const root = path.join(__dirname, '..');
@@ -34,8 +29,9 @@ function mkEl(tag) {
 
 const ids = {};
 ['q', 'group', 'sort', 'btn-clear', 'btn-summaries', 'count', 'results',
- 'facet-mode', 'facet-role', 'facet-via', 'facet-prov', 'facet-evidence',
- 'facet-feature', 'facet-year', 'facet-mode-count', 'facet-role-count',
+ 'facet-kind', 'facet-relation', 'facet-mode', 'facet-role', 'facet-via',
+ 'facet-prov', 'facet-evidence', 'facet-feature', 'facet-year',
+ 'facet-kind-count', 'facet-relation-count', 'facet-mode-count', 'facet-role-count',
  'facet-via-count', 'facet-prov-count', 'facet-evidence-count',
  'facet-feature-count', 'facet-year-count'].forEach(i => { ids[i] = mkEl('div'); });
 ids['q'].value = ''; ids['group'].value = 'none'; ids['sort'].value = 'loc';
@@ -93,9 +89,26 @@ setTimeout(() => {
   api.state.q = '';
 
   api.state.group = 'integration_mode'; api.render();
-  const modes = new Set(E.map(e => e.integration_mode)).size;
-  check('grouped by mode adds one heading per mode',
-        ids['results'].children.length, E.length + modes);
+  // Repositories bucket by their mode; papers have none and land in one
+  // "Not applicable" bucket, which must exist rather than dropping them.
+  const modes = new Set(E.filter(e => e.kind === 'repo').map(e => e.integration_mode)).size;
+  const anyPapers = E.some(e => e.kind !== 'repo') ? 1 : 0;
+  check('grouped by mode adds one heading per mode, plus one for papers',
+        ids['results'].children.length, E.length + modes + anyPapers);
+
+  api.state.group = 'kind'; api.render();
+  check('grouped by kind keeps every entry',
+        ids['results'].children.length,
+        E.length + new Set(E.map(e => e.kind)).size);
+
+  api.state.sel['kind']['paper'] = true; api.state.group = 'none'; api.render();
+  check('kind=paper', shown(), E.filter(e => e.kind === 'paper').length);
+  api.state.sel['kind']['paper'] = false;
+
+  api.state.sel['codon_relation']['extends'] = true; api.render();
+  check('relation=extends selects only papers', shown(),
+        E.filter(e => e.codon_relation === 'extends').length);
+  api.state.sel['codon_relation']['extends'] = false;
   api.state.group = 'none'; api.render();
 
   check('back to default', shown(), E.length);
