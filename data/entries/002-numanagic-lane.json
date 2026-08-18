@@ -7,6 +7,7 @@
     "integration_mode": "source",
     "integration_mode_secondary": "ir_plugin",
     "codon_via": "direct",
+    "codon_role": "implementation",
     "codon_features": {
       "static_typing": {"occurrences": 299, "files": 35},
       "llvm_inline": {"occurrences": 73, "files": 8},
@@ -35,6 +36,7 @@
     "integration_mode": "source",
     "integration_mode_secondary": "ir_plugin",
     "codon_via": "direct",
+    "codon_role": "implementation",
     "codon_features": {
       "static_typing": {"occurrences": 264, "files": 31},
       "llvm_inline": {"occurrences": 50, "files": 6},
@@ -48,17 +50,18 @@
     "provenance": "paper_backed",
     "paper": [{"doi": null, "venue": "USENIX Security 2025", "note": "no paper DOI; six Zenodo artifact DOIs exist"}],
     "derived_from": "repo-sequre",
+    "ruling": "Kept as its own entry rather than folded into Sequre: two distinct papers on a shared codebase, so the SDV published-survives rule does not apply. The shared code is recorded by derived_from.",
     "health": {"last_commit": "2024-09-04", "license": "LICENSE.md", "ci_builds_codon": false},
-    "needs": "Ruling: Shechi is a distinct paper on a shared codebase. Keep as its own entry with derived_from, or fold into Sequre? Recorded as a separate entry pending his call.",
     "confidence": "high"
   },
   {
     "id": "repo-biser",
     "url": "https://github.com/0xTCG/biser",
     "name": "BISER",
-    "summary": "A tool for detecting and decomposing segmental duplications in one genome or across many, successor to SEDEF, distributed on PyPI. It is the only repo in the index so far that exercises the Seq plugin: all six of its bio-import sites sit in its eight .codon files, and building from source requires Codon together with the Seq plugin.",
+    "summary": "A tool for detecting and decomposing segmental duplications in one genome or across many, successor to SEDEF, distributed on PyPI. All six of its bio-import sites sit in its eight .codon files, and building from source requires Codon together with the Seq plugin.",
     "integration_mode": "source",
     "codon_via": "direct",
+    "codon_role": "implementation",
     "codon_features": {
       "seq_plugin": {"occurrences": 6, "files": 6},
       "static_typing": {"occurrences": 2, "files": 2},
@@ -82,6 +85,7 @@
     "summary": "A framework for evaluating non-linear functions inside secure multiparty computation, covering Chebyshev approximation, logistic regression, neural network layers and GWAS, MNIST and SIREN applications. Codon is reached through Sequre rather than directly: installation pins Codon v0.17.0, drops the Sequre release into the Codon plugin directory, and runs every program as codon run -plugin sequre.",
     "integration_mode": "source",
     "codon_via": "plugin",
+    "codon_role": "implementation",
     "codon_features": {
       "static_typing": {"occurrences": 211, "files": 17},
       "python_interop": {"occurrences": 7, "files": 4},
@@ -106,6 +110,7 @@
     "summary": "An implementation of secure multiple imputation with chained equations, benchmarked against non-secure baselines from a companion notebook. The repo states it is implemented as an integral part of the Sequre framework, so Codon is reached through Sequre: four .codon files hold the application, and the benchmark container carries Codon debug settings rather than invoking Codon directly.",
     "integration_mode": "source",
     "codon_via": "framework",
+    "codon_role": "implementation",
     "codon_features": {
       "static_typing": {"occurrences": 18, "files": 3},
       "python_interop": {"occurrences": 3, "files": 1},
