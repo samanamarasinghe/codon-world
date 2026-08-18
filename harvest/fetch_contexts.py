@@ -34,8 +34,13 @@ Routes, in order (docs/paper-fetching.md):
 
 Citation context: finding the word "Codon" is not finding the citation. Numbered
 reference styles put the name only in the bibliography and a bracketed number in
-the body. So the bibliography is split into entries, the entry carrying the Codon
-authors gives its number, and the body is searched for that number.
+the body. So the bibliography is split into entries, the entry naming the Codon
+authors or an anchor title gives its number, and the body is searched for that
+number. Two details of that are load-bearing and were each got wrong once: the
+bibliography is split by ONE numbering marker, chosen by which one segments it,
+never by both unioned; and entries are matched by anchor title as well as by
+author surname, because a work may cite Vectron in its single-authored thesis
+form and carry none of the surnames.
 """
 import json, os, re, sys, time, urllib.request, io, urllib.parse, random
 
@@ -81,8 +86,25 @@ BROWSER = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
            "Accept-Language": "en-US,en;q=0.9"}
 
 NAME = re.compile(r"Shajii|Numanagi|Smajlovi", re.I)
+# Author surnames are not enough on their own. GenTT cites Vectron in its
+# dissertation form -- "Sourena Naser Moghaddasi. 2024. Vectron ..." -- which
+# carries none of the three surnames above, so the whole work read as zero
+# contexts. Bibliography entries are therefore matched by anchor TITLE as well.
+# The titles are quoted in full rather than reduced to bare words: a bare
+# "codon" would match the codon-usage literature that already contaminates this
+# project's repository half, and a bare "seq" matches half of bioinformatics.
+TITLE = re.compile(r"codon:\s*a compiler|vectron:\s*a dynamic|sequre:\s*a high|"
+                   r"seq:\s*a high-performance|python-based (?:programming language|"
+                   r"optimization framework) for high-performance", re.I)
+BIB_HIT = re.compile("(%s)|(%s)" % (NAME.pattern, TITLE.pattern), re.I)
+# Below this many entries a marker has not segmented the bibliography, it has
+# only found stray digits, and its entry boundaries mean nothing.
+MIN_BIB_ENTRIES = 8
+# The reason stamped on entries carried over from the version that filed every
+# refusal as a permanent block. Matched by value, not by absence of the key.
+PRESPLIT = "unclassified: recorded before the blocked/deferred split"
 # A bare "Seq" matches SPLiT-Seq, RNA-Seq and dozens of assay names, so the body
-# scan takes only unambiguous forms. Bibliography matching is by author name.
+# scan takes only unambiguous forms.
 WORD = re.compile(r"\bcodon\b|\bsequre\b|exaloop|\bseq language\b", re.I)
 # Markers of a bot-challenge page served with a 200 status. Kept narrow and only
 # applied to short documents, so a real article page that happens to mention
@@ -206,7 +228,7 @@ def contexts(text):
     """Return the passages where this text cites the Codon family."""
     out = []
     numbers = set()
-    for m in NAME.finditer(text):
+    for m in BIB_HIT.finditer(text):
         s = max(0, m.start() - 260)
         out.append({"kind": "bibliography", "text": re.sub(r"\s+", " ", text[s:m.start() + 300])})
     # Reference numbers are read from the bibliography by SPLITTING it into entries
@@ -219,11 +241,28 @@ def contexts(text):
         r"\n\s*(REFERENCES|References|BIBLIOGRAPHY|Bibliography)\s*\n", text)]
     bib_start = heads[-1] if heads else None
     bib = text[bib_start:] if bib_start is not None else ""
+    # A bibliography is numbered in ONE style, so exactly one marker is the right
+    # one and the results must not be unioned. Running both and taking the union
+    # was a live bug: against a bracketed bibliography the numeric-dot marker
+    # finds only a handful of pseudo-entries, each spanning a large slice of the
+    # text, so a pseudo-entry trivially contains the author name and contributes
+    # whatever digit-dot happened to fall in front of it. That yielded reference
+    # 34 on the SPDZ pipeline paper (the real one is 36) and reference 24 on the
+    # Julia equality-saturation paper (the real one is 57, and 24 came from an
+    # ACM running header reading "24:27"). Both produced inline passages about
+    # unrelated citations.
+    #
+    # The marker that genuinely segments is the one that finds many entries, so
+    # pick by entry count and require enough of them to look like a numbering.
+    best = []
     for marker in (r"\[(\d{1,3})\]", r"(?:^|\s)(\d{1,3})\.\s"):
         starts = [(m.start(), m.end(), m.group(1)) for m in re.finditer(marker, bib)]
-        for i, (_s, end, num) in enumerate(starts):
-            stop = starts[i + 1][0] if i + 1 < len(starts) else len(bib)
-            if NAME.search(bib[end:stop]):
+        if len(starts) > len(best):
+            best = starts
+    if len(best) >= MIN_BIB_ENTRIES:
+        for i, (_s, end, num) in enumerate(best):
+            stop = best[i + 1][0] if i + 1 < len(best) else len(bib)
+            if BIB_HIT.search(bib[end:stop]):
                 numbers.add(num)
 
     # The body is everything before the bibliography; fall back to "before the
@@ -231,7 +270,7 @@ def contexts(text):
     if bib_start is not None:
         body = text[:bib_start]
     else:
-        body = text[:min((m.start() for m in NAME.finditer(text)), default=len(text))]
+        body = text[:min((m.start() for m in BIB_HIT.finditer(text)), default=len(text))]
     for n in sorted(numbers):
         for m in re.finditer(r"\[[0-9,\s\-]*%s[,\]\s]" % n, body):
             s = max(0, m.start() - 420)
@@ -285,16 +324,27 @@ def main():
         done = {w["doi"]: w for w in keep if w.get("doi")}
         blocked = prev.get("blocked", [])
         deferred = prev.get("deferred", [])
-        # Entries written before the blocked/deferred split carry no reason. They
-        # were recorded by a version that filed rate limits as permanent failures,
-        # so none of them can be trusted as "no open copy" -- retry them all once.
-        stale = [b for b in blocked if "reason" not in b]
+        # Entries written before the blocked/deferred split were recorded by a
+        # version that filed rate limits as permanent failures, so none of them can
+        # be trusted as "no open copy" -- retry them all once.
+        #
+        # This migration ran once and did nothing, through an aliasing bug worth
+        # recording. `stale` held the SAME dict objects as `blocked`; the loop
+        # stamped a reason onto each of them and the filter that followed kept
+        # every entry whose reason key was present -- which, after the stamp, was
+        # all of them. `blocked` came back intact, `blocked_dois` covered all 56,
+        # and every one was skipped. Filter BEFORE mutating the key the filter
+        # tests, never after. Because that stamp is now committed, pre-split
+        # entries are recognised by the reason's value rather than by its absence.
+        stale = [b for b in blocked if b.get("reason", "").startswith(PRESPLIT)
+                 or "reason" not in b]
         if stale:
             print("migrating %d pre-split blocks to deferred" % len(stale), flush=True)
+            keys = {id(b) for b in stale}
+            blocked = [b for b in blocked if id(b) not in keys]
             for b in stale:
-                b["reason"] = "unclassified: recorded before the blocked/deferred split"
+                b["reason"] = PRESPLIT
             deferred = deferred + stale
-            blocked = [b for b in blocked if "reason" in b]
     # A previous run's deferrals are always retried; its blocks are not, unless
     # asked, because "no open copy anywhere" does not change between runs.
     if "--retry-blocked" in sys.argv:
