@@ -1,0 +1,59 @@
+name: Fetch paper contexts
+
+# Manual, and long-running. Walks the paper candidates, finds an openly readable
+# copy of each, and extracts the passages where the work cites Codon or Seq into
+# data/paper-contexts.json. Resumable: works already recorded, and works already
+# marked blocked, are skipped, so the job can be run repeatedly and picks up where
+# it stopped.
+#
+# It makes no judgement. codon_relation is still set by a person reading the
+# extracts, as ruling 8 requires.
+
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: 'How many new works to attempt this run (blank = all remaining)'
+        required: false
+        default: '40'
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install pypdf
+        run: pip install --quiet pypdf
+
+      - name: Harvest the candidate list if it is missing
+        run: |
+          if [ ! -f data/papers-candidates.json ]; then
+            python3 harvest/citations.py --write
+          fi
+
+      - name: Fetch full texts and extract citation contexts
+        run: |
+          if [ -n "${{ inputs.limit }}" ]; then
+            python3 harvest/fetch_contexts.py --limit ${{ inputs.limit }} --write
+          else
+            python3 harvest/fetch_contexts.py --write
+          fi
+
+      - name: Commit whatever was gathered
+        if: always()
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/paper-contexts.json data/papers-candidates.json || true
+          if ! git diff --cached --quiet; then
+            git commit -m "CI: fetch paper citation contexts"
+            git pull --rebase
+            git push
+          else
+            echo "nothing new gathered"
+          fi
