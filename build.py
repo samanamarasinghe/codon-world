@@ -4,10 +4,15 @@
 Usage:  python3 build.py            # dry run, reports counts
         python3 build.py --write    # writes data/codon-index.json
 
-Entry files are data/entries/*.json and data/pilot/*.json. One of them
-(012-false-positives-genetics.json) is a single wrapper object carrying a
-_class key and a repos list rather than a list of entries; it is split out
-into its own section instead of being merged with the entries.
+Entry files are data/entries/*.json and data/pilot/*.json.
+
+Most of them are plain lists of entries. Two are SIDECARS: a single wrapper
+object carrying a _class key and a repos list, used for repositories that are
+recorded so a later pass does not rediscover them, but that are not entries.
+Those are kept in their own section, keyed by _class, and never merged into the
+entries. Keeping them apart matters: 012 holds eleven genetics false positives
+and 015 holds twenty-three forks of an already-indexed packaging recipe, and
+summing the two would report a number that means nothing.
 """
 import json, glob, sys
 
@@ -15,22 +20,26 @@ OUT = "data/codon-index.json"
 
 
 def load():
-    entries, fps = [], []
+    entries, sidecars = [], {}
     files = sorted(glob.glob("data/entries/*.json")) + sorted(glob.glob("data/pilot/*.json"))
     for f in files:
         d = json.load(open(f))
         if d and isinstance(d[0], dict) and "_class" in d[0]:
-            for r in d[0]["repos"]:
-                fps.append(dict(r, source_file=f, _class=d[0]["_class"]))
+            cls = d[0]["_class"]
+            bucket = sidecars.setdefault(cls, {"class": cls, "note": d[0].get("note"),
+                                               "source_file": f, "repos": []})
+            bucket["repos"].extend(d[0]["repos"])
             continue
         for r in d:
             entries.append(dict(r, source_file=f))
-    return entries, fps
+    return entries, sidecars
 
 
 def main():
-    entries, fps = load()
+    entries, sidecars = load()
     ids = [e["id"] for e in entries]
+    for b in sidecars.values():
+        ids += [r["id"] for r in b["repos"]]
     if len(ids) != len(set(ids)):
         dupes = {i for i in ids if ids.count(i) > 1}
         sys.exit("duplicate ids: %s" % sorted(dupes))
@@ -38,15 +47,16 @@ def main():
     out = {
         "generated_from": "data/entries/*.json + data/pilot/*.json",
         "entry_count": len(entries),
-        "genetics_false_positive_count": len(fps),
+        "sidecar_counts": {c: len(b["repos"]) for c, b in sorted(sidecars.items())},
         "entries": entries,
-        "genetics_false_positives": fps,
+        "sidecars": [sidecars[c] for c in sorted(sidecars)],
     }
+    line = "%d entries; sidecars %s" % (len(entries), out["sidecar_counts"])
     if "--write" in sys.argv:
         json.dump(out, open(OUT, "w"), indent=1)
-        print("wrote %s: %d entries, %d genetics false positives" % (OUT, len(entries), len(fps)))
+        print("wrote %s: %s" % (OUT, line))
     else:
-        print("%d entries, %d genetics false positives (dry run)" % (len(entries), len(fps)))
+        print("%s (dry run)" % line)
 
 
 if __name__ == "__main__":
