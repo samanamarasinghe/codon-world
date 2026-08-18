@@ -47,7 +47,7 @@ jobs:
       PACE_WORK: ${{ inputs.pace_work }}
       PACE_HOST: ${{ inputs.pace_host }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Install pypdf
         run: pip install --quiet pypdf
