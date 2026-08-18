@@ -1,0 +1,36 @@
+{
+ "generated": "2026-08-18",
+ "round": 2,
+ "method": "The closing pass for the .py blind spot described in docs/gaps.md. Three signals: code containing 'exaloop/codon/releases/download' (73 files), 'codon run -release' (62 files), and 'from codon import' in Python (54 files). Deduplicated against all 84 round-1 candidates.",
+ "result": "58 repositories that round 1 could not see. Every one of them is new; the overlap with round 1 was zero, which means the extension:codon enumeration and the invocation signals find disjoint populations rather than the same one.",
+ "caveat": "These are CANDIDATES at confidence low. None has been opened. Classes below are provisional readings of the search hit alone.",
+ "signal_note": "'from codon import' in Python is almost useless on its own: 53 of its 54 hits are genetics code importing a local module named codon, and the single real hit (suzukiiichiro/N-Queens) was already known. The two Codon-specific signals -- the release URL and the run invocation -- carry the whole yield.",
+ "classes": [
+  {
+   "provisional_class": "packaging",
+   "note": "Distribution packaging of Codon itself: package definitions, version trackers and Nix flakes. NOT users. Mostly forks -- roughly twenty are copies of termux-packages carrying the same codon/build.sh, the same shape as the newnem.codon problem in the genetics false positives. Needs a fork-dedup rule before any of it is counted.",
+   "upstream": ["termux/termux-packages", "chromebrew/chromebrew", "chaotic-aur/packages", "compiler-explorer/infra", "gvcgo/vsources", "designinlife/version-checker", "ngruenwald/cli-tools", "ultrahiroo/nixos-config", "hidehic0/atcoder"],
+   "probable_forks_or_copies": ["Decdec-codelover/Decbrew", "punksm4ck/chromebrew", "MarkWalters-dev/aur", "j-g00da/aur-git-looking-glass", "leegao/vulkan_wrapper_termux-packages", "zhixianio/botdrop-packages", "BapuGYT/tmx-pkgs", "mh1775089-lgtm/Pythom-termux-", "ndrancs/termux-packages-Mart-01-oss", "haiyutian25/termux-packages", "Ahmed-762/neovim-armv7", "Nikhilroy22/termux-pkg-build-system", "renzceee/bootstrap-builder", "termux-pacman/termux-packages", "zrsx/termux-ng", "vhqtvn/termux-packages-copy", "nssuwan186-dev/termux-packages", "shanthropic/kothacode-packages", "nastorehub/NasUX-Packages", "jjoblab/codeide-terminal-pkg", "asklo339/g-package", "ali963git/THE-DIGITAL-WARRIOR---VULNERABILITY-ELIMINATION-SCRIPT", "laraholand/Mobile_No_Problem"]
+  },
+  {
+   "provisional_class": "first_party",
+   "note": "Exaloop's own. Should sit with the anchors rather than in a user class.",
+   "repos": ["exaloop/example-codon-plugin"]
+  },
+  {
+   "provisional_class": "coursework",
+   "note": "Four more UVic CSC427 students, taking that course to twelve repos, plus velvetc which carries the same actions.yml harness under a different name. A THIRD course also appears: NYCU object-oriented Python, whose notes carry a Codon chapter, in two copies.",
+   "repos": ["marlodenis/fall25-csc-bioinf", "yushannn/fall25-csc-bioinf", "kaceythai/fall25-csc-bioinf", "oliwhitla/fall25-csc-bioinf", "ashleyosuna/velvetc", "ARG-NCTU/oop-python-nycu", "iamkyleh/oop-python-nycu-main"]
+  },
+  {
+   "provisional_class": "user_or_benchmark",
+   "note": "The substantive part of the round. GeneticEngine is a genetic-programming framework whose example runner invokes Codon; word-counter and University compare Codon against other implementations; atcoder-codon packages a competitive-programming environment around it; EPlusPlus ships a Codon installer written in Rust.",
+   "repos": ["alcides/GeneticEngine", "yosephbernandus/word-counter", "BrenoFariasdaSilva/University", "liebe-magi/atcoder-codon", "AIRAS-The-Innovations-Of-New-Era/EPlusPlus", "0num4/codontest", "akleemans/aoc-2022", "akleemans/aoc-2023", "RioKKH/MachineLearning", "Jan1011000110/Practica-AP3", "Viitrexx/PisP-dsl", "acisoru/ctfcup24-school-ad", "ibra-kdbra/Language_Reactor"]
+  },
+  {
+   "provisional_class": "mention_only",
+   "note": "Blogs, notebooks, notes and starred-readme collections.",
+   "repos": ["Branden-Kang/Python-practice", "toolmaker-berlin/init", "AriESQ/stars", "suzukiiichiro/suzukiiichiro.github.io", "cainiaoprogram/cainiaoprogram.github.io"]
+  }
+ ]
+}
