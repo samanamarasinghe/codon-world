@@ -23,6 +23,9 @@ jobs:
       - name: Rebuild data/codon-index.json
         run: python3 build.py --write
 
+      - name: Check the page against the data
+        run: node test/harness.js
+
       - name: Commit the rebuilt index if it changed
         run: |
           if [ -n "$(git status --porcelain data/codon-index.json)" ]; then
