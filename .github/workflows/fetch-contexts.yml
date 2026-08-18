@@ -21,6 +21,12 @@ on:
         description: 'How many new works to attempt this run (blank = all remaining)'
         required: false
         default: ''
+      mode:
+        description: 'normal = fetch what is missing; retry-blocked = also re-attempt past blocks; refetch = redo everything (use after an extraction change)'
+        required: false
+        type: choice
+        options: ['normal', 'retry-blocked', 'refetch']
+        default: 'normal'
       pace_work:
         description: 'Seconds to wait between papers'
         required: false
@@ -54,11 +60,16 @@ jobs:
 
       - name: Fetch full texts and extract citation contexts
         run: |
+          FLAGS="--write"
+          case "${{ inputs.mode }}" in
+            retry-blocked) FLAGS="$FLAGS --retry-blocked" ;;
+            refetch)       FLAGS="$FLAGS --refetch" ;;
+          esac
           if [ -n "${{ inputs.limit }}" ]; then
-            python3 -u harvest/fetch_contexts.py --limit ${{ inputs.limit }} --write
-          else
-            python3 -u harvest/fetch_contexts.py --write
+            FLAGS="$FLAGS --limit ${{ inputs.limit }}"
           fi
+          echo "running: python3 -u harvest/fetch_contexts.py $FLAGS"
+          python3 -u harvest/fetch_contexts.py $FLAGS
 
       - name: Commit whatever was gathered
         if: always()
@@ -67,7 +78,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/paper-contexts.json data/papers-candidates.json || true
           if ! git diff --cached --quiet; then
-            git commit -m "CI: fetch paper citation contexts"
+            git commit -m "CI: fetch paper citation contexts (${{ inputs.mode }})"
             git pull --rebase
             git push
           else
