@@ -3702,17 +3702,18 @@
    "venue": "CGO 2026",
    "year": 2026,
    "doi": "10.1109/cgo68049.2026.11394843",
-   "summary": "A high-level synthesis framework that compiles dynamically polymorphic Python into monolithic hardware by representing every object as a Left-Child Right-Sibling tree, generating XLS IR and resolving types at runtime through a tree memory architecture, reporting large speedups over CPU and soft-core baselines on FPGA. Its own pipeline is XLS rather than Codon; whether Codon is cited as prior art or run as a comparison is not yet established, because the paper is closed access.",
+   "summary": "A high-level synthesis framework that compiles dynamically polymorphic Python into monolithic hardware by representing every object as a Left-Child Right-Sibling tree, generating XLS IR and resolving types at runtime through a tree memory architecture, reporting large speedups over CPU and soft-core baselines on FPGA. Codon appears in the survey of approaches to Python performance, described there as compiling Python as a static language and using static type inference and cross-module optimisation to remove interpretation and dynamic dispatch overhead.",
+   "codon_relation": "prior_art",
    "codon_role": "exploration",
-   "why_codon": "Not established. The abstract describes an XLS IR pipeline and positions the work against existing solutions that support only static subsets of Python, but the citation context has not been read.",
-   "why_codon_source": "inferred",
+   "why_codon": "The related-work section devotes a passage to Codon, quoting its claim to compile Python as a static language and describing its static type inference, compile-time optimisation and global optimisation across functions and modules. Codon is not part of the synthesis pipeline, which is XLS, and is not run.",
+   "why_codon_source": "stated",
    "provenance": "published",
    "cites_anchors": [
     "codon-cc-2023"
    ],
    "found_in": "openalex",
-   "needs": "codon_relation NOT SET, pending full text. OpenAlex reports oa_status closed with no PDF anywhere, so this needs an institutional login. First blocked work in the paper lane.",
-   "confidence": "low",
+   "note": "Resolved from full text collected through an institutional login, after standing as the paper lane's first and longest-blocked work. The reading the abstract could not settle turns out to be the plain one. Worth noting what the two papers share: Pyls exists to bring dynamic polymorphism to Python hardware synthesis, and runtime polymorphism is one of the two limitations the Codon paper names for itself.",
+   "confidence": "high",
    "source_file": "data/papers/001-pilot.json",
    "kind": "paper"
   },
@@ -4047,7 +4048,7 @@
    ],
    "found_in": "semantic_scholar_only",
    "related_repo": "repo-shechi",
-   "note": "The only work in the corpus citing four anchors. Has no paper DOI; six Zenodo artifact DOIs exist instead.",
+   "note": "The only work in the corpus citing four anchors. Has no paper DOI; six Zenodo artifact DOIs exist instead. Decor, curated later from the hand-collected set, states that it implemented its protocols in Shechi -- so Shechi now has a downstream user of its own inside this index, the same shape Sequre already had.",
    "confidence": "high",
    "source_file": "data/papers/001-pilot.json",
    "kind": "paper"
