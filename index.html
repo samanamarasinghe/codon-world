@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>codon-world &mdash; the uses of the Codon language</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header>
+  <h1>codon-world</h1>
+  <p class="sub">An index of repositories that use, extend, package, benchmark or teach
+     <a href="https://github.com/exaloop/codon" target="_blank" rel="noopener">Codon</a>.
+     Every entry was read, not inferred from a search result.</p>
+</header>
+
+<section id="controls">
+  <div class="row">
+    <label class="ctl">Search
+      <input id="q" type="search" placeholder="name, summary, url">
+    </label>
+    <label class="ctl">Group by
+      <select id="group">
+        <option value="none" selected>None</option>
+        <option value="integration_mode">Integration mode</option>
+        <option value="codon_role">Codon role</option>
+        <option value="provenance">Provenance</option>
+        <option value="year">Last active</option>
+      </select>
+    </label>
+    <label class="ctl">Sort
+      <select id="sort">
+        <option value="loc" selected>Codon lines (most first)</option>
+        <option value="recent">Last commit (newest)</option>
+        <option value="name">Name (A-Z)</option>
+      </select>
+      <span class="hint" title="Codon lines counts .codon source. It is not a measure of the project.&#10;&#10;codonx is a Rust tool with a thirteen-line Codon fixture. jutge-tests is ten files holding fifteen lines in total. Sorting this way ranks a conformance suite above a trading framework, so read it as how much Codon is present, not how large the work is.">i</span>
+    </label>
+    <button id="btn-summaries" type="button">Hide summaries</button>
+    <button id="btn-clear" type="button">Clear filters</button>
+  </div>
+
+  <div class="facets">
+    <div class="facet"><div class="facet-label">Integration mode <span id="facet-mode-count" class="facet-count"></span>
+      <span class="hint" title="What the repository actually contains.&#10;&#10;Source - its own .codon files&#10;C API frontend - Codon drives a C or C++ core through from-C-import declarations&#10;JIT decorator - Python files using the codon.jit decorator&#10;IR plugin - C++ against Codon's compiler API, a pass rather than a program&#10;Runtime port - Codon's C++ runtime retargeted to WASM or bare metal&#10;Vendored install - a committed Codon installation&#10;Docs mirror - a copy of Codon's documentation&#10;Mention only - Codon is discussed and never run&#10;False positive - the .codon files have nothing to do with the language&#10;&#10;A few entries do two of these at once and carry a second mode as a chip.">i</span></div>
+      <div id="facet-mode" class="facet-body"></div></div>
+
+    <div class="facet"><div class="facet-label">Codon role <span id="facet-role-count" class="facet-count"></span>
+      <span class="hint" title="What Codon is for in this repository.&#10;&#10;Implementation - Codon builds the thing the repo is for&#10;Benchmark - Codon is measured against alternatives, or runs the measurement&#10;Exploration - Codon is tried out with no comparison published&#10;&#10;The line between the last two is whether a comparison is actually published, not whether one could be made.">i</span></div>
+      <div id="facet-role" class="facet-body"></div></div>
+
+    <div class="facet"><div class="facet-label">How Codon is reached <span id="facet-via-count" class="facet-count"></span>
+      <span class="hint" title="Direct - the repo invokes Codon itself&#10;Via plugin - it runs codon with another project's plugin loaded&#10;Via framework - it is written against a Codon framework and never names Codon&#10;&#10;Sequre is itself a Codon platform with its own users. Decor and Secure MICE reach Codon through it and would otherwise read as ordinary direct users.">i</span></div>
+      <div id="facet-via" class="facet-body"></div></div>
+
+    <div class="facet"><div class="facet-label">Provenance <span id="facet-prov-count" class="facet-count"></span>
+      <span class="hint" title="What kind of work this is. Paper-backed entries carry a DOI. Coursework spans three separate courses, one of them taught at the university of a Codon co-author. Toy covers single-file utility ports and experiments.&#10;&#10;Nothing is excluded for being small. The only exclusion in the index is False positive.">i</span></div>
+      <div id="facet-prov" class="facet-body"></div></div>
+
+    <div class="facet"><div class="facet-label">Evidence <span id="facet-evidence-count" class="facet-count"></span>
+      <span class="hint" title="Whether the reason Codon is used was stated by the repository or inferred by the curator.&#10;&#10;Most repositories that use Codon never mention it, so most entries here are inferred. Every entry prints its reasoning under the summary, prefixed Stated or Inferred, and an inferred one names the observation it rests on.&#10;&#10;Select Stated by the repo to keep only entries where the project makes the claim itself.">i</span></div>
+      <div id="facet-evidence" class="facet-body"></div></div>
+
+    <div class="facet"><div class="facet-label">Codon feature <span id="facet-feature-count" class="facet-count"></span>
+      <span class="hint" title="Language features exercised in the repository's own .codon source, shown as occurrences and then distinct files.&#10;&#10;Both numbers matter. Vectron's 1,304 inline-LLVM sites sit in three generated files; fastcodon's 57 C imports sit in five files as a deliberate platform boundary. The same count means different things depending on how it is spread.&#10;&#10;Entries found through the JIT and mention lanes carry no feature counts.">i</span></div>
+      <div id="facet-feature" class="facet-body"></div></div>
+
+    <div class="facet"><div class="facet-label">Last active <span id="facet-year-count" class="facet-count"></span>
+      <span class="hint" title="Year of the last commit on the default branch when the entry was read. This is staleness, not vintage - it does not say when the work first appeared.&#10;&#10;Entries read through the JIT and mention lanes carry no date and group under Not recorded.">i</span></div>
+      <div id="facet-year" class="facet-body"></div></div>
+  </div>
+</section>
+
+<p id="count" class="count">loading&hellip;</p>
+<div id="results"></div>
+
+<footer>
+  <p>Built from <code>data/entries/*.json</code> by <code>build.py</code>. Method, rulings and
+     known gaps: <a href="docs/site.md">site</a>, <a href="docs/schema.md">schema</a>,
+     <a href="docs/rulings.md">rulings</a>, <a href="docs/gaps.md">gaps</a>,
+     <a href="docs/site-filters.md">filter choices</a>.</p>
+</footer>
+
+<script src="assets/js/codon-index.js"></script>
+</body>
+</html>
