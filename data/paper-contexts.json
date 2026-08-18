@@ -1,9 +1,11 @@
 {
  "generated": "2026-08-18",
  "note": "Mechanical extraction only. codon_relation is set by a person reading these, as ruling 8 requires.",
+ "blocked_vs_deferred": "blocked means no open copy was found anywhere and an institutional login is needed. deferred means a copy exists but the host refused this run -- 429 rate limiting, or 403 for publishers that serve only browsers. Deferrals are retried automatically on the next run; blocks are not, unless --retry-blocked is passed.",
  "counts": {
   "with_contexts": 40,
   "blocked": 56,
+  "deferred": 0,
   "total_candidates": 104
  },
  "works": [
@@ -1197,337 +1199,394 @@
    "year": 2026,
    "title": "BioVault: A privacy-first data visitation platform for equitable global collaboration in biomedicine",
    "doi": "10.64898/2026.02.12.705603",
-   "cites": "sequre-gb-2023"
+   "cites": "sequre-gb-2023",
+   "reason": "unclassified: recorded before the blocked/deferred split"
   },
   {
    "year": 2026,
    "title": "Decor: Delegated Computation on Randomness for Secure Evaluation of Nonlinear Functions",
    "doi": "10.1109/sp63933.2026.00256",
-   "cites": "codon-cc-2023,sequre-gb-2023"
+   "cites": "codon-cc-2023,sequre-gb-2023",
+   "reason": "unclassified: recorded before the blocked/deferred split"
   },
   {
    "year": 2026,
    "title": "Introduction to secret sharing based secure multiparty computation in health data",
    "doi": "10.1136/bmjopen-2025-110916",
-   "cites": "sequre-gb-2023"
+   "cites": "sequre-gb-2023",
+   "reason": "unclassified: recorded before the blocked/deferred split"
   },
   {
    "year": 2026,
    "title": "Machine-learning models integrating preoperative clinical factors and circulating tumor DNA features predict lymph node metastasis in esophageal carcinoma",
    "doi": "10.4251/wjgo.v18.i6.117851",
-   "cites": "seq-oopsla-2019"
+   "cites": "seq-oopsla-2019",
+   "reason": "unclassified: recorded before the blocked/deferred split"
   },
   {
    "year": 2026,
    "title": "Privacy-Preserving Protocols in Smart Cities and Industrial IoT: Challenges, Trends, and Future Directions",
    "doi": "10.3390/electronics15020399",
-   "cites": "sequre-gb-2023"
+   "cites": "sequre-gb-2023",
+   "reason": "unclassified: recorded before the blocked/deferred split"
   },
   {
    "year": 2026,
    "title": "Privacy-preserving AI in healthcare: a comprehensive survey of techniques and challenges",
    "doi": "10.1007/s10586-026-06284-6",
-   "cites": "sequre-gb-2023"
+   "cites": "sequre-gb-2023",
+   "reason": "unclassified: recorded before the blocked/deferred split"
   },
   {
    "year": 2026,
    "title": "Pyls: Enabling Python Hardware Synthesis with Dynamic Polymorphism via LCRS Encoding",
    "doi": "10.1109/cgo68049.2026.11394843",
-   "cites": "codon-cc-2023"
+   "cites": "codon-cc-2023",
+   "reason": "unclassified: recorded before the blocked/deferred split"
   },
   {
    "year": 2026,
    "title": "S2VEC: Compiler-Driven Stream Specialization for Linearized Vectorization",
    "doi": "10.1145/3797905.3807866",
-   "cites": "vectron-cgo-2025"
+   "cites": "vectron-cgo-2025",
+   "reason": "unclassified: recorded before the blocked/deferred split"
   },
   {
    "year": 2026,
    "title": "The Green Side of the Lua",
    "doi": "10.1109/saner-c67878.2026.00033",
-   "cites": "codon-cc-2023"
+   "cites": "codon-cc-2023",
+   "reason": "unclassified: recorded before the blocked/deferred split"
   },
   {
    "year": 2025,
    "title": "An Empirical Study on the Performance and Energy Usage of Compiled Python Code",
    "doi": "10.1145/3756681.3756972",
-   "cites": "codon-cc-2023,seq-oopsla-2019"
+   "cites": "codon-cc-2023,seq-oopsla-2019",
+   "reason": "unclassified: recorded before the blocked/deferred split"
   },
   {
    "year": 2025,
    "title": "Astrampc: Asynchronous Data-Driven Framework for Multi-Party Secure Computation",
    "doi": "10.1109/CSCloud66326.2025.00047",
-   "cites": "sequre-gb-2023"
+   "cites": "sequre-gb-2023",
+   "reason": "unclassified: recorded before the blocked/deferred split"
   },
   {
    "year": 2025,
    "title": "Collaborative genome-wide association analysis with cryptography",
    "doi": "10.1038/s41588-025-02110-8",
-   "cites": "sequre-gb-2023"
+   "cites": "sequre-gb-2023",
+   "reason": "unclassified: recorded before the blocked/deferred split"
   },
   {
    "year": 2025,
    "title": "General-purpose multi-user privacy-preserving outsourced k-means clustering",
    "doi": "10.1016/j.jisa.2025.103976",
-   "cites": "sequre-gb-2023"
+   "cites": "sequre-gb-2023",
+   "reason": "unclassified: recorded before the blocked/deferred split"
   },
   {
    "year": 2025,
    "title": "GraphBLAS Mathematical Opportunities: Parallel Hypersparse, Matrix Based Graph Streaming, and Complex-Index Matrices",
    "doi": "10.1109/hpec67600.2025.11196667",
-   "cites": "codon-cc-2023"
+   "cites": "codon-cc-2023",
+   "reason": "unclassified: recorded before the blocked/deferred split"
   },
   {
    "year": 2025,
    "title": "JetCert: A Self-Adaptive Compilation Framework for Fast and Safe Code Execution",
    "doi": "10.1145/3735452.3735528",
-   "cites": "codon-cc-2023"
+   "cites": "codon-cc-2023",
+   "reason": "unclassified: recorded before the blocked/deferred split"
   },
   {
    "year": 2025,
    "title": "NeuroSimo: an open-source software for closed-loop EEG- or EMG-guided TMS",
    "doi": "10.1101/2025.04.05.647342",
-   "cites": "seq-nbt-2021"
+   "cites": "seq-nbt-2021",
+   "reason": "unclassified: recorded before the blocked/deferred split"
   },
   {
    "year": 2025,
    "title": "Privacy-Preserving Training and Inference of CNNs: A Medical Performance Case Study",
    "doi": "10.1109/icsc65596.2025.11140461",
-   "cites": "sequre-gb-2023"
+   "cites": "sequre-gb-2023",
+   "reason": "unclassified: recorded before the blocked/deferred split"
   },
   {
    "year": 2025,
    "title": "Secure Multi-party Querying Federated Graph Databases",
    "doi": "10.1007/978-3-031-89518-0_2",
-   "cites": "sequre-gb-2023"
+   "cites": "sequre-gb-2023",
+   "reason": "unclassified: recorded before the blocked/deferred split"
   },
   {
    "year": 2025,
    "title": "Streamlining C Compilation: Harnessing Different Optimization Techniques",
    "doi": "10.1109/assic64892.2025.11158099",
-   "cites": "codon-cc-2023"
+   "cites": "codon-cc-2023",
+   "reason": "unclassified: recorded before the blocked/deferred split"
   },
   {
    "year": 2025,
    "title": "Using Secure Multi-Party Computation to Create Clinical Trial Cohorts",
    "doi": "10.3390/jcp6010002",
-   "cites": "sequre-gb-2023"
+   "cites": "sequre-gb-2023",
+   "reason": "unclassified: recorded before the blocked/deferred split"
   },
   {
    "year": 2025,
    "title": "webSPDZ: Versatile MPC on the Web",
    "doi": "10.1007/978-981-95-4434-9_11",
-   "cites": "sequre-ipdpsw-2022"
+   "cites": "sequre-ipdpsw-2022",
+   "reason": "unclassified: recorded before the blocked/deferred split"
   },
   {
    "year": 2024,
    "title": "A Systematic Review of Multi-Objective Evolutionary Algorithms Optimization Frameworks",
    "doi": "10.3390/pr12050869",
-   "cites": "seq-biorxiv-2020"
+   "cites": "seq-biorxiv-2020",
+   "reason": "unclassified: recorded before the blocked/deferred split"
   },
   {
    "year": 2024,
    "title": "A review of big data technology and its application in cancer care",
    "doi": "10.1016/j.compbiomed.2024.108577",
-   "cites": "sequre-gb-2023"
+   "cites": "sequre-gb-2023",
+   "reason": "unclassified: recorded before the blocked/deferred split"
   },
   {
    "year": 2024,
    "title": "A review of big data technology and its application in cancer care.",
    "doi": "10.1016/j.compbiomed.2024.108577",
-   "cites": "sequre-gb-2023"
+   "cites": "sequre-gb-2023",
+   "reason": "unclassified: recorded before the blocked/deferred split"
   },
   {
    "year": 2024,
    "title": "Computational Pipelines and Workflows in Bioinformatics",
    "doi": "10.1016/b978-0-323-95502-7.00023-3",
-   "cites": "seq-oopsla-2019"
+   "cites": "seq-oopsla-2019",
+   "reason": "unclassified: recorded before the blocked/deferred split"
   },
   {
    "year": 2024,
    "title": "Design of an English Translation Intelligent Proofreading System Based on Bidirectional Long Short-term Memory Algorithm",
    "doi": "10.1109/ipec61310.2024.00084",
-   "cites": "seq-nbt-2021"
+   "cites": "seq-nbt-2021",
+   "reason": "unclassified: recorded before the blocked/deferred split"
   },
   {
    "year": 2024,
    "title": "Efficient and Secure Multiparty Querying over Federated Graph Databases",
    "doi": "10.5220/0012757100003756",
-   "cites": "sequre-gb-2023"
+   "cites": "sequre-gb-2023",
+   "reason": "unclassified: recorded before the blocked/deferred split"
   },
   {
    "year": 2024,
    "title": "Enumerating Valid Non-Alpha-Equivalent Programs for Interpreter Testing",
    "doi": "10.1145/3647994",
-   "cites": "codon-cc-2023"
+   "cites": "codon-cc-2023",
+   "reason": "unclassified: recorded before the blocked/deferred split"
   },
   {
    "year": 2024,
    "title": "Genomic privacy preservation in genome-wide association studies: taxonomy, limitations, challenges, and vision",
    "doi": "10.1093/bib/bbae356",
-   "cites": "sequre-gb-2023"
+   "cites": "sequre-gb-2023",
+   "reason": "unclassified: recorded before the blocked/deferred split"
   },
   {
    "year": 2024,
    "title": "HiPy: Extracting High-Level Semantics from Python Code for Data Processing",
    "doi": "10.1145/3689737",
-   "cites": "codon-cc-2023"
+   "cites": "codon-cc-2023",
+   "reason": "unclassified: recorded before the blocked/deferred split"
   },
   {
    "year": 2024,
    "title": "High Performance Privacy Preserving AI",
    "doi": "10.1561/9781638283454",
-   "cites": "sequre-gb-2023"
+   "cites": "sequre-gb-2023",
+   "reason": "unclassified: recorded before the blocked/deferred split"
   },
   {
    "year": 2024,
    "title": "MicroPython Testbed for Federated Learning Algorithms",
    "doi": "10.1109/TELFOR63250.2024.10819071",
-   "cites": "codon-cc-2023"
+   "cites": "codon-cc-2023",
+   "reason": "unclassified: recorded before the blocked/deferred split"
   },
   {
    "year": 2024,
    "title": "Privacy-Preserving Retrieval Scheme Over Medical Images Based on Vision Transformer",
    "doi": "10.1007/978-981-97-5603-2_33",
-   "cites": "sequre-gb-2023"
+   "cites": "sequre-gb-2023",
+   "reason": "unclassified: recorded before the blocked/deferred split"
   },
   {
    "year": 2024,
    "title": "References",
    "doi": "10.1561/978-1-63828-345-420251012",
-   "cites": "sequre-gb-2023"
+   "cites": "sequre-gb-2023",
+   "reason": "unclassified: recorded before the blocked/deferred split"
   },
   {
    "year": 2024,
    "title": "Secure Multi-Party Traversal Queries over Federated Graph Databases",
    "doi": "10.5220/0012768000003767",
-   "cites": "sequre-gb-2023"
+   "cites": "sequre-gb-2023",
+   "reason": "unclassified: recorded before the blocked/deferred split"
   },
   {
    "year": 2024,
    "title": "Towards a type-based abstract semantics for Python",
    "doi": "10.1016/j.jlamp.2024.101032",
-   "cites": "codon-cc-2023"
+   "cites": "codon-cc-2023",
+   "reason": "unclassified: recorded before the blocked/deferred split"
   },
   {
    "year": 2024,
    "title": "Transcribing Natural Language to Python Code: A Compiler Based Approach",
    "doi": "10.1109/icccnt61001.2024.10725235",
-   "cites": "codon-cc-2023"
+   "cites": "codon-cc-2023",
+   "reason": "unclassified: recorded before the blocked/deferred split"
   },
   {
    "year": 2024,
    "title": "pyZtrategic: A Zipper-Based Embedding of Strategies and Attribute Grammars in Python",
    "doi": "10.5220/0012704000003687",
-   "cites": "codon-cc-2023"
+   "cites": "codon-cc-2023",
+   "reason": "unclassified: recorded before the blocked/deferred split"
   },
   {
    "year": 2023,
    "title": "A memory footprint optimization framework for Python applications targeting edge devices",
    "doi": "10.1016/j.sysarc.2023.102936",
-   "cites": "seq-biorxiv-2020"
+   "cites": "seq-biorxiv-2020",
+   "reason": "unclassified: recorded before the blocked/deferred split"
   },
   {
    "year": 2023,
    "title": "Automatic Python code generation for Embedded/Cyber-Physical Systems",
    "doi": "10.1109/yef-ece58420.2023.10209340",
-   "cites": "codon-cc-2023"
+   "cites": "codon-cc-2023",
+   "reason": "unclassified: recorded before the blocked/deferred split"
   },
   {
    "year": 2023,
    "title": "BioBlocksLab: A Portable DIY Bio Lab Using BioBlocks language.",
    "doi": "10.1016/j.ymeth.2023.01.001",
-   "cites": "seq-nbt-2021"
+   "cites": "seq-nbt-2021",
+   "reason": "unclassified: recorded before the blocked/deferred split"
   },
   {
    "year": 2023,
    "title": "BioBlocksLab: A portable DIY Bio Lab using BioBlocks language",
    "doi": "10.1016/j.ymeth.2023.01.001",
-   "cites": "seq-nbt-2021"
+   "cites": "seq-nbt-2021",
+   "reason": "unclassified: recorded before the blocked/deferred split"
   },
   {
    "year": 2023,
    "title": "Comparing Python Code Parallelization Techniques for Spatial Transcriptomics Data",
    "doi": "10.1109/telfor59449.2023.10372599",
-   "cites": "codon-cc-2023"
+   "cites": "codon-cc-2023",
+   "reason": "unclassified: recorded before the blocked/deferred split"
   },
   {
    "year": 2023,
    "title": "Concrete Type Inference for Code Optimization using Machine Learning with SMT Solving",
    "doi": "10.1145/3622825",
-   "cites": "codon-cc-2023"
+   "cites": "codon-cc-2023",
+   "reason": "unclassified: recorded before the blocked/deferred split"
   },
   {
    "year": 2023,
    "title": "Detecting Interpreter Bugs via Filling Function Calls in Skeletal Program Enumeration",
    "doi": "10.1109/issre59848.2023.00066",
-   "cites": "codon-cc-2023"
+   "cites": "codon-cc-2023",
+   "reason": "unclassified: recorded before the blocked/deferred split"
   },
   {
    "year": 2023,
    "title": "Efficient mapping of accurate long reads in minimizer space with mapquik",
    "doi": "10.1101/gr.277679.123",
-   "cites": "seq-nbt-2021"
+   "cites": "seq-nbt-2021",
+   "reason": "unclassified: recorded before the blocked/deferred split"
   },
   {
    "year": 2023,
    "title": "GPU Cloud Architectures for\u00a0Bioinformatic Applications",
    "doi": "10.1007/978-3-031-34953-9_6",
-   "cites": "sequre-gb-2023"
+   "cites": "sequre-gb-2023",
+   "reason": "unclassified: recorded before the blocked/deferred split"
   },
   {
    "year": 2023,
    "title": "Prevalence and clinical significance of deep vein thrombosis in Hispanic patients with acute pulmonary embolism",
    "doi": "10.1177/00033197231194234",
-   "cites": "seq-nbt-2021"
+   "cites": "seq-nbt-2021",
+   "reason": "unclassified: recorded before the blocked/deferred split"
   },
   {
    "year": 2023,
    "title": "Privacy-preserving techniques for decentralized and secure machine learning in drug discovery",
    "doi": "10.1016/j.drudis.2023.103820",
-   "cites": "sequre-gb-2023"
+   "cites": "sequre-gb-2023",
+   "reason": "unclassified: recorded before the blocked/deferred split"
   },
   {
    "year": 2023,
    "title": "Privacy-preserving techniques for decentralized and secure machine learning in drug discovery.",
    "doi": "10.1016/j.drudis.2023.103820",
-   "cites": "sequre-gb-2023"
+   "cites": "sequre-gb-2023",
+   "reason": "unclassified: recorded before the blocked/deferred split"
   },
   {
    "year": 2023,
    "title": "Treating a different kind of patient: curing security weaknesses in digital health systems of the future",
    "doi": "10.1109/iwasi58316.2023.10164581",
-   "cites": "sequre-gb-2023"
+   "cites": "sequre-gb-2023",
+   "reason": "unclassified: recorded before the blocked/deferred split"
   },
   {
    "year": 2022,
    "title": "Navigating bottlenecks and trade-offs in genomic data analysis",
    "doi": "10.1038/s41576-022-00551-z",
-   "cites": "seq-nbt-2021"
+   "cites": "seq-nbt-2021",
+   "reason": "unclassified: recorded before the blocked/deferred split"
   },
   {
    "year": 2022,
    "title": "RabbitFX: Efficient Framework for FASTA/Q File Parsing on Modern Multi-Core Platforms",
    "doi": "10.1109/tcbb.2022.3219114",
-   "cites": "seq-oopsla-2019"
+   "cites": "seq-oopsla-2019",
+   "reason": "unclassified: recorded before the blocked/deferred split"
   },
   {
    "year": 2021,
    "title": "Early Performance Prediction in Bioinformatics Systems Using Palladio Component Modeling",
    "doi": "10.3390/app11125426",
-   "cites": "seq-oopsla-2019"
+   "cites": "seq-oopsla-2019",
+   "reason": "unclassified: recorded before the blocked/deferred split"
   },
   {
    "year": 2021,
    "title": "Gene Expression Analysis through Parallel Non-Negative Matrix Factorization",
    "doi": "10.3390/computation9100106",
-   "cites": "seq-oopsla-2019"
+   "cites": "seq-oopsla-2019",
+   "reason": "unclassified: recorded before the blocked/deferred split"
   },
   {
    "year": 2020,
    "title": "A constructive model for collective intelligence",
    "doi": "10.1093/nsr/nwaa092",
-   "cites": "seq-oopsla-2019"
+   "cites": "seq-oopsla-2019",
+   "reason": "unclassified: recorded before the blocked/deferred split"
   }
- ]
+ ],
+ "deferred": []
 }
