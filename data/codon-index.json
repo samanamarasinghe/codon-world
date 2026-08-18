@@ -1,7 +1,10 @@
 {
  "generated_from": "data/entries/*.json + data/pilot/*.json",
  "entry_count": 96,
- "genetics_false_positive_count": 34,
+ "sidecar_counts": {
+  "false_positive/genetics": 11,
+  "fork_of_packaging": 23
+ },
  "entries": [
   {
    "id": "repo-sequre",
@@ -3143,255 +3146,201 @@
    "source_file": "data/entries/008-false-positives.json"
   }
  ],
- "genetics_false_positives": [
+ "sidecars": [
   {
-   "id": "fp-wormbase-pipeline",
-   "url": "https://github.com/WormBase/wormbase-pipeline",
-   "file": "wgf/newnem.codon",
-   "kind": "gene-finder codon table (nematode)",
+   "class": "false_positive/genetics",
+   "note": "Six of the eleven are the same newnem.codon nematode gene-finder table, carried through GBrowse and its derivatives and mirrors. The genetics collision is therefore narrower than the repo count suggests: two source artifacts account for most of it.",
    "source_file": "data/entries/012-false-positives-genetics.json",
-   "_class": "false_positive/genetics"
+   "repos": [
+    {
+     "id": "fp-wormbase-pipeline",
+     "url": "https://github.com/WormBase/wormbase-pipeline",
+     "file": "wgf/newnem.codon",
+     "kind": "gene-finder codon table (nematode)"
+    },
+    {
+     "id": "fp-wormbase-website-classic",
+     "url": "https://github.com/WormBase/website-classic",
+     "file": "conf/gftables/newnem.codon",
+     "kind": "gene-finder codon table (nematode)"
+    },
+    {
+     "id": "fp-gmod-gbrowse",
+     "url": "https://github.com/GMOD/GBrowse",
+     "file": "contrib/GeneFinder/nematode_gftables/newnem.codon",
+     "kind": "gene-finder codon table"
+    },
+    {
+     "id": "fp-gitpan-gbrowse",
+     "url": "https://github.com/gitpan/GBrowse",
+     "file": "contrib/GeneFinder/nematode_gftables/newnem.codon",
+     "kind": "gene-finder codon table (CPAN mirror of GBrowse)"
+    },
+    {
+     "id": "fp-hitz-gbrowse2-sgd",
+     "url": "https://github.com/hitz/gbrowse2-sgd",
+     "file": "contrib/GeneFinder/nematode_gftables/newnem.codon",
+     "kind": "gene-finder codon table (GBrowse derivative)"
+    },
+    {
+     "id": "fp-hitz-gbrowse-sgd",
+     "url": "https://github.com/hitz/gbrowse-sgd",
+     "file": "contrib/GeneFinder/nematode_gftables/newnem.codon",
+     "kind": "gene-finder codon table (GBrowse derivative)"
+    },
+    {
+     "id": "fp-nlm-magic2",
+     "url": "https://github.com/NLM-DIR/Magic2",
+     "file": "wgf/newnem.codon",
+     "kind": "gene-finder codon table"
+    },
+    {
+     "id": "fp-acedb",
+     "url": "https://github.com/richarddurbin/acedb",
+     "file": "wgf/newnem.codon, wdemo/wgf/newnem.codon",
+     "kind": "gene-finder codon table"
+    },
+    {
+     "id": "fp-phylo-node",
+     "url": "https://github.com/dohalloran/phylo-node",
+     "file": "Input_examples/sample_codeml/DNA.codon",
+     "kind": "codeml alignment input"
+    },
+    {
+     "id": "fp-cvb3-dms",
+     "url": "https://github.com/RGellerLab/CVB3_full_proteome_DMS",
+     "file": "B.Scripts_and_bioinformatic_pipelines/.../*.codon",
+     "kind": "codon tables from a deep mutational scanning pipeline"
+    },
+    {
+     "id": "fp-metatranscriptomes",
+     "url": "https://github.com/Bioinfo2015/metaTranscriptomes",
+     "file": "example_codeml_files/.../c004922.codon",
+     "kind": "codeml pairwise dN/dS input"
+    }
+   ]
   },
   {
-   "id": "fp-wormbase-website-classic",
-   "url": "https://github.com/WormBase/website-classic",
-   "file": "conf/gftables/newnem.codon",
-   "kind": "gene-finder codon table (nematode)",
-   "source_file": "data/entries/012-false-positives-genetics.json",
-   "_class": "false_positive/genetics"
-  },
-  {
-   "id": "fp-gmod-gbrowse",
-   "url": "https://github.com/GMOD/GBrowse",
-   "file": "contrib/GeneFinder/nematode_gftables/newnem.codon",
-   "kind": "gene-finder codon table",
-   "source_file": "data/entries/012-false-positives-genetics.json",
-   "_class": "false_positive/genetics"
-  },
-  {
-   "id": "fp-gitpan-gbrowse",
-   "url": "https://github.com/gitpan/GBrowse",
-   "file": "contrib/GeneFinder/nematode_gftables/newnem.codon",
-   "kind": "gene-finder codon table (CPAN mirror of GBrowse)",
-   "source_file": "data/entries/012-false-positives-genetics.json",
-   "_class": "false_positive/genetics"
-  },
-  {
-   "id": "fp-hitz-gbrowse2-sgd",
-   "url": "https://github.com/hitz/gbrowse2-sgd",
-   "file": "contrib/GeneFinder/nematode_gftables/newnem.codon",
-   "kind": "gene-finder codon table (GBrowse derivative)",
-   "source_file": "data/entries/012-false-positives-genetics.json",
-   "_class": "false_positive/genetics"
-  },
-  {
-   "id": "fp-hitz-gbrowse-sgd",
-   "url": "https://github.com/hitz/gbrowse-sgd",
-   "file": "contrib/GeneFinder/nematode_gftables/newnem.codon",
-   "kind": "gene-finder codon table (GBrowse derivative)",
-   "source_file": "data/entries/012-false-positives-genetics.json",
-   "_class": "false_positive/genetics"
-  },
-  {
-   "id": "fp-nlm-magic2",
-   "url": "https://github.com/NLM-DIR/Magic2",
-   "file": "wgf/newnem.codon",
-   "kind": "gene-finder codon table",
-   "source_file": "data/entries/012-false-positives-genetics.json",
-   "_class": "false_positive/genetics"
-  },
-  {
-   "id": "fp-acedb",
-   "url": "https://github.com/richarddurbin/acedb",
-   "file": "wgf/newnem.codon, wdemo/wgf/newnem.codon",
-   "kind": "gene-finder codon table",
-   "source_file": "data/entries/012-false-positives-genetics.json",
-   "_class": "false_positive/genetics"
-  },
-  {
-   "id": "fp-phylo-node",
-   "url": "https://github.com/dohalloran/phylo-node",
-   "file": "Input_examples/sample_codeml/DNA.codon",
-   "kind": "codeml alignment input",
-   "source_file": "data/entries/012-false-positives-genetics.json",
-   "_class": "false_positive/genetics"
-  },
-  {
-   "id": "fp-cvb3-dms",
-   "url": "https://github.com/RGellerLab/CVB3_full_proteome_DMS",
-   "file": "B.Scripts_and_bioinformatic_pipelines/.../*.codon",
-   "kind": "codon tables from a deep mutational scanning pipeline",
-   "source_file": "data/entries/012-false-positives-genetics.json",
-   "_class": "false_positive/genetics"
-  },
-  {
-   "id": "fp-metatranscriptomes",
-   "url": "https://github.com/Bioinfo2015/metaTranscriptomes",
-   "file": "example_codeml_files/.../c004922.codon",
-   "kind": "codeml pairwise dN/dS input",
-   "source_file": "data/entries/012-false-positives-genetics.json",
-   "_class": "false_positive/genetics"
-  },
-  {
-   "id": "fork-leegao-termux",
-   "url": "https://github.com/leegao/vulkan_wrapper_termux-packages",
-   "upstream": "repo-termux-packages",
+   "class": "fork_of_packaging",
+   "note": "[stated] He excluded these from the deep pass. Twenty-three repositories, three upstreams. The pattern matches the genetics false positives, where six of eleven repos carried one nematode gene-finder table: a raw repository count of a search signal measures redistribution, not adoption.",
    "source_file": "data/entries/015-packaging-forks.json",
-   "_class": "fork_of_packaging"
-  },
-  {
-   "id": "fork-zhixianio-botdrop",
-   "url": "https://github.com/zhixianio/botdrop-packages",
-   "upstream": "repo-termux-packages",
-   "source_file": "data/entries/015-packaging-forks.json",
-   "_class": "fork_of_packaging"
-  },
-  {
-   "id": "fork-bapugyt-tmx",
-   "url": "https://github.com/BapuGYT/tmx-pkgs",
-   "upstream": "repo-termux-packages",
-   "source_file": "data/entries/015-packaging-forks.json",
-   "_class": "fork_of_packaging"
-  },
-  {
-   "id": "fork-mh1775089-pythom",
-   "url": "https://github.com/mh1775089-lgtm/Pythom-termux-",
-   "upstream": "repo-termux-packages",
-   "source_file": "data/entries/015-packaging-forks.json",
-   "_class": "fork_of_packaging"
-  },
-  {
-   "id": "fork-ndrancs-termux",
-   "url": "https://github.com/ndrancs/termux-packages-Mart-01-oss",
-   "upstream": "repo-termux-packages",
-   "source_file": "data/entries/015-packaging-forks.json",
-   "_class": "fork_of_packaging"
-  },
-  {
-   "id": "fork-haiyutian25-termux",
-   "url": "https://github.com/haiyutian25/termux-packages",
-   "upstream": "repo-termux-packages",
-   "source_file": "data/entries/015-packaging-forks.json",
-   "_class": "fork_of_packaging"
-  },
-  {
-   "id": "fork-ahmed762-neovim",
-   "url": "https://github.com/Ahmed-762/neovim-armv7",
-   "upstream": "repo-termux-packages",
-   "source_file": "data/entries/015-packaging-forks.json",
-   "_class": "fork_of_packaging"
-  },
-  {
-   "id": "fork-nikhilroy22-termux",
-   "url": "https://github.com/Nikhilroy22/termux-pkg-build-system",
-   "upstream": "repo-termux-packages",
-   "source_file": "data/entries/015-packaging-forks.json",
-   "_class": "fork_of_packaging"
-  },
-  {
-   "id": "fork-renzceee-bootstrap",
-   "url": "https://github.com/renzceee/bootstrap-builder",
-   "upstream": "repo-termux-packages",
-   "source_file": "data/entries/015-packaging-forks.json",
-   "_class": "fork_of_packaging"
-  },
-  {
-   "id": "fork-termux-pacman",
-   "url": "https://github.com/termux-pacman/termux-packages",
-   "upstream": "repo-termux-packages",
-   "source_file": "data/entries/015-packaging-forks.json",
-   "_class": "fork_of_packaging"
-  },
-  {
-   "id": "fork-zrsx-termux-ng",
-   "url": "https://github.com/zrsx/termux-ng",
-   "upstream": "repo-termux-packages",
-   "source_file": "data/entries/015-packaging-forks.json",
-   "_class": "fork_of_packaging"
-  },
-  {
-   "id": "fork-vhqtvn-termux",
-   "url": "https://github.com/vhqtvn/termux-packages-copy",
-   "upstream": "repo-termux-packages",
-   "source_file": "data/entries/015-packaging-forks.json",
-   "_class": "fork_of_packaging"
-  },
-  {
-   "id": "fork-nssuwan186-termux",
-   "url": "https://github.com/nssuwan186-dev/termux-packages",
-   "upstream": "repo-termux-packages",
-   "source_file": "data/entries/015-packaging-forks.json",
-   "_class": "fork_of_packaging"
-  },
-  {
-   "id": "fork-shanthropic-kothacode",
-   "url": "https://github.com/shanthropic/kothacode-packages",
-   "upstream": "repo-termux-packages",
-   "source_file": "data/entries/015-packaging-forks.json",
-   "_class": "fork_of_packaging"
-  },
-  {
-   "id": "fork-nastorehub-nasux",
-   "url": "https://github.com/nastorehub/NasUX-Packages",
-   "upstream": "repo-termux-packages",
-   "source_file": "data/entries/015-packaging-forks.json",
-   "_class": "fork_of_packaging"
-  },
-  {
-   "id": "fork-jjoblab-codeide",
-   "url": "https://github.com/jjoblab/codeide-terminal-pkg",
-   "upstream": "repo-termux-packages",
-   "source_file": "data/entries/015-packaging-forks.json",
-   "_class": "fork_of_packaging"
-  },
-  {
-   "id": "fork-asklo339-g-package",
-   "url": "https://github.com/asklo339/g-package",
-   "upstream": "repo-termux-packages",
-   "source_file": "data/entries/015-packaging-forks.json",
-   "_class": "fork_of_packaging"
-  },
-  {
-   "id": "fork-ali963git-digital-warrior",
-   "url": "https://github.com/ali963git/THE-DIGITAL-WARRIOR---VULNERABILITY-ELIMINATION-SCRIPT",
-   "upstream": "repo-termux-packages",
-   "source_file": "data/entries/015-packaging-forks.json",
-   "_class": "fork_of_packaging"
-  },
-  {
-   "id": "fork-laraholand-mobile",
-   "url": "https://github.com/laraholand/Mobile_No_Problem",
-   "upstream": "repo-termux-packages",
-   "source_file": "data/entries/015-packaging-forks.json",
-   "_class": "fork_of_packaging"
-  },
-  {
-   "id": "fork-decdec-decbrew",
-   "url": "https://github.com/Decdec-codelover/Decbrew",
-   "upstream": "repo-chromebrew",
-   "source_file": "data/entries/015-packaging-forks.json",
-   "_class": "fork_of_packaging"
-  },
-  {
-   "id": "fork-punksm4ck-chromebrew",
-   "url": "https://github.com/punksm4ck/chromebrew",
-   "upstream": "repo-chromebrew",
-   "source_file": "data/entries/015-packaging-forks.json",
-   "_class": "fork_of_packaging"
-  },
-  {
-   "id": "fork-markwalters-aur",
-   "url": "https://github.com/MarkWalters-dev/aur",
-   "upstream": "repo-chaotic-aur",
-   "source_file": "data/entries/015-packaging-forks.json",
-   "_class": "fork_of_packaging"
-  },
-  {
-   "id": "fork-jg00da-aur-git",
-   "url": "https://github.com/j-g00da/aur-git-looking-glass",
-   "upstream": "repo-chaotic-aur",
-   "source_file": "data/entries/015-packaging-forks.json",
-   "_class": "fork_of_packaging"
+   "repos": [
+    {
+     "id": "fork-leegao-termux",
+     "url": "https://github.com/leegao/vulkan_wrapper_termux-packages",
+     "upstream": "repo-termux-packages"
+    },
+    {
+     "id": "fork-zhixianio-botdrop",
+     "url": "https://github.com/zhixianio/botdrop-packages",
+     "upstream": "repo-termux-packages"
+    },
+    {
+     "id": "fork-bapugyt-tmx",
+     "url": "https://github.com/BapuGYT/tmx-pkgs",
+     "upstream": "repo-termux-packages"
+    },
+    {
+     "id": "fork-mh1775089-pythom",
+     "url": "https://github.com/mh1775089-lgtm/Pythom-termux-",
+     "upstream": "repo-termux-packages"
+    },
+    {
+     "id": "fork-ndrancs-termux",
+     "url": "https://github.com/ndrancs/termux-packages-Mart-01-oss",
+     "upstream": "repo-termux-packages"
+    },
+    {
+     "id": "fork-haiyutian25-termux",
+     "url": "https://github.com/haiyutian25/termux-packages",
+     "upstream": "repo-termux-packages"
+    },
+    {
+     "id": "fork-ahmed762-neovim",
+     "url": "https://github.com/Ahmed-762/neovim-armv7",
+     "upstream": "repo-termux-packages"
+    },
+    {
+     "id": "fork-nikhilroy22-termux",
+     "url": "https://github.com/Nikhilroy22/termux-pkg-build-system",
+     "upstream": "repo-termux-packages"
+    },
+    {
+     "id": "fork-renzceee-bootstrap",
+     "url": "https://github.com/renzceee/bootstrap-builder",
+     "upstream": "repo-termux-packages"
+    },
+    {
+     "id": "fork-termux-pacman",
+     "url": "https://github.com/termux-pacman/termux-packages",
+     "upstream": "repo-termux-packages"
+    },
+    {
+     "id": "fork-zrsx-termux-ng",
+     "url": "https://github.com/zrsx/termux-ng",
+     "upstream": "repo-termux-packages"
+    },
+    {
+     "id": "fork-vhqtvn-termux",
+     "url": "https://github.com/vhqtvn/termux-packages-copy",
+     "upstream": "repo-termux-packages"
+    },
+    {
+     "id": "fork-nssuwan186-termux",
+     "url": "https://github.com/nssuwan186-dev/termux-packages",
+     "upstream": "repo-termux-packages"
+    },
+    {
+     "id": "fork-shanthropic-kothacode",
+     "url": "https://github.com/shanthropic/kothacode-packages",
+     "upstream": "repo-termux-packages"
+    },
+    {
+     "id": "fork-nastorehub-nasux",
+     "url": "https://github.com/nastorehub/NasUX-Packages",
+     "upstream": "repo-termux-packages"
+    },
+    {
+     "id": "fork-jjoblab-codeide",
+     "url": "https://github.com/jjoblab/codeide-terminal-pkg",
+     "upstream": "repo-termux-packages"
+    },
+    {
+     "id": "fork-asklo339-g-package",
+     "url": "https://github.com/asklo339/g-package",
+     "upstream": "repo-termux-packages"
+    },
+    {
+     "id": "fork-ali963git-digital-warrior",
+     "url": "https://github.com/ali963git/THE-DIGITAL-WARRIOR---VULNERABILITY-ELIMINATION-SCRIPT",
+     "upstream": "repo-termux-packages"
+    },
+    {
+     "id": "fork-laraholand-mobile",
+     "url": "https://github.com/laraholand/Mobile_No_Problem",
+     "upstream": "repo-termux-packages"
+    },
+    {
+     "id": "fork-decdec-decbrew",
+     "url": "https://github.com/Decdec-codelover/Decbrew",
+     "upstream": "repo-chromebrew"
+    },
+    {
+     "id": "fork-punksm4ck-chromebrew",
+     "url": "https://github.com/punksm4ck/chromebrew",
+     "upstream": "repo-chromebrew"
+    },
+    {
+     "id": "fork-markwalters-aur",
+     "url": "https://github.com/MarkWalters-dev/aur",
+     "upstream": "repo-chaotic-aur"
+    },
+    {
+     "id": "fork-jg00da-aur-git",
+     "url": "https://github.com/j-g00da/aur-git-looking-glass",
+     "upstream": "repo-chaotic-aur"
+    }
+   ]
   }
  ]
 }
