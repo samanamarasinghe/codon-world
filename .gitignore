@@ -1,0 +1,11 @@
+# Papers collected through an institutional login. This repository is public and
+# the papers are licensed for personal scholarly use, not redistribution, so the
+# sources stay out of git. harvest/ingest_local.py reads this directory and
+# commits only the extracted citation passages, which are quotations.
+pdfs/
+*.pdf
+
+# Local scratch
+__pycache__/
+*.pyc
+.DS_Store
