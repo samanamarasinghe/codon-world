@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Fetch open full texts for the paper candidates and extract the Codon citation context.
 
-    python3 harvest/fetch_contexts.py               # all works not already done
-    python3 harvest/fetch_contexts.py --limit 20    # first N undone works
-    python3 harvest/fetch_contexts.py --write       # write data/paper-contexts.json
+    python3 harvest/fetch_contexts.py                  # all works not already done
+    python3 harvest/fetch_contexts.py --limit 20       # first N undone works
+    python3 harvest/fetch_contexts.py --write          # write data/paper-contexts.json
+    python3 harvest/fetch_contexts.py --retry-blocked  # also re-attempt past blocks
 
 This does the mechanical half of the paper lane: find a readable copy, pull the
 text, and cut out the sentences where the work actually cites Codon or Seq. It
@@ -11,16 +12,22 @@ makes no judgement -- codon_relation is still set by a person reading the extrac
 as ruling 8 requires.
 
 It is resumable, and it checkpoints after every paper, so an interrupted run loses
-only the fetch in flight. Works already recorded, and works already marked blocked,
-are skipped.
+only the fetch in flight.
+
+A failure is not a failure. Three outcomes are recorded separately:
+  blocked   -- no open copy found anywhere; needs an institutional login
+  deferred  -- a copy exists but the host refused this run (429 rate limiting, or
+               403 from publishers that serve only browsers). Retried next run.
+The first version of this script filed all three as blocked, and because the
+resumable path skips blocked works, a momentary 429 wrote a paper off permanently.
 
 Routes, in order (docs/paper-fetching.md):
   1. arXiv pdf, when the doi is a 10.48550 arXiv doi or a location points there
   2. every OpenAlex location carrying a pdf_url, not just the primary one
   3. a publisher landing page, read once for a citation_pdf_url meta tag or a
      link ending .pdf
-  4. Unpaywall, if UNPAYWALL_EMAIL is set
-Anything still unreachable is listed under "blocked" for institutional access.
+  4. Europe PMC, which often holds a copy the publisher route cannot reach
+  5. Unpaywall, if UNPAYWALL_EMAIL is set
 
 Citation context: finding the word "Codon" is not finding the citation. Numbered
 reference styles put the name only in the bibliography and a bracketed number in
@@ -63,6 +70,13 @@ def _sleep(seconds, why=""):
     time.sleep(seconds)
 
 
+# Some publishers refuse anything that does not look like a browser. This is not
+# enough for MDPI, which needs a real browser session, but it clears others.
+BROWSER = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+                        "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36",
+           "Accept": "text/html,application/xhtml+xml,application/pdf;q=0.9,*/*;q=0.8",
+           "Accept-Language": "en-US,en;q=0.9"}
+
 NAME = re.compile(r"Shajii|Numanagi|Smajlovi", re.I)
 # A bare "Seq" matches SPLiT-Seq, RNA-Seq and dozens of assay names, so the body
 # scan takes only unambiguous forms. Bibliography matching is by author name.
@@ -86,19 +100,30 @@ def get(url, timeout=60, tries=BACKOFF_TRIES):
 
 
 def fetch_pdf(url, timeout=90, follow_html=True):
-    """Fetch a pdf. If the url serves html, look inside it for a pdf link once."""
+    """Try to fetch a pdf.
+
+    Returns (blob, reason). reason is one of:
+      ok          -- got a pdf
+      transient   -- 429 or 503; the copy exists, the host is refusing right now
+      forbidden   -- 403; open access but not served to scripts (MDPI does this)
+      none        -- the url simply does not yield a pdf
+    """
     _throttle(url)
     try:
-        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (research)"})
+        req = urllib.request.Request(url, headers=BROWSER)
         data = urllib.request.urlopen(req, timeout=timeout).read()
     except Exception as exc:
-        if "429" in str(exc) or "503" in str(exc):
+        msg = str(exc)
+        if "429" in msg or "503" in msg:
             _sleep(BACKOFF, "rate limited fetching a pdf")
-        return None
+            return None, "transient"
+        if "403" in msg:
+            return None, "forbidden"
+        return None, "none"
     if data[:4] == b"%PDF":
-        return data
+        return data, "ok"
     if not follow_html:
-        return None
+        return None, "none"
     html = data[:400000].decode("utf-8", "ignore")
     cands = re.findall(r'citation_pdf_url"\s+content="([^"]+)"', html)
     cands += re.findall(r'href="([^"]+\.pdf[^"]*)"', html)
@@ -108,10 +133,12 @@ def fetch_pdf(url, timeout=90, follow_html=True):
             c = base.group(1) + c
         if not c.startswith("http"):
             continue
-        got = fetch_pdf(c, timeout=timeout, follow_html=False)
+        got, why = fetch_pdf(c, timeout=timeout, follow_html=False)
         if got:
-            return got
-    return None
+            return got, "ok"
+        if why in ("transient", "forbidden"):
+            return None, why
+    return None, "none"
 
 
 def pdf_urls(doi):
@@ -133,6 +160,17 @@ def pdf_urls(doi):
         oa = (rec.get("open_access") or {}).get("oa_url")
         if oa:
             yield oa
+    # Europe PMC often holds a copy the publisher route cannot reach, and it is
+    # the only alternative host for a bioRxiv preprint when bioRxiv is refusing.
+    epmc = get("https://www.ebi.ac.uk/europepmc/webservices/rest/search"
+               "?query=DOI:%%22%s%%22&format=json&resultType=core" % doi)
+    for r in (epmc.get("resultList") or {}).get("result", [])[:2]:
+        for u in ((r.get("fullTextUrlList") or {}).get("fullTextUrl") or []):
+            if (u.get("documentStyle") or "") == "pdf" and u.get("url"):
+                yield u["url"]
+        if r.get("pmcid"):
+            yield ("https://www.ebi.ac.uk/europepmc/webservices/rest/%s"
+                   "/fullTextXML" % r["pmcid"])
     if EMAIL:
         up = get("https://api.unpaywall.org/v2/%s?email=%s" % (doi, EMAIL))
         for loc in (up.get("oa_locations") or []):
@@ -187,32 +225,49 @@ def contexts(text):
     return keep[:12]
 
 
-def summary(results, blocked, works):
+def summary(results, blocked, works, deferred):
     return {"generated": time.strftime("%Y-%m-%d"),
             "note": "Mechanical extraction only. codon_relation is set by a person "
                     "reading these, as ruling 8 requires.",
+            "blocked_vs_deferred": "blocked means no open copy was found anywhere and "
+                                   "an institutional login is needed. deferred means a "
+                                   "copy exists but the host refused this run -- 429 "
+                                   "rate limiting, or 403 for publishers that serve "
+                                   "only browsers. Deferrals are retried automatically "
+                                   "on the next run; blocks are not, unless "
+                                   "--retry-blocked is passed.",
             "counts": {"with_contexts": len(results), "blocked": len(blocked),
-                       "total_candidates": len(works)},
-            "works": results, "blocked": blocked}
+                       "deferred": len(deferred), "total_candidates": len(works)},
+            "works": results, "blocked": blocked, "deferred": deferred}
 
 
-def checkpoint(results, blocked, works):
+def checkpoint(results, blocked, works, deferred):
     """Write after every paper, so a killed run loses nothing but the current fetch."""
     if "--write" in sys.argv:
-        json.dump(summary(results, blocked, works), open(OUT, "w"), indent=1)
+        json.dump(summary(results, blocked, works, deferred), open(OUT, "w"), indent=1)
 
 
 def main():
     works = json.load(open(CAND))["works"]
-    done, blocked = {}, []
+    done, keep, blocked, deferred = {}, [], [], []
     if os.path.exists(OUT):
         prev = json.load(open(OUT))
-        done = {w["doi"]: w for w in prev["works"] if w.get("doi")}
+        # Index by doi for the skip test, but carry EVERY recorded work forward.
+        # Keying the carried list by doi silently drops any work without one.
+        keep = list(prev["works"])
+        done = {w["doi"]: w for w in keep if w.get("doi")}
         blocked = prev.get("blocked", [])
+        deferred = prev.get("deferred", [])
+    # A previous run's deferrals are always retried; its blocks are not, unless
+    # asked, because "no open copy anywhere" does not change between runs.
+    if "--retry-blocked" in sys.argv:
+        deferred = deferred + blocked
+        blocked = []
     blocked_dois = {b["doi"] for b in blocked}
+    deferred = []   # rebuilt this run; last run's deferrals are all retried above
     limit = int(sys.argv[sys.argv.index("--limit") + 1]) if "--limit" in sys.argv else 10 ** 6
 
-    results, n = list(done.values()), 0
+    results, n = list(keep), 0
     remaining = sum(1 for w in works if w[2] and w[2] not in done and w[2] not in blocked_dois)
     est = min(remaining, limit) * (PACE_WORK + PACE_TRY) / 60.0
     print("%d works left to try, pacing %.0fs each, rough estimate %.0f minutes"
@@ -223,27 +278,35 @@ def main():
         if n >= limit:
             break
         n += 1
-        blob = None
+        blob, worst = None, "none"
         for url in pdf_urls(doi):
-            blob = fetch_pdf(url)
+            blob, why = fetch_pdf(url)
             if blob:
                 break
+            # remember the most recoverable reason seen across all routes
+            if why == "transient" or (why == "forbidden" and worst != "transient"):
+                worst = why
             _sleep(PACE_TRY)
         if not blob:
-            blocked.append({"year": year, "title": title, "doi": doi, "cites": cites})
-            print("BLOCKED %s  %s" % (doi, (title or "")[:60]), flush=True)
-            checkpoint(results, blocked, works)
+            rec = {"year": year, "title": title, "doi": doi, "cites": cites, "reason": worst}
+            if worst == "none":
+                blocked.append(rec)
+                print("BLOCKED  %s  no open copy  %s" % (doi, (title or "")[:50]), flush=True)
+            else:
+                deferred.append(rec)
+                print("DEFERRED %s  %s  %s" % (doi, worst, (title or "")[:50]), flush=True)
+            checkpoint(results, blocked, works, deferred)
             _sleep(PACE_WORK)
             continue
         text = text_of(blob)
         ctx = contexts(text)
         results.append({"year": year, "title": title, "doi": doi, "cites": cites,
                         "chars": len(text), "contexts": ctx})
-        print("ok      %s  %d contexts  %s" % (doi, len(ctx), (title or "")[:50]), flush=True)
-        checkpoint(results, blocked, works)
+        print("ok       %s  %d contexts  %s" % (doi, len(ctx), (title or "")[:50]), flush=True)
+        checkpoint(results, blocked, works, deferred)
         _sleep(PACE_WORK)
 
-    out = summary(results, blocked, works)
+    out = summary(results, blocked, works, deferred)
     print(json.dumps(out["counts"], indent=1))
     if "--write" in sys.argv:
         json.dump(out, open(OUT, "w"), indent=1)
