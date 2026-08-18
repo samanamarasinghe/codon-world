@@ -1,0 +1,162 @@
+[
+  {
+    "id": "repo-codon-numpy",
+    "url": "https://github.com/hsmajlovic/codon-numpy",
+    "name": "codon-numpy",
+    "summary": "A NumPy implementation delivered as a Codon compiler plugin. It carries no README; the structure is the documentation. A C++ class deriving from codon::DSL registers IR passes through codon/dsl/dsl.h, a plugin.toml declares the plugin, and six .codon files under stdlib/numpy supply ndarray, array creation, reductions, BLAS and linalg. The first pure compiler-plugin entry in the index -- Sequre ships IR helpers alongside a library, whereas this repo is only the plugin.",
+    "integration_mode": "ir_plugin",
+    "codon_via": "direct",
+    "codon_role": "implementation",
+    "codon_features": {
+      "static_typing": {"occurrences": 77, "files": 3},
+      "c_interop": {"occurrences": 2, "files": 1},
+      "tuple": {"occurrences": 2, "files": 1},
+      "llvm_inline": {"occurrences": 1, "files": 1}
+    },
+    "scale": {"own_codon_files": 6, "own_codon_loc": 2517, "vendored_stdlib_files": 0},
+    "why_codon": "No README and no claim anywhere. Inferred from the codon::DSL subclass and plugin.toml that the repo exists to extend Codon itself rather than to use it.",
+    "why_codon_source": "inferred",
+    "provenance": "research_prototype",
+    "paper": null,
+    "health": {"last_commit": "2023-11-06", "license": "license.md", "ci_builds_codon": false},
+    "note": "Possible lineage worth checking with him: the author is a co-author on the Codon and Sequre papers, this repo stopped in 2023, and Codon's own stdlib now carries a numpy package whose module names overlap (ndarray, create, reductions, linalg). Recorded as an observation, not a causal claim.",
+    "confidence": "high"
+  },
+  {
+    "id": "repo-codon-light",
+    "url": "https://github.com/dalibor-drgon/codon-light",
+    "name": "codon-light",
+    "summary": "A retargeted build of Codon's C++ runtime, carrying Exaloop's own lib.h and exception machinery with CMake configurations for desktop, WebAssembly and bare metal. The single .codon file is a replacement threading module supplying ThreadLocal and the lock primitives against the reduced runtime. It does not use Codon to build something; it changes where Codon-compiled code can run.",
+    "integration_mode": "runtime_port",
+    "codon_via": "direct",
+    "codon_role": "implementation",
+    "codon_features": {
+      "static_typing": {"occurrences": 3, "files": 1},
+      "tuple": {"occurrences": 3, "files": 1}
+    },
+    "scale": {"own_codon_files": 1, "own_codon_loc": 667, "vendored_stdlib_files": 0},
+    "why_codon": "No README. Inferred from the baremetal, wasm and desktop CMake targets over Codon's runtime sources that the aim is to run Codon output in constrained environments.",
+    "why_codon_source": "inferred",
+    "provenance": "research_prototype",
+    "paper": null,
+    "health": {"last_commit": "2026-03-03", "license": null, "ci_builds_codon": false},
+    "confidence": "high"
+  },
+  {
+    "id": "repo-codon-wasm",
+    "url": "https://github.com/coco875/codon-wasm",
+    "name": "codon-wasm",
+    "summary": "A WASI port of Codon's runtime. A runtime-wasi directory holds the reworked lib.cpp, exception handling and DWARF support, a Makefile drives the cross build, and one small .codon file serves as the program compiled against it.",
+    "integration_mode": "runtime_port",
+    "codon_via": "direct",
+    "codon_role": "exploration",
+    "codon_features": {
+      "c_interop": {"occurrences": 1, "files": 1}
+    },
+    "scale": {"own_codon_files": 1, "own_codon_loc": 22, "vendored_stdlib_files": 0},
+    "why_codon": "README is a two-line build instruction. Inferred from the runtime-wasi tree that the goal is running Codon output under WASI.",
+    "why_codon_source": "inferred",
+    "provenance": "toy",
+    "paper": null,
+    "health": {"last_commit": "2024-11-27", "license": "LICENSE", "ci_builds_codon": false},
+    "confidence": "high"
+  },
+  {
+    "id": "repo-tresflow",
+    "url": "https://github.com/CSOgroup/TrESFlow",
+    "name": "TrESFlow",
+    "summary": "A Nextflow DSL2 pipeline built on the nf-core template for preprocessing TrES-seq data. Codon supplies the per-read core: six .codon files under scripts/core_runtime handle read splitting, FASTQ to SAM conversion and the tagging steps for UMIs and ligation sites, using the Seq plugin throughout and the pipeline operator in the splitting stage.",
+    "integration_mode": "source",
+    "codon_via": "direct",
+    "codon_role": "implementation",
+    "codon_features": {
+      "seq_plugin": {"occurrences": 14, "files": 6},
+      "pipeline": {"occurrences": 12, "files": 1},
+      "static_typing": {"occurrences": 2, "files": 1},
+      "tuple": {"occurrences": 1, "files": 1}
+    },
+    "scale": {"own_codon_files": 6, "own_codon_loc": 1931, "vendored_stdlib_files": 0},
+    "why_codon": "README documents the Nextflow pipeline and does not mention Codon. Inferred from the scripts/core_runtime tree and its Seq plugin usage that Codon runs the per-read stages inside the workflow.",
+    "why_codon_source": "inferred",
+    "provenance": "production",
+    "paper": null,
+    "health": {"last_commit": "2026-05-20", "license": "LICENSE", "ci_builds_codon": false},
+    "confidence": "high"
+  },
+  {
+    "id": "repo-graphmemory-ide",
+    "url": "https://github.com/elementalcollision/GraphMemory-IDE",
+    "name": "GraphMemory-IDE",
+    "summary": "A long-term memory system for IDEs built over the Kuzu graph database. Codon carries the compute-heavy layer rather than the application: four graph kernels covering centrality, community detection, similarity and path analysis, plus hashing and vector operations under data_processing, with a dedicated Dockerfile for the Codon build.",
+    "integration_mode": "source",
+    "codon_via": "direct",
+    "codon_role": "implementation",
+    "codon_features": {
+      "par": {"occurrences": 1, "files": 1}
+    },
+    "scale": {"own_codon_files": 7, "own_codon_loc": 945, "vendored_stdlib_files": 0},
+    "why_codon": "README describes the system without naming Codon. Inferred from the codon/graph_kernels and codon/data_processing trees and the dedicated Dockerfile.codon that Codon is the acceleration layer for graph analytics.",
+    "why_codon_source": "inferred",
+    "provenance": "research_prototype",
+    "paper": null,
+    "health": {"last_commit": "2026-06-21", "license": "LICENSE", "ci_builds_codon": true, "workflows": [".github/workflows/ci.yml"]},
+    "confidence": "high"
+  },
+  {
+    "id": "repo-yogi",
+    "url": "https://github.com/jutge-org/yogi",
+    "name": "yogi",
+    "summary": "A small typed input-reading package for beginners, distributed on PyPI by the Jutge.org online judge so that students get static type checking on the data they read. Alongside the Python implementation sits a single .codon port of the same interface, so a student solution written in Codon can use the identical reading API.",
+    "integration_mode": "source",
+    "codon_via": "direct",
+    "codon_role": "implementation",
+    "codon_features": {},
+    "scale": {"own_codon_files": 1, "own_codon_loc": 92, "vendored_stdlib_files": 0},
+    "why_codon": "README documents the Python package only. Inferred from the parallel yogi.codon port that Jutge supports Codon submissions and needs the same input interface there.",
+    "why_codon_source": "inferred",
+    "provenance": "production",
+    "paper": null,
+    "related": "repo-jutge-tests",
+    "health": {"last_commit": "2024-07-02", "license": "LICENSE", "ci_builds_codon": false},
+    "confidence": "high"
+  },
+  {
+    "id": "repo-jutge-tests",
+    "url": "https://github.com/jutge-org/jutge-tests",
+    "name": "Jutge tests",
+    "summary": "Submissions used to test the correction process of the Jutge.org online judge, covering both basic functionality and edge limits. Ten of them are Codon, fifteen lines in total across all ten, which is what a conformance suite for a supported submission language looks like rather than a program.",
+    "integration_mode": "source",
+    "codon_via": "direct",
+    "codon_role": "exploration",
+    "codon_features": {},
+    "scale": {"own_codon_files": 10, "own_codon_loc": 15, "vendored_stdlib_files": 0},
+    "why_codon": "README describes the judge test harness and does not mention Codon. Inferred from the ten minimal .codon submissions that Codon is one of the judge's supported languages under test.",
+    "why_codon_source": "inferred",
+    "provenance": "production",
+    "paper": null,
+    "related": "repo-yogi",
+    "health": {"last_commit": "2025-11-06", "license": null, "ci_builds_codon": false},
+    "note": "Highest file-count-to-LOC ratio in the index: 10 files, 15 lines. A reminder that file counts alone rank this above repos a hundred times its size.",
+    "confidence": "high"
+  },
+  {
+    "id": "repo-codonx",
+    "url": "https://github.com/lmx-4/codonx",
+    "name": "codonx",
+    "summary": "A Linux command-line tool addressing the drift that appears when a project keeps one Python file for debugging and a second Codon file for performance. It generates the Codon side from the Python side so the boundary stays explicit rather than becoming two divergent programs. The tool itself is written in Rust; the single .codon file is a thirteen-line fixture.",
+    "integration_mode": "source",
+    "codon_via": "direct",
+    "codon_role": "implementation",
+    "codon_features": {
+      "par": {"occurrences": 1, "files": 1}
+    },
+    "scale": {"own_codon_files": 1, "own_codon_loc": 13, "vendored_stdlib_files": 0},
+    "why_codon": "README frames the tool as a bridge between Python's inspectability and Codon's release path, generating the Codon source rather than hand-maintaining it.",
+    "why_codon_source": "stated",
+    "provenance": "research_prototype",
+    "paper": null,
+    "health": {"last_commit": "2026-05-21", "license": "LICENSE.md", "ci_builds_codon": false},
+    "note": "Tooling ABOUT Codon written outside Codon. The .codon LOC understates it badly; the substance is Rust.",
+    "confidence": "high"
+  }
+]
