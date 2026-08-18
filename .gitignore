@@ -5,6 +5,11 @@
 pdfs/
 *.pdf
 
+# Homebrew python on macOS refuses a system-wide pip install (PEP 668), so the
+# local runs happen in a virtual environment here.
+.venv/
+venv/
+
 # Local scratch
 __pycache__/
 *.pyc
