@@ -34,6 +34,19 @@
     ["year", "Last active", "facet-year"]
   ];
 
+  // A sort that means something for only one kind of entry is offered only when
+  // that kind is the one being shown. Stars measure a repository and citations
+  // measure a paper; putting the two in one order would need a conversion that
+  // does not exist, and the site does not invent one.
+  var SORTS = [
+    ["loc", "Codon lines (most first)", null],
+    ["recent", "Most recent", null],
+    ["name", "Name (A-Z)", null],
+    ["stars", "Stars (most first)", "repo"],
+    ["citations", "Citations (most first)", "paper"],
+    ["mentions", "Codon mentions (most first)", "paper"]
+  ];
+
   var data = null, state = { sel: {}, q: "", group: "none", sort: "loc", summaries: true };
   FACETS.forEach(function (f) { state.sel[f[0]] = {}; });
 
@@ -112,12 +125,55 @@
     if (head) head.textContent = "(" + keys.length + ")";
   }
 
+  function soleKind() {
+    var k = selected("kind");
+    return k.length === 1 ? k[0] : null;
+  }
+
+  function availableSorts() {
+    var k = soleKind();
+    return SORTS.filter(function (s) { return !s[2] || s[2] === k; });
+  }
+
+  function syncSort() {
+    var sel = el("sort");
+    if (!sel) return;
+    var avail = availableSorts();
+    // Narrowing the Kind facet can take away the sort in use. Fall back rather
+    // than leaving the list ordered by a key that is no longer on offer.
+    var ok = avail.some(function (s) { return s[0] === state.sort; });
+    if (!ok) state.sort = "loc";
+    sel.textContent = "";
+    avail.forEach(function (s) {
+      var o = document.createElement("option");
+      o.value = s[0];
+      o.textContent = s[1];
+      if (s[0] === state.sort) o.selected = true;
+      sel.appendChild(o);
+    });
+    sel.value = state.sort;
+  }
+
+  function popNumber(e, key) {
+    var v = (e.popularity || {})[key];
+    return v == null ? -1 : v;   // never read is not the same as zero, and sorts last
+  }
+
   function sortEntries(list) {
     var s = state.sort;
     return list.slice().sort(function (a, b) {
       if (s === "loc") {
         var la = (a.scale || {}).own_codon_loc || 0, lb = (b.scale || {}).own_codon_loc || 0;
         return lb - la || (a.name || "").localeCompare(b.name || "");
+      }
+      if (s === "stars" || s === "citations") {
+        var key = s === "stars" ? "stars" : "citations";
+        return popNumber(b, key) - popNumber(a, key) || (a.name || "").localeCompare(b.name || "");
+      }
+      if (s === "mentions") {
+        var ma = (a.codon_mentions || {}).count, mb = (b.codon_mentions || {}).count;
+        ma = ma == null ? -1 : ma; mb = mb == null ? -1 : mb;
+        return mb - ma || (a.name || "").localeCompare(b.name || "");
       }
       if (s === "recent") {
         var da = (a.health || {}).last_commit || String(a.year || ""),
@@ -135,6 +191,12 @@
     return s;
   }
 
+  function chipT(text, cls, title) {
+    var s = chip(text, cls);
+    s.title = title;
+    return s;
+  }
+
   function renderItem(e) {
     var d = document.createElement("div");
     d.className = "entry";
@@ -147,6 +209,19 @@
     var sc = (e.scale || {}).own_codon_loc;
     if (sc) h.appendChild(chip(sc.toLocaleString() + " Codon LOC", "chip-scale"));
     if (e.kind === "paper" && e.venue) h.appendChild(chip(e.venue + (e.year ? " " + e.year : ""), "chip-scale"));
+    var pop = e.popularity || {};
+    if (pop.stars != null) {
+      h.appendChild(chipT(pop.stars.toLocaleString() + " stars", "chip-scale",
+        "Stars on the repository as a whole, read " + pop.fetched + ". It measures the "
+        + "repository, not its Codon content: a packaging recipe is followed by thousands "
+        + "of people for whom Codon is one line of a build file."));
+    }
+    if (pop.citations != null) {
+      h.appendChild(chipT(pop.citations.toLocaleString() + " citations", "chip-scale",
+        "Citations of the whole paper from " + (pop.source === "openalex" ? "OpenAlex" : "Semantic Scholar")
+        + ", read " + pop.fetched + ". Every such index undercounts against Google Scholar, "
+        + "and the number counts citations of the paper, not of anything Codon did in it."));
+    }
     d.appendChild(h);
 
     var meta = document.createElement("div");
@@ -157,6 +232,17 @@
       var v = e[p[0]];
       if (v) meta.appendChild(chip(labelFor(v), p[1]));
     });
+    var mn = e.codon_mentions;
+    if (mn) {
+      meta.appendChild(chipT(
+        mn.count ? mn.count + (mn.capped ? "+" : "") + " Codon mentions" : "no Codon mentions extracted",
+        "chip-dim",
+        "Places in the full text that discuss the Codon family: " + mn.inline + " numbered "
+        + "citation sites and " + mn.body + " prose mentions. The reference list entry itself is "
+        + "not counted.\n\nRead it as a floor. Papers that cite by superscript are invisible to "
+        + "the scan, the extractor keeps at most twelve passages per paper, and Secure MICE, "
+        + "which extends Sequre, counts zero here."));
+    }
     if (e.integration_mode_secondary) meta.appendChild(chip("+ " + labelFor(e.integration_mode_secondary), ""));
     if (e.machine_authored) meta.appendChild(chip("Machine-authored", "chip-flag"));
     if (e.needs) meta.appendChild(chip("Unresolved", "chip-flag"));
@@ -198,6 +284,7 @@
 
   function render() {
     FACETS.forEach(function (f) { buildFacet(f[0], f[2]); });
+    syncSort();
     var vis = sortEntries(visible());
     el("count").textContent = vis.length + " of " + data.entries.length +
       " entries \u2014 a floor, not a count (see docs/gaps.md)";
@@ -252,5 +339,7 @@
     .then(boot)
     .catch(function (err) { el("results").textContent = "Could not load the index: " + err; });
 
-  window._codonIndex = { boot: boot, state: state, render: render };
+  window._codonIndex = { boot: boot, state: state, render: render,
+                         availableSorts: availableSorts, sortEntries: sortEntries,
+                         visible: visible };
 })();
