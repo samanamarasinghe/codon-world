@@ -16,6 +16,7 @@
     "why_codon_source": "stated",
     "provenance": "coursework",
     "paper": null,
+    "course": "UVic CSC427",
     "health": {"last_commit": "2024-12-12", "license": null, "ci_builds_codon": false},
     "confidence": "high"
   },
@@ -214,6 +215,7 @@
     "integration_mode": "source",
     "codon_via": "direct",
     "codon_role": "exploration",
+    "machine_authored": true,
     "codon_features": {},
     "scale": {"own_codon_files": 1, "own_codon_loc": 18, "vendored_stdlib_files": 0},
     "why_codon": "README describes the LLM loop. Inferred that Codon's presence reflects a model's language choice rather than any decision about Codon.",
@@ -221,7 +223,7 @@
     "provenance": "toy",
     "paper": null,
     "health": {"last_commit": "2026-05-28", "license": null, "ci_builds_codon": false},
-    "note": "First machine-authored Codon found in the index. Worth a ruling on whether generated code should be marked as such.",
+    "note": "Machine-authored Codon: a language model chose the language at random and wrote the program. Flagged per ruling 6, kept as an ordinary entry.",
     "confidence": "high"
   }
 ]
