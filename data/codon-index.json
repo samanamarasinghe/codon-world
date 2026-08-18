@@ -1,7 +1,7 @@
 {
  "generated_from": "data/entries/*.json + data/pilot/*.json",
- "entry_count": 87,
- "genetics_false_positive_count": 11,
+ "entry_count": 96,
+ "genetics_false_positive_count": 34,
  "entries": [
   {
    "id": "repo-sequre",
@@ -2080,6 +2080,88 @@
    "source_file": "data/entries/013-round2-substantive.json"
   },
   {
+   "id": "repo-chaotic-aur",
+   "url": "https://github.com/chaotic-aur/packages",
+   "name": "Chaotic-AUR",
+   "summary": "A prebuilt binary repository for Arch users, carrying codon-bin at 0.19.6. The PKGBUILD declares the usual Arch metadata plus provides and conflicts entries for codon, so the binary package and any source build of the same name cannot be installed together.",
+   "integration_mode": "packaging",
+   "codon_via": "direct",
+   "codon_role": "implementation",
+   "codon_features": {},
+   "scale": {
+    "own_codon_files": 0,
+    "own_codon_loc": 0,
+    "vendored_stdlib_files": 0
+   },
+   "why_codon": "The package description repeats Codon's own line about a high-performance, zero-overhead, extensible Python compiler using LLVM.",
+   "why_codon_source": "stated",
+   "provenance": "production",
+   "paper": null,
+   "codon_version_pinned": "0.19.6",
+   "health": {
+    "last_commit": null,
+    "license": null,
+    "ci_builds_codon": false
+   },
+   "confidence": "high",
+   "source_file": "data/entries/014-packaging-lane.json"
+  },
+  {
+   "id": "repo-chromebrew",
+   "url": "https://github.com/chromebrew/chromebrew",
+   "name": "Chromebrew",
+   "summary": "The package manager for Chrome OS, which ships Codon 0.19.6 as a binary package. The recipe takes the upstream x86_64 release tarball, pins its SHA-256 and depends on the system LLVM, so Codon is installable on a Chromebook without a build.",
+   "integration_mode": "packaging",
+   "codon_via": "direct",
+   "codon_role": "implementation",
+   "codon_features": {},
+   "scale": {
+    "own_codon_files": 0,
+    "own_codon_loc": 0,
+    "vendored_stdlib_files": 0
+   },
+   "why_codon": "The package description calls Codon a high-performance Python compiler that compiles Python to native machine code without runtime overhead.",
+   "why_codon_source": "stated",
+   "provenance": "production",
+   "paper": null,
+   "codon_version_pinned": "0.19.6",
+   "health": {
+    "last_commit": null,
+    "license": null,
+    "ci_builds_codon": false
+   },
+   "note": "Two copies of this repo appear in the round-2 fork list.",
+   "confidence": "high",
+   "source_file": "data/entries/014-packaging-lane.json"
+  },
+  {
+   "id": "repo-cli-tools-ngruenwald",
+   "url": "https://github.com/ngruenwald/cli-tools",
+   "name": "cli-tools",
+   "summary": "A collection of installable command-line tool definitions. The Codon entry is a small TOML naming the release URL template and the archive strip depth, so the tool can be fetched and unpacked into a prefix.",
+   "integration_mode": "packaging",
+   "codon_via": "direct",
+   "codon_role": "implementation",
+   "codon_features": {},
+   "scale": {
+    "own_codon_files": 0,
+    "own_codon_loc": 0,
+    "vendored_stdlib_files": 0
+   },
+   "why_codon": "The definition repeats Codon's own description of itself and supplies the release URL template.",
+   "why_codon_source": "stated",
+   "provenance": "production",
+   "paper": null,
+   "codon_version_pinned": "0.19.6",
+   "health": {
+    "last_commit": null,
+    "license": null,
+    "ci_builds_codon": false
+   },
+   "confidence": "high",
+   "source_file": "data/entries/014-packaging-lane.json"
+  },
+  {
    "id": "repo-codeboarding-architecture-mds",
    "url": "https://github.com/CodeBoarding/awesome-architecture-mds",
    "name": "awesome-architecture-mds",
@@ -2162,6 +2244,33 @@
    "note": "One of the few entries recording a failure. Worth keeping: an index of successful uses would misrepresent what adopting Codon is like.",
    "confidence": "high",
    "source_file": "data/entries/013-round2-substantive.json"
+  },
+  {
+   "id": "repo-compiler-explorer-infra",
+   "url": "https://github.com/compiler-explorer/infra",
+   "name": "Compiler Explorer infra",
+   "summary": "The provisioning repository behind Compiler Explorer. Its Python configuration lists Codon 0.19.2 as a compiler alongside CPython 3.5 through 3.14 and PyPy, fetched from the release tarball and verified with codon --version. This is the entry with the widest reach in the index: it puts Codon in a browser next to every Python implementation, for anyone who has never installed it.",
+   "integration_mode": "packaging",
+   "codon_via": "direct",
+   "codon_role": "implementation",
+   "codon_features": {},
+   "scale": {
+    "own_codon_files": 0,
+    "own_codon_loc": 0,
+    "vendored_stdlib_files": 0
+   },
+   "why_codon": "No prose claim; the configuration lists codon among the Python-family compilers it provisions. Inferred from its placement beside CPython and PyPy that Codon is offered as a Python implementation to compare against.",
+   "why_codon_source": "inferred",
+   "provenance": "production",
+   "paper": null,
+   "codon_version_pinned": "0.19.2",
+   "health": {
+    "last_commit": null,
+    "license": null,
+    "ci_builds_codon": false
+   },
+   "confidence": "high",
+   "source_file": "data/entries/014-packaging-lane.json"
   },
   {
    "id": "repo-csc427-chase2512",
@@ -2382,6 +2491,34 @@
    },
    "confidence": "medium",
    "source_file": "data/entries/010-jit-and-mention-lane.json"
+  },
+  {
+   "id": "repo-hidehic0-atcoder",
+   "url": "https://github.com/hidehic0/atcoder",
+   "name": "hidehic0/atcoder",
+   "summary": "Competitive programming work with a Nix derivation for Codon 0.19.5 built into the repository, fetching the release tarball with a pinned hash and installing the bin, include and lib trees. The environment is packaged so the contest setup is reproducible.",
+   "integration_mode": "packaging",
+   "codon_via": "direct",
+   "codon_role": "exploration",
+   "codon_features": {},
+   "scale": {
+    "own_codon_files": 0,
+    "own_codon_loc": 0,
+    "vendored_stdlib_files": 0
+   },
+   "why_codon": "No claim. Inferred from a pinned Codon derivation inside a competitive-programming repository that Codon is being used for contest submissions and pinned for reproducibility.",
+   "why_codon_source": "inferred",
+   "provenance": "toy",
+   "paper": null,
+   "codon_version_pinned": "0.19.5",
+   "health": {
+    "last_commit": null,
+    "license": null,
+    "ci_builds_codon": false
+   },
+   "note": "Fourth competitive-programming entry, after takechi-scratch/atcoder, liebe-magi/atcoder-codon and Jutge.org.",
+   "confidence": "high",
+   "source_file": "data/entries/014-packaging-lane.json"
   },
   {
    "id": "repo-kapibara-robot",
@@ -2789,6 +2926,34 @@
    "source_file": "data/entries/011-vendored-and-mirrors.json"
   },
   {
+   "id": "repo-termux-packages",
+   "url": "https://github.com/termux/termux-packages",
+   "name": "termux-packages",
+   "summary": "Termux's package collection, which builds Codon from source for Android. The recipe is the most involved packaging found: it pins LLVM 20.1.7 alongside Codon 0.19.6, cross-builds through CMake with an OpenBLAS target override on x86, installs under opt and writes a wrapper script onto PATH, then strips the shipped include and lib trees back out. Codon on a phone is not a repackaged release tarball but a real cross-compilation.",
+   "integration_mode": "packaging",
+   "codon_via": "direct",
+   "codon_role": "implementation",
+   "codon_features": {},
+   "scale": {
+    "own_codon_files": 0,
+    "own_codon_loc": 0,
+    "vendored_stdlib_files": 0
+   },
+   "why_codon": "The recipe describes Codon as a high-performance, zero-overhead, extensible Python compiler using LLVM and builds it for Termux users.",
+   "why_codon_source": "stated",
+   "provenance": "production",
+   "paper": null,
+   "codon_version_pinned": "0.19.6",
+   "health": {
+    "last_commit": null,
+    "license": null,
+    "ci_builds_codon": true
+   },
+   "note": "Upstream of roughly twenty forks and copies in the round-2 candidate set, all carrying this same build.sh. Those are recorded as a fork list rather than as entries.",
+   "confidence": "high",
+   "source_file": "data/entries/014-packaging-lane.json"
+  },
+  {
    "id": "repo-udemy-python-pro",
    "url": "https://github.com/franneck94/UdemyPythonPro",
    "name": "UdemyPythonPro",
@@ -2813,6 +2978,33 @@
    },
    "confidence": "medium",
    "source_file": "data/entries/010-jit-and-mention-lane.json"
+  },
+  {
+   "id": "repo-ultrahiroo-nixos-config",
+   "url": "https://github.com/ultrahiroo/nixos-config",
+   "name": "ultrahiroo/nixos-config",
+   "summary": "A personal NixOS configuration carrying a Codon flake of its own, pinning v0.19.0 for x86_64-linux. Packaging Codon for one machine because no upstream Nix package existed to depend on.",
+   "integration_mode": "packaging",
+   "codon_via": "direct",
+   "codon_role": "exploration",
+   "codon_features": {},
+   "scale": {
+    "own_codon_files": 0,
+    "own_codon_loc": 0,
+    "vendored_stdlib_files": 0
+   },
+   "why_codon": "The flake description repeats Codon's own line. Inferred from a hand-written flake in a personal configuration that no packaged Codon was available to use instead.",
+   "why_codon_source": "inferred",
+   "provenance": "toy",
+   "paper": null,
+   "codon_version_pinned": "0.19.0",
+   "health": {
+    "last_commit": null,
+    "license": null,
+    "ci_builds_codon": false
+   },
+   "confidence": "high",
+   "source_file": "data/entries/014-packaging-lane.json"
   },
   {
    "id": "repo-unifyweaver",
@@ -2840,6 +3032,60 @@
    "note": "A code generator that EMITS Codon. Neither an ordinary user nor a compiler plugin; the emitted code lives in generated output, not in the repo.",
    "confidence": "medium",
    "source_file": "data/entries/010-jit-and-mention-lane.json"
+  },
+  {
+   "id": "repo-version-checker",
+   "url": "https://github.com/designinlife/version-checker",
+   "name": "version-checker",
+   "summary": "An automated release tracker. Its codon.json records the latest version and the twenty releases behind it, from 0.15.1 through 0.19.6, refreshed daily with download URLs. Tracking rather than packaging, and the most complete release timeline found in the index.",
+   "integration_mode": "packaging",
+   "codon_via": "direct",
+   "codon_role": "exploration",
+   "codon_features": {},
+   "scale": {
+    "own_codon_files": 0,
+    "own_codon_loc": 0,
+    "vendored_stdlib_files": 0
+   },
+   "why_codon": "No claim; Codon is one project among many being watched for new releases.",
+   "why_codon_source": "inferred",
+   "provenance": "production",
+   "paper": null,
+   "codon_version_pinned": "0.19.6",
+   "health": {
+    "last_commit": null,
+    "license": null,
+    "ci_builds_codon": false
+   },
+   "confidence": "high",
+   "source_file": "data/entries/014-packaging-lane.json"
+  },
+  {
+   "id": "repo-vsources",
+   "url": "https://github.com/gvcgo/vsources",
+   "name": "vsources",
+   "summary": "A version-manager source registry. Its codon.version.json enumerates every Codon release with per-platform download URLs, architecture, operating system and archive size, so a version manager can install and switch between them.",
+   "integration_mode": "packaging",
+   "codon_via": "direct",
+   "codon_role": "implementation",
+   "codon_features": {},
+   "scale": {
+    "own_codon_files": 0,
+    "own_codon_loc": 0,
+    "vendored_stdlib_files": 0
+   },
+   "why_codon": "No claim; a machine-readable release table. Inferred from the per-platform installer metadata that Codon is offered as a managed toolchain.",
+   "why_codon_source": "inferred",
+   "provenance": "production",
+   "paper": null,
+   "health": {
+    "last_commit": null,
+    "license": null,
+    "ci_builds_codon": false
+   },
+   "note": "Records macOS arm64 and x86_64 builds as far back as 0.15.1, so it doubles as a release-history source.",
+   "confidence": "high",
+   "source_file": "data/entries/014-packaging-lane.json"
   },
   {
    "id": "repo-word-counter",
@@ -2985,6 +3231,167 @@
    "kind": "codeml pairwise dN/dS input",
    "source_file": "data/entries/012-false-positives-genetics.json",
    "_class": "false_positive/genetics"
+  },
+  {
+   "id": "fork-leegao-termux",
+   "url": "https://github.com/leegao/vulkan_wrapper_termux-packages",
+   "upstream": "repo-termux-packages",
+   "source_file": "data/entries/015-packaging-forks.json",
+   "_class": "fork_of_packaging"
+  },
+  {
+   "id": "fork-zhixianio-botdrop",
+   "url": "https://github.com/zhixianio/botdrop-packages",
+   "upstream": "repo-termux-packages",
+   "source_file": "data/entries/015-packaging-forks.json",
+   "_class": "fork_of_packaging"
+  },
+  {
+   "id": "fork-bapugyt-tmx",
+   "url": "https://github.com/BapuGYT/tmx-pkgs",
+   "upstream": "repo-termux-packages",
+   "source_file": "data/entries/015-packaging-forks.json",
+   "_class": "fork_of_packaging"
+  },
+  {
+   "id": "fork-mh1775089-pythom",
+   "url": "https://github.com/mh1775089-lgtm/Pythom-termux-",
+   "upstream": "repo-termux-packages",
+   "source_file": "data/entries/015-packaging-forks.json",
+   "_class": "fork_of_packaging"
+  },
+  {
+   "id": "fork-ndrancs-termux",
+   "url": "https://github.com/ndrancs/termux-packages-Mart-01-oss",
+   "upstream": "repo-termux-packages",
+   "source_file": "data/entries/015-packaging-forks.json",
+   "_class": "fork_of_packaging"
+  },
+  {
+   "id": "fork-haiyutian25-termux",
+   "url": "https://github.com/haiyutian25/termux-packages",
+   "upstream": "repo-termux-packages",
+   "source_file": "data/entries/015-packaging-forks.json",
+   "_class": "fork_of_packaging"
+  },
+  {
+   "id": "fork-ahmed762-neovim",
+   "url": "https://github.com/Ahmed-762/neovim-armv7",
+   "upstream": "repo-termux-packages",
+   "source_file": "data/entries/015-packaging-forks.json",
+   "_class": "fork_of_packaging"
+  },
+  {
+   "id": "fork-nikhilroy22-termux",
+   "url": "https://github.com/Nikhilroy22/termux-pkg-build-system",
+   "upstream": "repo-termux-packages",
+   "source_file": "data/entries/015-packaging-forks.json",
+   "_class": "fork_of_packaging"
+  },
+  {
+   "id": "fork-renzceee-bootstrap",
+   "url": "https://github.com/renzceee/bootstrap-builder",
+   "upstream": "repo-termux-packages",
+   "source_file": "data/entries/015-packaging-forks.json",
+   "_class": "fork_of_packaging"
+  },
+  {
+   "id": "fork-termux-pacman",
+   "url": "https://github.com/termux-pacman/termux-packages",
+   "upstream": "repo-termux-packages",
+   "source_file": "data/entries/015-packaging-forks.json",
+   "_class": "fork_of_packaging"
+  },
+  {
+   "id": "fork-zrsx-termux-ng",
+   "url": "https://github.com/zrsx/termux-ng",
+   "upstream": "repo-termux-packages",
+   "source_file": "data/entries/015-packaging-forks.json",
+   "_class": "fork_of_packaging"
+  },
+  {
+   "id": "fork-vhqtvn-termux",
+   "url": "https://github.com/vhqtvn/termux-packages-copy",
+   "upstream": "repo-termux-packages",
+   "source_file": "data/entries/015-packaging-forks.json",
+   "_class": "fork_of_packaging"
+  },
+  {
+   "id": "fork-nssuwan186-termux",
+   "url": "https://github.com/nssuwan186-dev/termux-packages",
+   "upstream": "repo-termux-packages",
+   "source_file": "data/entries/015-packaging-forks.json",
+   "_class": "fork_of_packaging"
+  },
+  {
+   "id": "fork-shanthropic-kothacode",
+   "url": "https://github.com/shanthropic/kothacode-packages",
+   "upstream": "repo-termux-packages",
+   "source_file": "data/entries/015-packaging-forks.json",
+   "_class": "fork_of_packaging"
+  },
+  {
+   "id": "fork-nastorehub-nasux",
+   "url": "https://github.com/nastorehub/NasUX-Packages",
+   "upstream": "repo-termux-packages",
+   "source_file": "data/entries/015-packaging-forks.json",
+   "_class": "fork_of_packaging"
+  },
+  {
+   "id": "fork-jjoblab-codeide",
+   "url": "https://github.com/jjoblab/codeide-terminal-pkg",
+   "upstream": "repo-termux-packages",
+   "source_file": "data/entries/015-packaging-forks.json",
+   "_class": "fork_of_packaging"
+  },
+  {
+   "id": "fork-asklo339-g-package",
+   "url": "https://github.com/asklo339/g-package",
+   "upstream": "repo-termux-packages",
+   "source_file": "data/entries/015-packaging-forks.json",
+   "_class": "fork_of_packaging"
+  },
+  {
+   "id": "fork-ali963git-digital-warrior",
+   "url": "https://github.com/ali963git/THE-DIGITAL-WARRIOR---VULNERABILITY-ELIMINATION-SCRIPT",
+   "upstream": "repo-termux-packages",
+   "source_file": "data/entries/015-packaging-forks.json",
+   "_class": "fork_of_packaging"
+  },
+  {
+   "id": "fork-laraholand-mobile",
+   "url": "https://github.com/laraholand/Mobile_No_Problem",
+   "upstream": "repo-termux-packages",
+   "source_file": "data/entries/015-packaging-forks.json",
+   "_class": "fork_of_packaging"
+  },
+  {
+   "id": "fork-decdec-decbrew",
+   "url": "https://github.com/Decdec-codelover/Decbrew",
+   "upstream": "repo-chromebrew",
+   "source_file": "data/entries/015-packaging-forks.json",
+   "_class": "fork_of_packaging"
+  },
+  {
+   "id": "fork-punksm4ck-chromebrew",
+   "url": "https://github.com/punksm4ck/chromebrew",
+   "upstream": "repo-chromebrew",
+   "source_file": "data/entries/015-packaging-forks.json",
+   "_class": "fork_of_packaging"
+  },
+  {
+   "id": "fork-markwalters-aur",
+   "url": "https://github.com/MarkWalters-dev/aur",
+   "upstream": "repo-chaotic-aur",
+   "source_file": "data/entries/015-packaging-forks.json",
+   "_class": "fork_of_packaging"
+  },
+  {
+   "id": "fork-jg00da-aur-git",
+   "url": "https://github.com/j-g00da/aur-git-looking-glass",
+   "upstream": "repo-chaotic-aur",
+   "source_file": "data/entries/015-packaging-forks.json",
+   "_class": "fork_of_packaging"
   }
  ]
 }
