@@ -1,0 +1,202 @@
+[
+ {
+  "id": "paper-biser-2022",
+  "url": "https://doi.org/10.1186/s13015-022-00210-2",
+  "name": "Fast characterization of segmental duplication structure in multiple genome assemblies",
+  "venue": "Algorithms for Molecular Biology",
+  "year": 2022,
+  "doi": "10.1186/s13015-022-00210-2",
+  "summary": "BISER detects segmental duplications across several genome assemblies at homology levels where earlier tools break down, by decomposing the error between paralogs into a random point-mutation component and a clustered block-edit component and filtering on a Jaccard bound derived from the first. It reports the human genome in seven minutes on eight cores against SEDEF's hour and a quarter. The tool is written in Seq, which is what puts it in this index.",
+  "codon_relation": "uses",
+  "codon_role": "implementation",
+  "why_codon": "The paper states BISER is a framework implemented in the Seq programming language, citing both Seq papers at that point. Seq is the implementation language, not a subject of the work, and nothing about Seq itself is changed.",
+  "why_codon_source": "stated",
+  "provenance": "published",
+  "cites_anchors": [
+   "seq-nbt-2021",
+   "seq-oopsla-2019"
+  ],
+  "found_in": "openalex",
+  "related_repo": "repo-biser",
+  "note": "Second paper-to-repository join, after secure-mice. Unlike that one the paper does not upgrade the repository's reading: 0xTCG/biser was already recorded as Seq source and the paper says the same. Worth noting that this is a Numanagic-lab paper, so the author-name scan matches its own byline and its self-citations to SEDEF; the Seq citation is reference 24, not the reference 22 the extractor also surfaced.",
+  "confidence": "high"
+ },
+ {
+  "id": "paper-secret-gwas-2024",
+  "url": "https://doi.org/10.1101/2024.04.24.590989",
+  "name": "SECRET-GWAS: Confidential Computing for Population-Scale GWAS",
+  "venue": "bioRxiv",
+  "year": 2024,
+  "doi": "10.1101/2024.04.24.590989",
+  "summary": "A genome-wide association study framework built on trusted execution rather than secret sharing, reporting four million SNPs over one million patients on 1,024 cores in 29 minutes. Sequre is the comparison point it argues against: the paper quotes Sequre's own published estimate of three weeks for a comparable linear-regression pipeline and positions its measured runtime against that figure.",
+  "codon_relation": "prior_art",
+  "codon_role": "exploration",
+  "why_codon": "The paper describes Sequre as a framework for quick development of MPC programs and quotes its published runtime estimate for a full GWAS pipeline. The comparison is against that stated figure; Sequre is not built or run here.",
+  "why_codon_source": "stated",
+  "provenance": "preprint",
+  "cites_anchors": [
+   "sequre-ipdpsw-2022"
+  ],
+  "found_in": "openalex",
+  "note": "The closest any citation in the corpus has come to `evaluates` while remaining `prior_art`. A comparison is genuinely published, but against a number quoted from Sequre's paper rather than a run the authors performed, and ruling 7 draws the line at whether Codon executed. Worth his eye if the distinction should be recorded differently.",
+  "confidence": "high"
+ },
+ {
+  "id": "paper-tardis-fl-paradigm-2023",
+  "url": "https://doi.org/10.48550/arXiv.2310.05102",
+  "name": "A Federated Learning Algorithms Development Paradigm",
+  "venue": "arXiv",
+  "year": 2023,
+  "doi": "10.48550/arXiv.2310.05102",
+  "summary": "A development paradigm for federated learning algorithms built around PTB-FLA, a Python testbed aimed at edge and bare-metal deployment. Codon appears in the discussion of system performance, and the authors single out its bidirectional intermediate representation and SSA-form LLVM output as the property that would let them build a translator from compiled code into a behavioural model.",
+  "codon_relation": "prior_art",
+  "codon_role": "exploration",
+  "why_codon": "The paper devotes a paragraph to Codon as work highly related to system performance, describing it as a full language compiling Pythonic syntax to native code, and states that its bidirectional IR and SSA-form output make it interesting for the authors' project. No Codon code is written or run.",
+  "why_codon_source": "stated",
+  "provenance": "preprint",
+  "cites_anchors": [
+   "codon-cc-2023"
+  ],
+  "found_in": "openalex",
+  "note": "Further evidence for the split running through this corpus: the paper opens on performance and then settles on the intermediate representation as the thing it actually wants. The Codon paper leads with speed; readers who plan to build something reach past it for the IR.",
+  "confidence": "high"
+ },
+ {
+  "id": "paper-gwas-privacy-taxonomy-2024",
+  "url": "https://doi.org/10.1093/bib/bbae356",
+  "name": "Genomic privacy preservation in genome-wide association studies: taxonomy, limitations, challenges, and vision",
+  "venue": "Briefings in Bioinformatics",
+  "year": 2024,
+  "doi": "10.1093/bib/bbae356",
+  "summary": "A taxonomy of privacy-preserving methods for genome-wide association studies, tabulating each published approach by the privacy technique it uses and the statistical test it supports. Sequre occupies one row of that table, recorded as a secure multiparty computation protocol covering GWAS, drug-target interaction prediction and metagenomic binning.",
+  "codon_relation": "prior_art",
+  "codon_role": "exploration",
+  "why_codon": "Sequre is catalogued in the survey's table of secure multiparty computation approaches and described in one sentence of the accompanying prose. The survey classifies published work and runs none of it.",
+  "why_codon_source": "stated",
+  "provenance": "survey",
+  "cites_anchors": [
+   "sequre-gb-2023"
+  ],
+  "found_in": "openalex",
+  "note": "First work in the corpus filed with provenance `survey`. It also carries the SECRET-GWAS preprint DOI in its bibliography, which is what made the local ingest report it as two candidates before the identifier learned to prefer a DOI printed before the references heading.",
+  "confidence": "high"
+ },
+ {
+  "id": "paper-attune-share-2026",
+  "url": "https://doi.org/10.1007/s10207-026-01223-3",
+  "name": "ATTUNE-SHARE: an agent-based secure time-series healthcare data sharing scheme for IoT-cloud systems",
+  "venue": "International Journal of Information Security",
+  "year": 2026,
+  "doi": "10.1007/s10207-026-01223-3",
+  "summary": "An agent-based scheme for sharing time-series healthcare data between IoT devices and cloud services. Sequre appears in the related-work survey of privacy-preserving approaches, described as a high-performance framework for secure multiparty computation on biomedical data.",
+  "codon_relation": "prior_art",
+  "codon_role": "exploration",
+  "why_codon": "One sentence of the related-work section describes Sequre as a high-performance framework developed for secure multiparty computation in medicine. Nothing in the scheme uses it.",
+  "why_codon_source": "stated",
+  "provenance": "published",
+  "cites_anchors": [
+   "sequre-gb-2023"
+  ],
+  "found_in": "openalex",
+  "confidence": "high"
+ },
+ {
+  "id": "paper-federated-graph-querying-2025",
+  "url": "https://doi.org/10.1007/s42979-025-04503-2",
+  "name": "Fast and Secure Multiparty Querying over Federated Graph Databases",
+  "venue": "SN Computer Science",
+  "year": 2025,
+  "doi": "10.1007/s42979-025-04503-2",
+  "summary": "Secure query processing across graph databases held by parties that will not share their contents. Sequre appears twice: once in the related-work prose as a Python-based secure multiparty computation framework whose compile-time optimisations make such computations faster, and once as a row in the paper's comparison table of existing systems, where it is recorded as three-party secret sharing over a relational database in Python and C++.",
+  "codon_relation": "prior_art",
+  "codon_role": "exploration",
+  "why_codon": "Sequre is described in related work and tabulated against other secure query systems by party count, sharing scheme, data model and implementation language. The table compares published properties; no system in it is run by these authors.",
+  "why_codon_source": "stated",
+  "provenance": "published",
+  "cites_anchors": [
+   "sequre-gb-2023"
+  ],
+  "found_in": "openalex",
+  "note": "A feature-comparison table rather than a measurement, so the relation stays `prior_art` under ruling 7's test of whether Codon executed. This is the most detailed characterisation of Sequre found in a third-party paper so far.",
+  "confidence": "high"
+ },
+ {
+  "id": "paper-anonify-2024",
+  "url": "https://doi.org/10.56553/popets-2024-0069",
+  "name": "Anonify: Decentralized Dual-level Anonymity for Medical Data Donation",
+  "venue": "Proceedings on Privacy Enhancing Technologies",
+  "year": 2024,
+  "doi": "10.56553/popets-2024-0069",
+  "summary": "A scheme giving medical data donors anonymity both from the recipient and from each other, set against the trade-off between privacy and utility that k-anonymity and differential privacy each force. Sequre is one of three citations supporting the sentence that many data-sharing protocols build on secure multiparty computation.",
+  "codon_relation": "prior_art",
+  "codon_role": "exploration",
+  "why_codon": "Sequre is cited once, bracketed alongside two other works in a list of secure multiparty computation protocols. Nothing is run.",
+  "why_codon_source": "stated",
+  "provenance": "published",
+  "cites_anchors": [
+   "sequre-gb-2023"
+  ],
+  "found_in": "openalex",
+  "confidence": "high"
+ },
+ {
+  "id": "paper-genomic-inference-attacks-2025",
+  "url": "https://doi.org/10.48550/arXiv.2505.07188",
+  "name": "Securing Genomic Data Against Inference Attacks in Federated Learning Environments",
+  "venue": "arXiv",
+  "year": 2025,
+  "doi": "10.48550/arXiv.2505.07188",
+  "summary": "A survey of inference attacks against federated learning on genomic data and the defences available against them, running through secure aggregation, homomorphic encryption and differential privacy in turn. Sequre is cited once, as the supporting reference for the homomorphic encryption defence.",
+  "codon_relation": "prior_art",
+  "codon_role": "exploration",
+  "why_codon": "The single citation attaches Sequre to the bullet on homomorphic encryption over encrypted gradients. Nothing is run, and the citation is loose on its own terms: Sequre is a secret-sharing multiparty framework rather than a homomorphic encryption one.",
+  "why_codon_source": "stated",
+  "provenance": "preprint",
+  "cites_anchors": [
+   "sequre-gb-2023"
+  ],
+  "found_in": "openalex",
+  "note": "Recorded because the index should show how the work is actually cited, not how it should have been. This is the first miscitation found in the corpus, and it sits in a survey, where it is most likely to be copied onward.",
+  "confidence": "high"
+ },
+ {
+  "id": "paper-gentt-2025",
+  "url": "https://doi.org/10.48550/arXiv.2506.03686",
+  "name": "GenTT: Generate Vectorized Codes for General Tensor Permutation",
+  "venue": "arXiv",
+  "year": 2025,
+  "doi": "10.48550/arXiv.2506.03686",
+  "summary": "A code generator for tensor permutation that handles the general case rather than the predictable permutation modes earlier work restricted itself to, targeting long strides and misalignment. Vectron is one of four citations behind the observation that automation is a long-standing concern in vectorization.",
+  "codon_relation": "prior_art",
+  "codon_role": "exploration",
+  "why_codon": "Vectron is cited once, bracketed with three other works in a sentence about automation in vectorization. No experiment involves it.",
+  "why_codon_source": "stated",
+  "provenance": "preprint",
+  "cites_anchors": [
+   "vectron-cgo-2025"
+  ],
+  "found_in": "openalex",
+  "note": "Cites Vectron in its dissertation form -- single-authored, University of Victoria, 2024 -- rather than the CGO paper. That rendering carries none of the Codon-family surnames, so the harvester read the work as having no citation context at all until bibliography matching was extended to anchor titles. Third third-party citation of Vectron, and again from outside compilers.",
+  "confidence": "high"
+ },
+ {
+  "id": "paper-neurosimo-2025",
+  "url": "https://doi.org/10.1101/2025.04.05.647342",
+  "name": "NeuroSimo: an open-source software for closed-loop EEG- or EMG-guided transcranial magnetic stimulation",
+  "venue": "bioRxiv",
+  "year": 2025,
+  "doi": "10.1101/2025.04.05.647342",
+  "summary": "Software for closed-loop transcranial magnetic stimulation, timing pulses against live EEG or EMG. C++ handles the sliding windows of past samples and Python carries the algorithms, and the Seq paper is cited in support of that division of labour rather than for anything about Seq itself.",
+  "codon_relation": "prior_art",
+  "codon_role": "exploration",
+  "why_codon": "The single citation supports the claim that combining C++ for performance-critical work with Python for algorithmic flexibility balances performance against ease of development. Neither Seq nor Codon is used in the system.",
+  "why_codon_source": "stated",
+  "provenance": "preprint",
+  "cites_anchors": [
+   "seq-nbt-2021"
+  ],
+  "found_in": "openalex",
+  "note": "The same premise-support pattern as Pytrf: the Nature Biotechnology paper is cited as evidence about Python's place in scientific computing rather than about the language it describes. That venue keeps buying reach the compiler papers do not have, and keeps spending it this way.",
+  "confidence": "high"
+ }
+]
