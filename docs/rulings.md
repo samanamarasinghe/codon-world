@@ -11,8 +11,8 @@ which declares 1,347 C entry points and says nothing about Codon anywhere.
 
 ## 2. Coursework and documentation mirrors are entries
 
-Not filtered out. The fall25-csc-bioinf student repos and the three `mpearrow`
-documentation copies are indexed like anything else.
+Not filtered out. The CSC427 student repos and the three `mpearrow` documentation
+copies are indexed like anything else.
 
 ## 3. Vendored installs are entries
 
@@ -48,13 +48,18 @@ its single Codon file and reports no timings, so it is `exploration`; mce-sandbo
 names its three implementation technologies and labels what each Codon variant
 exercises, so it is `benchmark`.
 
-## Open, awaiting a ruling
+## 6. Machine-authored Codon is flagged, not excluded
 
-- **Machine-authored Codon.** PL-ultimate-llm stores an eighteen-line Fibonacci
-  program that a language model wrote after choosing Codon at random. It is real
-  Codon and it compiles, but no human decided to use the language. Currently filed
-  as an ordinary `exploration` entry with a note. Options: leave it, add a
-  `machine_authored` flag, or exclude generated code.
+`machine_authored: true` marks code a model wrote rather than a person. The entry
+stays in the index and keeps its ordinary role and provenance; the flag records how
+the code came to exist. First and so far only case: PL-ultimate-llm, where a model
+chose Codon at random and wrote an eighteen-line Fibonacci program.
+
+## Open, awaiting a ruling
 
 - **A `thesis` provenance value.** RedKinda/mojo-benchmarks is 2024 Bachelor's
   thesis work, currently filed `coursework` because nothing closer exists.
+
+- **Whether to run the `.py` closing pass.** Codon compiles `.py` directly, so the
+  `extension:codon` enumeration has a blind spot. See `docs/gaps.md`; one repo
+  already in the index was caught only by accident.
