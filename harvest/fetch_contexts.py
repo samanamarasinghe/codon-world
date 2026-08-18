@@ -14,12 +14,12 @@ as ruling 8 requires.
 It is resumable, and it checkpoints after every paper, so an interrupted run loses
 only the fetch in flight.
 
-A failure is not a failure. Three outcomes are recorded separately:
+A failure is not a failure. Two outcomes are recorded separately:
   blocked   -- no open copy found anywhere; needs an institutional login
   deferred  -- a copy exists but the host refused this run (429 rate limiting, or
                403 from publishers that serve only browsers). Retried next run.
-The first version of this script filed all three as blocked, and because the
-resumable path skips blocked works, a momentary 429 wrote a paper off permanently.
+The first version of this script filed both as blocked, and because the resumable
+path skips blocked works, a momentary 429 wrote a paper off permanently.
 
 Routes, in order (docs/paper-fetching.md):
   1. arXiv pdf, when the doi is a 10.48550 arXiv doi or a location points there
@@ -258,6 +258,16 @@ def main():
         done = {w["doi"]: w for w in keep if w.get("doi")}
         blocked = prev.get("blocked", [])
         deferred = prev.get("deferred", [])
+        # Entries written before the blocked/deferred split carry no reason. They
+        # were recorded by a version that filed rate limits as permanent failures,
+        # so none of them can be trusted as "no open copy" -- retry them all once.
+        stale = [b for b in blocked if "reason" not in b]
+        if stale:
+            print("migrating %d pre-split blocks to deferred" % len(stale), flush=True)
+            for b in stale:
+                b["reason"] = "unclassified: recorded before the blocked/deferred split"
+            deferred = deferred + stale
+            blocked = [b for b in blocked if "reason" in b]
     # A previous run's deferrals are always retried; its blocks are not, unless
     # asked, because "no open copy anywhere" does not change between runs.
     if "--retry-blocked" in sys.argv:
