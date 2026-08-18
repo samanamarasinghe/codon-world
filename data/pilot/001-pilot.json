@@ -1,0 +1,57 @@
+[
+  {
+    "id": "repo-vectron",
+    "url": "https://github.com/0xTCG/vectron",
+    "name": "Vectron",
+    "summary": "A compiler pass that analyses array- and matrix-based dynamic programming kernels and vectorizes them automatically, reporting up to 18x throughput improvement on DP algorithms. Vectron is written as a Codon extension: its 151 .codon files carry the dispatcher, the attribute machinery and a large set of generated CPU and GPU alignment kernels, and it depends on a from-source Codon build with its LLVM distribution.",
+    "integration_mode": "source",
+    "codon_features": {
+      "llvm_inline": {"occurrences": 1304, "files": 3},
+      "par": {"occurrences": 64, "files": null},
+      "static_typing": {"occurrences": 23, "files": null},
+      "gpu": {"occurrences": 2, "files": null},
+      "seq_plugin": {"occurrences": 3, "files": null}
+    },
+    "scale": {"own_codon_files": 151, "own_codon_loc": 28881, "vendored_stdlib_files": 0},
+    "why_codon": "Vectron is built as a Codon compiler pass; the repo states the vectorizer improves DP performance up to 18 times.",
+    "provenance": "paper_backed",
+    "paper": {"doi": "10.1145/3696443.3708963", "title": "Vectron: A Dynamic Programming Auto-vectorization Framework", "venue": "CGO 2025"},
+    "health": {"last_commit": "2024-09-23", "license": "LICENSE present", "ci_builds_codon": false},
+    "confidence": "high"
+  },
+  {
+    "id": "repo-flox",
+    "url": "https://github.com/FLOX-Foundation/flox",
+    "name": "FLOX",
+    "summary": "A framework for building trading systems -- strategies, backtests, paper trading and live execution behind one toolkit, distributed on PyPI and npm. Codon is the scripting surface over a C or C++ core rather than the whole system: 55 .codon files hold the strategy, backtest, order-book and execution modules, and 28 of them declare 1,347 C entry points through Codon's from-C-import interop.",
+    "integration_mode": "c_api_frontend",
+    "codon_features": {
+      "c_interop": {"occurrences": 1347, "files": 28},
+      "static_typing": {"occurrences": 2, "files": null}
+    },
+    "scale": {"own_codon_files": 55, "own_codon_loc": 10238, "vendored_stdlib_files": 0},
+    "why_codon": "Repo makes no explicit Codon performance claim; the binding layer implies Codon is used for native-speed strategy code over the C API.",
+    "provenance": "production",
+    "paper": null,
+    "health": {"last_commit": "2026-08-16", "license": "LICENSE present", "ci_builds_codon": true, "workflows": [".github/workflows/ci.yml", ".github/workflows/build-matrix.yml", ".github/workflows/codegen.yml"]},
+    "confidence": "high"
+  },
+  {
+    "id": "repo-conduit",
+    "url": "https://github.com/cruso003/conduit",
+    "name": "Conduit",
+    "summary": "A web framework for machine-learning APIs, MCP servers and streaming services, describing itself as AI-first and claiming native performance. Codon is the implementation language: 151 .codon files hold the HTTP server, middleware, MCP protocol handling and tooling, with sockets bound through from-C-import and a NumPy path used for the inference demos.",
+    "integration_mode": "source",
+    "codon_features": {
+      "numpy": {"occurrences": 18, "files": null},
+      "c_interop": {"occurrences": 47, "files": 6},
+      "python_interop": {"occurrences": 4, "files": null}
+    },
+    "scale": {"own_codon_files": 151, "own_codon_loc": 27501, "vendored_stdlib_files": 0},
+    "why_codon": "Repo claims native performance for a Python-shaped web framework; badge pins Codon 0.16+.",
+    "provenance": "research_prototype",
+    "paper": null,
+    "health": {"last_commit": "2026-05-05", "license": null, "ci_builds_codon": true, "workflows": [".github/workflows/release.yml", ".github/workflows/test.yml"]},
+    "confidence": "high"
+  }
+]

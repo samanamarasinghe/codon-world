@@ -1,0 +1,58 @@
+{
+  "note": "Tier 1 anchors only: works whose title or venue names the language itself, plus the two first-party repos. Everything else -- Sequre, Vectron, Shechi, BISER -- is expected to surface as an entry, not an anchor.",
+  "papers": [
+    {
+      "id": "codon-cc-2023",
+      "title": "Codon: A Compiler for High-Performance Pythonic Applications and DSLs",
+      "venue": "CC 2023",
+      "year": 2023,
+      "doi": "10.1145/3578360.3580275",
+      "doi_aliases": [],
+      "authors": ["Ariya Shajii", "Gabriel Ramirez", "Haris Smajlovic", "Jessica Ray", "Bonnie Berger", "Saman Amarasinghe", "Ibrahim Numanagic"]
+    },
+    {
+      "id": "seq-oopsla-2019",
+      "title": "Seq: a high-performance language for bioinformatics",
+      "venue": "OOPSLA 2019 / PACMPL",
+      "year": 2019,
+      "doi": "10.1145/3360551",
+      "doi_aliases": [],
+      "artifact_doi": "10.5281/zenodo.3374036",
+      "authors": ["Ariya Shajii", "Ibrahim Numanagic", "Riyadh Baghdadi", "Bonnie Berger", "Saman Amarasinghe"]
+    },
+    {
+      "id": "seq-nbt-2021",
+      "title": "A Python-based programming language for high-performance computational genomics",
+      "venue": "Nature Biotechnology",
+      "year": 2021,
+      "doi": "10.1038/s41587-021-00985-6",
+      "doi_aliases": ["10.1101/2020.10.29.361402"],
+      "preprint_title": "A Python-based optimization framework for high-performance genomics",
+      "authors": ["Ariya Shajii", "Ibrahim Numanagic", "Alexander T. Leighton", "Haley Greenyer", "Saman Amarasinghe", "Bonnie Berger"]
+    },
+    {
+      "id": "shajii-thesis-2021",
+      "title": "High-Performance Computational Genomics",
+      "venue": "MIT PhD thesis",
+      "year": 2021,
+      "doi": null,
+      "handle": "https://hdl.handle.net/1721.1/140081",
+      "authors": ["Ariya Shajii"]
+    }
+  ],
+  "repos": [
+    {"id": "repo-exaloop-codon", "url": "https://github.com/exaloop/codon", "role": "the compiler"},
+    {"id": "repo-exaloop-seq", "url": "https://github.com/exaloop/seq", "role": "the predecessor language and the bio plugin"}
+  ],
+  "tier2_expected_as_entries": [
+    {"title": "Sequre", "dois": ["10.1109/IPDPSW55747.2022.00040", "10.1186/s13059-022-02841-5"], "repo": "https://github.com/0xTCG/sequre"},
+    {"title": "Vectron", "dois": ["10.1145/3696443.3708963"], "repo": "https://github.com/0xTCG/vectron"},
+    {"title": "Shechi", "dois": [], "note": "USENIX Security 2025, no paper DOI; six Zenodo artifact DOIs", "repo": "https://github.com/anon-conf-subm/shechi"},
+    {"title": "BISER", "dois": [], "repo": "https://github.com/0xTCG/biser"}
+  ],
+  "hazards": [
+    "'.codon' is also used for codon-usage tables and codeml alignments in genetics -- extension alone is not evidence of Codon source.",
+    "Several repos commit the whole Codon stdlib; count distinct repos and separate vendored files from own source.",
+    "Surname 'Shajii' collides with unrelated MIT and biomedical authors; filter on given name and field."
+  ]
+}
