@@ -3625,7 +3625,13 @@
    "found_in": "openalex",
    "confidence": "high",
    "source_file": "data/papers/004-batch.json",
-   "kind": "paper"
+   "kind": "paper",
+   "codon_mentions": {
+    "count": 1,
+    "inline": 1,
+    "body": 0,
+    "capped": false
+   }
   },
   {
    "id": "paper-decor-2026",
@@ -3649,7 +3655,13 @@
    "note": "Third paper-to-repository join, and the second where the paper and the repository do not say quite the same thing. The repository entry for hcholab/decor reads the Codon route as Sequre loaded as a plugin, inferred from an install recipe pinning Codon v0.17.0. The paper names Shechi instead. Both can be true of different artefacts -- Shechi and Sequre share 87 of 88 .codon paths, which is what ruling 4 was about -- but the discrepancy is worth reconciling, and the repository's `why_codon_source: inferred` is the weaker of the two readings.",
    "confidence": "high",
    "source_file": "data/papers/006-batch.json",
-   "kind": "paper"
+   "kind": "paper",
+   "codon_mentions": {
+    "count": 4,
+    "inline": 3,
+    "body": 1,
+    "capped": false
+   }
   },
   {
    "id": "paper-green-side-lua-2026",
@@ -3671,7 +3683,13 @@
    "note": "The second work in the corpus to reach for Codon in an energy argument, after the EASE 2025 compiled-Python study. That study measured Codon's energy directly; this one cites it as evidence that compiling an interpreted language is the response the field reaches for. Neither is a Codon paper, and energy is a claim the Codon paper itself does not make.",
    "confidence": "high",
    "source_file": "data/papers/006-batch.json",
-   "kind": "paper"
+   "kind": "paper",
+   "codon_mentions": {
+    "count": 2,
+    "inline": 1,
+    "body": 1,
+    "capped": false
+   }
   },
   {
    "id": "paper-poppy-2026",
@@ -3693,7 +3711,13 @@
    "note": "Resolved from the full text under ruling 8: the arXiv PDF has exactly one inline citation of the Codon reference, in the Python optimization paragraph of related work.",
    "confidence": "high",
    "source_file": "data/papers/001-pilot.json",
-   "kind": "paper"
+   "kind": "paper",
+   "codon_mentions": {
+    "count": 1,
+    "inline": 1,
+    "body": 0,
+    "capped": false
+   }
   },
   {
    "id": "paper-pyls-2026",
@@ -3715,7 +3739,13 @@
    "note": "Resolved from full text collected through an institutional login, after standing as the paper lane's first and longest-blocked work. The reading the abstract could not settle turns out to be the plain one. Worth noting what the two papers share: Pyls exists to bring dynamic polymorphism to Python hardware synthesis, and runtime polymorphism is one of the two limitations the Codon paper names for itself.",
    "confidence": "high",
    "source_file": "data/papers/001-pilot.json",
-   "kind": "paper"
+   "kind": "paper",
+   "codon_mentions": {
+    "count": 3,
+    "inline": 1,
+    "body": 2,
+    "capped": false
+   }
   },
   {
    "id": "paper-secure-mice-2026",
@@ -3740,7 +3770,13 @@
    "note": "First paper-to-repository join in the index: this is the published account of 0xTCG/secure-mice, whose four .codon files the repository lane recorded as reaching Codon through Sequre. The paper confirms that reading and goes further -- the Codon layer itself was extended, which the repository alone did not show.",
    "confidence": "high",
    "source_file": "data/papers/002-batch.json",
-   "kind": "paper"
+   "kind": "paper",
+   "codon_mentions": {
+    "count": 0,
+    "inline": 0,
+    "body": 0,
+    "capped": true
+   }
   },
   {
    "id": "paper-seqproc-2026",
@@ -3784,7 +3820,13 @@
    "note": "Resolved from the full text under ruling 8, via an open copy in DSpace@MIT where the publisher page carries no PDF. First work found that both extends Codon and benchmarks against Codon-proper in the same evaluation. Jessica Ray is a co-author of the Codon paper.",
    "confidence": "high",
    "source_file": "data/papers/001-pilot.json",
-   "kind": "paper"
+   "kind": "paper",
+   "codon_mentions": {
+    "count": 12,
+    "inline": 0,
+    "body": 12,
+    "capped": true
+   }
   },
   {
    "id": "paper-vector-register-usage-2026",
@@ -3806,7 +3848,13 @@
    "note": "The first citation of Vectron found from outside the Codon family, and it lands in a security-adjacent measurement paper rather than a compiler one.",
    "confidence": "high",
    "source_file": "data/papers/003-batch.json",
-   "kind": "paper"
+   "kind": "paper",
+   "codon_mentions": {
+    "count": 1,
+    "inline": 1,
+    "body": 0,
+    "capped": false
+   }
   },
   {
    "id": "paper-compiled-python-energy-2025",
@@ -3851,7 +3899,13 @@
    "note": "Resolved through the arXiv copy at 2508.17493, which OpenAlex listed as a green location while the IEEE page carries no PDF.",
    "confidence": "high",
    "source_file": "data/papers/002-batch.json",
-   "kind": "paper"
+   "kind": "paper",
+   "codon_mentions": {
+    "count": 1,
+    "inline": 1,
+    "body": 0,
+    "capped": false
+   }
   },
   {
    "id": "paper-eqsat-julia-2025",
@@ -3873,7 +3927,13 @@
    "note": "Cited for its extensible IR rather than its performance, which is the framing the Codon paper itself leads with. The compiler literature picks up the DSL-framework claim; the application literature picks up the speed claim.",
    "confidence": "high",
    "source_file": "data/papers/003-batch.json",
-   "kind": "paper"
+   "kind": "paper",
+   "codon_mentions": {
+    "count": 1,
+    "inline": 1,
+    "body": 0,
+    "capped": false
+   }
   },
   {
    "id": "paper-federated-graph-querying-2025",
@@ -3895,7 +3955,13 @@
    "note": "A feature-comparison table rather than a measurement, so the relation stays `prior_art` under ruling 7's test of whether Codon executed. This is the most detailed characterisation of Sequre found in a third-party paper so far.",
    "confidence": "high",
    "source_file": "data/papers/004-batch.json",
-   "kind": "paper"
+   "kind": "paper",
+   "codon_mentions": {
+    "count": 4,
+    "inline": 1,
+    "body": 3,
+    "capped": false
+   }
   },
   {
    "id": "paper-genomic-inference-attacks-2025",
@@ -3917,7 +3983,13 @@
    "note": "Recorded because the index should show how the work is actually cited, not how it should have been. This is the first miscitation found in the corpus, and it sits in a survey, where it is most likely to be copied onward.",
    "confidence": "high",
    "source_file": "data/papers/004-batch.json",
-   "kind": "paper"
+   "kind": "paper",
+   "codon_mentions": {
+    "count": 1,
+    "inline": 1,
+    "body": 0,
+    "capped": false
+   }
   },
   {
    "id": "paper-gentt-2025",
@@ -3939,7 +4011,13 @@
    "note": "Cites Vectron in its dissertation form -- single-authored, University of Victoria, 2024 -- rather than the CGO paper. That rendering carries none of the Codon-family surnames, so the harvester read the work as having no citation context at all until bibliography matching was extended to anchor titles. Third third-party citation of Vectron, and again from outside compilers.",
    "confidence": "high",
    "source_file": "data/papers/004-batch.json",
-   "kind": "paper"
+   "kind": "paper",
+   "codon_mentions": {
+    "count": 1,
+    "inline": 1,
+    "body": 0,
+    "capped": false
+   }
   },
   {
    "id": "paper-graphblas-opportunities-2025",
@@ -3960,7 +4038,13 @@
    "found_in": "openalex",
    "confidence": "high",
    "source_file": "data/papers/006-batch.json",
-   "kind": "paper"
+   "kind": "paper",
+   "codon_mentions": {
+    "count": 1,
+    "inline": 1,
+    "body": 0,
+    "capped": false
+   }
   },
   {
    "id": "paper-iridescent-2025",
@@ -3981,7 +4065,13 @@
    "found_in": "openalex",
    "confidence": "high",
    "source_file": "data/papers/003-batch.json",
-   "kind": "paper"
+   "kind": "paper",
+   "codon_mentions": {
+    "count": 1,
+    "inline": 1,
+    "body": 0,
+    "capped": false
+   }
   },
   {
    "id": "paper-neurosimo-2025",
@@ -4003,7 +4093,13 @@
    "note": "The same premise-support pattern as Pytrf: the Nature Biotechnology paper is cited as evidence about Python's place in scientific computing rather than about the language it describes. That venue keeps buying reach the compiler papers do not have, and keeps spending it this way.",
    "confidence": "high",
    "source_file": "data/papers/004-batch.json",
-   "kind": "paper"
+   "kind": "paper",
+   "codon_mentions": {
+    "count": 1,
+    "inline": 1,
+    "body": 0,
+    "capped": false
+   }
   },
   {
    "id": "paper-pytrf-2025",
@@ -4025,7 +4121,13 @@
    "note": "A citation of the Nature Biotechnology paper as evidence about Python's popularity, not about Codon or Seq. The venue choice of that paper gives it a reach the compiler papers do not have, and this is what that reach looks like in practice.",
    "confidence": "high",
    "source_file": "data/papers/002-batch.json",
-   "kind": "paper"
+   "kind": "paper",
+   "codon_mentions": {
+    "count": 1,
+    "inline": 1,
+    "body": 0,
+    "capped": false
+   }
   },
   {
    "id": "paper-shechi-2025",
@@ -4073,7 +4175,13 @@
    "note": "Illustrates a pattern in the Sequre-only citation group: the MPC literature engages with Sequre's compiler design while treating Codon underneath it as an implementation detail, so these citations reach Codon at one remove.",
    "confidence": "high",
    "source_file": "data/papers/003-batch.json",
-   "kind": "paper"
+   "kind": "paper",
+   "codon_mentions": {
+    "count": 2,
+    "inline": 1,
+    "body": 1,
+    "capped": false
+   }
   },
   {
    "id": "paper-streamlining-c-compilation-2025",
@@ -4095,7 +4203,13 @@
    "note": "One of the few citations that repeats Codon's stated limitations rather than only its results. Runtime polymorphism is the one it names first, and it is also exactly what Pyls exists to supply for Python hardware synthesis -- the same gap read as a caveat here and as an opportunity there.",
    "confidence": "high",
    "source_file": "data/papers/006-batch.json",
-   "kind": "paper"
+   "kind": "paper",
+   "codon_mentions": {
+    "count": 4,
+    "inline": 1,
+    "body": 3,
+    "capped": false
+   }
   },
   {
    "id": "paper-anonify-2024",
@@ -4116,7 +4230,13 @@
    "found_in": "openalex",
    "confidence": "high",
    "source_file": "data/papers/004-batch.json",
-   "kind": "paper"
+   "kind": "paper",
+   "codon_mentions": {
+    "count": 1,
+    "inline": 1,
+    "body": 0,
+    "capped": false
+   }
   },
   {
    "id": "paper-gwas-privacy-taxonomy-2024",
@@ -4138,7 +4258,13 @@
    "note": "First work in the corpus filed with provenance `survey`. It also carries the SECRET-GWAS preprint DOI in its bibliography, which is what made the local ingest report it as two candidates before the identifier learned to prefer a DOI printed before the references heading.",
    "confidence": "high",
    "source_file": "data/papers/004-batch.json",
-   "kind": "paper"
+   "kind": "paper",
+   "codon_mentions": {
+    "count": 4,
+    "inline": 2,
+    "body": 2,
+    "capped": false
+   }
   },
   {
    "id": "paper-jacc-2024",
@@ -4160,7 +4286,13 @@
    "note": "Another citation that reaches for the intermediate representation rather than the benchmark numbers, consistent with the split this corpus keeps showing between compiler-facing and application-facing readers.",
    "confidence": "high",
    "source_file": "data/papers/006-batch.json",
-   "kind": "paper"
+   "kind": "paper",
+   "codon_mentions": {
+    "count": 2,
+    "inline": 1,
+    "body": 1,
+    "capped": false
+   }
   },
   {
    "id": "paper-secret-gwas-2024",
@@ -4182,7 +4314,13 @@
    "note": "The closest any citation in the corpus has come to `evaluates` while remaining `prior_art`. A comparison is genuinely published, but against a number quoted from Sequre's paper rather than a run the authors performed, and ruling 7 draws the line at whether Codon executed. Worth his eye if the distinction should be recorded differently.",
    "confidence": "high",
    "source_file": "data/papers/004-batch.json",
-   "kind": "paper"
+   "kind": "paper",
+   "codon_mentions": {
+    "count": 2,
+    "inline": 1,
+    "body": 1,
+    "capped": false
+   }
   },
   {
    "id": "paper-asnl-ir-design-2023",
@@ -4204,7 +4342,13 @@
    "note": "The second miscitation found in the corpus, after the genomic inference survey cited Sequre for homomorphic encryption. Both are recorded as they stand, because how a work is cited is what an index of reception should show. Note also that this work is one Semantic Scholar holds and OpenAlex does not, which is the recall gap the paper lane was set up to expose.",
    "confidence": "high",
    "source_file": "data/papers/005-batch.json",
-   "kind": "paper"
+   "kind": "paper",
+   "codon_mentions": {
+    "count": 1,
+    "inline": 1,
+    "body": 0,
+    "capped": false
+   }
   },
   {
    "id": "paper-collagene-2023",
@@ -4226,7 +4370,13 @@
    "note": "The first citation in the corpus that argues against the approach rather than merely reporting it, and it appears in Genome Biology, the venue that published Sequre. The cost it names -- complexity and maintainability -- is the cost of the compiler bet itself, so it is the sharpest external appraisal the index holds.",
    "confidence": "high",
    "source_file": "data/papers/005-batch.json",
-   "kind": "paper"
+   "kind": "paper",
+   "codon_mentions": {
+    "count": 5,
+    "inline": 1,
+    "body": 4,
+    "capped": false
+   }
   },
   {
    "id": "paper-d2x-2023",
@@ -4248,7 +4398,13 @@
    "note": "Published at the same venue that would publish Codon the same year. The citation is unusual in being about what a Codon-family compiler KNOWS rather than how fast it is -- type information the compiler infers and then discards from view. Recovered through DSpace@MIT after the ACM Digital Library served a bot challenge, the third time an institutional repository has been the route to an MIT-authored closed paper.",
    "confidence": "high",
    "source_file": "data/papers/005-batch.json",
-   "kind": "paper"
+   "kind": "paper",
+   "codon_mentions": {
+    "count": 1,
+    "inline": 1,
+    "body": 0,
+    "capped": false
+   }
   },
   {
    "id": "paper-fcfuzzer-2023",
@@ -4270,7 +4426,13 @@
    "note": "The only work in the corpus that treats Codon as a program under test rather than a tool or a citation, and the only one to file bugs against it. It also sets Codon among Python interpreters rather than among compilers, which is a category error the paper's own description avoids -- and one that makes Codon look worse, since a compiler that rejects a dynamic program is behaving as designed. Two Codon crashes appear in the table, one recorded as already known upstream.",
    "confidence": "high",
    "source_file": "data/papers/006-batch.json",
-   "kind": "paper"
+   "kind": "paper",
+   "codon_mentions": {
+    "count": 8,
+    "inline": 1,
+    "body": 7,
+    "capped": false
+   }
   },
   {
    "id": "paper-nelli-2023",
@@ -4291,7 +4453,13 @@
    "found_in": "semantic_scholar_only",
    "confidence": "high",
    "source_file": "data/papers/005-batch.json",
-   "kind": "paper"
+   "kind": "paper",
+   "codon_mentions": {
+    "count": 1,
+    "inline": 1,
+    "body": 0,
+    "capped": false
+   }
   },
   {
    "id": "paper-opencilk-2023",
@@ -4313,7 +4481,13 @@
    "note": "The only citation in the corpus that runs the other way along the lineage. Everywhere else a work cites Codon or Seq as something it might use; here Seq is named as a downstream consumer of the citing paper's own infrastructure. Worth holding alongside the parallelism findings from the repository half, where no `implementation` entry touches Codon's GPU support.",
    "confidence": "high",
    "source_file": "data/papers/005-batch.json",
-   "kind": "paper"
+   "kind": "paper",
+   "codon_mentions": {
+    "count": 4,
+    "inline": 2,
+    "body": 2,
+    "capped": false
+   }
   },
   {
    "id": "paper-tardis-fl-paradigm-2023",
@@ -4335,7 +4509,13 @@
    "note": "Further evidence for the split running through this corpus: the paper opens on performance and then settles on the intermediate representation as the thing it actually wants. The Codon paper leads with speed; readers who plan to build something reach past it for the IR.",
    "confidence": "high",
    "source_file": "data/papers/004-batch.json",
-   "kind": "paper"
+   "kind": "paper",
+   "codon_mentions": {
+    "count": 4,
+    "inline": 1,
+    "body": 3,
+    "capped": false
+   }
   },
   {
    "id": "paper-biser-2022",
@@ -4359,7 +4539,13 @@
    "note": "Second paper-to-repository join, after secure-mice. Unlike that one the paper does not upgrade the repository's reading: 0xTCG/biser was already recorded as Seq source and the paper says the same. Worth noting that this is a Numanagic-lab paper, so the author-name scan matches its own byline and its self-citations to SEDEF; the Seq citation is reference 24, not the reference 22 the extractor also surfaced.",
    "confidence": "high",
    "source_file": "data/papers/004-batch.json",
-   "kind": "paper"
+   "kind": "paper",
+   "codon_mentions": {
+    "count": 2,
+    "inline": 2,
+    "body": 0,
+    "capped": true
+   }
   },
   {
    "id": "paper-mapquik-2022",
@@ -4381,7 +4567,13 @@
    "note": "One of the few citations in the corpus that carries a number across. Most works cite the Codon family for what it is; this one cites it for what it measured.",
    "confidence": "high",
    "source_file": "data/papers/005-batch.json",
-   "kind": "paper"
+   "kind": "paper",
+   "codon_mentions": {
+    "count": 1,
+    "inline": 1,
+    "body": 0,
+    "capped": false
+   }
   },
   {
    "id": "paper-new-language-survey-2022",
@@ -4403,7 +4595,13 @@
    "note": "Second work filed as `survey`. It sets Seq among general-purpose Python accelerators rather than among bioinformatics tools, which is the framing the repository half found in the coursework and benchmark lanes rather than in the Numanagic lane.",
    "confidence": "high",
    "source_file": "data/papers/005-batch.json",
-   "kind": "paper"
+   "kind": "paper",
+   "codon_mentions": {
+    "count": 1,
+    "inline": 1,
+    "body": 0,
+    "capped": false
+   }
   },
   {
    "id": "paper-graphit-zoo-2021",
@@ -4425,7 +4623,13 @@
    "note": "One of three works in this batch from the same research group as the anchors, alongside D2X and OpenCilk. All three cite Seq the same way -- as an established example of the DSL argument rather than as a tool they use.",
    "confidence": "high",
    "source_file": "data/papers/005-batch.json",
-   "kind": "paper"
+   "kind": "paper",
+   "codon_mentions": {
+    "count": 1,
+    "inline": 1,
+    "body": 0,
+    "capped": false
+   }
   },
   {
    "id": "paper-mdbg-2021",
@@ -4448,7 +4652,13 @@
    "note": "Read from the bioRxiv preprint, 10.1101/2021.06.09.447586, which the harvest holds as a separate candidate; the Cell Systems record is used as the entry because it is the published version. That pair is a preprint and its own published form rather than two works, unlike the Sequre and Shechi pair that ruling 4 kept separate, so they are collapsed here. Worth his confirmation that collapsing is right, and worth checking whether other preprint-and-published pairs are sitting in the candidate list unnoticed.",
    "confidence": "high",
    "source_file": "data/papers/005-batch.json",
-   "kind": "paper"
+   "kind": "paper",
+   "codon_mentions": {
+    "count": 0,
+    "inline": 0,
+    "body": 0,
+    "capped": false
+   }
   }
  ],
  "sidecars": [
@@ -4647,5 +4857,10 @@
     }
    ]
   }
- ]
+ ],
+ "popularity_counts": {
+  "repos_with_stars": 0,
+  "papers_with_citations": 0,
+  "papers_with_mentions": 35
+ }
 }
