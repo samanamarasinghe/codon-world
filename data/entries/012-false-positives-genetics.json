@@ -1,0 +1,20 @@
+[
+  {
+    "_comment": "Genetics false positives. Every repo here has .codon files that are codon-usage tables, codeml alignments or gene-finder tables, unrelated to the Codon language. Recorded rather than dropped so a later pass does not rediscover them as candidates.",
+    "_class": "false_positive/genetics",
+    "repos": [
+      {"id": "fp-wormbase-pipeline", "url": "https://github.com/WormBase/wormbase-pipeline", "file": "wgf/newnem.codon", "kind": "gene-finder codon table (nematode)"},
+      {"id": "fp-wormbase-website-classic", "url": "https://github.com/WormBase/website-classic", "file": "conf/gftables/newnem.codon", "kind": "gene-finder codon table (nematode)"},
+      {"id": "fp-gmod-gbrowse", "url": "https://github.com/GMOD/GBrowse", "file": "contrib/GeneFinder/nematode_gftables/newnem.codon", "kind": "gene-finder codon table"},
+      {"id": "fp-gitpan-gbrowse", "url": "https://github.com/gitpan/GBrowse", "file": "contrib/GeneFinder/nematode_gftables/newnem.codon", "kind": "gene-finder codon table (CPAN mirror of GBrowse)"},
+      {"id": "fp-hitz-gbrowse2-sgd", "url": "https://github.com/hitz/gbrowse2-sgd", "file": "contrib/GeneFinder/nematode_gftables/newnem.codon", "kind": "gene-finder codon table (GBrowse derivative)"},
+      {"id": "fp-hitz-gbrowse-sgd", "url": "https://github.com/hitz/gbrowse-sgd", "file": "contrib/GeneFinder/nematode_gftables/newnem.codon", "kind": "gene-finder codon table (GBrowse derivative)"},
+      {"id": "fp-nlm-magic2", "url": "https://github.com/NLM-DIR/Magic2", "file": "wgf/newnem.codon", "kind": "gene-finder codon table"},
+      {"id": "fp-acedb", "url": "https://github.com/richarddurbin/acedb", "file": "wgf/newnem.codon, wdemo/wgf/newnem.codon", "kind": "gene-finder codon table"},
+      {"id": "fp-phylo-node", "url": "https://github.com/dohalloran/phylo-node", "file": "Input_examples/sample_codeml/DNA.codon", "kind": "codeml alignment input"},
+      {"id": "fp-cvb3-dms", "url": "https://github.com/RGellerLab/CVB3_full_proteome_DMS", "file": "B.Scripts_and_bioinformatic_pipelines/.../*.codon", "kind": "codon tables from a deep mutational scanning pipeline"},
+      {"id": "fp-metatranscriptomes", "url": "https://github.com/Bioinfo2015/metaTranscriptomes", "file": "example_codeml_files/.../c004922.codon", "kind": "codeml pairwise dN/dS input"}
+    ],
+    "note": "Six of the eleven are the same newnem.codon nematode gene-finder table, carried through GBrowse and its derivatives and mirrors. The genetics collision is therefore narrower than the repo count suggests: two source artifacts account for most of it."
+  }
+]
