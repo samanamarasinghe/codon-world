@@ -1,11 +1,11 @@
 {
  "generated": "2026-08-18",
  "note": "Mechanical extraction only. codon_relation is set by a person reading these, as ruling 8 requires.",
- "blocked_vs_deferred": "blocked means no open copy was found anywhere and an institutional login is needed. deferred means a copy exists but the host refused this run -- 429 rate limiting, or 403 for publishers that serve only browsers. Deferrals are retried automatically on the next run; blocks are not, unless --retry-blocked is passed.",
+ "blocked_vs_deferred": "blocked means no open copy was found anywhere and an institutional login is needed. deferred means a copy exists but the host refused this run -- 429 rate limiting, or 403 and bot-challenge pages from publishers that serve only browsers. Deferrals are retried automatically on the next run; blocks are not, unless --retry-blocked is passed.",
  "counts": {
-  "with_contexts": 40,
-  "blocked": 56,
-  "deferred": 0,
+  "with_contexts": 18,
+  "blocked": 57,
+  "deferred": 7,
   "total_candidates": 104
  },
  "works": [
@@ -16,6 +16,11 @@
    "cites": "sequre-gb-2023",
    "chars": 84555,
    "contexts": [
+    {
+     "kind": "inline",
+     "ref": "32",
+     "text": "ems. Karagiannis et al. [31] proposed a k-anonymity algorithm for health data sharing. It is used as a privacy-preserving policy that highly integrates medical records. The proposed scheme is used to secure the sensitive information which con- tains personal records of the patients. When compared with others, the proposed algorithm maximizes the precision in securing healthcare data while sharing. Smajlovi\u00b4 ce ta l .[ 32] developed a high-performance framework named, Secure for biomedical data sharing. The framework is developed for secure multiparty computation (MPC) in medical"
+    },
     {
      "kind": "bibliography",
      "text": "integrates medical records. The proposed scheme is used to secure the sensitive information which con- tains personal records of the patients. When compared with others, the proposed algorithm maximizes the precision in securing healthcare data while sharing. Smajlovi\u00b4 ce ta l .[ 32] developed a high-performance framework named, Secure for biomedical data sharing. The framework is developed for secure multiparty computation (MPC) in medical healthcare applications. A compute-time optimization is implemented in the framework to optimize the problems durin"
@@ -52,11 +57,6 @@
      "text": " the programmer. For example, gcc 14 has multiple autovector- ization features [6, 7] including early break support, which gener- ates vector instructions from a loop that might exit depending on a value in memory before the proper finish condition. Much work is also done such as quantifying the autovectorization ability of compilers [1, 5] and an autovectorization framework for dynamic programmingcodewritteninPython[ 19].Althoughpreferablefor performance, autovectorization could negatively impact the safety againstDownfall.AswediscussinSection 5.7,manypopularpack- agesdonotrequ"
     },
     {
-     "kind": "inline",
-     "ref": "19",
-     "text": "M- Bleed: Reading Bits in Memory Without Accessing Them. InIEEE Symposium on Security and Privacy (S&P). 695\u2013711. [17] Fangfei Liu, Yuval Yarom, Qian Ge, Gernot Heiser, and Ruby B. Lee. 2015. Last- Level Cache Side-Channel Attacks are Practical. InIEEE Symposium on Security and Privacy (S&P). 605\u2013622. [18] Daniel Moghimi. 2023. Downfall: Exploiting Speculative Data Gathering. In USENIX Security Symposium. 7179\u20137193. [19] Sourena Naser Moghaddasi, Haris "
-    },
-    {
      "kind": "bibliography",
      "text": " Level Cache Side-Channel Attacks are Practical. InIEEE Symposium on Security and Privacy (S&P). 605\u2013622. [18] Daniel Moghimi. 2023. Downfall: Exploiting Speculative Data Gathering. In USENIX Security Symposium. 7179\u20137193. [19] Sourena Naser Moghaddasi, Haris Smajlovi\u0107, Ariya Shajii, and Ibrahim Nu- managi\u0107. 2025. Vectron: A Dynamic Programming Auto-vectorization Frame- work. In International Symposium on Code Generation and Optimization (CGO) . 644\u2013659. [20] Avery Pennarun, Bill Allombert, and Petter Reinholdtsen. 2025. Debian Popu- larity Contest.https"
     },
@@ -75,13 +75,13 @@
    "contexts": [
     {
      "kind": "inline",
-     "ref": "61",
-     "text": "flow, and are unable to support applications such as Tree-of- Thoughts. SGLang [77] offers a DSL for expressing certain kinds of compound AI applications, but parallelism has to be handled manually and it has no support for other kinds of external calls, such as embedding models. Python optimization. Recent work improves the perfor- mance of Python programs by transforming and optimizing bottleneck fragments in them [4, 10, 13, 33, 38, 53, 61, 63, 78]. Their key focus is to identify small bottleneck fragments of the internal Python computation (e.g., UDFs that are used as part of a data analytics app"
+     "ref": "35",
+     "text": "can exploit some degree of parallelization, they either have limited expressiveness or require manual parallelization. (3) There has been prior work on Python optimization; however, none of them can extract parallelism across external calls. Below, we expand on these and other lines of related work. Automatic parallelization of general-purpose languages. There is an enormous literature on automatic paralleliza- tion [2, 3, 7, 9, 19, 22, 25, 29, 35, 36, 44, 45, 57, 69] of general- purpose languages. While most of this existing work does not support extracting parallelism from programs bottle- necked at ext"
     },
     {
      "kind": "inline",
      "ref": "61",
-     "text": "dings of the 4th Workshop on Machine Learning and Systems (Athens, Greece) (EuroMLSys \u201924). Association for Computing Machinery, New York, NY, USA, 117\u2013125. https: //doi.org/10.1145/3642970.3655844 [60] A.V.S. Sastry and Roy D.C. Ju. 1998. A New Algorithm for Scalar Register Promotion Based on SSA Form. PLDI \u201998: Proceedings of the ACM SIGPLAN 1998 conference on Programming language design and implementation (1998). [61] Ariya "
+     "text": "flow, and are unable to support applications such as Tree-of- Thoughts. SGLang [77] offers a DSL for expressing certain kinds of compound AI applications, but parallelism has to be handled manually and it has no support for other kinds of external calls, such as embedding models. Python optimization. Recent work improves the perfor- mance of Python programs by transforming and optimizing bottleneck fragments in them [4, 10, 13, 33, 38, 53, 61, 63, 78]. Their key focus is to identify small bottleneck fragments of the internal Python computation (e.g., UDFs that are used as part of a data analytics app"
     },
     {
      "kind": "bibliography",
@@ -163,60 +163,51 @@
    "contexts": [
     {
      "kind": "body",
-     "text": "performance. In particular, we show that in a video compression application, a simple naive implementation of spatial relationships incurs up to 65 \u00d7 slowdown when compared to reference C implementations, whereas an implementation in our DSLs achieves parity. 1Including tools that jit numpy such as Codon or Numba[Lam et al. 2015; "
+     "text": "performance. In particular, we show that in a video compression application, a simple naive implementation of spatial relationships incurs up to 65 \u00d7 slowdown when compared to reference C implementations, whereas an implementation in our DSLs achieves parity. 1Including tools that jit numpy such as Codon or Numba[Lam et al. 2015; Shajii et al. 2023] ACM Trans. Arch. Code Optim. UniTe: A Universal Tensor Abstraction for Capturing Spatial Relationships \u2022 3 \u2022 We discuss further application of the UniTe abstraction to data movement within memory hierarchies and distributed compute. This paper beg"
     },
-    {
-     "kind": "bibliography",
-     "text": "ion, a simple naive implementation of spatial relationships incurs up to 65 \u00d7 slowdown when compared to reference C implementations, whereas an implementation in our DSLs achieves parity. 1Including tools that jit numpy such as Codon or Numba[Lam et al. 2015; Shajii et al. 2023] ACM Trans. Arch. Code Optim. UniTe: A Universal Tensor Abstraction for Capturing Spatial Relationships \u2022 3 \u2022 We discuss further application of the UniTe abstraction to data movement within memory hierarchies and distributed compute. This paper begins with a case study in Section"
-    },
-    {
-     "kind": "bibliography",
-     "text": "ves the need for both views, which can be removed with a later dead code elimination pass. 6 CoLa: UniTe in Python This section introduces the standalone DSL and compiler, CoLa (Compression Language), which implements UniTe within the Pythonic language Codon [Shajii et al. 2023]. CoLa provides a general-use implementation of UniTe, and through integration with Codon, users can seamlessly integrate UniTe operations with high-level Pythonic features, providing users with a familiar API. Figure 9 shows two small snippets of CoLa code and highlights the UniT"
-    },
-    {
-     "kind": "bibliography",
-     "text": "d location propagation, successfully bringing runtime performance to parity against the reference implementations. ACM Trans. Arch. Code Optim. UniTe: A Universal Tensor Abstraction for Capturing Spatial Relationships \u2022 15 6.1 Integration within Codon Codon [Shajii et al. 2023] is a high-level, general purpose, statically typed language that implements the syntax of Python, along with many of Python\u2019s features and semantics, while also utilizing ahead-of-time compilation. 1# UniTe: pred/ref are tensors 2def intra_4x4_vr(pred, ref): 3# UniTe: colocation "
-    },
-    {
-     "kind": "bibliography",
-     "text": "that users could use to build an indexing formula for a particular colocation, but besides being error-prone, these often realize unnecessary intermediate tensors to do the index calculation. Compiler based tools that help with numpy-esq arrays (such as Codon[Shajii et al . 2023] or Julia[Bezanson et al . 2017]) do reduce this overhead, but the manual efort remains. Other systems with multidimensional arrays focus on the view/hierarchical aspect, which is more closely aligned with this work. Marray [Andres et al . 2010] provides a hybrid templated/runtim"
-    },
-    {
-     "kind": "bibliography",
-     "text": "library for linear algebra. Journal of Open Source Software 1, 2 (2016), 26. Sven-Bodo Scholz. 2003. Single Assignment C: eicient support for high-level array operations in a functional setting. Journal of functional programming 13, 6 (2003), 1005\u015b1059. Ariya Shajii, Gabriel Ramirez, Haris Smajlovi\u0107, Jessica Ray, Bonnie Berger, Saman Amarasinghe, and Ibrahim Numanagi\u0107. 2023. Codon: A Compiler for High-Performance Pythonic Applications and DSLs. In Proceedings of the 32nd ACM SIGPLAN International Conference on Compiler Construction. 191\u015b202. Max Taylor, "
-    },
-    {
-     "kind": "bibliography",
-     "text": "rnal of Open Source Software 1, 2 (2016), 26. Sven-Bodo Scholz. 2003. Single Assignment C: eicient support for high-level array operations in a functional setting. Journal of functional programming 13, 6 (2003), 1005\u015b1059. Ariya Shajii, Gabriel Ramirez, Haris Smajlovi\u0107, Jessica Ray, Bonnie Berger, Saman Amarasinghe, and Ibrahim Numanagi\u0107. 2023. Codon: A Compiler for High-Performance Pythonic Applications and DSLs. In Proceedings of the 32nd ACM SIGPLAN International Conference on Compiler Construction. 191\u015b202. Max Taylor, Jayson Boubin, Haicheng Chen, C"
-    },
-    {
-     "kind": "bibliography",
-     "text": "Single Assignment C: eicient support for high-level array operations in a functional setting. Journal of functional programming 13, 6 (2003), 1005\u015b1059. Ariya Shajii, Gabriel Ramirez, Haris Smajlovi\u0107, Jessica Ray, Bonnie Berger, Saman Amarasinghe, and Ibrahim Numanagi\u0107. 2023. Codon: A Compiler for High-Performance Pythonic Applications and DSLs. In Proceedings of the 32nd ACM SIGPLAN International Conference on Compiler Construction. 191\u015b202. Max Taylor, Jayson Boubin, Haicheng Chen, Christopher Stewart, and Feng Qin. 2021. A Study on Software Bugs in Un"
-    }
-   ]
-  },
-  {
-   "year": 2026,
-   "title": "seqproc: An efficient, flexible, and concise tool for sequence geometry description and transformation",
-   "doi": "10.64898/2026.07.28.741211",
-   "cites": "seq-oopsla-2019",
-   "chars": 72324,
-   "contexts": [
     {
      "kind": "body",
-     "text": "proc backend. Beyond tools designed speci\ufb01cally for read pre-processing, several broader e\u21b5orts have applied DSLs and specialized libraries to sequence analysis. SAR V A VID[Mahadik et al. , 2016] compiles a high-level DSL to e\u0000 cient sequence analysis code through program synthesis techniques. The Seq language [ "
+     "text": "mbined with the constant propagation, this removes the need for both views, which can be removed with a later dead code elimination pass. 6 CoLa: UniTe in Python This section introduces the standalone DSL and compiler, CoLa (Compression Language), which implements UniTe within the Pythonic language Codon [Shajii et al. 2023]. CoLa provides a general-use implementation of UniTe, and through integration with Codon, users can seamlessly integrate UniTe operations with high-level Pythonic features, providing users with a familiar API. Figure 9 shows two small snippets of CoLa code and highlights t"
     },
     {
-     "kind": "bibliography",
-     "text": "d pre-processing, several broader e\u21b5orts have applied DSLs and specialized libraries to sequence analysis. SAR V A VID[Mahadik et al. , 2016] compiles a high-level DSL to e\u0000 cient sequence analysis code through program synthesis techniques. The Seq language [ Shajii et al., 2019]e x t e n d sPythonwith genomics-speci\ufb01c primitives and compiler optimizations for sequence processing pipelines. BioJulia [Greener et al., 2020]p r o v i d e sac o m p o s a b l el i b r a r y ecosystem for biological sequence manipulation within the Julia language. While these "
+     "kind": "body",
+     "text": "dead code elimination pass. 6 CoLa: UniTe in Python This section introduces the standalone DSL and compiler, CoLa (Compression Language), which implements UniTe within the Pythonic language Codon [Shajii et al. 2023]. CoLa provides a general-use implementation of UniTe, and through integration with Codon, users can seamlessly integrate UniTe operations with high-level Pythonic features, providing users with a familiar API. Figure 9 shows two small snippets of CoLa code and highlights the UniTe operations. As expected, CoLa\u2019s unoptimized performance incurs severe overheads due to the additional"
     },
     {
-     "kind": "bibliography",
-     "text": "iao, O. Voulgaris, S. M. Rivera, S. J. Vervoort, M. E. Ritchie, Q. Gouil, and M. B. Clark. Powerful read processing with matchbox. bioRxiv,2 0 2 5 . d o i : 10.1101/2025.11.09.685711. URL https://www.biorxiv.org/ content/early/2025/11/11/2025.11.09.685711. A. Shajii, I. Numanagi\u00b4 c, R. Baghdadi, B. Berger, and S. Amarasinghe. Seq: a high-performance language for bioinformatics. Proc. ACM Program. Lang., 3(OOPSLA), Oct. 2019. doi: 10.1145/3360551. URL https://doi.org/10. 1145/3360551. D. K. Sullivan and L. Pachter. Flexible parsing, interpretation, and ed"
+     "kind": "body",
+     "text": "timizing compiler performs view access propagation and location propagation, successfully bringing runtime performance to parity against the reference implementations. ACM Trans. Arch. Code Optim. UniTe: A Universal Tensor Abstraction for Capturing Spatial Relationships \u2022 15 6.1 Integration within Codon Codon [Shajii et al. 2023] is a high-level, general purpose, statically typed language that implements the syntax of Python, along with many of Python\u2019s features and semantics, while also utilizing ahead-of-time compilation. 1# UniTe: pred/ref are tensors 2def intra_4x4_vr(pred, ref): 3# UniTe"
     },
     {
-     "kind": "bibliography",
-     "text": "lgaris, S. M. Rivera, S. J. Vervoort, M. E. Ritchie, Q. Gouil, and M. B. Clark. Powerful read processing with matchbox. bioRxiv,2 0 2 5 . d o i : 10.1101/2025.11.09.685711. URL https://www.biorxiv.org/ content/early/2025/11/11/2025.11.09.685711. A. Shajii, I. Numanagi\u00b4 c, R. Baghdadi, B. Berger, and S. Amarasinghe. Seq: a high-performance language for bioinformatics. Proc. ACM Program. Lang., 3(OOPSLA), Oct. 2019. doi: 10.1145/3360551. URL https://doi.org/10. 1145/3360551. D. K. Sullivan and L. Pachter. Flexible parsing, interpretation, and editing of te"
+     "kind": "body",
+     "text": "ng compiler performs view access propagation and location propagation, successfully bringing runtime performance to parity against the reference implementations. ACM Trans. Arch. Code Optim. UniTe: A Universal Tensor Abstraction for Capturing Spatial Relationships \u2022 15 6.1 Integration within Codon Codon [Shajii et al. 2023] is a high-level, general purpose, statically typed language that implements the syntax of Python, along with many of Python\u2019s features and semantics, while also utilizing ahead-of-time compilation. 1# UniTe: pred/ref are tensors 2def intra_4x4_vr(pred, ref): 3# UniTe: colo"
+    },
+    {
+     "kind": "body",
+     "text": "s 10pred[y,x] = (p(-1,x-(y>>1)-1)+ \\ 11p(-1,x-(y>>1))+1) \\ 12>>1 13# UniTe: tensor is Block or view object 14def dct(tensor): 15for r in range (8): 16# UniTe: extract 17row = tensor[r,:] 18# UniTe: read 19tmp0 = int(row(0) + row(7)) 20... Fig. 9. Code snippets showing part of the UniTe API in CoLa. Codon does not utilize the Python interpreter (or any parts of the standard Python implementation) at any stage of compilation or execution; rather, Codon implements its own full-featured compilation frame- work that supports parsing, AST/IR generation, type- checking, optimization, and code generat"
+    },
+    {
+     "kind": "body",
+     "text": "6# UniTe: extract 17row = tensor[r,:] 18# UniTe: read 19tmp0 = int(row(0) + row(7)) 20... Fig. 9. Code snippets showing part of the UniTe API in CoLa. Codon does not utilize the Python interpreter (or any parts of the standard Python implementation) at any stage of compilation or execution; rather, Codon implements its own full-featured compilation frame- work that supports parsing, AST/IR generation, type- checking, optimization, and code generation with LLVM. The frontend of CoLa (i.e. user API contain- ing blocks, views, etc.) is written in Codon-proper. To perform the necessary optimizatio"
+    },
+    {
+     "kind": "body",
+     "text": "at any stage of compilation or execution; rather, Codon implements its own full-featured compilation frame- work that supports parsing, AST/IR generation, type- checking, optimization, and code generation with LLVM. The frontend of CoLa (i.e. user API contain- ing blocks, views, etc.) is written in Codon-proper. To perform the necessary optimizations for CoLa, we modiied Codon\u2019s compiler and added in CoLa-speciic transformation passes15. While it is possible to use CoLa purely as a library (i.e. it compiles and runs using the standard Codon compiler), as we will see in Section 6.2, performance"
+    },
+    {
+     "kind": "body",
+     "text": " full-featured compilation frame- work that supports parsing, AST/IR generation, type- checking, optimization, and code generation with LLVM. The frontend of CoLa (i.e. user API contain- ing blocks, views, etc.) is written in Codon-proper. To perform the necessary optimizations for CoLa, we modiied Codon\u2019s compiler and added in CoLa-speciic transformation passes15. While it is possible to use CoLa purely as a library (i.e. it compiles and runs using the standard Codon compiler), as we will see in Section 6.2, performance is very poor due to the overheads introduced by the accesses on blocks an"
+    },
+    {
+     "kind": "body",
+     "text": ". user API contain- ing blocks, views, etc.) is written in Codon-proper. To perform the necessary optimizations for CoLa, we modiied Codon\u2019s compiler and added in CoLa-speciic transformation passes15. While it is possible to use CoLa purely as a library (i.e. it compiles and runs using the standard Codon compiler), as we will see in Section 6.2, performance is very poor due to the overheads introduced by the accesses on blocks and views. To combat performance degradation, CoLa imple- ments the view access propagation and location prop- agation passes and adds them to Codon\u2019s compiler. CoLa\u2019s i"
+    },
+    {
+     "kind": "body",
+     "text": "d runs using the standard Codon compiler), as we will see in Section 6.2, performance is very poor due to the overheads introduced by the accesses on blocks and views. To combat performance degradation, CoLa imple- ments the view access propagation and location prop- agation passes and adds them to Codon\u2019s compiler. CoLa\u2019s implementation for these compiler transfor- mations closely follows their description in the prior section, though there is some slight overlap between the two passes in CoLa, allowing view access propagation to provide some slight performance beneit. 6.2 Evaluation The opti"
+    },
+    {
+     "kind": "body",
+     "text": "JG [Independent JPEG Group 2022], libjpeg [Richter, Thomas 2022], and JM [Joint Video Team 2022] for JPEGS, JPEGL, and H.264, respectively. For each benchmark, we irst evaluate the performance of CoLa without any of our CoLa-speciic optimization passes. This is equivalent to executing the code with Codon-proper, thus represents the performance of Codon alone. This can be considered similar to the performance of a highly-optimized C ++ implementation. Then, we add 15The frontend of CoLa is approximately 700 lines of pure Codon, while CoLa\u2019s backend modiications use approximately 7500 lines of C"
     }
    ]
   },
@@ -229,13 +220,13 @@
    "contexts": [
     {
      "kind": "inline",
-     "ref": "36",
-     "text": "SSA-style MPC IR and argue that directly reusing generic compiler IRs is nontrivial, particularly around representing data-oblivious control flow and\u03d5-merges in MPC [35]. These IRs further incorporate array- and SIMD-aware constructs to support backend-independent vectorization and scheduling. Sequre introduces a Python-like DSL that compiles through a custom intermediate form before lowering to LLVM and native code [36]. It emphasizes cryptographic efficiency through compile-time rewrites and analyses that reduce expensive MPC operations and select efficient instantiations. It"
+     "ref": "34",
+     "text": "ont end, com- piling an extended C-like language via source-to-source translation into MPC code. In contrast, we focus on the compiler middle end, operating on LLVM IR to leverage and extend existing transformation and optimization passes. A separate line of work introduces MPC-specific intermediate representations. FUSE defines a custom IR and file format for circuit- level optimizations before lowering to backends [34]. COMBINE and related systems also adopt a custom SSA-style MPC IR and argue that directly reusing generic compiler IRs is nontrivial, particularly around repre"
     },
     {
      "kind": "inline",
      "ref": "36",
-     "text": "856. 3590340 [35] B. Levy, M. Ishaq, B. Sherman, L. Kennard, A. Milanova, and V . Zikas, \u201cCombine: Compilation and backend-independent vectorization for multi-party computation,\u201d inProceedings of the 2023 ACM SIGSAC Conference on Computer and Communications Security, ser. CCS \u201923. New York, NY , USA: Association for Computing Machinery, 2023, p. 2531\u20132545. [Online]. Available: https://doi.org/10.1145/3576915.3623181 [36] H. "
+     "text": "SSA-style MPC IR and argue that directly reusing generic compiler IRs is nontrivial, particularly around representing data-oblivious control flow and\u03d5-merges in MPC [35]. These IRs further incorporate array- and SIMD-aware constructs to support backend-independent vectorization and scheduling. Sequre introduces a Python-like DSL that compiles through a custom intermediate form before lowering to LLVM and native code [36]. It emphasizes cryptographic efficiency through compile-time rewrites and analyses that reduce expensive MPC operations and select efficient instantiations. It"
     },
     {
      "kind": "body",
@@ -272,13 +263,43 @@
    "contexts": [
     {
      "kind": "inline",
-     "ref": "36",
-     "text": " Distributed arrays (also referred to a PGAS \u2013 partitioned global address spaces [29]) are a complimentary approach that can be used for both horizontal and vertical scaling, often leveraging threading and message passing as underlying enabling technologies. Distributed arrays can be implemented effectively in low level languages [30], [31] and high level languages (e.g., Matlab [32], [33], Octave [34], Python [35], [36]) using both shared and distributed memory hardware. Many message passing libraries present themselves to users as distributed arrays [23]\u2013[25]. Distributed arr"
+     "ref": "1",
+     "text": "ncrease in CPU core bandwidth over 20 years, 100x increase in CPU node bandwidth over 20 years, and 5x increase in GPU node bandwidth over 5 years. Running on hundreds of MIT SuperCloud nodes simultaneously achieved a sustained bandwidth >1 PB/s. Index Terms \u2014GPUs, distributed arrays, parallel processing, vertical scaling, horizontal scaling I. I NTRODUCTION Easy-to-use high level programming languages (e.g., Matlab [1], Octave [2], Python [3], and Julia [4],) enable millions of programmers and play an important role in computational science and high performance computing. Acc"
+    },
+    {
+     "kind": "inline",
+     "ref": "1",
+     "text": "and do not necessarily reflect the views of the Under Secretary of Defense for Research and Engineering. Use of this work is controlled by the human-to- human license listed in Exhibit 3 of https://doi.org/10.48550/arXiv.2306.09267 Vertical scaling within nodes often relies on threading approaches (e.g., OpenMP [8], pthreads [9], and Cilk [10]) that leverage shared memory model. Threading allows libraries (e.g., MKL [11], MAGMA [12], SPIRAL [13], and Graph- BLAS [14], [15]) written in low-level languages (e.g., C [16], C++ [17], and Fortran [18]) to deliver parallel performance"
+    },
+    {
+     "kind": "inline",
+     "ref": "1",
+     "text": " [16], C++ [17], and Fortran [18]) to deliver parallel performance at the function level that can be readily called by a high level programming language. Vertical scaling on accelerators often follows a similar approach leverage technologies that are designed for more heterogenous accelerator architectures (e.g., CUDA [19] and OpenCL [20]). Horizontal scaling across nodes often relies on messaging passing (e.g., MPI [21] and SHMEM [22]) approaches that can work with both shared and distributed memory. Although more challenging than threading, library writers can create librarie"
+    },
+    {
+     "kind": "inline",
+     "ref": "1",
+     "text": "er [26] or map-reduce [27], [28] approaches are often used for horizontal scaling. Distributed arrays (also referred to a PGAS \u2013 partitioned global address spaces [29]) are a complimentary approach that can be used for both horizontal and vertical scaling, often leveraging threading and message passing as underlying enabling technologies. Distributed arrays can be implemented effectively in low level languages [30], [31] and high level languages (e.g., Matlab [32], [33], Octave [34], Python [35], [36]) using both shared and distributed memory hardware. Many message passing libr"
+    },
+    {
+     "kind": "inline",
+     "ref": "1",
+     "text": "sing model is in many respects the opposite of the client-server and map-reduce models. The message passing model requires that any process (denoted by a PID ) be able to send and receive messages from any other PID . The infrastructure of the message passing model is fairly simple. This infrastructure is most typically instantiated in the parallel computing community via the Message Passing Interface (MPI) standard [21]. The message passing model requires that each processor have a unique identifier (PID ) and know how many other processors ( NP ) are working together on a pro"
+    },
+    {
+     "kind": "inline",
+     "ref": "1",
+     "text": "LLEL STREAM (A, B, C : RP (N ), q : R, n : Z) 1 tcopy, tscale, tadd, tcopy : R 2 for i = 1 : Nt 3 do 4 TIC 5 C.loc = A.loc 6 tcopy += TOC 7 TIC 8 B.loc = q C.loc 9 tscale += TOC 10 TIC 11 C.loc = A.loc + B.loc 12 tadd += TOC 13 TIC 14 A.loc = B.loc + q C.loc 15 ttriad += TOC Code Listing 1 (Parallel Stream Matlab program). 1 2 3 4 Nt = 10; N = Np *(2.\u222730); 5 A0 = 1.0; B0 =2.0; C0 = 0.0; q = sqrt(2)-1; 6 ABCmap = map([1 Np], {},0:Np-1); % Map. 7 % Allocate and initialize distributed vectors. 8 Aloc = gpuArray(local(zeros(1,N,ABCmap)))+A0; 9 Bloc = gpuArray(local(zeros(1,N,ABCma"
+    },
+    {
+     "kind": "inline",
+     "ref": "1",
+     "text": "plifies the program and reduces the total memory required to run the program by eliminating unnec- essary duplication. The Matlab Parallel Computing Toolbox (PCT) function gpuArray (currently not implemented in Code Listing 2 (Parallel Stream Python program). 1 import numpy as np 2 import cupy as cp 3 import pPython as GPC 4 Nt = 10; N = GPC.Np *(2**30) 5 A0 = 1.0; B0 =2.0; C0 = 0.0; q = np.sqrt(2)-1 6 ABCmap = Dmap([1,Np], {},range(Np)) # Map. 7 # Allocate and initialize distributed vectors. 8 Aloc = cp.array(local(zeros(1,N,map=ABCmap)))+A0 9 Bloc = cp.array(local(zeros(1,N,"
     },
     {
      "kind": "inline",
      "ref": "36",
-     "text": "ab,\u201d Proceedings of the ACM on Programming Languages, vol. 4, no. HOPL, pp. 1\u201367, 2020. [34] J. Kepner, Parallel MATLAB for Multicore and Multinode Computers . SIAM, 2009. [35] C. Byun, W. Arcand, D. Bestor, B. Bergeron, V . Gadepally, M. Houle, M. Hubbell, H. Jananthan, M. Jones, A. Klein, et al. , \u201cpPython per- formance study,\u201d in 2023 IEEE High Performance Extreme Computing Conference (HPEC), pp. 1\u20137, IEEE, 2023. [36] A. "
+     "text": " Distributed arrays (also referred to a PGAS \u2013 partitioned global address spaces [29]) are a complimentary approach that can be used for both horizontal and vertical scaling, often leveraging threading and message passing as underlying enabling technologies. Distributed arrays can be implemented effectively in low level languages [30], [31] and high level languages (e.g., Matlab [32], [33], Octave [34], Python [35], [36]) using both shared and distributed memory hardware. Many message passing libraries present themselves to users as distributed arrays [23]\u2013[25]. Distributed arr"
     },
     {
      "kind": "bibliography",
@@ -303,13 +324,23 @@
    "contexts": [
     {
      "kind": "inline",
-     "ref": "57",
-     "text": "ages and their optimization has been explored in many other contexts. Jones et al. demonstrated the application of domain-specific rewrites in the GHC compiler [37]. In contrast to EqSat, their rewrites are applied greedily and destructively to the program, hence suffering from the phase-ordering problem. Other works focus on designing extensible, high-level IRs to express optimized domain-specific programs directly [42, 43, 57]. We consider that work complementary to ours, as similar techniques to those discussed in this article could be used to optimize such high-level IRs using equa"
+     "ref": "24",
+     "text": " themselves automatically discover opportunities to use their more performant implementations. Our system gives framework authors the option for implementing such discovery and optimization almost for free. As an example, the code in Figure 11 shows an implementation of the forward pass of a single fully connected feedforward layer. Several existing Julia packages allow us to compute such operations more efficiently [24, 33, 34]. For example, the programmer could rewrite the code as shown in Figure 12 to use the optimized fused_dense_bias_activation function from the Lux.jl dee"
+    },
+    {
+     "kind": "inline",
+     "ref": "24",
+     "text": "Evolving and Emerging Libraries for GEMMs As an example of multiple libraries providing complementary functionality, considerGeneral Matrix Multiplications(GEMMs), a cornerstone in many scientific domains. GEMMs are also often combined with element-wise operations orelopson their operands or result, for example with non-linear activation functions such as ReLU. Many libraries exist to perform different GEMM variants [ 24, 65, 67], each offering different tradeoffs and interfaces. For targeting NVIDIA GPUs, e.g., the cuBLAS library provides the highest performance for basic GEMM "
+    },
+    {
+     "kind": "inline",
+     "ref": "24",
+     "text": "LU. Many libraries exist to perform different GEMM variants [ 24, 65, 67], each offering different tradeoffs and interfaces. For targeting NVIDIA GPUs, e.g., the cuBLAS library provides the highest performance for basic GEMM expressions on matrices with simple datatypes. It also offers some kernels that fuse often-used elops with the GEMM. For elops not supported by cuBLAS, the alternative GemmKernels.jl can be used [24]. This package leverages Julia\u2019s multiple dispatch and GPU programming support [ 15] to generate performant GEMM code on the fly, including for user-defined elo"
     },
     {
      "kind": "inline",
      "ref": "57",
-     "text": "s and Control.IEEE, 1\u20137. [55] Nico Reissmann, Jan Christian Meyer, Helge Bahmann, and Magnus Sj\u00e4lander. 2020. RVSDG: An intermediate represen- tation for optimizing compilers.ACM Transactions on Embedded Computing Systems19, 6 (2020), 1\u201328. arXiv:1912.05036 [56] Jarrett Revels, Miles Lubin, and Theodore Papamarkou. 2016. Forward-mode automatic differentiation in julia. Retrieved from https://arxiv.org/abs/1607.07892 [57] Ariya "
+     "text": "ages and their optimization has been explored in many other contexts. Jones et al. demonstrated the application of domain-specific rewrites in the GHC compiler [37]. In contrast to EqSat, their rewrites are applied greedily and destructively to the program, hence suffering from the phase-ordering problem. Other works focus on designing extensible, high-level IRs to express optimized domain-specific programs directly [42, 43, 57]. We consider that work complementary to ours, as similar techniques to those discussed in this article could be used to optimize such high-level IRs using equa"
     },
     {
      "kind": "bibliography",
@@ -334,37 +365,63 @@
    "contexts": [
     {
      "kind": "inline",
-     "ref": "43",
-     "text": "aptation of the Yannakakis algorithm specifically designed for computing free-connex join-aggregate que - ries within a two-party computation model. This protocol preserves data confidentiality during query evaluation, ensuring that individual data remains private. The results demonstrate improved efficiency compared to traditional approaches that rely on Yao\u2019s garbled circuit. In bioinformatics, the authors of [ 43] introduce Sequre, a Python based framework for SMPC. It is designed to enhance the performance of SMPC applications by incorpo- rating automatic compile-time"
+     "ref": "1",
+     "text": "t issues [ 23]. This method offers several advantages, including ensuring that no third parties, even those considered trustworthy, can access the data. It effectively eliminates the need to choose between data privacy and usability, enabling accurate processing without compromising confidentiality. Nowadays, SMPC is employed in a wide variety of prac- tical contexts, including the detection of financial fraud [41], the aggregation of model features across private data - sets, and the prognosis of heart disease [ 46]. Additionally, it can assist in resolving trust issues"
     },
     {
      "kind": "inline",
-     "ref": "43",
-     "text": "AM ObliVM No 2 Relational DB SQL No \u2013 Secrecy [28] 3 Repl. Secret Sharing N/A No 3 Relational DB SQL No C Waldo [14] 3 Repl. Secret Sharing MP-SPDZ No 3 Time- series DB MQL Yes C++ SecureYanna- kakis [50] 2 Garbled Circuits N/A No 2 Relational DB SQL Yes C++ VaultDB [39] 2 Garbled Circuits EMP-Toolkit No 2 Relational DB SQL No C++ Scape [21] 3 Repl. Secret Sharing Frigate No 3 Relational DB SQL No \u2013 Sequre [43] 3 Secret Sharing N/A Yes 3 Relational DB SQL Yes Python/C++ Hu-Fu [44] >=2 N/A N/A Yes n Relational DB SQL Yes Java SMPQ [1] >=2 Secret Sharing Conclave/JI"
+     "ref": "1",
+     "text": "secure the query on different types of databases. Up until now, SMPC has pri - marily been utilized for safeguarding relational databases [8, 10, 48]. Although SMPC is effective in securely execut- ing queries, its application in the context of graph databases has been minimally explored. The authors of [ 12] employs SMPC at the backend, while queries remain one-party only and secure multi-party querying (SMPQ) [ 1] which imple- ments multi-party queries. In comparison to relational databases, graph databases offer a more flexible data model that proves more efficient In"
     },
     {
-     "kind": "body",
-     "text": "tation model. This protocol preserves data confidentiality during query evaluation, ensuring that individual data remains private. The results demonstrate improved efficiency compared to traditional approaches that rely on Yao\u2019s garbled circuit. In bioinformatics, the authors of [ 43] introduce Sequre, a Python based framework for SMPC. It is designed to enhance the performance of SMPC applications by incorpo- rating automatic compile-time optimisations, making com - putations faster and more efficient. Using secret sharing, Sequre enables the secure processing of biomedical data, impr"
+     "kind": "inline",
+     "ref": "1",
+     "text": "ypes of queries, such as traversal queries [ 40]. The graph-based structure utilised by these databases has demonstrated advantages in various contexts and has been widely adopted in platforms like Instagram, Twitter, and Facebook [12]. Although SMPC applied to multi-party queries holds potential, significant challenges persist, particularly in terms of performance. For instance, our SMPQ system, discussed in [1], builds on the previously developed Conclave system [48] for graph databases and improves processing, yet con - siderable overheads remain. In this work, we p"
     },
     {
-     "kind": "body",
-     "text": "ed circuit. In bioinformatics, the authors of [ 43] introduce Sequre, a Python based framework for SMPC. It is designed to enhance the performance of SMPC applications by incorpo- rating automatic compile-time optimisations, making com - putations faster and more efficient. Using secret sharing, Sequre enables the secure processing of biomedical data, improving the speed of queries and analysis tasks. Hu-Fu [44] is the first system designed for efficient and secure spatial query processing in data federations. It opti - mises the balance between plaintext and secure operations, reducing "
+     "kind": "inline",
+     "ref": "1",
+     "text": "cheme of SMPC among five parties. Neo4j and Cypher Query Language In this work, we have used Neo4j [20], one of the most widely used implementations of graph databases. It employs a data model known as labeled property graphs, which consist of nodes and relationships. Nodes represent individual entities, while relationships define directed, meaningful connections between nodes, typically illustrated with arrows [ 31]. Each node can have properties, which are key-value pairs that store additional information about the entities. Additionally, Fig. 1 Multi-party computation"
     },
     {
-     "kind": "body",
-     "text": "o [14] 3 Repl. Secret Sharing MP-SPDZ No 3 Time- series DB MQL Yes C++ SecureYanna- kakis [50] 2 Garbled Circuits N/A No 2 Relational DB SQL Yes C++ VaultDB [39] 2 Garbled Circuits EMP-Toolkit No 2 Relational DB SQL No C++ Scape [21] 3 Repl. Secret Sharing Frigate No 3 Relational DB SQL No \u2013 Sequre [43] 3 Secret Sharing N/A Yes 3 Relational DB SQL Yes Python/C++ Hu-Fu [44] >=2 N/A N/A Yes n Relational DB SQL Yes Java SMPQ [1] >=2 Secret Sharing Conclave/JIFF No >=2 GraphDB Cypher No Python SDB [22, 51]a N/A Secret Sharing N/A No 1 Relational DB SQL No \u2013 GOOSE [12] b N/A Secret "
+     "kind": "inline",
+     "ref": "1",
+     "text": "intersection of the results from each database is applied, allowing for the identifica - tion of common nodes. Related Work Implementation of SMPC Until recently, the main emphasis of research on SMPC has been theoretical. However, there has been a substantial effort to apply SMPC in practical real-world scenarios. [16]. Vari- ous implementations of SMPC, including JIFF [ 3], Oblivm [29], GraphSC [34], Sharemind [11], ABY [15], MP-SPDZ [26], EMP-toolkit [49], TinyGarble2 [25], and Frigate [32], have been utilised in different contexts. JIFF [ 3] is a JavaScript library de"
     },
     {
-     "kind": "bibliography",
-     "text": "al Cryp - tography and Data Security: 23rd International Conference, FC 2019, Frigate Bay, St. Kitts and Nevis, 18\u201322 Feb 2019, Revised Selected Papers 23; 2019. pp. 605\u2013623. Springer. 42. Shamir A. How to share a secret. Commun ACM. 1979;22(11):612\u20133. 43. Smajlovi\u0107 H, Shajii A, Berger B, Cho H, Numanagi\u0107 I. Sequre: a high-performance framework for secure multiparty computation enables biomedical data sharing. Genome Biol. 2023;24(1):1\u201318. 44. Tong Y , Pan X, Zeng Y , Shi Y , Xue C, Zhou Z, et al. Hu-fu: Effi- cient and secure spatial queries over d"
+     "kind": "inline",
+     "ref": "1",
+     "text": "ta. It builds upon ObliVM [29], which utilises garbled circuits. The framework allows two parties to compute over shared secret data in parallel, with one party acting as the garbler, responsible for creating the garbled circuits, and the other as the evaluator, who executes these circuits. The graph is represented as tuples, and an oblivious sort is implemented to ensure privacy during computations. Sharemind [ 11] is a privacy-preserving computation framework that prioritises speed and security. It uses a three- party hybrid protocol with additive secret-sharing over a"
     },
     {
-     "kind": "bibliography",
-     "text": "raphy and Data Security: 23rd International Conference, FC 2019, Frigate Bay, St. Kitts and Nevis, 18\u201322 Feb 2019, Revised Selected Papers 23; 2019. pp. 605\u2013623. Springer. 42. Shamir A. How to share a secret. Commun ACM. 1979;22(11):612\u20133. 43. Smajlovi\u0107 H, Shajii A, Berger B, Cho H, Numanagi\u0107 I. Sequre: a high-performance framework for secure multiparty computation enables biomedical data sharing. Genome Biol. 2023;24(1):1\u201318. 44. Tong Y , Pan X, Zeng Y , Shi Y , Xue C, Zhou Z, et al. Hu-fu: Effi- cient and secure spatial queries over data federatio"
+     "kind": "inline",
+     "ref": "1",
+     "text": "rations. It opti - mises the balance between plaintext and secure operations, reducing the need for secure operators while maintaining overall security. Hu-Fu interprets federated spatial queries in SQL, decomposes them into secure and plaintext parts, and securely combines the results. In all previous works, the discussion revolves around the use of SMPC within multi-party queries. In contrast, the authors of [ 22, 51] and [ 12] investigate the use of SMPC for single-party querying. The SDB system, discussed in [22, 51], is a cloud database system designed for relational t"
     },
     {
-     "kind": "bibliography",
-     "text": "rd International Conference, FC 2019, Frigate Bay, St. Kitts and Nevis, 18\u201322 Feb 2019, Revised Selected Papers 23; 2019. pp. 605\u2013623. Springer. 42. Shamir A. How to share a secret. Commun ACM. 1979;22(11):612\u20133. 43. Smajlovi\u0107 H, Shajii A, Berger B, Cho H, Numanagi\u0107 I. Sequre: a high-performance framework for secure multiparty computation enables biomedical data sharing. Genome Biol. 2023;24(1):1\u201318. 44. Tong Y , Pan X, Zeng Y , Shi Y , Xue C, Zhou Z, et al. Hu-fu: Effi- cient and secure spatial queries over data federation. Proc VLDB Endow. 2022;1"
+     "kind": "inline",
+     "ref": "1",
+     "text": "e operators while maintaining overall security. Hu-Fu interprets federated spatial queries in SQL, decomposes them into secure and plaintext parts, and securely combines the results. In all previous works, the discussion revolves around the use of SMPC within multi-party queries. In contrast, the authors of [ 22, 51] and [ 12] investigate the use of SMPC for single-party querying. The SDB system, discussed in [22, 51], is a cloud database system designed for relational tables. It involving two parties: the data owner (DO) and the server provider (SP). Each sensitive data i"
+    },
+    {
+     "kind": "inline",
+     "ref": "1",
+     "text": "stem is its capability to defend against malicious parties, a feature that was missing in earlier systems based on a semi-honest architecture. Furthermore, Secrecy [ 28] presents a relational SMPC system based on replicated secret sharing. The approach works by splitting the data into three parts: s1, s2, and s3. Each participant holds two of these shares and runs a seg - ment of the query execution code. Scape [ 21] is a scalable analytics system for private databases that ensures security against malicious parties. It enables secure database sharing among three non-coll"
+    },
+    {
+     "kind": "inline",
+     "ref": "1",
+     "text": "as complete knowledge of the entire graph, the query, or the results. A review of the existing literature reveals that while SMPC has been employed in both relational and graph data- bases, the concept of multi-party queries specifically for graph databases is relatively new. The initial approach to securing multi-party queries in graph databases was intro - duced in our previous work through the SMPQ framework [1]. Subsequent developments transformed SMPQ into a fully automated solution, enhancing its capability to han - dle a broader range of queries with significantly"
+    },
+    {
+     "kind": "inline",
+     "ref": "1",
+     "text": "M No 2 Relational DB SQL No \u2013 Shrinkwarp [9] 2 Garbled Cir- cuits/ ORAM ObliVM No 2 Relational DB SQL No \u2013 Secrecy [28] 3 Repl. Secret Sharing N/A No 3 Relational DB SQL No C Waldo [14] 3 Repl. Secret Sharing MP-SPDZ No 3 Time- series DB MQL Yes C++ SecureYanna- kakis [50] 2 Garbled Circuits N/A No 2 Relational DB SQL Yes C++ VaultDB [39] 2 Garbled Circuits EMP-Toolkit No 2 Relational DB SQL No C++ Scape [21] 3 Repl. Secret Sharing Frigate No 3 Relational DB SQL No \u2013 Sequre [43] 3 Secret Sharing N/A Yes 3 Relational DB SQL Yes Python/C++ Hu-Fu [44] >=2 N/A N/A Y"
+    },
+    {
+     "kind": "inline",
+     "ref": "1",
+     "text": "ecret Sharing MP-SPDZ No 3 Time- series DB MQL Yes C++ SecureYanna- kakis [50] 2 Garbled Circuits N/A No 2 Relational DB SQL Yes C++ VaultDB [39] 2 Garbled Circuits EMP-Toolkit No 2 Relational DB SQL No C++ Scape [21] 3 Repl. Secret Sharing Frigate No 3 Relational DB SQL No \u2013 Sequre [43] 3 Secret Sharing N/A Yes 3 Relational DB SQL Yes Python/C++ Hu-Fu [44] >=2 N/A N/A Yes n Relational DB SQL Yes Java SMPQ [1] >=2 Secret Sharing Conclave/JIFF No >=2 GraphDB Cypher No Python SDB [22, 51]a N/A Secret Sharing N/A No 1 Relational DB SQL No \u2013 GOOSE [12] b N/A Secret "
     }
    ]
   },
@@ -387,11 +444,6 @@
      "kind": "inline",
      "ref": "56",
      "text": "ions We classify offline automatic specialization techniques in four categories. (i) Compile pass selection techniques au- tomatically select the optimal sequence of compiler op- timization passes through auto-tuning methods for try- ing out different combinations [58, 58, 59, 62], (ii) Special- ized compiler optimization passes that can generate spe- cialized code for specific hardware features like vectoriza- tion [56] or prefetching [73], or for other specific optimiza- tions [2, 47, 52, 69], (iii) Feedback-Driven Optimizations (FDO) [13, 23, 33, 33, 34, 38, 57, 61, 67, 71, "
-    },
-    {
-     "kind": "inline",
-     "ref": "56",
-     "text": "approxi- mate computing. In2017 IEEE/ACM International Sym- posium on Code Generation and Optimization (CGO), pages 185\u2013196. IEEE, 2017. [55] L\u00e1szl\u00f3 Moln\u00e1r, Gergely Pongr\u00e1cz, G\u00e1bor Enyedi, Zolt\u00e1n Lajos Kis, Levente Csikor, Ferenc Juh\u00e1sz, Attila K\u0151r\u00f6si, and G\u00e1bor R\u00e9tv\u00e1ri. Dataplane specialization for high-performance openflow software switching. InPro- ceedings of the 2016 ACM SIGCOMM Conference, pages 539\u2013552, 2016. [56] Sourena Naser Moghaddasi, Haris "
     },
     {
      "kind": "bibliography",
@@ -463,80 +515,12 @@
      "text": "ic techniques can protect client updates: \u2022 Secure Aggregation Protocols: Using protocols like Bonawitz et al. (2017), the server only sees the sum of client updates\u2014individual contributions remain encrypted and unlinkable [37]. \u2022 Homomorphic Encryption (HE): Enables compu- tations on encrypted gradients. Although computa- tionally intensive, it\u2019s promising for scenarios where data privacy outweighs latency concerns [38]. Use Case: National biobanks participating in feder- ated training across institutions may adopt secure aggregation to comply with GDPR/HIPAA while enabling cr"
     },
     {
-     "kind": "inline",
-     "ref": "38",
-     "text": "or Genomic Data.\u201d Pac Symp Biocomput. 2021;26:26-37. PMID: 33691001. [36] Kai Yue and Richeng Jin et al. \u201dGradient Obfuscation Gives a False Sense of Security in Federated Learning\u201d arXiv preprint arXiv:2206.04055 (2022). [37] Bonawitz Keith and Ivanov Vladimir et al. \u201dPractical Secure Ag- gregation for Privacy-Preserving Machine Learning\u201d Association for Computing Machinery, https://doi.org/10.1145/3133956.3133982. [38] "
-    },
-    {
      "kind": "bibliography",
      "text": "erated Learning\u201d arXiv preprint arXiv:2206.04055 (2022). [37] Bonawitz Keith and Ivanov Vladimir et al. \u201dPractical Secure Ag- gregation for Privacy-Preserving Machine Learning\u201d Association for Computing Machinery, https://doi.org/10.1145/3133956.3133982. [38] Smajlovi \u00b4c, H., Shajii, A., Berger, B. et al. \u201dSequre: a high-performance framework for secure multiparty computation enables biomedical data sharing.\u201d Genome Biol 24, 5 (2023). https://doi.org/10.1186/s13059-022- 02841-5 [39] Yang, J., Soltan, A.A.S., Eyre, D.W. et al. \u201dAn adversarial training fra"
     },
     {
      "kind": "bibliography",
      "text": "arXiv preprint arXiv:2206.04055 (2022). [37] Bonawitz Keith and Ivanov Vladimir et al. \u201dPractical Secure Ag- gregation for Privacy-Preserving Machine Learning\u201d Association for Computing Machinery, https://doi.org/10.1145/3133956.3133982. [38] Smajlovi \u00b4c, H., Shajii, A., Berger, B. et al. \u201dSequre: a high-performance framework for secure multiparty computation enables biomedical data sharing.\u201d Genome Biol 24, 5 (2023). https://doi.org/10.1186/s13059-022- 02841-5 [39] Yang, J., Soltan, A.A.S., Eyre, D.W. et al. \u201dAn adversarial training framework for mitiga"
-    }
-   ]
-  },
-  {
-   "year": 2024,
-   "title": "A shared compilation stack for distributed-memory parallelism in stencil DSLs",
-   "doi": "10.1145/3620666.3651344",
-   "cites": "codon-cc-2023",
-   "chars": 103984,
-   "contexts": [
-    {
-     "kind": "body",
-     "text": " al. 2021]. Regarding frameworks to assist DSL developers in build- ing DSLs for HPC code, AnyDSL [Lei\u00dfa et al. 2018] provides composable DSL development using partial evaluation. Julia [Bezanson et al. 2017] combines dynamic types with the abil- ity to generate HPC code. Python-based projects like Codon ["
-    },
-    {
-     "kind": "bibliography",
-     "text": "developers in build- ing DSLs for HPC code, AnyDSL [Lei\u00dfa et al. 2018] provides composable DSL development using partial evaluation. Julia [Bezanson et al. 2017] combines dynamic types with the abil- ity to generate HPC code. Python-based projects like Codon [Shajii et al. 2023], features static typing and compilation via LLVM, showcasing notable speedups compared to native Python routines and Mojo [Modular [n. d.]] as a Pythonic frontend for MLIR, displays a significant performance boost over state-of-the-art tools. Finally, the MSF\u2019s [Coullon et al. 20"
-    },
-    {
-     "kind": "bibliography",
-     "text": "//doi.org/10.1145/3624062.3624543 Science and Technology Facilities Council (STFC). 2021. PSycloneBench: small benchmarks used to inform the development of the PSyclone Domain-Specific Compiler. https://github.com/stfc/PSycloneBench Accessed 2023-04-24. Ariya Shajii, Gabriel Ramirez, Haris Smajlovi\u0107, Jessica Ray, Bonnie Berger, Saman Amarasinghe, and Ibrahim Numanagi\u0107. 2023. Codon: A Compiler for High-Performance Pythonic Applications and DSLs. In Proceedings of the 32nd ACM SIGPLAN International Conference on Compiler Con- struction (Montr\u00e9al, QC, Canad"
-    },
-    {
-     "kind": "bibliography",
-     "text": "43 Science and Technology Facilities Council (STFC). 2021. PSycloneBench: small benchmarks used to inform the development of the PSyclone Domain-Specific Compiler. https://github.com/stfc/PSycloneBench Accessed 2023-04-24. Ariya Shajii, Gabriel Ramirez, Haris Smajlovi\u0107, Jessica Ray, Bonnie Berger, Saman Amarasinghe, and Ibrahim Numanagi\u0107. 2023. Codon: A Compiler for High-Performance Pythonic Applications and DSLs. In Proceedings of the 32nd ACM SIGPLAN International Conference on Compiler Con- struction (Montr\u00e9al, QC, Canada) (CC 2023). ACM, New York, NY"
-    },
-    {
-     "kind": "bibliography",
-     "text": "ch: small benchmarks used to inform the development of the PSyclone Domain-Specific Compiler. https://github.com/stfc/PSycloneBench Accessed 2023-04-24. Ariya Shajii, Gabriel Ramirez, Haris Smajlovi\u0107, Jessica Ray, Bonnie Berger, Saman Amarasinghe, and Ibrahim Numanagi\u0107. 2023. Codon: A Compiler for High-Performance Pythonic Applications and DSLs. In Proceedings of the 32nd ACM SIGPLAN International Conference on Compiler Con- struction (Montr\u00e9al, QC, Canada) (CC 2023). ACM, New York, NY, USA, 191\u2013202. https://doi.org/10.1145/3578360.3580275 Michel Steuwer"
-    }
-   ]
-  },
-  {
-   "year": 2024,
-   "title": "All-Atom Biomolecular Simulation in the Exascale Era",
-   "doi": "10.1021/acs.jctc.3c01276",
-   "cites": "seq-nbt-2021",
-   "chars": 33481,
-   "contexts": [
-    {
-     "kind": "bibliography",
-     "text": ". 10 References (1) Song, L. F.; Merz Jr, K. M. Evolution of alchemical free energy methods in drug discovery.J. Chem. Info. Mod.2020, 60, 5308\u20135318. (2) Cirillo,D.; Valencia,A.Bigdataanalyticsforpersonalizedmedicine. Curr. Op. Biotech. 2019, 58, 161\u2013167. (3) Shajii, A.; Numanagi\u0107, I.; Leighton, A. T.; Greenyer, H.; Amarasinghe, S.; Berger, B. A Python-based programming language for high-performance computational genomics. Nature Biotech.2021, 39, 1062\u20131064. (4) Shamshad, F.; Khan, S.; Zamir, S. W.; Khan, M. H.; Hayat, M.; Khan, F. S.; Fu, H. Transformer"
-    },
-    {
-     "kind": "bibliography",
-     "text": "ces (1) Song, L. F.; Merz Jr, K. M. Evolution of alchemical free energy methods in drug discovery.J. Chem. Info. Mod.2020, 60, 5308\u20135318. (2) Cirillo,D.; Valencia,A.Bigdataanalyticsforpersonalizedmedicine. Curr. Op. Biotech. 2019, 58, 161\u2013167. (3) Shajii, A.; Numanagi\u0107, I.; Leighton, A. T.; Greenyer, H.; Amarasinghe, S.; Berger, B. A Python-based programming language for high-performance computational genomics. Nature Biotech.2021, 39, 1062\u20131064. (4) Shamshad, F.; Khan, S.; Zamir, S. W.; Khan, M. H.; Hayat, M.; Khan, F. S.; Fu, H. Transformers in medical"
-    }
-   ]
-  },
-  {
-   "year": 2024,
-   "title": "All-Atom Biomolecular Simulation in the Exascale Era.",
-   "doi": "10.1021/acs.jctc.3c01276",
-   "cites": "seq-nbt-2021",
-   "chars": 33481,
-   "contexts": [
-    {
-     "kind": "bibliography",
-     "text": ". 10 References (1) Song, L. F.; Merz Jr, K. M. Evolution of alchemical free energy methods in drug discovery.J. Chem. Info. Mod.2020, 60, 5308\u20135318. (2) Cirillo,D.; Valencia,A.Bigdataanalyticsforpersonalizedmedicine. Curr. Op. Biotech. 2019, 58, 161\u2013167. (3) Shajii, A.; Numanagi\u0107, I.; Leighton, A. T.; Greenyer, H.; Amarasinghe, S.; Berger, B. A Python-based programming language for high-performance computational genomics. Nature Biotech.2021, 39, 1062\u20131064. (4) Shamshad, F.; Khan, S.; Zamir, S. W.; Khan, M. H.; Hayat, M.; Khan, F. S.; Fu, H. Transformer"
-    },
-    {
-     "kind": "bibliography",
-     "text": "ces (1) Song, L. F.; Merz Jr, K. M. Evolution of alchemical free energy methods in drug discovery.J. Chem. Info. Mod.2020, 60, 5308\u20135318. (2) Cirillo,D.; Valencia,A.Bigdataanalyticsforpersonalizedmedicine. Curr. Op. Biotech. 2019, 58, 161\u2013167. (3) Shajii, A.; Numanagi\u0107, I.; Leighton, A. T.; Greenyer, H.; Amarasinghe, S.; Berger, B. A Python-based programming language for high-performance computational genomics. Nature Biotech.2021, 39, 1062\u20131064. (4) Shamshad, F.; Khan, S.; Zamir, S. W.; Khan, M. H.; Hayat, M.; Khan, F. S.; Fu, H. Transformers in medical"
     }
    ]
   },
@@ -553,11 +537,6 @@
      "text": "eries on differentially private datasets can lead to privacy risks over time. Similarly to the challenges in\ud835\udc58-anonymity, where selecting appro- priate QIDs and finding a balanced\ud835\udc58 value is crucial, determining a suitable epsilon (\ud835\udf16) in DP presents a challenge due to the inevitable trade-off between privacy and utility. Many data sharing protocols have been proposed, leveraging se- cure multi-party computation (SMPC) [34, 36, 41] or homomorphic encryption (HE) [31, 33, 42]. These protocols aim to ensure strong protection guarantees with minimal trust requirements. SMPC al- lows comp"
     },
     {
-     "kind": "inline",
-     "ref": "36",
-     "text": "hao Jiang, Wenrui Dai, Xiaoqian Jiang, Yuzhe Tang, Lucila Ohno- Machado, and Shuang Wang. 2016. Secure multi-pArty computation grid LOgistic REgression (SMAC-GLORE). BMC medical informatics and decision making 16 (2016), 175\u2013187. [35] Joanna Sleigh. 2018. Experiences of donating personal data to mental health research: an explorative anthropological study. Biomedical Informatics Insights 10 (2018), 1178222618785131. [36] Haris "
-    },
-    {
      "kind": "bibliography",
      "text": "edical informatics and decision making 16 (2016), 175\u2013187. [35] Joanna Sleigh. 2018. Experiences of donating personal data to mental health research: an explorative anthropological study. Biomedical Informatics Insights 10 (2018), 1178222618785131. [36] Haris Smajlovi\u0107, Ariya Shajii, Bonnie Berger, Hyunghoon Cho, and Ibrahim Numanagi\u0107. 2023. Sequre: a high-performance framework for secure multiparty computation enables biomedical data sharing. Genome Biology 24, 1 (2023), 5. [37] Latanya Sweeney. 2002. Achieving k-anonymity privacy protection using gen- "
     },
@@ -572,130 +551,6 @@
    ]
   },
   {
-   "year": 2024,
-   "title": "Geny: A Genotyping Tool for Allelic Decomposition of Killer Cell Immunoglobulin-Like Receptor Genes",
-   "doi": "10.1101/2024.02.27.582413",
-   "cites": "codon-cc-2023",
-   "chars": 66044,
-   "contexts": [
-    {
-     "kind": "bibliography",
-     "text": "or Allelic Decomposition of Killer Cell Immunoglobulin-Like Receptor Genes Qinghui Zhou1,\u2217 , Mazyar Ghezelji 1,\u2217 , Ananth Hari 2,3, Michael K.B. Ford3, Connor Holley 1, COVNET Consortium4, Lisa Mirabello 3, Stephen Chanock 3, S. Cenk Sahinalp 3,\u2020, and Ibrahim Numanagi\u00b4 c1,\u2020 1University of Victoria, Victoria, BC, Canada 2University of Maryland, College Park, MD, USA 3National Cancer Institute, NIH, Bethesda, MD, USA 4The COVNET Consortium is a DCEG-National Cancer Institute multi-institutional study of the genetics of COVID-19 susceptibility including man"
-    },
-    {
-     "kind": "bibliography",
-     "text": "deiros, Jennelle C Hodge, Amy M Breman, Bryan P Schneider, et al. Computational pharmacogenotype extraction from clinical next-generation sequencing. Frontiers in Oncology, 13, 2023. [15] Andrea Gaedigk, Erin C Boone, Steven E Scherer, Seung-been Lee, Ibrahim Numanagi\u00b4 c, Cenk Sahi- nalp, Joshua D Smith, Sean McGee, Aparna Radhakrishnan, Xiang Qin, et al. CYP2C8, CYP2C9, and CYP2C19 characterization using next-generation sequencing and haplotype analysis: A GeT-RM collaborative project. The Journal of Molecular Diagnostics, 24(4):337\u2013350, 2022. [16] Ibra"
-    },
-    {
-     "kind": "bibliography",
-     "text": ", Sean McGee, Aparna Radhakrishnan, Xiang Qin, et al. CYP2C8, CYP2C9, and CYP2C19 characterization using next-generation sequencing and haplotype analysis: A GeT-RM collaborative project. The Journal of Molecular Diagnostics, 24(4):337\u2013350, 2022. [16] Ibrahim Numanagi\u00b4 c, Salem Maliki\u00b4 c, Michael Ford, Xiang Qin, Lorraine Toji, Milan Radovich, Todd C Skaar, Victoria M Pratt, Bonnie Berger, Steve Scherer, et al. Allelic decomposition and exact genotyping of highly polymorphic and structurally variant genes. Nature communications, 9(1):828, 2018. [17] Ibra"
-    },
-    {
-     "kind": "bibliography",
-     "text": "Xiang Qin, Lorraine Toji, Milan Radovich, Todd C Skaar, Victoria M Pratt, Bonnie Berger, Steve Scherer, et al. Allelic decomposition and exact genotyping of highly polymorphic and structurally variant genes. Nature communications, 9(1):828, 2018. [17] Ibrahim Numanagi\u00b4 c, Salem Maliki\u00b4 c, Victoria M Pratt, Todd C Skaar, David A Flockhart, and S Cenk Sahinalp. Cypiripi: exact genotyping of CYP2D6 using high-throughput sequencing data. Bioinformat- ics, 31(12):i27\u2013i34, 2015. [18] Seung-been Lee, Jong-Yeon Shin, Nak-Jung Kwon, Changhoon Kim, and Jeong-Sun S"
-    },
-    {
-     "kind": "bibliography",
-     "text": " assignment of a highly polymorphic pharmacogene, CYP2D6, from whole-genome sequences. NPJ genomic medicine , 1(1):1\u201310, 2016. [22] Ananth Hari, Qinghui Zhou, Nina Gonzaludo, John Harting, Stuart A Scott, Xiang Qin, Steve Scherer, S Cenk Sahinalp, and Ibrahim Numanagi\u00b4 c. An efficient genotyper and star-allele caller for pharmacoge- nomics. Genome Research, 33(1):61\u201370, 2023. [23] Oscar L Rodriguez, William S Gibson, Tom Parks, Matthew Emery, James Powell, Maya Strahl, Gin- taras Deikus, Kathryn Auckland, Evan E Eichler, Wayne A Marasco, et al. A novel f"
-    },
-    {
-     "kind": "bibliography",
-     "text": "ein- Baak, Paul Hujsak, Ruth Kornreich, Jun Liao, Rachel Lorier, et al. Characterization of 137 genomic DNA reference materials for 28 pharmacogenetic genes: a GeT-RM collaborative project. The Journal of molecular diagnostics, 18(1):109\u2013123, 2016. [41] Ariya Shajii, Gabriel Ramirez, Haris Smajlovi\u00b4 c, Jessica Ray, Bonnie Berger, Saman Amarasinghe, and Ibrahim Numanagi\u00b4 c. Codon: A Compiler for High-Performance Pythonic Applications and DSLs. In Proceedings of the 32nd ACM SIGPLAN International Conference on Compiler Construction, pages 191\u2013202, 2023. [4"
-    },
-    {
-     "kind": "bibliography",
-     "text": "rnreich, Jun Liao, Rachel Lorier, et al. Characterization of 137 genomic DNA reference materials for 28 pharmacogenetic genes: a GeT-RM collaborative project. The Journal of molecular diagnostics, 18(1):109\u2013123, 2016. [41] Ariya Shajii, Gabriel Ramirez, Haris Smajlovi\u00b4 c, Jessica Ray, Bonnie Berger, Saman Amarasinghe, and Ibrahim Numanagi\u00b4 c. Codon: A Compiler for High-Performance Pythonic Applications and DSLs. In Proceedings of the 32nd ACM SIGPLAN International Conference on Compiler Construction, pages 191\u2013202, 2023. [42] Daniela Pende, Michela Falco"
-    },
-    {
-     "kind": "bibliography",
-     "text": " DNA reference materials for 28 pharmacogenetic genes: a GeT-RM collaborative project. The Journal of molecular diagnostics, 18(1):109\u2013123, 2016. [41] Ariya Shajii, Gabriel Ramirez, Haris Smajlovi\u00b4 c, Jessica Ray, Bonnie Berger, Saman Amarasinghe, and Ibrahim Numanagi\u00b4 c. Codon: A Compiler for High-Performance Pythonic Applications and DSLs. In Proceedings of the 32nd ACM SIGPLAN International Conference on Compiler Construction, pages 191\u2013202, 2023. [42] Daniela Pende, Michela Falco, Massimo Vitale, Claudia Cantoni, Chiara Vitale, Enrico Munari, Alice B"
-    }
-   ]
-  },
-  {
-   "year": 2024,
-   "title": "JACC: Leveraging HPC Meta-Programming and Performance Portability with the Just-in-Time and LLVM-based Julia Language",
-   "doi": "10.1109/scw63240.2024.00245",
-   "cites": "codon-cc-2023",
-   "chars": 52267,
-   "contexts": [
-    {
-     "kind": "inline",
-     "ref": "12",
-     "text": "ython [6], Julia [7], and R [8] and their current performance levels, especially because these languages and their ecosystems have been at the forefront of AI/ML and data analysis workflows [9]. Additionally, the widespread adoption of LLVM [10] allows for unifying efforts in the compiler back-end layers for several languages and programming models. Julia and other efforts that target Python (e.g., Numba [11], codon [12]) reuse LLVM\u2019s modularity by generating intermediate representa- tions (LLVM-IRs) to achieve improved performance from their high-level, just-in-time, and dynam"
-    },
-    {
-     "kind": "inline",
-     "ref": "12",
-     "text": "10.1145/3624062.3624278 [10] C. Lattner and V . Adve, \u201cLLVM: A compilation framework for lifelong program analysis & transformation,\u201d in International Symposium on Code Generation and Optimization, 2004. CGO 2004. IEEE, 2004, pp. 75\u201386. [11] S. K. Lam, A. Pitrou, and S. Seibert, \u201cNumba: A LLVM-based Python JIT compiler,\u201d in Proceedings of the Second Workshop on the LLVM Compiler Infrastructure in HPC, 2015, pp. 1\u20136. [12] A. "
-    },
-    {
-     "kind": "body",
-     "text": " ecosystems have been at the forefront of AI/ML and data analysis workflows [9]. Additionally, the widespread adoption of LLVM [10] allows for unifying efforts in the compiler back-end layers for several languages and programming models. Julia and other efforts that target Python (e.g., Numba [11], codon [12]) reuse LLVM\u2019s modularity by generating intermediate representa- tions (LLVM-IRs) to achieve improved performance from their high-level, just-in-time, and dynamic programming models. In this work, we focus on both programming productivity and performance portability and evaluate how to bri"
-    },
-    {
-     "kind": "bibliography",
-     "text": " Generation and Optimization, 2004. CGO 2004. IEEE, 2004, pp. 75\u201386. [11] S. K. Lam, A. Pitrou, and S. Seibert, \u201cNumba: A LLVM-based Python JIT compiler,\u201d in Proceedings of the Second Workshop on the LLVM Compiler Infrastructure in HPC, 2015, pp. 1\u20136. [12] A. Shajii, G. Ramirez, H. Smajlovi \u00b4c, J. Ray, B. Berger, S. Amarasinghe, and I. Numanagi \u00b4c, \u201cCodon: A compiler for high-performance pythonic applications and dsls,\u201d in Proceedings of the 32nd ACM SIGPLAN International Conference on Compiler Construction, ser. CC 2023. New York, NY , USA: Association "
-    },
-    {
-     "kind": "bibliography",
-     "text": "ation, 2004. CGO 2004. IEEE, 2004, pp. 75\u201386. [11] S. K. Lam, A. Pitrou, and S. Seibert, \u201cNumba: A LLVM-based Python JIT compiler,\u201d in Proceedings of the Second Workshop on the LLVM Compiler Infrastructure in HPC, 2015, pp. 1\u20136. [12] A. Shajii, G. Ramirez, H. Smajlovi \u00b4c, J. Ray, B. Berger, S. Amarasinghe, and I. Numanagi \u00b4c, \u201cCodon: A compiler for high-performance pythonic applications and dsls,\u201d in Proceedings of the 32nd ACM SIGPLAN International Conference on Compiler Construction, ser. CC 2023. New York, NY , USA: Association for Computing Machinery"
-    },
-    {
-     "kind": "bibliography",
-     "text": ". Lam, A. Pitrou, and S. Seibert, \u201cNumba: A LLVM-based Python JIT compiler,\u201d in Proceedings of the Second Workshop on the LLVM Compiler Infrastructure in HPC, 2015, pp. 1\u20136. [12] A. Shajii, G. Ramirez, H. Smajlovi \u00b4c, J. Ray, B. Berger, S. Amarasinghe, and I. Numanagi \u00b4c, \u201cCodon: A compiler for high-performance pythonic applications and dsls,\u201d in Proceedings of the 32nd ACM SIGPLAN International Conference on Compiler Construction, ser. CC 2023. New York, NY , USA: Association for Computing Machinery, 2023, p. 191\u2013202. [Online]. Available: https://doi.or"
-    }
-   ]
-  },
-  {
-   "year": 2024,
-   "title": "Privacy-Enhancing Technologies in Biomedical Data Science",
-   "doi": "10.1146/annurev-biodatasci-120423-120107",
-   "cites": "sequre-gb-2023",
-   "chars": 154015,
-   "contexts": []
-  },
-  {
-   "year": 2024,
-   "title": "SECRET-GWAS: Confidential Computing for Population-Scale GWAS",
-   "doi": "10.1101/2024.04.24.590989",
-   "cites": "sequre-ipdpsw-2022",
-   "chars": 64463,
-   "contexts": [
-    {
-     "kind": "inline",
-     "ref": "1",
-     "text": "ate that SECRET-GWAS enables multivariate linear and logistic regression GWAS queries on population-scale datasets (one mil- lion patients, four million SNPs, 12 covariates) from ten independent sources in just 4.5 and 29 minutes, respectively. Keywords: Genomic privacy, Confidential computing, Collaborative analysis Genome-wide association studies (GWAS) cor- relate genetic variants to phenotypes (traits, diseases) [1]. They help us understand genetic risks for diseases and develop targeted drugs [2]. GWAS are conducted using a genomic database, which typically consists of a "
-    },
-    {
-     "kind": "inline",
-     "ref": "1",
-     "text": "ted scaling of par- allel execution past a single SGX server using 8 cores [15]. Our solution automatically works with any number of machines, cores, and threads. We exploit the high degree of SNP-level parallelism in GWAS by scaling SECRET-GWAS to over a thousand processor cores. Side-Channel Vulnerabilities: The appli- cations running inside of trusted hardware such as SGX may be vulnerable to side-channel attacks [18, 31, 32]. Side-channels are a class of security attacks that observe the physical behav- ior of an application, and based on this infer sensitive information. For e"
-    },
-    {
-     "kind": "inline",
-     "ref": "1",
-     "text": "ks discussed in prior works such as control flow timing [16, 17], memory access pattern analysis [18\u201321], as well as Spectre attacks [22] are also part of our threat model. To address this we use a novel combina- tion of oblivious transformations and speculative load hardening to defend against the aforemen- tioned side-channels. Implementation and Artifacts Our SGX application uses Microsoft\u2019s OpenEn- clave library [41], an open-source SGX SDK. OpenEnclave was chosen due to its portabil- ity and multi-platform support. It also contains many useful cryptography libraries. SECRE"
-    },
-    {
-     "kind": "bibliography",
-     "text": "m processes 4 million SNPs, 1 million patients, and 12 covariates (which is 71,666x larger) on 1024 cores in 29 minutes as seen in Table 1. Addition- ally, we do not use any approximations in our logistic regression giving us higher confidence in our results. Smajlovi\u00b4 c et al. [12] developed Sequre, a framework for quick development of MPC pro- grams. They implement a full GWAS pipeline and estimate a runtime of 3 weeks to process one million patients with linear regression as the genetic association test. SECRET-GWAS can perform the genetic association"
-    },
-    {
-     "kind": "bibliography",
-     "text": "n, J. H. & Park, D. Efficient logistic regression on large encrypted data. IACR Cryptol. ePrint Arch. 2018, 662 (2018). [11] Sim, J. J., Chan, F. M., Chen, S., Tan, B. H. M. & Aung, K. M. M. Achieving gwas with homomorphic encryption (2019). 1902. 04303. [12] Smajlovi\u00b4 c, H., Shajii, A., Berger, B., Cho, H. & Numanagi\u00b4 c, I.Sequre: a high-performance framework for rapid development of secure bioinformatics pipelines, 164\u2013165 (IEEE, 2022). [13] Chen, H. et al. Logistic regression over encrypted data from fully homomorphic encryption. BMC medical genomics "
-    },
-    {
-     "kind": "bibliography",
-     "text": "D. Efficient logistic regression on large encrypted data. IACR Cryptol. ePrint Arch. 2018, 662 (2018). [11] Sim, J. J., Chan, F. M., Chen, S., Tan, B. H. M. & Aung, K. M. M. Achieving gwas with homomorphic encryption (2019). 1902. 04303. [12] Smajlovi\u00b4 c, H., Shajii, A., Berger, B., Cho, H. & Numanagi\u00b4 c, I.Sequre: a high-performance framework for rapid development of secure bioinformatics pipelines, 164\u2013165 (IEEE, 2022). [13] Chen, H. et al. Logistic regression over encrypted data from fully homomorphic encryption. BMC medical genomics 11, 3\u201312 (2018). "
-    },
-    {
-     "kind": "bibliography",
-     "text": "n large encrypted data. IACR Cryptol. ePrint Arch. 2018, 662 (2018). [11] Sim, J. J., Chan, F. M., Chen, S., Tan, B. H. M. & Aung, K. M. M. Achieving gwas with homomorphic encryption (2019). 1902. 04303. [12] Smajlovi\u00b4 c, H., Shajii, A., Berger, B., Cho, H. & Numanagi\u00b4 c, I.Sequre: a high-performance framework for rapid development of secure bioinformatics pipelines, 164\u2013165 (IEEE, 2022). [13] Chen, H. et al. Logistic regression over encrypted data from fully homomorphic encryption. BMC medical genomics 11, 3\u201312 (2018). [14] Chen, F. et al. PRINCESS: Pri"
-    }
-   ]
-  },
-  {
    "year": 2023,
    "title": "A Federated Learning Algorithms Development Paradigm",
    "doi": "10.48550/arxiv.2310.05102",
@@ -706,11 +561,6 @@
      "kind": "inline",
      "ref": "26",
      "text": "em overheads (performance), it is worth mentioning that PTB- FLA is also targeting embedded platforms without the OS, where a single application runs on a bare machine or some runtime/interpreter, such as for example MicroPython [25] boards where MicroPython (Python 3, written in C and optimized to run on a microcontroller) is the replacement for the OS. Another work highly related to system performance is Codon [26], a compiler for high-performance Pythonic applications and Domain Specific Languages (DSLs). In broader sense, Codon is a full language (and compiler) that b"
-    },
-    {
-     "kind": "inline",
-     "ref": "26",
-     "text": "hang, T. Senjyu, C. So -In, A. Joshi (Ed.) Smart Trends in Computing and Communications . Lecture Notes in Networks and Systems, Vol. 286, 209 \u2013217. Springer, Singapore . https://doi.org/10.1007/978-981-16-4016-2_20 [24] T.G. Mattson, B. Sanders, and B. Massingill. 2008. Patterns for Parallel Programming. Addison-Wesley, Massachusetts, USA. [25] MicroPython. Retrieved Jun 15, 2023 from https://micropython.org/ [26] A. "
     },
     {
      "kind": "body",
@@ -782,414 +632,6 @@
     {
      "kind": "bibliography",
      "text": "ancewic S. SoK: general purpose compilers for secure multi-party computa- tion. In: 2019 IEEE Symposium on Security and Privacy (SP). San Francisco; 2019. p. 1220\u201337. https:// doi. org/ 10. 1109/ SP . 2019. 00028. 61. Smajlovi\u0107 H, Shajii A, Berger B, Cho H, Numanagi\u0107 I. Sequre: a high-performance framework for rapid development of secure bioinformatics pipelines. In: 2022 IEEE International Parallel and Distributed Processing Symposium Workshops (IPDPSW). Lyon; 2022. p. 164\u20135. https:// doi. org/ 10. 1109/ IPDPS W55747. 2022. 00040. 62. Yao X, Huang "
-    }
-   ]
-  },
-  {
-   "year": 2023,
-   "title": "D2X: An eXtensible conteXtual Debugger for Modern DSLs",
-   "doi": "10.1145/3579990.3580014",
-   "cites": "seq-oopsla-2019",
-   "chars": 60163,
-   "contexts": [
-    {
-     "kind": "inline",
-     "ref": "25",
-     "text": "ying source informa- tion and calling functions from the applications. While these are good for languages like C or C++, DSLs and DSLs com- pilers have a lot of DSL-specific state often hidden inside the compiler. This includes results of the domain-specific passes, statically inferred types of variables in a dynamically typed language among others which are crucial for debugging the generated code. For example, Seq [25] the DSL for genomics is a dynamically typed language similar in syntax to python but generates high-performance native code after statically inferring types fo"
-    },
-    {
-     "kind": "inline",
-     "ref": "25",
-     "text": "e in the DSL implementation apart from the above modifications made to BuildIt. This further supports our claim that D2X improves DSL designer and end-user productivity. Table 4 shows the total number of lines and the lines changed. 6 Related Works High-performance DSLs are gaining popularity across vari- ous domains like graph computations [8, 29, 30], tensors [16, 17], polyhedral compilation [2], genome sequencing [25], im- age processing and analysis [11, 22], machine learning [1, 10] among others. Recently, there has been a focus on building infrastructure support for proto"
-    },
-    {
-     "kind": "inline",
-     "ref": "25",
-     "text": "lism, Locality, and Recom- putation in Image Processing Pipelines. In Proc. PLDI. [23] Tiark Rompf, Arvind K. Sujeeth, HyoukJoong Lee, Kevin J. Brown, Has- san Chafi, Martin Odersky, and Kunle Olukotun. 2011. Building-Blocks for Performance Oriented DSLs. Electronic Proceedings in Theoretical Computer Science (2011). [24] Roy Schwartz, Jesse Dodge, Noah A. Smith, and Oren Etzioni. 2020. Green AI. Commun. ACM (2020). [25] Ariya "
-    },
-    {
-     "kind": "bibliography",
-     "text": "in Odersky, and Kunle Olukotun. 2011. Building-Blocks for Performance Oriented DSLs. Electronic Proceedings in Theoretical Computer Science (2011). [24] Roy Schwartz, Jesse Dodge, Noah A. Smith, and Oren Etzioni. 2020. Green AI. Commun. ACM (2020). [25] Ariya Shajii, Ibrahim Numanagi\u0107, Riyadh Baghdadi, Bonnie Berger, and Saman Amarasinghe. 2019. Seq: A High-Performance Language for Bioinformatics. In Proc. OOPSLA. [26] Eelco Visser. 2008. WebDSL: A Case Study in Domain-Specific Language Engineering. [27] Hui Wu, Jeff Gray, and Marjan Mernik. 2008. Gramma"
-    },
-    {
-     "kind": "bibliography",
-     "text": "Kunle Olukotun. 2011. Building-Blocks for Performance Oriented DSLs. Electronic Proceedings in Theoretical Computer Science (2011). [24] Roy Schwartz, Jesse Dodge, Noah A. Smith, and Oren Etzioni. 2020. Green AI. Commun. ACM (2020). [25] Ariya Shajii, Ibrahim Numanagi\u0107, Riyadh Baghdadi, Bonnie Berger, and Saman Amarasinghe. 2019. Seq: A High-Performance Language for Bioinformatics. In Proc. OOPSLA. [26] Eelco Visser. 2008. WebDSL: A Case Study in Domain-Specific Language Engineering. [27] Hui Wu, Jeff Gray, and Marjan Mernik. 2008. Grammar-driven gener- "
-    }
-   ]
-  },
-  {
-   "year": 2023,
-   "title": "Effectiveness and Limitations of existing techniques for privacy preservation data mining (PPDM) for Medical Data",
-   "doi": "10.33130/ajct.2023v09i02.010",
-   "cites": "sequre-gb-2023",
-   "chars": 54462,
-   "contexts": [
-    {
-     "kind": "body",
-     "text": "cenarios. No-code, desktop-based application to perform joint calculations. This creates a dependency on the third-party software installation which might not be feasible in certain scenarios. Also, this tool has a limitation of addition and subtraction which would be a major limitation. \u201cSequre: a high-performance framework for secure multiparty computation enables biomedical data sharing\u201d26 Multiparty Computation algebraic operations Genomics Data Comparison between bioinformatics tasks. Python based tool, which has the capability of converting the simple syntax of pyt"
-    },
-    {
-     "kind": "bibliography",
-     "text": "erts that this tool is scalable and reliable , addition and subtraction is one of the big limitations . Apart from this, the tool uses email as basic communication medium, when dealing with large number of messages, the email server may tag this as spam. Smajlovi\u0107 et al. [32] introduces Sequre framework in this paper. This is a powerful and user-friendly framework for creating effective MPC applications. The performance of MPC applications is greatly enhanced by this tool's set of automatic compile time optimisations. The Python programming la"
-    },
-    {
-     "kind": "bibliography",
-     "text": "he techniques to be included as part of the future papers are Privacy preserving SVM model on HIV sequence data as proposed by Chen et al. [23] PPMCK as proposed by Fan et a l.[28], \u201cno-code solution\u201d EasyMPC proposed by Wirth et al.[31], [32] proposed by Smajlovi\u0107 et al., SAFELearn Framework proposed by Fereidooni et al .[36], MPCDDI proposed by Xiao et al. [33] and Prop -FL[34], FedSGD [35] proposed by Maryam Hosseini et al. and McMahan et al. respectively. We would implement these techniques on the MIMIC[37] Patient note data. Declaration"
-    },
-    {
-     "kind": "bibliography",
-     "text": "th, T. Kussel, A. M\u00fcller, K. Hamacher, and F. Prasser, \u201cEasySMPC: a simple but powerful no -code tool for practical secure multiparty computation,\u201d BMC Bioinformatics, vol. 23, no. 1, Dec. 2022, doi: 10.1186/s12859-022-05044-8. [32] [32] H. Smajlov i\u0107, A. Shajii, B. Berger, H. Cho, and I. Numanagi\u0107, \u201cSequre: a high -performance framework for secure multiparty computation enables biomedical data sharing,\u201d Genome Biol, vol. 24, no. 1, Dec. 2023, doi: 10.1186/s13059-022-02841-5. [33] X. Xiao, X. Wang, S. Liu, and S. Peng, \u201cMPCDDI: A Secure Multipart"
-    },
-    {
-     "kind": "bibliography",
-     "text": "her, and F. Prasser, \u201cEasySMPC: a simple but powerful no -code tool for practical secure multiparty computation,\u201d BMC Bioinformatics, vol. 23, no. 1, Dec. 2022, doi: 10.1186/s12859-022-05044-8. [32] [32] H. Smajlov i\u0107, A. Shajii, B. Berger, H. Cho, and I. Numanagi\u0107, \u201cSequre: a high -performance framework for secure multiparty computation enables biomedical data sharing,\u201d Genome Biol, vol. 24, no. 1, Dec. 2023, doi: 10.1186/s13059-022-02841-5. [33] X. Xiao, X. Wang, S. Liu, and S. Peng, \u201cMPCDDI: A Secure Multiparty Computation-Based Deep Learning"
-    }
-   ]
-  },
-  {
-   "year": 2023,
-   "title": "IR Design for Application-Specific Natural Language: A Case Study on Traffic Data",
-   "doi": "10.48550/arXiv.2307.06983",
-   "cites": "codon-cc-2023",
-   "chars": 37953,
-   "contexts": [
-    {
-     "kind": "inline",
-     "ref": "31",
-     "text": "ile different DSLs together, thereby eliminating the boundaries between these DSLs and enhancing the code efficiency. Furthermore, MLIR is capable of automatically optimizing code, allowing it to identify and optimize bottlenecks within the code, thus further improving its runtime efficiency. LLVM is a more general code performance optimization tool framework, and its code optimization is implemented through LLVM IR [31]. LLVM IR is a low-level abstract syntax tree, in which the compiler decomposes the source code into low-level struc- tures such as basic blocks and expressions"
-    },
-    {
-     "kind": "inline",
-     "ref": "31",
-     "text": "De Meuter, \u201cJust-in-time data structures,\u201d in 2015 ACM International Symposium on New Ideas, New Paradigms, and Reflections on Programming and Software (Onward!), 2015, pp. 61\u201375. [30] A. Bik, P. Koanantakool, T. Shpeisman, N. Vasilache, B. Zheng, and F. Kjolstad, \u201cCompiler support for sparse tensor computations in mlir,\u201d ACM Transactions on Architecture and Code Optimization (TACO) , vol. 19, no. 4, pp. 1\u201325, 2022. [31] A. "
-    },
-    {
-     "kind": "bibliography",
-     "text": " pp. 61\u201375. [30] A. Bik, P. Koanantakool, T. Shpeisman, N. Vasilache, B. Zheng, and F. Kjolstad, \u201cCompiler support for sparse tensor computations in mlir,\u201d ACM Transactions on Architecture and Code Optimization (TACO) , vol. 19, no. 4, pp. 1\u201325, 2022. [31] A. Shajii, G. Ramirez, H. Smajlovi \u00b4c, J. Ray, B. Berger, S. Amaras- inghe, and I. Numanagi \u00b4c, \u201cCodon: A compiler for high-performance pythonic applications and dsls,\u201d in Proceedings of the 32nd ACM SIGPLAN International Conference on Compiler Construction , 2023, pp. 191\u2013202. [32] H. Yu, C. Chang, S."
-    },
-    {
-     "kind": "bibliography",
-     "text": ", P. Koanantakool, T. Shpeisman, N. Vasilache, B. Zheng, and F. Kjolstad, \u201cCompiler support for sparse tensor computations in mlir,\u201d ACM Transactions on Architecture and Code Optimization (TACO) , vol. 19, no. 4, pp. 1\u201325, 2022. [31] A. Shajii, G. Ramirez, H. Smajlovi \u00b4c, J. Ray, B. Berger, S. Amaras- inghe, and I. Numanagi \u00b4c, \u201cCodon: A compiler for high-performance pythonic applications and dsls,\u201d in Proceedings of the 32nd ACM SIGPLAN International Conference on Compiler Construction , 2023, pp. 191\u2013202. [32] H. Yu, C. Chang, S. Li, and L. Li, \u201cCd-db:"
-    },
-    {
-     "kind": "bibliography",
-     "text": "and F. Kjolstad, \u201cCompiler support for sparse tensor computations in mlir,\u201d ACM Transactions on Architecture and Code Optimization (TACO) , vol. 19, no. 4, pp. 1\u201325, 2022. [31] A. Shajii, G. Ramirez, H. Smajlovi \u00b4c, J. Ray, B. Berger, S. Amaras- inghe, and I. Numanagi \u00b4c, \u201cCodon: A compiler for high-performance pythonic applications and dsls,\u201d in Proceedings of the 32nd ACM SIGPLAN International Conference on Compiler Construction , 2023, pp. 191\u2013202. [32] H. Yu, C. Chang, S. Li, and L. Li, \u201cCd-db: A data storage model for cooperative driving,\u201d IEEE Tran"
-    }
-   ]
-  },
-  {
-   "year": 2023,
-   "title": "OpenCilk",
-   "doi": "10.1145/3572848.3577509",
-   "cites": "seq-oopsla-2019",
-   "chars": 83196,
-   "contexts": [
-    {
-     "kind": "bibliography",
-     "text": "/LLVM. Stelle et al. developed a front end for OpenMP\u2019s task and taskwait pragmas [56]. Schardl and Samsi modified TensorFlow\u2019s XLA compiler to use Tapir/L- LVM and thus enable parallel tasks in TensorFlow appli- cations to run on the Cilk Plus runtime [ 67]. Shajii et al. introduce the Seq language for bioinformatics, which uses Tapir/LLVM to compile and run parallel tasks on a custom OpenMP back end for Tapir/LLVM [68]. Margerm et al. de- veloped TAPAS, a hardware-synthesis tool that generates 10 OpenCilk: A Modular and Extensible Software Infrastructu"
-    },
-    {
-     "kind": "bibliography",
-     "text": "lelism into LLVM\u2019s Intermediate Representation. ACM TOPC 6, 4, Article 19 (Dec. 2019), 33 pages. [67] Tao B. Schardl and Siddharth Samsi. 2019. TapirXLA: Embedding Fork-Join Parallelism into the XLA Compiler in TensorFlow Using Tapir. In HPEC. 1\u20138. [68] Ariya Shajii, Ibrahim Numanagi\u0107, Riyadh Baghdadi, Bonnie Berger, and Saman Amarasinghe. 2019. Seq: A High-Performance Language for Bioinformatics. Proc. ACM Program. Lang. 3, OOPSLA, Article 125 (oct 2019), 29 pages. [69] Shumpei Shiina and Kenjiro Taura. 2019. Almost Deterministic Work Stealing. In SC. ["
-    },
-    {
-     "kind": "bibliography",
-     "text": "\u2019s Intermediate Representation. ACM TOPC 6, 4, Article 19 (Dec. 2019), 33 pages. [67] Tao B. Schardl and Siddharth Samsi. 2019. TapirXLA: Embedding Fork-Join Parallelism into the XLA Compiler in TensorFlow Using Tapir. In HPEC. 1\u20138. [68] Ariya Shajii, Ibrahim Numanagi\u0107, Riyadh Baghdadi, Bonnie Berger, and Saman Amarasinghe. 2019. Seq: A High-Performance Language for Bioinformatics. Proc. ACM Program. Lang. 3, OOPSLA, Article 125 (oct 2019), 29 pages. [69] Shumpei Shiina and Kenjiro Taura. 2019. Almost Deterministic Work Stealing. In SC. [70] Jun Shirako,"
-    }
-   ]
-  },
-  {
-   "year": 2023,
-   "title": "OpenCilk: A Modular and Extensible Software Infrastructure for Fast Task-Parallel Code",
-   "doi": "10.1145/3572848.3577509",
-   "cites": "seq-oopsla-2019",
-   "chars": 83196,
-   "contexts": [
-    {
-     "kind": "bibliography",
-     "text": "/LLVM. Stelle et al. developed a front end for OpenMP\u2019s task and taskwait pragmas [56]. Schardl and Samsi modified TensorFlow\u2019s XLA compiler to use Tapir/L- LVM and thus enable parallel tasks in TensorFlow appli- cations to run on the Cilk Plus runtime [ 67]. Shajii et al. introduce the Seq language for bioinformatics, which uses Tapir/LLVM to compile and run parallel tasks on a custom OpenMP back end for Tapir/LLVM [68]. Margerm et al. de- veloped TAPAS, a hardware-synthesis tool that generates 10 OpenCilk: A Modular and Extensible Software Infrastructu"
-    },
-    {
-     "kind": "bibliography",
-     "text": "lelism into LLVM\u2019s Intermediate Representation. ACM TOPC 6, 4, Article 19 (Dec. 2019), 33 pages. [67] Tao B. Schardl and Siddharth Samsi. 2019. TapirXLA: Embedding Fork-Join Parallelism into the XLA Compiler in TensorFlow Using Tapir. In HPEC. 1\u20138. [68] Ariya Shajii, Ibrahim Numanagi\u0107, Riyadh Baghdadi, Bonnie Berger, and Saman Amarasinghe. 2019. Seq: A High-Performance Language for Bioinformatics. Proc. ACM Program. Lang. 3, OOPSLA, Article 125 (oct 2019), 29 pages. [69] Shumpei Shiina and Kenjiro Taura. 2019. Almost Deterministic Work Stealing. In SC. ["
-    },
-    {
-     "kind": "bibliography",
-     "text": "\u2019s Intermediate Representation. ACM TOPC 6, 4, Article 19 (Dec. 2019), 33 pages. [67] Tao B. Schardl and Siddharth Samsi. 2019. TapirXLA: Embedding Fork-Join Parallelism into the XLA Compiler in TensorFlow Using Tapir. In HPEC. 1\u20138. [68] Ariya Shajii, Ibrahim Numanagi\u0107, Riyadh Baghdadi, Bonnie Berger, and Saman Amarasinghe. 2019. Seq: A High-Performance Language for Bioinformatics. Proc. ACM Program. Lang. 3, OOPSLA, Article 125 (oct 2019), 29 pages. [69] Shumpei Shiina and Kenjiro Taura. 2019. Almost Deterministic Work Stealing. In SC. [70] Jun Shirako,"
-    }
-   ]
-  },
-  {
-   "year": 2023,
-   "title": "Understanding and Designing Recursive Functions via Syntactic Rewriting",
-   "doi": "10.15388/ioi.2023.08",
-   "cites": "codon-cc-2023",
-   "chars": 39725,
-   "contexts": [
-    {
-     "kind": "body",
-     "text": " offers better ways of printing bit strings in Python. To show the power of a purely functional programming language, I have included some Haskell programs for generating bit strings in Ap - pendix C. I hope also that I have shown some nifty uses of Python. Maybe the recent Python compiler named Codon ("
-    },
-    {
-     "kind": "bibliography",
-     "text": " Python. To show the power of a purely functional programming language, I have included some Haskell programs for generating bit strings in Ap - pendix C. I hope also that I have shown some nifty uses of Python. Maybe the recent Python compiler named Codon (Shajii, 2023) can make Python interesting for use in program - ming contests such as the IOI. Acknowledgment I would like to thank Berry Schoenmakers and Sten Wessel (TU Eindhoven, Nether - lands) and Radu Negulescu (Ontario, Canada) for helping me improve this article. References Roberts, E. (1986)"
-    },
-    {
-     "kind": "bibliography",
-     "text": "egulescu (Ontario, Canada) for helping me improve this article. References Roberts, E. (1986). Thinking Recursively (1st Ed.). Wiley. Rubio-S\u00e1nchez, M. (2018). Introduction to Recursive Programming. Taylor & Francis. T. Verhoeff114 DOI: 10.1201/9781315120850 Shajii, A. et al. (2023). Codon: A Compiler for High-Performance Pythonic Applications and DSLs. In: Proceed- ings of the 32nd ACM SIGPLAN International Conference on Compiler Construction. ACM, pp. 191\u2013202. DOI: 10.1145/3578360.3580275 Verhoeff, T. (2018). A Master Class on Recursion. In: Adventur"
-    }
-   ]
-  },
-  {
-   "year": 2023,
-   "title": "nelli: a lightweight frontend for MLIR",
-   "doi": "10.48550/arXiv.2307.16080",
-   "cites": "codon-cc-2023",
-   "chars": 63271,
-   "contexts": [
-    {
-     "kind": "inline",
-     "ref": "37",
-     "text": "tatic (ahead-of-time) source analysis, including lexing, abstract syntax tree (AST) construction, control-flow analysis, type inference, and code generation (for the target language, MLIR or otherwise). Suffice it to say, this is a monumental undertaking. Nonetheless, the undertaking has been undertaken, in the context of Python and, specifically, numerics intensive programs, many times to varying degrees of success [8, 23, 37]. The scope of such an undertaking is slightly improved by the fact that Python provides, in its standard library, source lexing (for Python source code), AST c"
-    },
-    {
-     "kind": "inline",
-     "ref": "37",
-     "text": ", Alban Desmaison, Luca Antiga, and Adam Lerer. Automatic differentiation in PyTorch. 2017. [35] J. Rapin and O. Teytaud. Nevergrad - A gradient-free optimization platform. https://GitHub.com/FacebookResearch/Nevergrad, 2018. [36] Nico Reissmann, Jan Christian Meyer, Helge Bahmann, and Magnus Sj\u00e4lander. Rvsdg: An intermediate representation for optimizing compilers. ACM Trans. Embed. Comput. Syst. , 19(6), dec 2020. [37] Ariya "
-    },
-    {
-     "kind": "bibliography",
-     "text": ". https://GitHub.com/FacebookResearch/Nevergrad, 2018. [36] Nico Reissmann, Jan Christian Meyer, Helge Bahmann, and Magnus Sj\u00e4lander. Rvsdg: An intermediate representation for optimizing compilers. ACM Trans. Embed. Comput. Syst. , 19(6), dec 2020. [37] Ariya Shajii, Gabriel Ramirez, Haris Smajlovi\u0107, Jessica Ray, Bonnie Berger, Saman Amarasinghe, and Ibrahim Numanagi\u0107. Codon: A compiler for high-performance pythonic applications and dsls. In Proceedings of the 32nd ACM SIGPLAN International Conference on Compiler Construction , CC 2023, pages 191\u2013202, Ne"
-    },
-    {
-     "kind": "bibliography",
-     "text": "search/Nevergrad, 2018. [36] Nico Reissmann, Jan Christian Meyer, Helge Bahmann, and Magnus Sj\u00e4lander. Rvsdg: An intermediate representation for optimizing compilers. ACM Trans. Embed. Comput. Syst. , 19(6), dec 2020. [37] Ariya Shajii, Gabriel Ramirez, Haris Smajlovi\u0107, Jessica Ray, Bonnie Berger, Saman Amarasinghe, and Ibrahim Numanagi\u0107. Codon: A compiler for high-performance pythonic applications and dsls. In Proceedings of the 32nd ACM SIGPLAN International Conference on Compiler Construction , CC 2023, pages 191\u2013202, New York, NY, USA, 2023. Associat"
-    },
-    {
-     "kind": "bibliography",
-     "text": "e Bahmann, and Magnus Sj\u00e4lander. Rvsdg: An intermediate representation for optimizing compilers. ACM Trans. Embed. Comput. Syst. , 19(6), dec 2020. [37] Ariya Shajii, Gabriel Ramirez, Haris Smajlovi\u0107, Jessica Ray, Bonnie Berger, Saman Amarasinghe, and Ibrahim Numanagi\u0107. Codon: A compiler for high-performance pythonic applications and dsls. In Proceedings of the 32nd ACM SIGPLAN International Conference on Compiler Construction , CC 2023, pages 191\u2013202, New York, NY, USA, 2023. Association for Computing Machinery. Manuscript submitted to ACM nelli: A ligh"
-    }
-   ]
-  },
-  {
-   "year": 2022,
-   "title": "Design of a New Language Seeks Literature Survey",
-   "doi": "10.22214/ijraset.2022.40949",
-   "cites": "seq-oopsla-2019",
-   "chars": 26096,
-   "contexts": [
-    {
-     "kind": "bibliography",
-     "text": " mathematics, and data science. Create a compiler that boosts programme r efficiency while delivering code that is as good as optimized C code. It demonstrates that careful compiler design preserves Wolfram Language productivity and expected behavior. Ariya Shajii, Ibrahim Numanagi\u0107, et al., [4] proposed \u201cSeq: A High -Performance Language for Bioinformatics\u201d. This paper talks about 1) A domain -specific language for computational biology (Bio -informatics) that combines Python's ease of use and productivity with performance comparable to C. "
-    },
-    {
-     "kind": "bibliography",
-     "text": "d data science. Create a compiler that boosts programme r efficiency while delivering code that is as good as optimized C code. It demonstrates that careful compiler design preserves Wolfram Language productivity and expected behavior. Ariya Shajii, Ibrahim Numanagi\u0107, et al., [4] proposed \u201cSeq: A High -Performance Language for Bioinformatics\u201d. This paper talks about 1) A domain -specific language for computational biology (Bio -informatics) that combines Python's ease of use and productivity with performance comparable to C. 2) Seq is design"
-    },
-    {
-     "kind": "bibliography",
-     "text": "y 22 -26, 2020, San Diego, CA, USA. ACM, New York, NY, USA, 17 pages. https://doi.org/10.1145/3368826.3377913 [3] Antonio Cuni \u201cHigh-performance implementation of Python for CLI/.NET with JIT compiler generation for dynamic languages\u201d July 2010 [4] Ariya Shajii, Ibrahim Numanagi \u0107, Riyadh Baghdadi, Bonnie Berger, and Saman Amarasinghe. 2019. \u201cSeq: A High -Performance Language for Bioinformatics.\u201d Proc. ACM Program. Lang. 3, OOPSLA, Article 125 (October 2019), 29 pages. https://doi.org/10.1145/3360551 [5] Denis Merigoux, Rapha\u00ebl Monat, and Jonatha"
-    },
-    {
-     "kind": "bibliography",
-     "text": "San Diego, CA, USA. ACM, New York, NY, USA, 17 pages. https://doi.org/10.1145/3368826.3377913 [3] Antonio Cuni \u201cHigh-performance implementation of Python for CLI/.NET with JIT compiler generation for dynamic languages\u201d July 2010 [4] Ariya Shajii, Ibrahim Numanagi \u0107, Riyadh Baghdadi, Bonnie Berger, and Saman Amarasinghe. 2019. \u201cSeq: A High -Performance Language for Bioinformatics.\u201d Proc. ACM Program. Lang. 3, OOPSLA, Article 125 (October 2019), 29 pages. https://doi.org/10.1145/3360551 [5] Denis Merigoux, Rapha\u00ebl Monat, and Jonathan Protzenko. 202"
-    }
-   ]
-  },
-  {
-   "year": 2022,
-   "title": "Fast characterization of segmental duplication structure in multiple genome assemblies",
-   "doi": "10.1186/s13015-022-00210-2",
-   "cites": "seq-nbt-2021,seq-oopsla-2019",
-   "chars": 63339,
-   "contexts": [
-    {
-     "kind": "bibliography",
-     "text": " et al. Algorithms for Molecular Biology (2022) 17:4 https://doi.org/10.1186/s13015-022-00210-2 RESEARCH Fast characterization of segmental duplication structure in multiple genome assemblies Hamza I\u0161eri\u01071, Can Alkan2, Faraz Hach3,4 and Ibrahim Numanagi\u01071* Abstract Motivation: The increasing availability of high-quality genome assemblies raised interest in the characterization of genomic architecture. Major architectural elements, such as common repeats and segmental duplications (SDs), increase genome plasticity that stimulates furthe"
-    },
-    {
-     "kind": "bibliography",
-     "text": "lies become available in the next few years. The following steps would consist of applying BISER to a larger set of available mammalian genomes, and the detailed biological analysis of the SDs and associated core duplicons. Acknowledgements We thank Haris Smajlovi\u0107 for invaluable comments and suggestions during the manuscript preparation. H.I. and I.N. were supported by National Science and Engineering Council of Canada (NSERC) Discovery Grant (RGPIN-04973) and Canada Research Chairs Program. F.H. was supported by NSERC Discovery Grant (RGPIN-059"
-    },
-    {
-     "kind": "bibliography",
-     "text": "18;34:2708\u201314. https:// doi. org/ 10. 1093/ bioin forma tics/ bty172. 21. Pu L, Lin Y, Pevzner PA. Detection and analysis of ancient segmental duplications in mammalian genomes. Genome Res. 2018;28:901\u20139. https:// doi. org/ 10. 1101/ gr. 228718. 117. 22. Numanagi\u0107 I, G\u00f6kkaya AS, Zhang L, Berger B, Alkan C, Hach F. Fast characterization of segmental duplications in genome assemblies. Bioinformatics. 2018;34:706\u201314. https:// doi. org/ 10. 1093/ bioin forma tics/ bty586. 23. Harris RS. Improved pairwise alignment of genomic DNA. Ph.D. thesis, Stat"
-    },
-    {
-     "kind": "bibliography",
-     "text": "ions in genome assemblies. Bioinformatics. 2018;34:706\u201314. https:// doi. org/ 10. 1093/ bioin forma tics/ bty586. 23. Harris RS. Improved pairwise alignment of genomic DNA. Ph.D. thesis, State College: Pennsylvania State University; 2007. AAI3299002. 24. Shajii A, Numanagi\u0107 I, Baghdadi R, Berger B, Amarasinghe S. Seq: a high- performance language for bioinformatics. In: Proceedings of the ACM on programming languages. 2019;3. https:// doi. org/ 10. 1145/ 33605 51. 25. Shajii A, Numanagi\u0107 I, Leighton AT, Greenyer H, Amarasinghe S, Berger B. A pyth"
-    },
-    {
-     "kind": "bibliography",
-     "text": "nome assemblies. Bioinformatics. 2018;34:706\u201314. https:// doi. org/ 10. 1093/ bioin forma tics/ bty586. 23. Harris RS. Improved pairwise alignment of genomic DNA. Ph.D. thesis, State College: Pennsylvania State University; 2007. AAI3299002. 24. Shajii A, Numanagi\u0107 I, Baghdadi R, Berger B, Amarasinghe S. Seq: a high- performance language for bioinformatics. In: Proceedings of the ACM on programming languages. 2019;3. https:// doi. org/ 10. 1145/ 33605 51. 25. Shajii A, Numanagi\u0107 I, Leighton AT, Greenyer H, Amarasinghe S, Berger B. A python-based p"
-    },
-    {
-     "kind": "bibliography",
-     "text": "tate University; 2007. AAI3299002. 24. Shajii A, Numanagi\u0107 I, Baghdadi R, Berger B, Amarasinghe S. Seq: a high- performance language for bioinformatics. In: Proceedings of the ACM on programming languages. 2019;3. https:// doi. org/ 10. 1145/ 33605 51. 25. Shajii A, Numanagi\u0107 I, Leighton AT, Greenyer H, Amarasinghe S, Berger B. A python-based programming language for high-performance compu- tational genomics. Nat Biotechnol. 2021;39(9):1062\u20134. https:// doi. org/ 10. 1038/ s41587- 021- 00985-6. 26. Levenshtein V. Binary codes capable of correcting d"
-    },
-    {
-     "kind": "bibliography",
-     "text": "rsity; 2007. AAI3299002. 24. Shajii A, Numanagi\u0107 I, Baghdadi R, Berger B, Amarasinghe S. Seq: a high- performance language for bioinformatics. In: Proceedings of the ACM on programming languages. 2019;3. https:// doi. org/ 10. 1145/ 33605 51. 25. Shajii A, Numanagi\u0107 I, Leighton AT, Greenyer H, Amarasinghe S, Berger B. A python-based programming language for high-performance compu- tational genomics. Nat Biotechnol. 2021;39(9):1062\u20134. https:// doi. org/ 10. 1038/ s41587- 021- 00985-6. 26. Levenshtein V. Binary codes capable of correcting deletions, "
-    }
-   ]
-  },
-  {
-   "year": 2022,
-   "title": "mapquik: Efficient low-divergence mapping of long reads in minimizer space",
-   "doi": "10.1101/2022.12.23.521809",
-   "cites": "seq-nbt-2021",
-   "chars": 73602,
-   "contexts": [
-    {
-     "kind": "inline",
-     "ref": "42",
-     "text": " snippets of DNA with high-confidence (exact or inexact) matches between a query and a reference genome. Seeds are initial matches that serve as anchoring points of alignments: They allow a challenging instance to be split into a set of easier sub-instances by aligning only the shorter intervals in-between seeds. In the short-read era, state-of-the-art alignment algorithms (e.g., BWA-MEM [22], Bowtie2 [21], and CORA [44, 42]) typically relied on finding all possible seeds using a full-text index of the reference genome. For long reads, there has been a recent breakthrough by sampli"
-    },
-    {
-     "kind": "inline",
-     "ref": "42",
-     "text": "ration of minimap2 developed by Intel, achieved a 1.5\u00d7acceleration over minimap2, end-to-end on HiFi reads. The bulk of the speed-up was obtained in the alignment phase, not in the seeding/chaining phase (Figure 1 in [18]). The domain-specific language Seq was developed to speed up genomic sequence analysis, and achieved two orders of magnitude improvement in the homology table reconstruction of the CORA read mapper [44, 42]. There also exist efficient implementations that employ specialized hardware. mm2-ax [38], a recent GPU acceleration of minimap2 developed by NVIDIA, achieved "
-    },
-    {
-     "kind": "bibliography",
-     "text": "ps://doi.org/10.1093/bioinformatics/btp236 41. Schleimer, S., Wilkerson, D.S., Aiken, A.: Winnowing: Local algorithms for document fingerprinting. In: Proceed- ings of the 22nd International conference on Management of Data (SIGMOD 2003). pp. 76\u201385 (2003) 42. Shajii, A., Numanagi\u00b4 c, I., Leighton, A.T., Greenyer, H., Amarasinghe, S., Berger, B.: A Python-based program- ming language for high-performance computational genomics. Nature Biotechnology 39(9), 1062\u20131064 (2021) 43. Snytsar, R., Turakhia, Y.: Parallel approach to sliding window sums. In: Proceed"
-    },
-    {
-     "kind": "bibliography",
-     "text": "/10.1093/bioinformatics/btp236 41. Schleimer, S., Wilkerson, D.S., Aiken, A.: Winnowing: Local algorithms for document fingerprinting. In: Proceed- ings of the 22nd International conference on Management of Data (SIGMOD 2003). pp. 76\u201385 (2003) 42. Shajii, A., Numanagi\u00b4 c, I., Leighton, A.T., Greenyer, H., Amarasinghe, S., Berger, B.: A Python-based program- ming language for high-performance computational genomics. Nature Biotechnology 39(9), 1062\u20131064 (2021) 43. Snytsar, R., Turakhia, Y.: Parallel approach to sliding window sums. In: Proceedings of the "
-    }
-   ]
-  },
-  {
-   "year": 2021,
-   "title": "Minimizer-space de Bruijn graphs",
-   "doi": "10.1101/2021.06.09.447586",
-   "cites": "seq-biorxiv-2020",
-   "chars": 77247,
-   "contexts": [
-    {
-     "kind": "inline",
-     "ref": "4",
-     "text": "can sequence 10 to 25 Kbp-long (HiFi) reads at \u2264 1% error rate [52]. The R10.3 pore of Oxford Nanopore produces reads of hundreds of Kbps in length at a \u223c 5% error rate. A tantalizing possibility is that DNA sequencing will eventually converge to long, nearly-perfect reads. These new technologies require novel algorithms that are both e\ufb03cient and accurate for important sequence analysis tasks such as genome assembly [34]. E\ufb03cient algorithms for sequence analysis have played a central role in the era of high-throughput DNA sequencing. Many analyses such as read mapping (e.g. [54"
-    },
-    {
-     "kind": "inline",
-     "ref": "4",
-     "text": "or rate. A tantalizing possibility is that DNA sequencing will eventually converge to long, nearly-perfect reads. These new technologies require novel algorithms that are both e\ufb03cient and accurate for important sequence analysis tasks such as genome assembly [34]. E\ufb03cient algorithms for sequence analysis have played a central role in the era of high-throughput DNA sequencing. Many analyses such as read mapping (e.g. [54, 50]), genome assembly (e.g. [44]), and taxonomic pro\ufb01ling (e.g., [37, 40]) have bene\ufb01ted from milestone advances that e\ufb00ectively compress, or sketch, the data "
-    },
-    {
-     "kind": "inline",
-     "ref": "4",
-     "text": "y is that DNA sequencing will eventually converge to long, nearly-perfect reads. These new technologies require novel algorithms that are both e\ufb03cient and accurate for important sequence analysis tasks such as genome assembly [34]. E\ufb03cient algorithms for sequence analysis have played a central role in the era of high-throughput DNA sequencing. Many analyses such as read mapping (e.g. [54, 50]), genome assembly (e.g. [44]), and taxonomic pro\ufb01ling (e.g., [37, 40]) have bene\ufb01ted from milestone advances that e\ufb00ectively compress, or sketch, the data [35]; e.g. fast full-text search "
-    },
-    {
-     "kind": "inline",
-     "ref": "4",
-     "text": "st during the initial sequence processing steps. Consider short-read genome assembly: The non-trivial insight of chopping up reads into k-mers, thereby bypassing the ordering of k-mers within each read, has unlocked fast and memory-e\ufb03cient approaches using de Bruijn graphs; yet the short k-mers\u2014chosen for e\ufb03ciency\u2014lead to fragmented assemblies [3]. In modern sequence similarity estimation and read mapping approaches [54] information loss is even more drastic as large genomic windows are sketched down to com- paratively tiny sets of minimizers\u2014which index a sequence (window) by "
-    },
-    {
-     "kind": "inline",
-     "ref": "4",
-     "text": "uided assembly. Error correction using minimizer-space partial order alignment (POA). Long-read sequencing technologies from Paci\ufb01c Biosciences (PacBio) and Oxford Nanopore (ONT) recently enabled the production of genome assemblies with high contiguity, albeit with a relatively high error rate ( \u2265 %5) in the reads, requiring either read error correction, and/or assembly polishing, both being resource-intensive steps [14, 36]. We will demonstrate that our minimizer-space representation is applicable to error-free sequencing reads and PacBio HiFi reads, which boast error rates lo"
-    },
-    {
-     "kind": "inline",
-     "ref": "4",
-     "text": " time (largely IO-bound). The memory consumption was 58 GB and the total disk usage was under 150 GB. Increasing\u03b4 to 0.01 yields a \ufb01ner-resolution mdBG but increases the wall-clock running time to 13h30m, the memory usage to 481 GB, and the disk usage to 200 GB. To compare the performance of mdBG with existing state-of-the-art tools for building de Bruijn graphs, we executed KMC 3 [25] to count 63-mers and Cuttle\ufb01sh [24] to construct a de Bruijn graph from the countedk-mers. KMC 3 took 22 wall-clock hours and 191 GB memory using 8 threads, 2 TB of temporary disk usage, and 758 "
-    },
-    {
-     "kind": "inline",
-     "ref": "4",
-     "text": "sage to 481 GB, and the disk usage to 200 GB. To compare the performance of mdBG with existing state-of-the-art tools for building de Bruijn graphs, we executed KMC 3 [25] to count 63-mers and Cuttle\ufb01sh [24] to construct a de Bruijn graph from the countedk-mers. KMC 3 took 22 wall-clock hours and 191 GB memory using 8 threads, 2 TB of temporary disk usage, and 758 GB of output (56 billion distinct k-mers). Cuttle\ufb01sh [24] did not terminate within three weeks of execution time. Hence, constructing the mdBG is at least two orders of magnitude more e\ufb03cient in running time, and one "
-    },
-    {
-     "kind": "inline",
-     "ref": "4",
-     "text": "1]. Haplotype separation might prove more di\ufb03cult to incorporate in mdBGs: Unlike HiFi assemblers which use overlap graphs with near- perfect overlaps, minimizer-space de Bruijn graphs cannot di\ufb00erentiate between exact and inexact overlaps in bases that are not captured by a minimizer. However, an immediate workaround is to perform haplotype phasing on resulting contigs, using tools such as HapCut2 [19] or HapTree-X [4]. We anticipate that k-min-mers could become a drop-in replacement for ubiquitously-adopted k-mers for the comparison and indexing of long, highly similar seque"
-    },
-    {
-     "kind": "bibliography",
-     "text": "hotgun assembler. Genome Research 12(1), 177\u2013189 (2002) 3. Berger, B., Peng, J., Singh, M.: Computational solutions for omics data. Nature Reviews Genetics 14(5), 333\u2013346 (2013) 4. Berger, E., Yorukoglu, D., Zhang, L., Nyquist, S.K., Shalek, A.K., Kellis, M., Numanagi\u00b4 c, I., Berger, B.: Im- proved haplotype inference by exploiting long-range linking and allelic imbalance in RNA-seq datasets. Nature Communications 11(1), 1\u20139 (2020) 5. Bingmann, T., Bradley, P., Gauger, F., Iqbal, Z.: COBS: A compact bit-sliced signature index. In: 26th Interna- tional Co"
-    },
-    {
-     "kind": "bibliography",
-     "text": "ria: report from the eucast subcommittee. Clinical microbiology and infection 23(1), 2\u201322 (2017) 21. Gurevich, A., Saveliev, V., Vyahhi, N., Tesler, G.: QUAST: Quality assessment tool for genome assemblies. Bioinformatics 29(8), 1072\u20131075 (2013) 22. Hach, F., Numanagi\u00b4 c, I., Alkan, C., S \u00b8ahinalp, S.C.: SCALCE: Boosting sequence compression algorithms using locally consistent encoding. Bioinformatics 28(23), 3051\u20133057 (2012) 13 .CC-BY-NC-ND 4.0 International licenseavailable under a (which was not certified by peer review) is the author/funder, who has"
-    },
-    {
-     "kind": "bibliography",
-     "text": "r review) is the author/funder, who has granted bioRxiv a license to display the preprint in perpetuity. It is made The copyright holder for this preprintthis version posted June 10, 2021. ; https://doi.org/10.1101/2021.06.09.447586doi: bioRxiv preprint 50. Shajii, A.R., Numanagi\u00b4 c, I., Leighton, A.T., Greenyer, H., Amarasinghe, S., Berger, B.: A Python-based opti- mization framework for high-performance genomics. bioRxiv (2020). https://doi.org/10.1101/2020.10.29.361402, https://www.biorxiv.org/content/early/2020/10/30/2020.10.29.361402 51. Vaser, R."
-    },
-    {
-     "kind": "bibliography",
-     "text": "he author/funder, who has granted bioRxiv a license to display the preprint in perpetuity. It is made The copyright holder for this preprintthis version posted June 10, 2021. ; https://doi.org/10.1101/2021.06.09.447586doi: bioRxiv preprint 50. Shajii, A.R., Numanagi\u00b4 c, I., Leighton, A.T., Greenyer, H., Amarasinghe, S., Berger, B.: A Python-based opti- mization framework for high-performance genomics. bioRxiv (2020). https://doi.org/10.1101/2020.10.29.361402, https://www.biorxiv.org/content/early/2020/10/30/2020.10.29.361402 51. Vaser, R., Sovi\u00b4 c, I.,"
-    }
-   ]
-  },
-  {
-   "year": 2021,
-   "title": "Minimizer-space de Bruijn graphs: Whole-genome assembly of long reads in minutes on a personal computer",
-   "doi": "10.1016/j.cels.2021.08.009",
-   "cites": "seq-biorxiv-2020,seq-nbt-2021",
-   "chars": 21110,
-   "contexts": []
-  },
-  {
-   "year": 2021,
-   "title": "Taming the Zoo: The Unified GraphIt Compiler Framework for Novel Architectures",
-   "doi": "10.1109/isca52012.2021.00041",
-   "cites": "seq-oopsla-2019",
-   "chars": 80254,
-   "contexts": [
-    {
-     "kind": "inline",
-     "ref": "74",
-     "text": "es these features, and implementations must be cognizant of these features and their implications. Domain-speci\ufb01c languages (DSLs) for graph processing abstract the complexity of modern architectures [95] and the dynamic challenges of graph structure. DSLs have been used to abstract hardware in domains like machine learning [22, 53], image processing [70], networking [14, 51], tensor algebra [50], and bioinformatics [74], or sometimes combining a few domains [18, 72]. An ideal DSL for graph processing would facilitate algorithm expression and abstract away architectural details"
-    },
-    {
-     "kind": "inline",
-     "ref": "74",
-     "text": " in image processing pipelines,\u201d in Proc. PLDI, 2013. [71] C. Ramey, \u201cTILE-Gx100 ManyCore processor: Acceleration interfaces and architecture,\u201d in Proc. HotChips, 2011. [72] D. Richmond, A. Althoff, and R. Kastner, \u201cSynthesizable higher-order functions for C++,\u201d IEEE TCAD, 2018. [73] R. A. Rossi and N. K. Ahmed, \u201cThe network data repository with interactive graph analytics and visualization,\u201d in Proc. AAAI-29, 2015. [74] A. "
-    },
-    {
-     "kind": "bibliography",
-     "text": " [72] D. Richmond, A. Althoff, and R. Kastner, \u201cSynthesizable higher-order functions for C++,\u201d IEEE TCAD, 2018. [73] R. A. Rossi and N. K. Ahmed, \u201cThe network data repository with interactive graph analytics and visualization,\u201d in Proc. AAAI-29, 2015. [74] A. Shajii, I. Numanagi \u00b4c, R. Baghdadi, B. Berger, and S. Amarasinghe, \u201cSeq: a high-performance language for bioinformatics,\u201d in Proc. OOPSLA, 2019. [75] A. Sharma, J. Jiang, P. Bommannavar, B. Larson, and J. Lin, \u201cGraphJet: Real-time content recommendations at Twitter,\u201d VLDB Endow., 2016. [76] X. Shi,"
-    },
-    {
-     "kind": "bibliography",
-     "text": "chmond, A. Althoff, and R. Kastner, \u201cSynthesizable higher-order functions for C++,\u201d IEEE TCAD, 2018. [73] R. A. Rossi and N. K. Ahmed, \u201cThe network data repository with interactive graph analytics and visualization,\u201d in Proc. AAAI-29, 2015. [74] A. Shajii, I. Numanagi \u00b4c, R. Baghdadi, B. Berger, and S. Amarasinghe, \u201cSeq: a high-performance language for bioinformatics,\u201d in Proc. OOPSLA, 2019. [75] A. Sharma, J. Jiang, P. Bommannavar, B. Larson, and J. Lin, \u201cGraphJet: Real-time content recommendations at Twitter,\u201d VLDB Endow., 2016. [76] X. Shi, X. Luo, J."
-    }
-   ]
-  },
-  {
-   "year": 2020,
-   "title": "Improved haplotype inference by exploiting long-range linking and allelic imbalance in RNA-seq datasets",
-   "doi": "10.1038/s41467-020-18320-z",
-   "cites": "seq-oopsla-2019",
-   "chars": 62072,
-   "contexts": [
-    {
-     "kind": "bibliography",
-     "text": "ARTICLE Improved haplotype inference by exploiting long-range linking and allelic imbalance in RNA-seq datasets Emily Berger1,2,3,5, Deniz Yorukoglu1,5, Lillian Zhang 1,5, Sarah K. Nyquist 1, Alex K. Shalek 1, Manolis Kellis 1, Ibrahim Numanagi \u0107 1,2,4 \u2709 & Bonnie Berger 1,2 \u2709 Haplotype reconstruction of distant genetic variants remains an unsolved problem due to the short-read length of common sequencing data. Here, we introduce HapTree-X, a probabilistic framework that utilizes latent long-range information to reconstruct unspeci"
-    },
-    {
-     "kind": "bibliography",
-     "text": " & Lappalainen, T. Rare variant phasing and haplotypic expression from RNA sequencing with phASER. Nat. Commun. 7, 12817 (2016). 22. Zheng, G. X. Y. et al. Massively parallel digital transcriptional pro \ufb01ling of single cells. Nat. Commun. 8, 14049 (2017). 23. Shajii, A., Numanagi \u0107, I., Baghdadi, R., Berger, B. & Amarasinghe, S. Seq: a high-performance language for bioinformatics. Proc. ACM Program. Lang. 3, 1\u201329 (2019). 24. Rosenbloom, K. R. et al. ENCODE data in the UCSC genome browser: year 5 update. Nucleic Acids Res. 41, D56 \u2013D63 (2012). 25. Eberle,"
-    },
-    {
-     "kind": "bibliography",
-     "text": "en, T. Rare variant phasing and haplotypic expression from RNA sequencing with phASER. Nat. Commun. 7, 12817 (2016). 22. Zheng, G. X. Y. et al. Massively parallel digital transcriptional pro \ufb01ling of single cells. Nat. Commun. 8, 14049 (2017). 23. Shajii, A., Numanagi \u0107, I., Baghdadi, R., Berger, B. & Amarasinghe, S. Seq: a high-performance language for bioinformatics. Proc. ACM Program. Lang. 3, 1\u201329 (2019). 24. Rosenbloom, K. R. et al. ENCODE data in the UCSC genome browser: year 5 update. Nucleic Acids Res. 41, D56 \u2013D63 (2012). 25. Eberle, M. A. et al"
-    },
-    {
-     "kind": "bibliography",
-     "text": "9. Dobin, A. et al. STAR: ultrafast universal RNA-seq aligner. Bioinformatics 29, 15\u201321 (2013). 30. McKenna, A. et al. The genome analysis toolkit: a mapreduce framework for analyzing next-generation dna sequencing data. Genome Res. 20, 1297 \u20131303 (2010). 31. Shajii, A., Numanagi \u0107, I., Whelan, C. & Berger, B. Statistical binning for barcoded reads improves downstream analyses. Cell Syst. 7, 219 \u2013226 (2018). 32. Le Page, C. et al. Btn3a2 expression in epithelial ovarian cancer is associated with higher tumor in \ufb01ltrating t cells and a better prognosis. P"
-    },
-    {
-     "kind": "bibliography",
-     "text": " et al. STAR: ultrafast universal RNA-seq aligner. Bioinformatics 29, 15\u201321 (2013). 30. McKenna, A. et al. The genome analysis toolkit: a mapreduce framework for analyzing next-generation dna sequencing data. Genome Res. 20, 1297 \u20131303 (2010). 31. Shajii, A., Numanagi \u0107, I., Whelan, C. & Berger, B. Statistical binning for barcoded reads improves downstream analyses. Cell Syst. 7, 219 \u2013226 (2018). 32. Le Page, C. et al. Btn3a2 expression in epithelial ovarian cancer is associated with higher tumor in \ufb01ltrating t cells and a better prognosis. Plos ONE 7 (2"
-    },
-    {
-     "kind": "bibliography",
-     "text": "ce of novel isoforms. Bioinformatics 30, 644\u2013651 (2013). Acknowledgements A single page abstract of an earlier version of this work appeared in RECOMB 2015. We are indebted to Lior Pachter for guidance and helpful conversations. We thank Sumaiya Nazeen, Ariya Shajii, Maxwell Aaron Sherman, Shilpa Garg, and members of the Berger lab. This work was supported in part by NIH GM108348 (to B.B.) and NSERC Discovery Grant RGPIN-2019-04973 and Canada Research Chairs Program (to I.N.). Author contributions E.B. and B.B. designed the study and the underlying algor"
     }
    ]
   }
@@ -1586,7 +1028,64 @@
    "doi": "10.1093/nsr/nwaa092",
    "cites": "seq-oopsla-2019",
    "reason": "unclassified: recorded before the blocked/deferred split"
+  },
+  {
+   "year": 2024,
+   "title": "JACC: Leveraging HPC Meta-Programming and Performance Portability with the Just-in-Time and LLVM-based Julia Language",
+   "doi": "10.1109/scw63240.2024.00245",
+   "cites": "codon-cc-2023",
+   "reason": "none"
   }
  ],
- "deferred": []
+ "deferred": [
+  {
+   "year": 2026,
+   "title": "seqproc: An efficient, flexible, and concise tool for sequence geometry description and transformation",
+   "doi": "10.64898/2026.07.28.741211",
+   "cites": "seq-oopsla-2019",
+   "reason": "transient"
+  },
+  {
+   "year": 2024,
+   "title": "A shared compilation stack for distributed-memory parallelism in stencil DSLs",
+   "doi": "10.1145/3620666.3651344",
+   "cites": "codon-cc-2023",
+   "reason": "forbidden"
+  },
+  {
+   "year": 2024,
+   "title": "All-Atom Biomolecular Simulation in the Exascale Era",
+   "doi": "10.1021/acs.jctc.3c01276",
+   "cites": "seq-nbt-2021",
+   "reason": "forbidden"
+  },
+  {
+   "year": 2024,
+   "title": "All-Atom Biomolecular Simulation in the Exascale Era.",
+   "doi": "10.1021/acs.jctc.3c01276",
+   "cites": "seq-nbt-2021",
+   "reason": "forbidden"
+  },
+  {
+   "year": 2024,
+   "title": "Geny: A Genotyping Tool for Allelic Decomposition of Killer Cell Immunoglobulin-Like Receptor Genes",
+   "doi": "10.1101/2024.02.27.582413",
+   "cites": "codon-cc-2023",
+   "reason": "transient"
+  },
+  {
+   "year": 2024,
+   "title": "Privacy-Enhancing Technologies in Biomedical Data Science",
+   "doi": "10.1146/annurev-biodatasci-120423-120107",
+   "cites": "sequre-gb-2023",
+   "reason": "forbidden"
+  },
+  {
+   "year": 2024,
+   "title": "SECRET-GWAS: Confidential Computing for Population-Scale GWAS",
+   "doi": "10.1101/2024.04.24.590989",
+   "cites": "sequre-ipdpsw-2022",
+   "reason": "transient"
+  }
+ ]
 }
