@@ -37,8 +37,8 @@ Two shapes from the first hand-collected batch need care:
   - A whole book downloaded for one chapter. The book carries many bibliographies,
     and contexts() takes the last "References" heading in the document, which
     would be some other chapter's. A page range in the manifest is exact and is
-    what to use; failing that the chapter is located by its title, and the run
-    says which of the two happened.
+    what to use; failing that the chapter is located by its doi, or by its title
+    as a fallback, and the run reports which route it took.
   - An article available only as html and printed to pdf. These often stop before
     the bibliography, so the reference-number route has nothing to work from. The
     body scan still finds passages naming Codon outright, and the report says when
@@ -185,38 +185,57 @@ def identify(text, works):
     return [], "none"
 
 
-def scope_chapter(text, title):
-    """Narrow a book to one chapter: its title through its own bibliography.
+def scope_chapter(text, title, doi=None):
+    """Narrow a book to one chapter: its opening through its own bibliography.
 
     Five of the collected files are whole volumes downloaded for a single chapter.
     contexts() reads the LAST references heading in a document, which in a book
     belongs to whatever chapter comes last, so a reference number taken from a
     whole volume is meaningless. Page ranges in the manifest are exact and are
-    preferred; this is what happens when none was given and the chapter can be
-    located by its title.
+    preferred; this is what happens when none was given.
 
-    Returns (slice, note). The slice is the original text when the title cannot
-    be found, because a wrong window is worse than a wide one.
+    FINDING THE CHAPTER IS THE WHOLE DIFFICULTY, and the first version got it
+    wrong in a way that looked like success. It took the first occurrence of the
+    chapter title, which in any edited volume is the line in the table of
+    contents, and then the first references heading after that -- the FIRST
+    chapter's bibliography. Every one of the four collected volumes came back
+    "bibliography present but nothing matched", which reads as though the chapter
+    does not cite Codon when in fact the wrong bibliography was read. A false
+    negative that arrives with a plausible explanation is worse than a failure.
+
+    So the chapter doi is tried first: Springer prints it on the chapter's opening
+    page and nowhere else, which is exactly the anchor needed. Failing that, the
+    LAST title occurrence is used rather than the first, since the contents page
+    precedes the chapter and running heads do not precede its bibliography.
+
+    Returns (slice, note). The slice is the original text when the chapter cannot
+    be located, because a wide window is better than a wrong one.
     """
-    n = norm(title)[:60]
-    if len(n) < 25:
-        return text, "chapter title too short to locate"
-    # walk the text in normalised space to find where the chapter opens
-    flat, index = [], []
-    for i, ch in enumerate(text.lower()):
-        if ch.isalnum():
-            flat.append(ch)
-            index.append(i)
-    at = "".join(flat).find(n)
-    if at < 0:
-        return text, "chapter title not found in the volume"
-    start = index[at]
+    start, how = -1, ""
+    if doi:
+        at = text.lower().find(doi.lower())
+        if at >= 0:
+            start, how = at, "by chapter doi"
+    if start < 0:
+        n = norm(title)[:60]
+        if len(n) < 25:
+            return text, "chapter title too short to locate"
+        # walk the text in normalised space to find where the chapter opens
+        flat, index = [], []
+        for i, ch in enumerate(text.lower()):
+            if ch.isalnum():
+                flat.append(ch)
+                index.append(i)
+        at = "".join(flat).rfind(n)
+        if at < 0:
+            return text, "chapter title not found in the volume"
+        start, how = index[at], "by last title occurrence"
     tail = text[start:]
     m = re.search(r"\n\s*(REFERENCES|References|BIBLIOGRAPHY|Bibliography)\s*\n", tail)
     if not m:
-        return text, "no bibliography follows the chapter title"
+        return text, "no bibliography follows the chapter opening"
     end = start + m.end() + CHAPTER_BIB
-    return text[start:end], "scoped to the chapter by title"
+    return text[start:end], "scoped to the chapter " + how
 
 
 def has_bibliography(text):
@@ -292,7 +311,7 @@ def main():
         year, title, doi, cites, found = hits[0]
         scoped = None
         if len(text) > BOOK_CHARS and not row.get("pages"):
-            text, scoped = scope_chapter(text, title)
+            text, scoped = scope_chapter(text, title, doi)
         cx = contexts(text)
         bib = has_bibliography(text)
         refs = sorted({c["ref"] for c in cx if c["kind"] == "inline"})
