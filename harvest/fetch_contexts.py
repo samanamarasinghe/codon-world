@@ -19,7 +19,8 @@ only the fetch in flight.
 A failure is not a failure. Two outcomes are recorded separately:
   blocked   -- no open copy found anywhere; needs an institutional login
   deferred  -- a copy exists but the host refused this run (429 rate limiting, or
-               403 from publishers that serve only browsers). Retried next run.
+               403 and bot-challenge pages from publishers that serve only
+               browsers). Retried next run.
 The first version of this script filed both as blocked, and because the resumable
 path skips blocked works, a momentary 429 wrote a paper off permanently.
 
@@ -83,6 +84,12 @@ NAME = re.compile(r"Shajii|Numanagi|Smajlovi", re.I)
 # A bare "Seq" matches SPLiT-Seq, RNA-Seq and dozens of assay names, so the body
 # scan takes only unambiguous forms. Bibliography matching is by author name.
 WORD = re.compile(r"\bcodon\b|\bsequre\b|exaloop|\bseq language\b", re.I)
+# Markers of a bot-challenge page served with a 200 status. Kept narrow and only
+# applied to short documents, so a real article page that happens to mention
+# Cloudflare in its text is not mistaken for a block.
+BLOCK_PAGE = re.compile(r"cf-browser-verification|just a moment\.\.\.|captcha|"
+                        r"unusual traffic|access denied|request blocked|"
+                        r"enable javascript and cookies|ddos protection", re.I)
 
 
 def get(url, timeout=60, tries=BACKOFF_TRIES):
@@ -107,7 +114,8 @@ def fetch_pdf(url, timeout=90, follow_html=True):
     Returns (blob, reason). reason is one of:
       ok          -- got a pdf
       transient   -- 429 or 503; the copy exists, the host is refusing right now
-      forbidden   -- 403; open access but not served to scripts (MDPI does this)
+      forbidden   -- 403, or a 200 that is really a bot-challenge page; open
+                     access but not served to scripts (MDPI does this)
       none        -- the url simply does not yield a pdf
     """
     _throttle(url)
@@ -127,6 +135,12 @@ def fetch_pdf(url, timeout=90, follow_html=True):
     if not follow_html:
         return None, "none"
     html = data[:400000].decode("utf-8", "ignore")
+    # A soft block: the host answered 200 with a challenge page rather than an
+    # error status. From a GitHub runner, publishers that return 403 to a laptop
+    # often do this instead, and reading it as "no open copy" writes off a paper
+    # that is open access and simply not served to scripts.
+    if len(html) < 20000 and BLOCK_PAGE.search(html):
+        return None, "forbidden"
     cands = re.findall(r'citation_pdf_url"\s+content="([^"]+)"', html)
     cands += re.findall(r'href="([^"]+\.pdf[^"]*)"', html)
     base = re.match(r"(https?://[^/]+)", url)
@@ -245,10 +259,10 @@ def summary(results, blocked, works, deferred):
             "blocked_vs_deferred": "blocked means no open copy was found anywhere and "
                                    "an institutional login is needed. deferred means a "
                                    "copy exists but the host refused this run -- 429 "
-                                   "rate limiting, or 403 for publishers that serve "
-                                   "only browsers. Deferrals are retried automatically "
-                                   "on the next run; blocks are not, unless "
-                                   "--retry-blocked is passed.",
+                                   "rate limiting, or 403 and bot-challenge pages from "
+                                   "publishers that serve only browsers. Deferrals are "
+                                   "retried automatically on the next run; blocks are "
+                                   "not, unless --retry-blocked is passed.",
             "counts": {"with_contexts": len(results), "blocked": len(blocked),
                        "deferred": len(deferred), "total_candidates": len(works)},
             "works": results, "blocked": blocked, "deferred": deferred}
