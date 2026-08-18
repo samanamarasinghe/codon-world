@@ -1,4 +1,4 @@
-# Repo entry schema (draft 3)
+# Repo entry schema (draft 4)
 
 Codon-world goes deeper per entry than the SDV index did, because the population is
 smaller. Every repo entry carries the SDV fields (url, summary, authors, use case)
@@ -13,11 +13,16 @@ One value, decided by what the repo actually contains:
 | `source` | own `.codon` files that are not a vendored stdlib copy |
 | `c_api_frontend` | Codon drives a C or C++ core through `from C import` declarations |
 | `jit_decorator` | Python files using `@codon.jit` |
-| `ir_plugin` | C++ against `codon/cir`, a compiler pass rather than a program |
+| `ir_plugin` | C++ against `codon/cir` or `codon/dsl`, a compiler pass rather than a program |
+| `runtime_port` | Codon's C++ runtime retargeted to another environment (WASM, bare metal) |
 | `vendored_install` | ships a Codon installation; no own source |
 | `docs_mirror` | a copy of the Codon documentation |
 | `mention_only` | names Codon in prose, runs none of it |
 | `false_positive` | `.codon` files that are codon-usage tables or codeml alignments |
+
+A repo may carry `integration_mode_secondary` where it does two things at once --
+Sequre and Shechi are both `source` and `ir_plugin`, and scATAC-seq is `source` and
+`vendored_install`.
 
 ## How Codon is reached
 
@@ -30,19 +35,24 @@ One value, decided by what the repo actually contains:
 | `framework` | the repo is written against a Codon framework and never names Codon |
 
 The Numanagic cluster forced this. Decor pins Codon v0.17.0 and loads Sequre as a
-Codon plugin; Secure MICE says only that it is part of Sequre. Both are real Codon
-code, and neither would read that way from `integration_mode` alone.
-
-A repo may also carry `integration_mode_secondary` where it does two things at once
--- Sequre and Shechi are both `source` and `ir_plugin`, shipping a compiler pass
-alongside the library.
+Codon plugin; Secure MICE says only that it is part of Sequre.
 
 `codon_version_pinned` records an exact version where the repo pins one.
+
+## What Codon is for here
+
+`codon_role`, closed by ruling 5:
+
+| value | test |
+|---|---|
+| `implementation` | Codon builds the thing the repo is for |
+| `benchmark` | Codon is measured against alternatives, or runs the measurement |
+| `exploration` | Codon is tried out with no comparison published |
 
 ## Codon features exercised
 
 Counted over own source only. `par`, `gpu`, `llvm_inline`, `pipeline`,
-`python_interop`, `c_interop`, `numpy`, `static_typing`, `seq_plugin`.
+`python_interop`, `c_interop`, `numpy`, `static_typing`, `seq_plugin`, `tuple`.
 Counts are occurrences plus the number of distinct files carrying them -- a
 feature confined to one generated file means something different from one spread
 across thirty.
@@ -52,6 +62,10 @@ across thirty.
 `own_codon_files`, `own_codon_loc`, `vendored_stdlib_files`. Reported separately;
 a repo with 151 files of which 140 are a vendored stdlib is a small repo.
 
+Scale in `.codon` lines is not scale of the project. codonx is a Rust tool with a
+thirteen-line Codon fixture; jutge-tests is ten files holding fifteen lines in
+total. Neither should be ranked by `.codon` volume alone.
+
 ## Why Codon
 
 The performance claim the repo itself makes, with any benchmark number it reports.
@@ -59,8 +73,7 @@ The performance claim the repo itself makes, with any benchmark number it report
 Where the repo makes no such claim, an inference is allowed but must be marked:
 `why_codon_source` is `stated` or `inferred`, and an `inferred` value carries the
 observation it rests on. FLOX is the case that forced this -- it declares 1,347 C
-entry points and claims nothing about Codon anywhere, so the reading that Codon is
-the native-speed strategy surface is an inference from the binding layer.
+entry points and claims nothing about Codon anywhere.
 
 ## Provenance
 
