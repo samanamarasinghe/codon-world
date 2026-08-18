@@ -33,8 +33,8 @@ Routes, in order (docs/paper-fetching.md):
 
 Citation context: finding the word "Codon" is not finding the citation. Numbered
 reference styles put the name only in the bibliography and a bracketed number in
-the body. So the bibliography entry is located first, its number taken, and the
-body searched for that number in brackets.
+the body. So the bibliography is split into entries, the entry carrying the Codon
+authors gives its number, and the body is searched for that number.
 """
 import json, os, re, sys, time, urllib.request, io, urllib.parse, random
 
@@ -195,19 +195,22 @@ def contexts(text):
     for m in NAME.finditer(text):
         s = max(0, m.start() - 260)
         out.append({"kind": "bibliography", "text": re.sub(r"\s+", " ", text[s:m.start() + 300])})
-    # Reference numbers are read ONLY from the bibliography, located as the last
-    # references heading in the document. Scanning the whole text lets a body
-    # sentence like "efforts such as the work of Numanagic [8]" contribute a
-    # reference number belonging to something else, and one wrong number produces
-    # inline passages about an unrelated citation -- worse than no passage at all.
+    # Reference numbers are read from the bibliography by SPLITTING it into entries
+    # and asking which entry contains the author name. Two earlier attempts scanned
+    # a fixed window backwards from the name and both picked a neighbouring entry:
+    # a window has no idea where one reference ends and the next begins, and in
+    # numeric-dot styles there are no brackets to stop it. One wrong number yields
+    # inline passages about an unrelated citation, which is worse than none.
     heads = [m.end() for m in re.finditer(
         r"\n\s*(REFERENCES|References|BIBLIOGRAPHY|Bibliography)\s*\n", text)]
     bib_start = heads[-1] if heads else None
     bib = text[bib_start:] if bib_start is not None else ""
-    for m in re.finditer(r"\[(\d{1,3})\][^\[\]]{0,200}?(?:Shajii|Numanagi|Smajlovi)", bib):
-        numbers.add(m.group(1))
-    for m in re.finditer(r"(?:^|\s)(\d{1,3})\.\s[^\[\]]{0,200}?(?:Shajii|Numanagi|Smajlovi)", bib):
-        numbers.add(m.group(1))
+    for marker in (r"\[(\d{1,3})\]", r"(?:^|\s)(\d{1,3})\.\s"):
+        starts = [(m.start(), m.end(), m.group(1)) for m in re.finditer(marker, bib)]
+        for i, (_s, end, num) in enumerate(starts):
+            stop = starts[i + 1][0] if i + 1 < len(starts) else len(bib)
+            if NAME.search(bib[end:stop]):
+                numbers.add(num)
 
     # The body is everything before the bibliography; fall back to "before the
     # first author-name match" for documents with no detectable references heading.
