@@ -10,8 +10,9 @@ text, and cut out the sentences where the work actually cites Codon or Seq. It
 makes no judgement -- codon_relation is still set by a person reading the extract,
 as ruling 8 requires.
 
-It is resumable. Works already recorded, and works already marked blocked, are
-skipped, so it can be run repeatedly, interrupted, and run again.
+It is resumable, and it checkpoints after every paper, so an interrupted run loses
+only the fetch in flight. Works already recorded, and works already marked blocked,
+are skipped.
 
 Routes, in order (docs/paper-fetching.md):
   1. arXiv pdf, when the doi is a 10.48550 arXiv doi or a location points there
@@ -26,12 +27,41 @@ reference styles put the name only in the bibliography and a bracketed number in
 the body. So the bibliography entry is located first, its number taken, and the
 body searched for that number in brackets.
 """
-import json, os, re, sys, time, urllib.request, io
+import json, os, re, sys, time, urllib.request, io, urllib.parse, random
 
 UA = {"User-Agent": "codon-world-index/1.0 (research)"}
 CAND = "data/papers-candidates.json"
 OUT = "data/paper-contexts.json"
 EMAIL = os.environ.get("UNPAYWALL_EMAIL", "")
+
+# Pacing. This job runs unattended for hours, so it is deliberately slow: being
+# rate-limited costs far more than waiting, because a 429 partway through can
+# poison a whole run of requests to that host, and OpenAlex bills against a daily
+# allowance that the curation work then needs. Every value is overridable by
+# environment variable if a run needs to be faster or slower.
+PACE_WORK = float(os.environ.get("PACE_WORK", 20))    # between papers
+PACE_TRY = float(os.environ.get("PACE_TRY", 6))       # between url attempts for one paper
+PACE_HOST = float(os.environ.get("PACE_HOST", 12))    # minimum gap between hits on one host
+BACKOFF = float(os.environ.get("BACKOFF", 60))        # first wait after a 429
+BACKOFF_TRIES = int(os.environ.get("BACKOFF_TRIES", 5))
+
+_last_hit = {}
+
+
+def _throttle(url):
+    """Wait until PACE_HOST seconds have passed since the last request to this host."""
+    host = urllib.parse.urlparse(url).netloc
+    gap = time.time() - _last_hit.get(host, 0)
+    if gap < PACE_HOST:
+        time.sleep(PACE_HOST - gap)
+    _last_hit[host] = time.time()
+
+
+def _sleep(seconds, why=""):
+    if why:
+        print("    waiting %.0fs (%s)" % (seconds, why), flush=True)
+    time.sleep(seconds)
+
 
 NAME = re.compile(r"Shajii|Numanagi|Smajlovi", re.I)
 # A bare "Seq" matches SPLiT-Seq, RNA-Seq and dozens of assay names, so the body
@@ -39,24 +69,31 @@ NAME = re.compile(r"Shajii|Numanagi|Smajlovi", re.I)
 WORD = re.compile(r"\bcodon\b|\bsequre\b|exaloop|\bseq language\b", re.I)
 
 
-def get(url, timeout=45, tries=2):
-    for _ in range(tries):
+def get(url, timeout=60, tries=BACKOFF_TRIES):
+    """JSON GET with host throttling and exponential backoff on 429."""
+    wait = BACKOFF
+    for attempt in range(tries):
+        _throttle(url)
         try:
             return json.load(urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=timeout))
         except Exception as exc:
-            if "429" in str(exc):
-                time.sleep(20)
+            if "429" in str(exc) or "503" in str(exc):
+                _sleep(wait + random.uniform(0, 5), "rate limited, attempt %d" % (attempt + 1))
+                wait *= 2
                 continue
             return {"_err": str(exc)}
-    return {"_err": "429"}
+    return {"_err": "rate limited after %d attempts" % tries}
 
 
 def fetch_pdf(url, timeout=90, follow_html=True):
     """Fetch a pdf. If the url serves html, look inside it for a pdf link once."""
+    _throttle(url)
     try:
         req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (research)"})
         data = urllib.request.urlopen(req, timeout=timeout).read()
-    except Exception:
+    except Exception as exc:
+        if "429" in str(exc) or "503" in str(exc):
+            _sleep(BACKOFF, "rate limited fetching a pdf")
         return None
     if data[:4] == b"%PDF":
         return data
@@ -150,6 +187,21 @@ def contexts(text):
     return keep[:12]
 
 
+def summary(results, blocked, works):
+    return {"generated": time.strftime("%Y-%m-%d"),
+            "note": "Mechanical extraction only. codon_relation is set by a person "
+                    "reading these, as ruling 8 requires.",
+            "counts": {"with_contexts": len(results), "blocked": len(blocked),
+                       "total_candidates": len(works)},
+            "works": results, "blocked": blocked}
+
+
+def checkpoint(results, blocked, works):
+    """Write after every paper, so a killed run loses nothing but the current fetch."""
+    if "--write" in sys.argv:
+        json.dump(summary(results, blocked, works), open(OUT, "w"), indent=1)
+
+
 def main():
     works = json.load(open(CAND))["works"]
     done, blocked = {}, []
@@ -161,6 +213,10 @@ def main():
     limit = int(sys.argv[sys.argv.index("--limit") + 1]) if "--limit" in sys.argv else 10 ** 6
 
     results, n = list(done.values()), 0
+    remaining = sum(1 for w in works if w[2] and w[2] not in done and w[2] not in blocked_dois)
+    est = min(remaining, limit) * (PACE_WORK + PACE_TRY) / 60.0
+    print("%d works left to try, pacing %.0fs each, rough estimate %.0f minutes"
+          % (remaining, PACE_WORK, est), flush=True)
     for year, title, doi, cites, found in works:
         if not doi or doi in done or doi in blocked_dois:
             continue
@@ -172,24 +228,22 @@ def main():
             blob = fetch_pdf(url)
             if blob:
                 break
-            time.sleep(1)
+            _sleep(PACE_TRY)
         if not blob:
             blocked.append({"year": year, "title": title, "doi": doi, "cites": cites})
-            print("BLOCKED %s  %s" % (doi, (title or "")[:60]))
-            time.sleep(2)
+            print("BLOCKED %s  %s" % (doi, (title or "")[:60]), flush=True)
+            checkpoint(results, blocked, works)
+            _sleep(PACE_WORK)
             continue
         text = text_of(blob)
         ctx = contexts(text)
         results.append({"year": year, "title": title, "doi": doi, "cites": cites,
                         "chars": len(text), "contexts": ctx})
-        print("ok      %s  %d contexts  %s" % (doi, len(ctx), (title or "")[:50]))
-        time.sleep(2)
+        print("ok      %s  %d contexts  %s" % (doi, len(ctx), (title or "")[:50]), flush=True)
+        checkpoint(results, blocked, works)
+        _sleep(PACE_WORK)
 
-    out = {"generated": time.strftime("%Y-%m-%d"),
-           "note": "Mechanical extraction only. codon_relation is set by a person reading these.",
-           "counts": {"with_contexts": len(results), "blocked": len(blocked),
-                      "total_candidates": len(works)},
-           "works": results, "blocked": blocked}
+    out = summary(results, blocked, works)
     print(json.dumps(out["counts"], indent=1))
     if "--write" in sys.argv:
         json.dump(out, open(OUT, "w"), indent=1)
