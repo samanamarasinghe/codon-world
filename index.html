@@ -8,17 +8,23 @@
 </head>
 <body>
 <header>
-  <h1>codon-world</h1>
+  <div class="brand">
+    <h1>codon-world</h1>
+    <a class="brand-logo" href="https://github.com/exaloop/codon" target="_blank" rel="noopener"
+       title="Codon (exaloop/codon)"><img src="assets/img/codon.svg" alt="Codon"></a>
+  </div>
   <p class="sub">An index of repositories that use, extend, package, benchmark or teach
      <a href="https://github.com/exaloop/codon" target="_blank" rel="noopener">Codon</a>,
      and of the papers that cite it. Every entry was read, not inferred from a search result.</p>
 </header>
 
 <section id="controls">
-  <div class="row">
-    <label class="ctl">Search
+  <div class="row row-search">
+    <label class="ctl ctl-wide">Search
       <input id="q" type="search" placeholder="name, summary, url">
     </label>
+  </div>
+  <div class="row">
     <label class="ctl">Group by
       <select id="group">
         <option value="none" selected>None</option>
@@ -31,12 +37,14 @@
       </select>
     </label>
     <label class="ctl">Sort
-      <select id="sort">
-        <option value="loc" selected>Codon lines (most first)</option>
-        <option value="recent">Most recent</option>
-        <option value="name">Name (A-Z)</option>
-      </select>
-      <span class="hint" title="Codon lines counts .codon source. It is not a measure of the project, and it does not apply to papers at all.&#10;&#10;codonx is a Rust tool with a thirteen-line Codon fixture. jutge-tests is ten files holding fifteen lines in total. More than half the repositories here write their Codon in .py files and count zero. Read it as how much .codon is present, not how large the work is.">i</span>
+      <span class="ctl-line">
+        <select id="sort">
+          <option value="loc" selected>Codon lines (most first)</option>
+          <option value="recent">Most recent</option>
+          <option value="name">Name (A-Z)</option>
+        </select>
+        <span class="hint" title="Codon lines counts .codon source. It is not a measure of the project, and it does not apply to papers at all.&#10;&#10;codonx is a Rust tool with a thirteen-line Codon fixture. jutge-tests is ten files holding fifteen lines in total. More than half the repositories here write their Codon in .py files and count zero. Read it as how much .codon is present, not how large the work is.">i</span>
+      </span>
     </label>
     <button id="btn-summaries" type="button">Hide summaries</button>
     <button id="btn-clear" type="button">Clear filters</button>
@@ -90,6 +98,7 @@
      <a href="docs/schema.md">repo schema</a>, <a href="docs/paper-schema.md">paper schema</a>,
      <a href="docs/rulings.md">rulings</a>, <a href="docs/gaps.md">gaps</a>,
      <a href="docs/site-filters.md">filter choices</a>, <a href="docs/running.md">running it</a>.</p>
+  <p>Codon wordmark from <a href="https://github.com/exaloop/codon" target="_blank" rel="noopener">exaloop/codon</a>.</p>
 </footer>
 
 <script src="assets/js/codon-index.js"></script>
