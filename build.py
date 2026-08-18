@@ -16,9 +16,50 @@ entries. Keeping them apart matters: 012 holds eleven genetics false positives
 and 015 holds twenty-three forks of an already-indexed packaging recipe, and
 summing the two would report a number that means nothing.
 """
-import json, glob, sys
+import json, glob, os, sys
 
 OUT = "data/codon-index.json"
+POP = "data/popularity.json"
+CONTEXT_FILES = ["data/paper-contexts.json", "data/local-contexts.json"]
+# harvest/fetch_contexts.py keeps at most this many contexts per work, so a work
+# at the cap may have had more that were never written down.
+CONTEXT_CAP = 12
+
+
+def popularity():
+    """Stars and citation counts, keyed by entry id. Absent until the workflow runs."""
+    return json.load(open(POP)) if os.path.exists(POP) else {"repos": {}, "papers": {}}
+
+
+def mention_counts():
+    """How many places in a paper actually discuss the Codon family, keyed by DOI.
+
+    A bibliography context is the reference list entry itself, which every citing
+    work has exactly one of, so it says nothing about engagement and is not
+    counted. What is counted is inline citation sites, deduplicated by reference
+    number, plus prose mentions found by name.
+
+    The number is a floor and is marked as one. Papers that cite by superscript
+    are invisible to the inline scan, and a work at the extractor's cap may have
+    had more. Secure MICE extends Sequre and counts zero here.
+    """
+    out = {}
+    for f in CONTEXT_FILES:
+        if not os.path.exists(f):
+            continue
+        for w in json.load(open(f)).get("works", []):
+            doi = (w.get("doi") or "").lower()
+            if not doi:
+                continue
+            cs = w.get("contexts") or []
+            inline = {str(c.get("ref")) for c in cs if c.get("kind") == "inline"}
+            body = sum(1 for c in cs if c.get("kind") == "body")
+            rec = out.setdefault(doi, {"count": 0, "inline": 0, "body": 0, "capped": False})
+            rec["inline"] += len(inline)
+            rec["body"] += body
+            rec["count"] = rec["inline"] + rec["body"]
+            rec["capped"] = rec["capped"] or len(cs) >= CONTEXT_CAP
+    return out
 
 
 def load():
@@ -41,6 +82,15 @@ def load():
 
 def main():
     entries, sidecars = load()
+    pop, mentions = popularity(), mention_counts()
+    for e in entries:
+        half = pop.get("repos" if e["kind"] == "repo" else "papers", {})
+        if e["id"] in half:
+            e["popularity"] = half[e["id"]]
+        if e["kind"] == "paper":
+            m = mentions.get((e.get("doi") or "").lower())
+            if m:
+                e["codon_mentions"] = m
     ids = [e["id"] for e in entries]
     for b in sidecars.values():
         ids += [r["id"] for r in b["repos"]]
@@ -61,7 +111,13 @@ def main():
         "entries": entries,
         "sidecars": [sidecars[c] for c in sorted(sidecars)],
     }
-    line = "%d entries (%s); sidecars %s" % (len(entries), out["kind_counts"], out["sidecar_counts"])
+    out["popularity_counts"] = {
+        "repos_with_stars": sum(1 for e in entries if e["kind"] == "repo" and e.get("popularity")),
+        "papers_with_citations": sum(1 for e in entries if e["kind"] == "paper" and e.get("popularity")),
+        "papers_with_mentions": sum(1 for e in entries if e.get("codon_mentions")),
+    }
+    line = "%d entries (%s); sidecars %s; popularity %s" % (
+        len(entries), out["kind_counts"], out["sidecar_counts"], out["popularity_counts"])
     if "--write" in sys.argv:
         json.dump(out, open(OUT, "w"), indent=1)
         print("wrote %s: %s" % (OUT, line))
