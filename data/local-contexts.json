@@ -2,29 +2,19 @@
  "generated": "2026-08-18",
  "note": "Contexts extracted from full texts collected by hand through an institutional login. Kept apart from data/paper-contexts.json so that a --refetch cannot destroy them. The pdfs are not committed.",
  "counts": {
-  "with_contexts": 27,
-  "needing_attention": 16
+  "with_contexts": 33,
+  "needing_attention": 14
  },
  "problems": [
   {
-   "file": "1-s2.0-S1359644623003367-main.pdf",
-   "kind": "ambiguous",
-   "detail": "10.1016/j.drudis.2023.103820, 10.1016/j.drudis.2023.103820"
-  },
-  {
    "file": "978-3-031-34953-9.pdf",
-   "kind": "unidentified",
-   "detail": "no candidate doi or title found in the text"
+   "kind": "no contexts",
+   "detail": "bibliography present but nothing matched the Codon family"
   },
   {
    "file": "978-3-031-89518-0.pdf",
-   "kind": "book-length",
-   "detail": "890299 chars and no page range; the reference numbers will come from the last bibliography in the volume"
-  },
-  {
-   "file": "978-981-95-4434-9.pdf",
-   "kind": "book-length",
-   "detail": "1631361 chars and no page range; the reference numbers will come from the last bibliography in the volume"
+   "kind": "no contexts",
+   "detail": "bibliography present but nothing matched the Codon family"
   },
   {
    "file": "978-981-95-4434-9.pdf",
@@ -33,8 +23,8 @@
   },
   {
    "file": "978-981-97-5603-2.pdf",
-   "kind": "unidentified",
-   "detail": "no candidate doi or title found in the text"
+   "kind": "no contexts",
+   "detail": "bibliography present but nothing matched the Codon family"
   },
   {
    "file": "Design_of_an_English_Translation_Intelligent_Proofreading_System_Based_on_Bidirectional_Long_Short-term_Memory_Algorithm.pdf",
@@ -45,11 +35,6 @@
    "file": "MicroPython_Testbed_for_Federated_Learning_Algorithms.pdf",
    "kind": "no contexts",
    "detail": "bibliography present but nothing matched the Codon family"
-  },
-  {
-   "file": "bbae356.pdf",
-   "kind": "ambiguous",
-   "detail": "10.1093/bib/bbae356, 10.1101/2024.04.24.590989"
   },
   {
    "file": "nwaa092.pdf",
@@ -63,8 +48,8 @@
   },
   {
    "file": "paper2.pdf",
-   "kind": "ambiguous",
-   "detail": "10.1016/j.compbiomed.2024.108577, 10.1016/j.compbiomed.2024.108577"
+   "kind": "no bibliography",
+   "detail": "reference-number route unavailable; body scan only"
   },
   {
    "file": "paper3.pdf",
@@ -83,11 +68,58 @@
   },
   {
    "file": "paper6.pdf",
-   "kind": "ambiguous",
-   "detail": "10.1016/j.ymeth.2023.01.001, 10.1016/j.ymeth.2023.01.001"
+   "kind": "no bibliography",
+   "detail": "reference-number route unavailable; body scan only"
+  },
+  {
+   "file": "paper4.pdf, paper5.pdf",
+   "kind": "same work twice",
+   "detail": "10.1016/j.sysarc.2023.102936 is claimed by 2 files"
   }
  ],
  "works": [
+  {
+   "year": 2023,
+   "title": "Privacy-preserving techniques for decentralized and secure machine learning in drug discovery",
+   "doi": "10.1016/j.drudis.2023.103820",
+   "cites": "sequre-gb-2023",
+   "chars": 40773,
+   "source_file": "1-s2.0-S1359644623003367-main.pdf",
+   "matched_by": "doi",
+   "pages": null,
+   "bibliography_found": true,
+   "scoped": null,
+   "contexts": [
+    {
+     "kind": "body",
+     "text": "parison, a so-called secure two-party computation (S2PC) is commonly applied. This approach allows the alignment of two genome sequences in a secure manner. S2PC can be divided into two groups: homomorphic- encryption-based construction and garbled-circuit-based con- struction. 17 Another approach, Sequre, a high-performance framework for secure multiparty computation, is a cryptographic tool that allows computation based on sensitive biomedical data. Sequre has been applied to different tasks such as secure genome- wide association analysis, secure drug-target interaction predic- tion, and se"
+    },
+    {
+     "kind": "body",
+     "text": " S2PC can be divided into two groups: homomorphic- encryption-based construction and garbled-circuit-based con- struction. 17 Another approach, Sequre, a high-performance framework for secure multiparty computation, is a cryptographic tool that allows computation based on sensitive biomedical data. Sequre has been applied to different tasks such as secure genome- wide association analysis, secure drug-target interaction predic- tion, and secure metagenomic binning. When compared with existing state-of-the art pipelines, Sequre achieved up to a seven- fold reduction in code length, while the ov"
+    },
+    {
+     "kind": "body",
+     "text": "ographic tool that allows computation based on sensitive biomedical data. Sequre has been applied to different tasks such as secure genome- wide association analysis, secure drug-target interaction predic- tion, and secure metagenomic binning. When compared with existing state-of-the art pipelines, Sequre achieved up to a seven- fold reduction in code length, while the overall execution time of the implemented pipelines was reduced three- to fourfold, and the network utilization was 17 % lower. Additionally, it achieved the best runtime performance in most of the cases while also being one of "
+    },
+    {
+     "kind": "bibliography",
+     "text": "and practical experiments. IACR Cryptol ePrint Arch . 2013;1:826:1\u2013826:19. 17. Zhao C, Zhao S, Zhao M, et al.. Secure multi-party computation: theory, practice and applications. Inf Sci (Ny) . 2019;476:357 \u2013372. https://doi.org/10.1016/j. ins.2018.10.024. 18. Smajlovi /C19c H, Shajii A, Berger B, Cho H, Numanagi /C19c I. Sequre: a high-performance framework for secure multiparty computation enables biomedical data sharing. Genome Biol . 2023;24:1 \u201318. https://doi.org/10.1186/s13059-022-02841-5 . 19. HIPPA 1996. Health Insurance Portability and Accountabi"
+    },
+    {
+     "kind": "bibliography",
+     "text": "riments. IACR Cryptol ePrint Arch . 2013;1:826:1\u2013826:19. 17. Zhao C, Zhao S, Zhao M, et al.. Secure multi-party computation: theory, practice and applications. Inf Sci (Ny) . 2019;476:357 \u2013372. https://doi.org/10.1016/j. ins.2018.10.024. 18. Smajlovi /C19c H, Shajii A, Berger B, Cho H, Numanagi /C19c I. Sequre: a high-performance framework for secure multiparty computation enables biomedical data sharing. Genome Biol . 2023;24:1 \u201318. https://doi.org/10.1186/s13059-022-02841-5 . 19. HIPPA 1996. Health Insurance Portability and Accountability Act of 1996 ("
+    },
+    {
+     "kind": "bibliography",
+     "text": "t Arch . 2013;1:826:1\u2013826:19. 17. Zhao C, Zhao S, Zhao M, et al.. Secure multi-party computation: theory, practice and applications. Inf Sci (Ny) . 2019;476:357 \u2013372. https://doi.org/10.1016/j. ins.2018.10.024. 18. Smajlovi /C19c H, Shajii A, Berger B, Cho H, Numanagi /C19c I. Sequre: a high-performance framework for secure multiparty computation enables biomedical data sharing. Genome Biol . 2023;24:1 \u201318. https://doi.org/10.1186/s13059-022-02841-5 . 19. HIPPA 1996. Health Insurance Portability and Accountability Act of 1996 (HIPAA). CDC. Health Insuran"
+    },
+    {
+     "kind": "bibliography",
+     "text": "6:1\u2013826:19. 17. Zhao C, Zhao S, Zhao M, et al.. Secure multi-party computation: theory, practice and applications. Inf Sci (Ny) . 2019;476:357 \u2013372. https://doi.org/10.1016/j. ins.2018.10.024. 18. Smajlovi /C19c H, Shajii A, Berger B, Cho H, Numanagi /C19c I. Sequre: a high-performance framework for secure multiparty computation enables biomedical data sharing. Genome Biol . 2023;24:1 \u201318. https://doi.org/10.1186/s13059-022-02841-5 . 19. HIPPA 1996. Health Insurance Portability and Accountability Act of 1996 (HIPAA). CDC. Health Insurance Portability and"
+    }
+   ]
+  },
   {
    "year": 2024,
    "title": "High Performance Privacy Preserving AI",
@@ -98,6 +130,7 @@
    "matched_by": "doi",
    "pages": null,
    "bibliography_found": true,
+   "scoped": null,
    "contexts": [
     {
      "kind": "inline",
@@ -139,56 +172,55 @@
    ]
   },
   {
+   "year": 2023,
+   "title": "GPU Cloud Architectures for\u00a0Bioinformatic Applications",
+   "doi": "10.1007/978-3-031-34953-9_6",
+   "cites": "sequre-gb-2023",
+   "chars": 64674,
+   "source_file": "978-3-031-34953-9.pdf",
+   "matched_by": "manifest",
+   "pages": null,
+   "bibliography_found": true,
+   "scoped": "scoped to the chapter by title",
+   "contexts": []
+  },
+  {
    "year": 2025,
    "title": "Secure Multi-party Querying Federated Graph Databases",
    "doi": "10.1007/978-3-031-89518-0_2",
    "cites": "sequre-gb-2023",
-   "chars": 890299,
+   "chars": 63038,
    "source_file": "978-3-031-89518-0.pdf",
    "matched_by": "doi",
    "pages": null,
    "bibliography_found": true,
-   "contexts": [
-    {
-     "kind": "body",
-     "text": "ee non-colluding computing parties and empowers users to perform a range of SQL queries including fully functional join, group by, aggregation, and more, on the shared databases. Benchmark results validate the advantages of Scape, demonstrating it to be up to 25 times faster than Secrecy [ 23]. Sequre [ 33] is a Python-based framework designed for secure multiparty com- putation (SMPC) in the bioinformatics \ufb01eld. It o\ufb00ers high performance and incorporates automatic compile-time optimizations to improve the e\ufb03ciency and speed of SMPC applications. By utilizing the secret sharing method, S"
-    },
-    {
-     "kind": "body",
-     "text": " Sequre [ 33] is a Python-based framework designed for secure multiparty com- putation (SMPC) in the bioinformatics \ufb01eld. It o\ufb00ers high performance and incorporates automatic compile-time optimizations to improve the e\ufb03ciency and speed of SMPC applications. By utilizing the secret sharing method, Sequre enables secure computation of biomedical data while achieving faster execution of queries and analysis tasks. The evaluation results demonstrate the usability and performance of Sequre, showcasing signi\ufb01cant speed improvements compared to existing pipelines. On the other hand, the author"
-    },
-    {
-     "kind": "body",
-     "text": " optimizations to improve the e\ufb03ciency and speed of SMPC applications. By utilizing the secret sharing method, Sequre enables secure computation of biomedical data while achieving faster execution of queries and analysis tasks. The evaluation results demonstrate the usability and performance of Sequre, showcasing signi\ufb01cant speed improvements compared to existing pipelines. On the other hand, the authors of [ 19,37] and [ 10] propose systems that demonstrate the implementation of single-party querying using SMPC. The SDB system, discussed in [ 19,37], is a cloud database system designe"
-    },
-    {
-     "kind": "body",
-     "text": " C Waldo [12] 3 Repl.Secret Sharing MP-SPDZ No 3 Time-series DB MQL Yes C++ SecureYannakakis [36] 2 Garbled Circuits N/A No 2 Relational DB SQL Yes C++ VaultDB [30] 2 Garbled Circuits EMP-Toolkit No 2 Relational DB SQL No C++ Scape [ 18] 3 Repl.Secret Sharing Frigate No 3 Relational DB SQL No - Sequre [ 33] 3 Secret Sharing N/A Yes 3 Relational DB SQL Yes Python/C++ SDB [ 19, 37]a N/A Secret Sharing N/A No 1 Relational DB SQL No - GOOSE [ 10]b N/A Secret Sharing N/A No 1 GraphDB SPARQL Yes Python SMPQ >=2 Secret Sharing JIFF No >=2 GraphDB Cypher No Python *Both . and a . use SMPC as ba"
-    },
-    {
-     "kind": "body",
-     "text": ", A.: Comparisons of Relational Databases with Big Data: A Teaching Approach. South Dakota State University, Brookings (2017) 32. Shamir, A.: How to share a secret. Commun. ACM 22(11), 612\u2013613 (1979) 33. Smajlovi\u00b4c , H . ,S h a j i i , A . ,B e r g e r , B . ,C h o ,H . , N u m a n a g i \u00b4c, I.: Sequre: a high- performance framework for secure multiparty computation enables biomedical data sharing. Genome Biol. 24(1), 1\u201318 (2023) 34. Volgushev, N., Schwarzkopf, M., Getchell, B., Varia, M., Lapets, A., Bestavros, A.: Conclave: secure multi-party computation on big data. In: Proceedings of"
-    },
-    {
-     "kind": "bibliography",
-     "text": " arXiv preprint arXiv:2203.00146 (2022) 31. Salehnia, A.: Comparisons of Relational Databases with Big Data: A Teaching Approach. South Dakota State University, Brookings (2017) 32. Shamir, A.: How to share a secret. Commun. ACM 22(11), 612\u2013613 (1979) 33. Smajlovi\u00b4c , H . ,S h a j i i , A . ,B e r g e r , B . ,C h o ,H . , N u m a n a g i \u00b4c, I.: Sequre: a high- performance framework for secure multiparty computation enables biomedical data sharing. Genome Biol. 24(1), 1\u201318 (2023) 34. Volgushev, N., Schwarzkopf, M., Getchell, B., Varia, M., Lapets,"
-    },
-    {
-     "kind": "bibliography",
-     "text": "s with Big Data: A Teaching Approach. South Dakota State University, Brookings (2017) 32. Shamir, A.: How to share a secret. Commun. ACM 22(11), 612\u2013613 (1979) 33. Smajlovi\u00b4c , H . ,S h a j i i , A . ,B e r g e r , B . ,C h o ,H . , N u m a n a g i \u00b4c, I.: Sequre: a high- performance framework for secure multiparty computation enables biomedical data sharing. Genome Biol. 24(1), 1\u201318 (2023) 34. Volgushev, N., Schwarzkopf, M., Getchell, B., Varia, M., Lapets, A., Bestavros, A.: Conclave: secure multi-party computation on big data. In: Proceedings of"
-    }
-   ]
+   "scoped": "scoped to the chapter by title",
+   "contexts": []
   },
   {
    "year": 2025,
    "title": "webSPDZ: Versatile MPC on the Web",
    "doi": "10.1007/978-981-95-4434-9_11",
    "cites": "sequre-ipdpsw-2022",
-   "chars": 1631361,
+   "chars": 76302,
    "source_file": "978-981-95-4434-9.pdf",
    "matched_by": "doi",
    "pages": null,
    "bibliography_found": true,
+   "scoped": "scoped to the chapter by title",
+   "contexts": []
+  },
+  {
+   "year": 2024,
+   "title": "Privacy-Preserving Retrieval Scheme Over Medical Images Based on Vision Transformer",
+   "doi": "10.1007/978-981-97-5603-2_33",
+   "cites": "sequre-gb-2023",
+   "chars": 45279,
+   "source_file": "978-981-97-5603-2.pdf",
+   "matched_by": "manifest",
+   "pages": null,
+   "bibliography_found": true,
+   "scoped": "scoped to the chapter by title",
    "contexts": []
   },
   {
@@ -201,6 +233,7 @@
    "matched_by": "doi",
    "pages": null,
    "bibliography_found": true,
+   "scoped": null,
    "contexts": [
     {
      "kind": "inline",
@@ -228,6 +261,7 @@
    "matched_by": "doi",
    "pages": null,
    "bibliography_found": true,
+   "scoped": null,
    "contexts": [
     {
      "kind": "inline",
@@ -258,6 +292,7 @@
    "matched_by": "doi",
    "pages": null,
    "bibliography_found": true,
+   "scoped": null,
    "contexts": [
     {
      "kind": "inline",
@@ -308,6 +343,7 @@
    "matched_by": "doi",
    "pages": null,
    "bibliography_found": true,
+   "scoped": null,
    "contexts": [
     {
      "kind": "inline",
@@ -368,6 +404,7 @@
    "matched_by": "doi",
    "pages": null,
    "bibliography_found": false,
+   "scoped": null,
    "contexts": []
   },
   {
@@ -380,6 +417,7 @@
    "matched_by": "doi",
    "pages": null,
    "bibliography_found": true,
+   "scoped": null,
    "contexts": [
     {
      "kind": "inline",
@@ -438,6 +476,7 @@
    "matched_by": "doi",
    "pages": null,
    "bibliography_found": true,
+   "scoped": null,
    "contexts": [
     {
      "kind": "inline",
@@ -472,6 +511,7 @@
    "matched_by": "doi",
    "pages": null,
    "bibliography_found": true,
+   "scoped": null,
    "contexts": [
     {
      "kind": "inline",
@@ -510,6 +550,7 @@
    "matched_by": "doi",
    "pages": null,
    "bibliography_found": true,
+   "scoped": null,
    "contexts": []
   },
   {
@@ -522,6 +563,7 @@
    "matched_by": "doi",
    "pages": null,
    "bibliography_found": true,
+   "scoped": null,
    "contexts": [
     {
      "kind": "inline",
@@ -565,6 +607,7 @@
    "matched_by": "doi",
    "pages": null,
    "bibliography_found": true,
+   "scoped": null,
    "contexts": [
     {
      "kind": "inline",
@@ -607,6 +650,7 @@
    "matched_by": "doi",
    "pages": null,
    "bibliography_found": true,
+   "scoped": null,
    "contexts": [
     {
      "kind": "inline",
@@ -637,6 +681,7 @@
    "matched_by": "doi",
    "pages": null,
    "bibliography_found": true,
+   "scoped": null,
    "contexts": [
     {
      "kind": "inline",
@@ -687,6 +732,7 @@
    "matched_by": "doi",
    "pages": null,
    "bibliography_found": true,
+   "scoped": null,
    "contexts": [
     {
      "kind": "inline",
@@ -725,6 +771,7 @@
    "matched_by": "doi",
    "pages": null,
    "bibliography_found": true,
+   "scoped": null,
    "contexts": [
     {
      "kind": "inline",
@@ -759,6 +806,7 @@
    "matched_by": "doi",
    "pages": null,
    "bibliography_found": true,
+   "scoped": null,
    "contexts": [
     {
      "kind": "inline",
@@ -789,6 +837,7 @@
    "matched_by": "doi",
    "pages": null,
    "bibliography_found": true,
+   "scoped": null,
    "contexts": [
     {
      "kind": "bibliography",
@@ -805,6 +854,46 @@
    ]
   },
   {
+   "year": 2024,
+   "title": "Genomic privacy preservation in genome-wide association studies: taxonomy, limitations, challenges, and vision",
+   "doi": "10.1093/bib/bbae356",
+   "cites": "sequre-gb-2023",
+   "chars": 71750,
+   "source_file": "bbae356.pdf",
+   "matched_by": "doi",
+   "pages": null,
+   "bibliography_found": true,
+   "scoped": null,
+   "contexts": [
+    {
+     "kind": "inline",
+     "ref": "27",
+     "text": "computation GW AS: Chi-Square \u2014\u2014\u2014\u2014 [23] Privacy preserving Secure multi-party computation GW AS: Logistic Regression \u2014\u2014\u2014\u2014 [24] Privacy preserving Secure multi-party computation GW AS: Chi-Square \u2014\u2014\u2014\u2014 [25] Privacy preserving Secure multi-party computation GW AS: Linear Regression \u2014\u2014\u2014\u2014 [26] Privacy preserving Secure multi-party computation GW AS: Cochran\u2013Armitage Test for T rend (CATT), Logistic Regression \u2014\u2014\u2014\u2014 [27] Privacy preserving Secure multi-party computation GW AS: Logistic Regression \u2014\u2014\u2014\u2014 [28] Privacy preserving Differential privacy GW AS \u2014\u2014\u2014\u2014 [29] Privacy preser"
+    },
+    {
+     "kind": "inline",
+     "ref": "27",
+     "text": "control, principle component analysis, Cochran\u2013Armitage trend test, and logistic regression. Paper [ 25] deals with the concern of privacy preservation of genetic data by introducing a framework that may facilitate quality control and population stratification correction without compromising the privacy and confidentiality of genotypes and phenotypes, and which is based on secure multi-party computation. Paper [ 27] introduced Sequre, a secure multi-party computation protocol, to enable secure collaborative analysis in three domains, including (1) GW AS, (2) drug\u2013target"
+    },
+    {
+     "kind": "body",
+     "text": "cy preservation of genetic data by introducing a framework that may facilitate quality control and population stratification correction without compromising the privacy and confidentiality of genotypes and phenotypes, and which is based on secure multi-party computation. Paper [ 27] introduced Sequre, a secure multi-party computation protocol, to enable secure collaborative analysis in three domains, including (1) GW AS, (2) drug\u2013target interaction prediction, and for the first time, (3) metagenomic binning. Downloaded from academic.oup.com/bib/article/25/5/bbae356/7723312 by guest on "
+    },
+    {
+     "kind": "bibliography",
+     "text": "ol 2018;36:547\u201351. https://doi.org/10.1038/nbt.4108. 26. Dong C, Weng J, Liu J-N. et al. Maliciously secure and effi- cient large-scale genome-wide association study with multi- party computation. IEEE T rans Dependable Secure Comput 2022;20: 1243\u201357. 27. Smajlovi\u00b4c H, Shajii A, Berger B.et al. Sequre: a high-performance framework for secure multiparty computation enables biomed- ical data sharing. Genome Biol 2023;24:5. https://doi.org/10.1186/ s13059-022-02841-5 . 28. Wang H, Wu X. Ipp: an intelligent privacy-preserving scheme for detecting int"
+    },
+    {
+     "kind": "bibliography",
+     "text": "\u201351. https://doi.org/10.1038/nbt.4108. 26. Dong C, Weng J, Liu J-N. et al. Maliciously secure and effi- cient large-scale genome-wide association study with multi- party computation. IEEE T rans Dependable Secure Comput 2022;20: 1243\u201357. 27. Smajlovi\u00b4c H, Shajii A, Berger B.et al. Sequre: a high-performance framework for secure multiparty computation enables biomed- ical data sharing. Genome Biol 2023;24:5. https://doi.org/10.1186/ s13059-022-02841-5 . 28. Wang H, Wu X. Ipp: an intelligent privacy-preserving scheme for detecting interactions in g"
+    },
+    {
+     "kind": "bibliography",
+     "text": "038/nbt.4108. 26. Dong C, Weng J, Liu J-N. et al. Maliciously secure and effi- cient large-scale genome-wide association study with multi- party computation. IEEE T rans Dependable Secure Comput 2022;20: 1243\u201357. 27. Smajlovi\u00b4c H, Shajii A, Berger B.et al. Sequre: a high-performance framework for secure multiparty computation enables biomed- ical data sharing. Genome Biol 2023;24:5. https://doi.org/10.1186/ s13059-022-02841-5 . 28. Wang H, Wu X. Ipp: an intelligent privacy-preserving scheme for detecting interactions in genome association studies."
+    }
+   ]
+  },
+  {
    "year": 2020,
    "title": "A constructive model for collective intelligence",
    "doi": "10.1093/nsr/nwaa092",
@@ -814,6 +903,7 @@
    "matched_by": "doi",
    "pages": null,
    "bibliography_found": true,
+   "scoped": null,
    "contexts": []
   },
   {
@@ -826,6 +916,7 @@
    "matched_by": "doi",
    "pages": null,
    "bibliography_found": false,
+   "scoped": null,
    "contexts": [
     {
      "kind": "bibliography",
@@ -839,6 +930,19 @@
   },
   {
    "year": 2024,
+   "title": "A review of big data technology and its application in cancer care",
+   "doi": "10.1016/j.compbiomed.2024.108577",
+   "cites": "sequre-gb-2023",
+   "chars": 17860,
+   "source_file": "paper2.pdf",
+   "matched_by": "doi",
+   "pages": null,
+   "bibliography_found": false,
+   "scoped": null,
+   "contexts": []
+  },
+  {
+   "year": 2024,
    "title": "Towards a type-based abstract semantics for Python",
    "doi": "10.1016/j.jlamp.2024.101032",
    "cites": "codon-cc-2023",
@@ -847,6 +951,7 @@
    "matched_by": "doi",
    "pages": null,
    "bibliography_found": false,
+   "scoped": null,
    "contexts": [
     {
      "kind": "body",
@@ -896,6 +1001,7 @@
    "matched_by": "doi",
    "pages": null,
    "bibliography_found": false,
+   "scoped": null,
    "contexts": []
   },
   {
@@ -908,6 +1014,20 @@
    "matched_by": "doi",
    "pages": null,
    "bibliography_found": false,
+   "scoped": null,
+   "contexts": []
+  },
+  {
+   "year": 2023,
+   "title": "BioBlocksLab: A Portable DIY Bio Lab Using BioBlocks language.",
+   "doi": "10.1016/j.ymeth.2023.01.001",
+   "cites": "seq-nbt-2021",
+   "chars": 10093,
+   "source_file": "paper6.pdf",
+   "matched_by": "doi",
+   "pages": null,
+   "bibliography_found": false,
+   "scoped": null,
    "contexts": []
   },
   {
@@ -920,6 +1040,7 @@
    "matched_by": "doi",
    "pages": null,
    "bibliography_found": true,
+   "scoped": null,
    "contexts": [
     {
      "kind": "bibliography",
@@ -957,6 +1078,7 @@
    "matched_by": "title",
    "pages": null,
    "bibliography_found": true,
+   "scoped": null,
    "contexts": [
     {
      "kind": "bibliography",
