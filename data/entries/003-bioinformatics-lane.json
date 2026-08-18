@@ -1,0 +1,115 @@
+[
+  {
+    "id": "repo-scatac-seq",
+    "url": "https://github.com/obenno/scATAC-seq",
+    "name": "scATAC-seq (StarScope)",
+    "summary": "A single-cell ATAC-seq processing pipeline documented at the StarScope site. It both vendors and uses Codon: 71 stdlib files plus the Codon parser headers and the jit Python package are committed into the repo, and on top of that sit 24 of its own .codon files holding the barcode and alignment work. The Seq plugin carries the sequence handling, with 56 from-C-import declarations concentrated in three files.",
+    "integration_mode": "source",
+    "integration_mode_secondary": "vendored_install",
+    "codon_via": "direct",
+    "codon_role": "implementation",
+    "codon_features": {
+      "tuple": {"occurrences": 71, "files": 17},
+      "seq_plugin": {"occurrences": 57, "files": 7},
+      "c_interop": {"occurrences": 56, "files": 3},
+      "static_typing": {"occurrences": 29, "files": 8},
+      "pipeline": {"occurrences": 8, "files": 2}
+    },
+    "scale": {"own_codon_files": 24, "own_codon_loc": 8890, "vendored_stdlib_files": 71},
+    "why_codon": "README is a pointer to the documentation site and makes no Codon claim. Inferred from the vendored toolchain and the Seq plugin usage that Codon runs the sequence-processing stages of the pipeline.",
+    "why_codon_source": "inferred",
+    "provenance": "production",
+    "paper": null,
+    "health": {"last_commit": "2025-01-05", "license": "LICENSE", "ci_builds_codon": false},
+    "note": "Vendors more than an install: codon/include/codon/parser/ headers and codon/python/codon/decorator.py are present, so the Codon source tree and the jit package are both committed.",
+    "confidence": "high"
+  },
+  {
+    "id": "repo-single-cell-toolkit",
+    "url": "https://github.com/aertslab/single_cell_toolkit",
+    "name": "Single Cell Toolkit",
+    "summary": "A set of command-line tools for single-cell ATAC FASTQ handling, chiefly attaching 10x cell barcodes from one read file onto the paired reads and correcting them against a whitelist. Nine .codon files carry the barcode extraction and correction, and it is the heaviest user of the Seq plugin found so far, with 41 bio-import sites across all nine files and the pipeline operator used for k-mer mutation.",
+    "integration_mode": "source",
+    "codon_via": "direct",
+    "codon_role": "implementation",
+    "codon_features": {
+      "seq_plugin": {"occurrences": 41, "files": 9},
+      "pipeline": {"occurrences": 19, "files": 2},
+      "tuple": {"occurrences": 7, "files": 2},
+      "static_typing": {"occurrences": 3, "files": 1}
+    },
+    "scale": {"own_codon_files": 9, "own_codon_loc": 3645, "vendored_stdlib_files": 0},
+    "why_codon": "README documents shell usage only and makes no Codon claim. Inferred from the Seq plugin and pipeline usage that Codon runs the per-read barcode work.",
+    "why_codon_source": "inferred",
+    "provenance": "production",
+    "paper": null,
+    "health": {"last_commit": "2026-08-12", "license": null, "ci_builds_codon": false},
+    "confidence": "high"
+  },
+  {
+    "id": "repo-scpreproc",
+    "url": "https://github.com/AAnnan/scPreproc",
+    "name": "scPreproc",
+    "summary": "A single-cell preprocessing pipeline whose demultiplexing stage is written in Codon. Two .codon files hold the work, run through the Seq plugin with compile-time parameters supplied on the command line -- barcode length, barcode start offset and a minimum read threshold are passed as -D definitions, so the barcode geometry is fixed at compile time rather than read at runtime.",
+    "integration_mode": "source",
+    "codon_via": "plugin",
+    "codon_role": "implementation",
+    "codon_features": {
+      "pipeline": {"occurrences": 12, "files": 1},
+      "seq_plugin": {"occurrences": 6, "files": 2},
+      "static_typing": {"occurrences": 5, "files": 2},
+      "tuple": {"occurrences": 1, "files": 1}
+    },
+    "scale": {"own_codon_files": 2, "own_codon_loc": 579, "vendored_stdlib_files": 0},
+    "why_codon": "README instructs the user to install Codon and Seq and gives the exact codon run -plugin seq -release command line; it makes no performance claim.",
+    "why_codon_source": "stated",
+    "provenance": "research_prototype",
+    "paper": null,
+    "health": {"last_commit": "2024-10-14", "license": null, "ci_builds_codon": false},
+    "confidence": "high"
+  },
+  {
+    "id": "repo-rdi",
+    "url": "https://github.com/curtisupshall/rdi",
+    "name": "RDI (Repeat Detection Index)",
+    "summary": "A library that builds an index for finding repeated substrings and uses it for de novo genome assembly, describing itself as a Codon library. Fourteen .codon files hold the suffix array, LCP, k-mer, B-tree and Bloom filter machinery; the Seq plugin supplies the sequence types and Python interop is used to reach json, bz2, tqdm and argparse from inside Codon.",
+    "integration_mode": "source",
+    "codon_via": "direct",
+    "codon_role": "implementation",
+    "codon_features": {
+      "seq_plugin": {"occurrences": 7, "files": 6},
+      "python_interop": {"occurrences": 5, "files": 4},
+      "c_interop": {"occurrences": 1, "files": 1}
+    },
+    "scale": {"own_codon_files": 14, "own_codon_loc": 952, "vendored_stdlib_files": 0},
+    "why_codon": "README states RDI is a Codon library and requires Codon with Python interoperability enabled plus the Seq plugin.",
+    "why_codon_source": "stated",
+    "provenance": "research_prototype",
+    "paper": null,
+    "health": {"last_commit": "2024-08-24", "license": null, "ci_builds_codon": false},
+    "confidence": "high"
+  },
+  {
+    "id": "repo-triton-seq",
+    "url": "https://github.com/shuochen0113/Triton-Seq",
+    "name": "Triton-Seq",
+    "summary": "A GPU framework for Smith-Waterman sequence alignment built on Triton kernels with custom MLIR compiler passes for shared-memory optimization. Codon is not the implementation: it is one of six alternatives the project evaluates alongside Triton, TileLang, ThunderKittens, CuTile and native CUDA, and its nine .codon files sit under experiments/codon and experiments/dsl_comparison. They are nonetheless the only GPU-annotated Codon code found in the index so far.",
+    "integration_mode": "source",
+    "codon_via": "direct",
+    "codon_role": "evaluated_alternative",
+    "codon_features": {
+      "gpu": {"occurrences": 6, "files": 3},
+      "c_interop": {"occurrences": 4, "files": 1},
+      "seq_plugin": {"occurrences": 1, "files": 1},
+      "python_interop": {"occurrences": 1, "files": 1},
+      "par": {"occurrences": 1, "files": 1}
+    },
+    "scale": {"own_codon_files": 9, "own_codon_loc": 748, "vendored_stdlib_files": 0},
+    "why_codon": "README lists Codon among the DSLs evaluated and implemented against for comparison; no claim is made that Codon powers the framework.",
+    "why_codon_source": "stated",
+    "provenance": "research_prototype",
+    "paper": null,
+    "health": {"last_commit": "2026-03-16", "license": "LICENSE", "ci_builds_codon": false},
+    "confidence": "high"
+  }
+]
