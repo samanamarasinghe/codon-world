@@ -1,0 +1,123 @@
+[
+ {
+  "id": "paper-decor-2026",
+  "url": "https://doi.org/10.1109/sp63933.2026.00256",
+  "name": "Decor: Delegated Computation on Randomness for Secure Evaluation of Nonlinear Functions",
+  "venue": "IEEE Symposium on Security and Privacy 2026",
+  "year": 2026,
+  "doi": "10.1109/sp63933.2026.00256",
+  "summary": "Protocols for evaluating nonlinear functions inside secure multiparty computation by delegating correlated randomness to a trusted dealer, measured on runtime, dealer and online bandwidth, and round count. Every protocol in the evaluation was implemented on the Codon stack: the paper states it used Shechi, which it describes as a Python compiler based on Codon, for the secret-sharing subroutines the implementation rests on.",
+  "codon_relation": "uses",
+  "codon_role": "implementation",
+  "why_codon": "The evaluation section states that all protocols were implemented in Shechi, a Python compiler based on Codon for developing MPC and homomorphic encryption protocols, which supplied the secret-sharing subroutines and utility functions. Codon executes; nothing about it is changed.",
+  "why_codon_source": "stated",
+  "provenance": "published",
+  "cites_anchors": [
+   "codon-cc-2023",
+   "sequre-gb-2023"
+  ],
+  "found_in": "openalex",
+  "related_repo": "repo-decor",
+  "note": "Third paper-to-repository join, and the second where the paper and the repository do not say quite the same thing. The repository entry for hcholab/decor reads the Codon route as Sequre loaded as a plugin, inferred from an install recipe pinning Codon v0.17.0. The paper names Shechi instead. Both can be true of different artefacts -- Shechi and Sequre share 87 of 88 .codon paths, which is what ruling 4 was about -- but the discrepancy is worth reconciling, and the repository's `why_codon_source: inferred` is the weaker of the two readings.",
+  "confidence": "high"
+ },
+ {
+  "id": "paper-fcfuzzer-2023",
+  "url": "https://doi.org/10.1109/issre59848.2023.00066",
+  "name": "Detecting Interpreter Bugs via Filling Function Calls in Skeletal Program Enumeration",
+  "venue": "ISSRE 2023",
+  "year": 2023,
+  "doi": "10.1109/issre59848.2023.00066",
+  "summary": "FCFuzzer extends skeletal program enumeration by filling in function calls, and is turned on seven Python implementations at once: CPython, IronPython, GPython, Pyston, PyPy, RustPython and Codon v0.15.5. A month of fuzzing produced 35 interpreter bugs, 16 of them previously unknown, and Codon is among the implementations that crashed.",
+  "codon_relation": "evaluates",
+  "codon_role": "benchmark",
+  "why_codon": "Codon is one of the seven Python implementations under test, named with the version used and appearing in the results table with reported crashes. The paper runs it as a subject of the study rather than citing it.",
+  "why_codon_source": "stated",
+  "provenance": "published",
+  "cites_anchors": [
+   "codon-cc-2023"
+  ],
+  "found_in": "openalex",
+  "note": "The only work in the corpus that treats Codon as a program under test rather than a tool or a citation, and the only one to file bugs against it. It also sets Codon among Python interpreters rather than among compilers, which is a category error the paper's own description avoids -- and one that makes Codon look worse, since a compiler that rejects a dynamic program is behaving as designed. Two Codon crashes appear in the table, one recorded as already known upstream.",
+  "confidence": "high"
+ },
+ {
+  "id": "paper-streamlining-c-compilation-2025",
+  "url": "https://doi.org/10.1109/assic64892.2025.11158099",
+  "name": "Streamlining C Compilation: Harnessing Different Optimization Techniques",
+  "venue": "ASSIC 2025",
+  "year": 2025,
+  "doi": "10.1109/assic64892.2025.11158099",
+  "summary": "A review of compiler optimisation techniques, working through recent papers one by one and stating what each contributes and where it falls short. Codon is one of those, credited with reaching C and C++ performance from Python while remaining domain-extensible, and then held to the two limitations the Codon paper names for itself.",
+  "codon_relation": "prior_art",
+  "codon_role": "exploration",
+  "why_codon": "The review summarises Codon as a domain-extensible compiler achieving low-level performance from Python syntax, and then states that support for runtime polymorphism and standard library coverage remain limited. Nothing is run.",
+  "why_codon_source": "stated",
+  "provenance": "published",
+  "cites_anchors": [
+   "codon-cc-2023"
+  ],
+  "found_in": "openalex",
+  "note": "One of the few citations that repeats Codon's stated limitations rather than only its results. Runtime polymorphism is the one it names first, and it is also exactly what Pyls exists to supply for Python hardware synthesis -- the same gap read as a caveat here and as an opportunity there.",
+  "confidence": "high"
+ },
+ {
+  "id": "paper-jacc-2024",
+  "url": "https://doi.org/10.1109/scw63240.2024.00245",
+  "name": "JACC: Leveraging HPC Meta-Programming and Performance Portability with the Just-in-Time and LLVM-based Julia Language",
+  "venue": "SC Workshops 2024",
+  "year": 2024,
+  "doi": "10.1109/scw63240.2024.00245",
+  "summary": "A portability layer for Julia that keeps one source form across CPU and GPU back ends, set against the wider movement of high-level languages onto LLVM. Codon is named alongside Numba as an effort targeting Python that reuses LLVM's modularity by generating LLVM IR.",
+  "codon_relation": "prior_art",
+  "codon_role": "exploration",
+  "why_codon": "Codon is cited once, bracketed with Numba, as an effort targeting Python that generates LLVM IR to get performance from a high-level dynamic programming model. No experiment involves it.",
+  "why_codon_source": "stated",
+  "provenance": "published",
+  "cites_anchors": [
+   "codon-cc-2023"
+  ],
+  "found_in": "openalex",
+  "note": "Another citation that reaches for the intermediate representation rather than the benchmark numbers, consistent with the split this corpus keeps showing between compiler-facing and application-facing readers.",
+  "confidence": "high"
+ },
+ {
+  "id": "paper-graphblas-opportunities-2025",
+  "url": "https://doi.org/10.1109/hpec67600.2025.11196667",
+  "name": "GraphBLAS Mathematical Opportunities: Parallel Hypersparse, Matrix Based Graph Algorithms, and Complex Numbers",
+  "venue": "HPEC 2025",
+  "year": 2025,
+  "doi": "10.1109/hpec67600.2025.11196667",
+  "summary": "A survey of directions the GraphBLAS standard could take, covering hypersparse parallelism, matrix formulations of graph algorithms and complex-valued semirings. Codon is one of two citations for Python in a list of high-level languages that can carry distributed array implementations, alongside Matlab and Octave.",
+  "codon_relation": "prior_art",
+  "codon_role": "exploration",
+  "why_codon": "Codon is cited once, as one of two references for Python in a bracketed list of high-level languages in which distributed arrays can be implemented. Nothing is run.",
+  "why_codon_source": "stated",
+  "provenance": "published",
+  "cites_anchors": [
+   "codon-cc-2023"
+  ],
+  "found_in": "openalex",
+  "confidence": "high"
+ },
+ {
+  "id": "paper-green-side-lua-2026",
+  "url": "https://doi.org/10.1109/saner-c67878.2026.00033",
+  "name": "The Green Side of the Lua",
+  "venue": "SANER 2026",
+  "year": 2026,
+  "doi": "10.1109/saner-c67878.2026.00033",
+  "summary": "An energy study of Lua, prompted by earlier rankings placing it among the least energy-efficient languages measured. Codon appears in the argument that designers of interpreted languages respond to such findings by building compilers, offered as the Python instance beside LuaAOT for Lua.",
+  "codon_relation": "prior_art",
+  "codon_role": "exploration",
+  "why_codon": "Codon is cited once, as the example of a compiler developed for an interpreted language to improve its runtime and energy efficiency, paired with LuaAOT. No measurement involves it.",
+  "why_codon_source": "stated",
+  "provenance": "published",
+  "cites_anchors": [
+   "codon-cc-2023"
+  ],
+  "found_in": "openalex",
+  "note": "The second work in the corpus to reach for Codon in an energy argument, after the EASE 2025 compiled-Python study. That study measured Codon's energy directly; this one cites it as evidence that compiling an interpreted language is the response the field reaches for. Neither is a Codon paper, and energy is a claim the Codon paper itself does not make.",
+  "confidence": "high"
+ }
+]
