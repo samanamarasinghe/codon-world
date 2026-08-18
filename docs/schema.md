@@ -1,4 +1,4 @@
-# Repo entry schema (draft 1)
+# Repo entry schema (draft 2)
 
 Codon-world goes deeper per entry than the SDV index did, because the population is
 smaller. Every repo entry carries the SDV fields (url, summary, authors, use case)
@@ -35,12 +35,23 @@ a repo with 151 files of which 140 are a vendored stdlib is a small repo.
 ## Why Codon
 
 The performance claim the repo itself makes, with any benchmark number it reports.
-Taken from the repo, never inferred. Empty where the repo makes no claim.
+
+Where the repo makes no such claim, an inference is allowed but must be marked:
+`why_codon_source` is `stated` or `inferred`, and an `inferred` value carries the
+observation it rests on. FLOX is the case that forced this -- it declares 1,347 C
+entry points and claims nothing about Codon anywhere, so the reading that Codon is
+the native-speed strategy surface is an inference from the binding layer.
 
 ## Provenance
 
 `paper_backed` (with the DOI), `production`, `research_prototype`, `coursework`,
 `toy`, `doc_mirror`.
+
+Coursework and documentation mirrors are INCLUDED as entries, not filtered out.
+So are repos that vendor a Codon installation -- their scale is reported at their
+own source size, with the vendored stdlib counted separately and never folded in.
+Only `false_positive` is an exclusion: `.codon` files that are codon-usage tables
+or codeml alignments and have nothing to do with the language.
 
 ## Health
 
