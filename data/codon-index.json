@@ -1,6 +1,10 @@
 {
- "generated_from": "data/entries/*.json + data/pilot/*.json",
- "entry_count": 108,
+ "generated_from": "data/entries/*.json + data/pilot/*.json + data/papers/*.json",
+ "entry_count": 117,
+ "kind_counts": {
+  "repo": 108,
+  "paper": 9
+ },
  "sidecar_counts": {
   "false_positive/genetics": 11,
   "fork_of_packaging": 23
@@ -72,7 +76,8 @@
     ]
    },
    "confidence": "high",
-   "source_file": "data/entries/002-numanagic-lane.json"
+   "source_file": "data/entries/002-numanagic-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-shechi",
@@ -128,7 +133,8 @@
     "ci_builds_codon": false
    },
    "confidence": "high",
-   "source_file": "data/entries/002-numanagic-lane.json"
+   "source_file": "data/entries/002-numanagic-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-vectron",
@@ -179,7 +185,8 @@
     "ci_builds_codon": false
    },
    "confidence": "high",
-   "source_file": "data/pilot/001-pilot.json"
+   "source_file": "data/pilot/001-pilot.json",
+   "kind": "repo"
   },
   {
    "id": "repo-conduit",
@@ -225,7 +232,8 @@
    },
    "note": "README carries an MIT license badge linking to LICENSE, but the repo contains no LICENSE file.",
    "confidence": "high",
-   "source_file": "data/pilot/001-pilot.json"
+   "source_file": "data/pilot/001-pilot.json",
+   "kind": "repo"
   },
   {
    "id": "repo-flox",
@@ -265,7 +273,8 @@
     ]
    },
    "confidence": "high",
-   "source_file": "data/pilot/001-pilot.json"
+   "source_file": "data/pilot/001-pilot.json",
+   "kind": "repo"
   },
   {
    "id": "repo-scatac-seq",
@@ -314,7 +323,8 @@
    },
    "note": "Vendors more than an install: codon/include/codon/parser/ headers and codon/python/codon/decorator.py are present, so the Codon source tree and the jit package are both committed.",
    "confidence": "high",
-   "source_file": "data/entries/003-bioinformatics-lane.json"
+   "source_file": "data/entries/003-bioinformatics-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-fastcodon",
@@ -349,7 +359,8 @@
    },
    "note": "Writes its own crypto and socket layers in Codon rather than binding a C library, so it exercises the language more broadly than its single recorded feature suggests.",
    "confidence": "high",
-   "source_file": "data/entries/004-web-frameworks-lane.json"
+   "source_file": "data/entries/004-web-frameworks-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-csc427-exophobias",
@@ -393,7 +404,8 @@
     ]
    },
    "confidence": "high",
-   "source_file": "data/entries/009-coursework-lane.json"
+   "source_file": "data/entries/009-coursework-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-csc427-kellofoggs",
@@ -438,7 +450,8 @@
     ]
    },
    "confidence": "high",
-   "source_file": "data/entries/009-coursework-lane.json"
+   "source_file": "data/entries/009-coursework-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-csc427-liamsquires",
@@ -482,7 +495,8 @@
     ]
    },
    "confidence": "high",
-   "source_file": "data/entries/009-coursework-lane.json"
+   "source_file": "data/entries/009-coursework-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-csc427-milorph",
@@ -522,7 +536,8 @@
     ]
    },
    "confidence": "high",
-   "source_file": "data/entries/009-coursework-lane.json"
+   "source_file": "data/entries/009-coursework-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-single-cell-toolkit",
@@ -565,7 +580,8 @@
     "ci_builds_codon": false
    },
    "confidence": "high",
-   "source_file": "data/entries/003-bioinformatics-lane.json"
+   "source_file": "data/entries/003-bioinformatics-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-decor",
@@ -617,7 +633,8 @@
     "ci_builds_codon": false
    },
    "confidence": "high",
-   "source_file": "data/entries/002-numanagic-lane.json"
+   "source_file": "data/entries/002-numanagic-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-codon-numpy",
@@ -661,7 +678,8 @@
    },
    "note": "Possible lineage worth checking with him: the author is a co-author on the Codon and Sequre papers, this repo stopped in 2023, and Codon's own stdlib now carries a numpy package whose module names overlap (ndarray, create, reductions, linalg). Recorded as an observation, not a causal claim.",
    "confidence": "high",
-   "source_file": "data/entries/006-tooling-lane.json"
+   "source_file": "data/entries/006-tooling-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-csc427-reedbryan",
@@ -692,7 +710,8 @@
     ]
    },
    "confidence": "high",
-   "source_file": "data/entries/009-coursework-lane.json"
+   "source_file": "data/entries/009-coursework-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-csc427-tristancornwell",
@@ -736,7 +755,8 @@
     ]
    },
    "confidence": "high",
-   "source_file": "data/entries/009-coursework-lane.json"
+   "source_file": "data/entries/009-coursework-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-tresflow",
@@ -779,7 +799,8 @@
     "ci_builds_codon": false
    },
    "confidence": "high",
-   "source_file": "data/entries/006-tooling-lane.json"
+   "source_file": "data/entries/006-tooling-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-biser",
@@ -827,7 +848,8 @@
     "ci_builds_codon": false
    },
    "confidence": "high",
-   "source_file": "data/entries/002-numanagic-lane.json"
+   "source_file": "data/entries/002-numanagic-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-mce-sandbox",
@@ -870,7 +892,8 @@
     "ci_builds_codon": false
    },
    "confidence": "high",
-   "source_file": "data/entries/005-benchmark-lane.json"
+   "source_file": "data/entries/005-benchmark-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-jaegeryan-bioinformatics",
@@ -906,7 +929,8 @@
     "ci_builds_codon": false
    },
    "confidence": "high",
-   "source_file": "data/entries/007-tail-lane.json"
+   "source_file": "data/entries/007-tail-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-csc427-rachel-wenhui-ma",
@@ -950,7 +974,8 @@
     ]
    },
    "confidence": "high",
-   "source_file": "data/entries/009-coursework-lane.json"
+   "source_file": "data/entries/009-coursework-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-secure-mice",
@@ -989,7 +1014,8 @@
     "ci_builds_codon": false
    },
    "confidence": "high",
-   "source_file": "data/entries/002-numanagic-lane.json"
+   "source_file": "data/entries/002-numanagic-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-turbox-sir-george2500",
@@ -1025,7 +1051,8 @@
    },
    "note": "Shares a name with cruso003/TurboX and nothing else: the two have zero .codon paths in common and different layouts. Not a fork.",
    "confidence": "high",
-   "source_file": "data/entries/004-web-frameworks-lane.json"
+   "source_file": "data/entries/004-web-frameworks-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-rdi",
@@ -1064,7 +1091,8 @@
     "ci_builds_codon": false
    },
    "confidence": "high",
-   "source_file": "data/entries/003-bioinformatics-lane.json"
+   "source_file": "data/entries/003-bioinformatics-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-graphmemory-ide",
@@ -1098,7 +1126,8 @@
     ]
    },
    "confidence": "high",
-   "source_file": "data/entries/006-tooling-lane.json"
+   "source_file": "data/entries/006-tooling-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-triton-seq",
@@ -1145,7 +1174,8 @@
     "ci_builds_codon": false
    },
    "confidence": "high",
-   "source_file": "data/entries/003-bioinformatics-lane.json"
+   "source_file": "data/entries/003-bioinformatics-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-codon-light",
@@ -1180,7 +1210,8 @@
     "ci_builds_codon": false
    },
    "confidence": "high",
-   "source_file": "data/entries/006-tooling-lane.json"
+   "source_file": "data/entries/006-tooling-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-scpreproc",
@@ -1223,7 +1254,8 @@
     "ci_builds_codon": false
    },
    "confidence": "high",
-   "source_file": "data/entries/003-bioinformatics-lane.json"
+   "source_file": "data/entries/003-bioinformatics-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-scalce-codon",
@@ -1258,7 +1290,8 @@
     "ci_builds_codon": false
    },
    "confidence": "high",
-   "source_file": "data/entries/007-tail-lane.json"
+   "source_file": "data/entries/007-tail-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-turbox-cruso003",
@@ -1296,7 +1329,8 @@
    },
    "note": "README carries an MIT license badge linking to LICENSE, but the repo contains no LICENSE file. Conduit, by the same author, has the same discrepancy.",
    "confidence": "high",
-   "source_file": "data/entries/004-web-frameworks-lane.json"
+   "source_file": "data/entries/004-web-frameworks-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-tsp-solver",
@@ -1323,7 +1357,8 @@
    },
    "note": "Filed exploration rather than benchmark: a Python counterpart exists, but the repo publishes no comparison.",
    "confidence": "high",
-   "source_file": "data/entries/005-benchmark-lane.json"
+   "source_file": "data/entries/005-benchmark-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-md5-codon",
@@ -1362,7 +1397,8 @@
     "ci_builds_codon": false
    },
    "confidence": "high",
-   "source_file": "data/entries/007-tail-lane.json"
+   "source_file": "data/entries/007-tail-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-mojo-benchmarks",
@@ -1394,7 +1430,8 @@
    },
    "note": "Bachelor's thesis work rather than a taught-course exercise; filed as coursework because no separate thesis value exists in the vocabulary.",
    "confidence": "high",
-   "source_file": "data/entries/005-benchmark-lane.json"
+   "source_file": "data/entries/005-benchmark-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-phase-project",
@@ -1425,7 +1462,8 @@
     "ci_builds_codon": false
    },
    "confidence": "high",
-   "source_file": "data/entries/007-tail-lane.json"
+   "source_file": "data/entries/007-tail-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-takechi-atcoder",
@@ -1456,7 +1494,8 @@
     "ci_builds_codon": false
    },
    "confidence": "high",
-   "source_file": "data/entries/005-benchmark-lane.json"
+   "source_file": "data/entries/005-benchmark-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-ds-tools",
@@ -1482,7 +1521,8 @@
     "ci_builds_codon": false
    },
    "confidence": "high",
-   "source_file": "data/entries/007-tail-lane.json"
+   "source_file": "data/entries/007-tail-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-strings-codon",
@@ -1513,7 +1553,8 @@
     "ci_builds_codon": false
    },
    "confidence": "high",
-   "source_file": "data/entries/007-tail-lane.json"
+   "source_file": "data/entries/007-tail-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-markhend-aoc",
@@ -1539,7 +1580,8 @@
     "ci_builds_codon": false
    },
    "confidence": "high",
-   "source_file": "data/entries/005-benchmark-lane.json"
+   "source_file": "data/entries/005-benchmark-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-yogi",
@@ -1566,7 +1608,8 @@
     "ci_builds_codon": false
    },
    "confidence": "high",
-   "source_file": "data/entries/006-tooling-lane.json"
+   "source_file": "data/entries/006-tooling-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-awesome-mojo",
@@ -1597,7 +1640,8 @@
     "ci_builds_codon": false
    },
    "confidence": "high",
-   "source_file": "data/entries/005-benchmark-lane.json"
+   "source_file": "data/entries/005-benchmark-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-xxd-codon",
@@ -1624,7 +1668,8 @@
     "ci_builds_codon": false
    },
    "confidence": "high",
-   "source_file": "data/entries/007-tail-lane.json"
+   "source_file": "data/entries/007-tail-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-r-packages-archives",
@@ -1663,7 +1708,8 @@
     "ci_builds_codon": false
    },
    "confidence": "high",
-   "source_file": "data/entries/007-tail-lane.json"
+   "source_file": "data/entries/007-tail-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-university-breno",
@@ -1690,7 +1736,8 @@
    },
    "note": "Fourth course found using Codon.",
    "confidence": "high",
-   "source_file": "data/entries/013-round2-substantive.json"
+   "source_file": "data/entries/013-round2-substantive.json",
+   "kind": "repo"
   },
   {
    "id": "repo-pyext",
@@ -1717,7 +1764,8 @@
     "ci_builds_codon": false
    },
    "confidence": "high",
-   "source_file": "data/entries/007-tail-lane.json"
+   "source_file": "data/entries/007-tail-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-llama2-hack",
@@ -1743,7 +1791,8 @@
     "ci_builds_codon": false
    },
    "confidence": "high",
-   "source_file": "data/entries/007-tail-lane.json"
+   "source_file": "data/entries/007-tail-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-codon-wasm",
@@ -1774,7 +1823,8 @@
     "ci_builds_codon": false
    },
    "confidence": "high",
-   "source_file": "data/entries/006-tooling-lane.json"
+   "source_file": "data/entries/006-tooling-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-ctfcup24-school-ad",
@@ -1802,7 +1852,8 @@
    },
    "note": "The only security-competition entry, and the only one where Codon appears in an exploit as well as in a service.",
    "confidence": "high",
-   "source_file": "data/entries/013-round2-substantive.json"
+   "source_file": "data/entries/013-round2-substantive.json",
+   "kind": "repo"
   },
   {
    "id": "repo-hello-pythran",
@@ -1828,7 +1879,8 @@
     "ci_builds_codon": false
    },
    "confidence": "high",
-   "source_file": "data/entries/005-benchmark-lane.json"
+   "source_file": "data/entries/005-benchmark-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-pl-ultimate-llm",
@@ -1856,7 +1908,8 @@
    },
    "note": "Machine-authored Codon: a language model chose the language at random and wrote the program. Flagged per ruling 6, kept as an ordinary entry.",
    "confidence": "high",
-   "source_file": "data/entries/007-tail-lane.json"
+   "source_file": "data/entries/007-tail-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-jutge-tests",
@@ -1884,7 +1937,8 @@
    },
    "note": "Highest file-count-to-LOC ratio in the index: 10 files, 15 lines. A reminder that file counts alone rank this above repos a hundred times its size.",
    "confidence": "high",
-   "source_file": "data/entries/006-tooling-lane.json"
+   "source_file": "data/entries/006-tooling-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-codonx",
@@ -1916,7 +1970,8 @@
    },
    "note": "Tooling ABOUT Codon written outside Codon. The .codon LOC understates it badly; the substance is Rust.",
    "confidence": "high",
-   "source_file": "data/entries/006-tooling-lane.json"
+   "source_file": "data/entries/006-tooling-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-hcc-conda-recipes",
@@ -1942,7 +1997,8 @@
     "ci_builds_codon": false
    },
    "confidence": "high",
-   "source_file": "data/entries/007-tail-lane.json"
+   "source_file": "data/entries/007-tail-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-agent-engineering-handbook",
@@ -1969,7 +2025,8 @@
    },
    "note": "Guidance aimed at coding agents rather than people. A distinct channel by which Codon reaches new code.",
    "confidence": "medium",
-   "source_file": "data/entries/010-jit-and-mention-lane.json"
+   "source_file": "data/entries/010-jit-and-mention-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-akleemans-aoc-2022",
@@ -1996,7 +2053,8 @@
     "ci_builds_codon": false
    },
    "confidence": "medium",
-   "source_file": "data/entries/013-round2-substantive.json"
+   "source_file": "data/entries/013-round2-substantive.json",
+   "kind": "repo"
   },
   {
    "id": "repo-akleemans-aoc-2023",
@@ -2024,7 +2082,8 @@
    },
    "note": "The pair is the only two-year longitudinal case in the index: the same author's Codon usage grew between 2022 and 2023.",
    "confidence": "medium",
-   "source_file": "data/entries/013-round2-substantive.json"
+   "source_file": "data/entries/013-round2-substantive.json",
+   "kind": "repo"
   },
   {
    "id": "repo-ariesq-stars",
@@ -2051,7 +2110,8 @@
    },
    "note": "The weakest entry in the index. Kept because the mention lane is a real channel, but it carries no information about Codon beyond the fact of a star.",
    "confidence": "high",
-   "source_file": "data/entries/017-mention-lane-round2.json"
+   "source_file": "data/entries/017-mention-lane-round2.json",
+   "kind": "repo"
   },
   {
    "id": "repo-arquimundo-api",
@@ -2077,7 +2137,8 @@
     "ci_builds_codon": false
    },
    "confidence": "medium",
-   "source_file": "data/entries/010-jit-and-mention-lane.json"
+   "source_file": "data/entries/010-jit-and-mention-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-atcoder-codon",
@@ -2107,7 +2168,8 @@
    },
    "note": "Third competitive-programming entry after takechi-scratch/atcoder and Jutge.org, and the only one that packages an environment for others.",
    "confidence": "high",
-   "source_file": "data/entries/013-round2-substantive.json"
+   "source_file": "data/entries/013-round2-substantive.json",
+   "kind": "repo"
   },
   {
    "id": "repo-branden-kang-python-practice",
@@ -2134,7 +2196,8 @@
    },
    "note": "The multithreading framing is the only place in the index where Codon is presented primarily as an escape from the GIL rather than as an optimizing compiler.",
    "confidence": "high",
-   "source_file": "data/entries/017-mention-lane-round2.json"
+   "source_file": "data/entries/017-mention-lane-round2.json",
+   "kind": "repo"
   },
   {
    "id": "repo-cainiaoprogram-blog",
@@ -2161,7 +2224,8 @@
    },
    "note": "With the Japanese N-Queens blog and the German notes, the mention lane spans four languages. Codon's documentation reaches beyond English writing even where its code does not.",
    "confidence": "medium",
-   "source_file": "data/entries/017-mention-lane-round2.json"
+   "source_file": "data/entries/017-mention-lane-round2.json",
+   "kind": "repo"
   },
   {
    "id": "repo-chaotic-aur",
@@ -2188,7 +2252,8 @@
     "ci_builds_codon": false
    },
    "confidence": "high",
-   "source_file": "data/entries/014-packaging-lane.json"
+   "source_file": "data/entries/014-packaging-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-chromebrew",
@@ -2216,7 +2281,8 @@
    },
    "note": "Two copies of this repo appear in the round-2 fork list.",
    "confidence": "high",
-   "source_file": "data/entries/014-packaging-lane.json"
+   "source_file": "data/entries/014-packaging-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-cli-tools-ngruenwald",
@@ -2243,7 +2309,8 @@
     "ci_builds_codon": false
    },
    "confidence": "high",
-   "source_file": "data/entries/014-packaging-lane.json"
+   "source_file": "data/entries/014-packaging-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-codeboarding-architecture-mds",
@@ -2271,7 +2338,8 @@
    },
    "note": "Machine-authored documentation about Codon, flagged under ruling 6. Second machine-authored entry after PL-ultimate-llm, and the second channel by which Codon reaches model-generated material, alongside llmref.",
    "confidence": "medium",
-   "source_file": "data/entries/011-vendored-and-mirrors.json"
+   "source_file": "data/entries/011-vendored-and-mirrors.json",
+   "kind": "repo"
   },
   {
    "id": "repo-codon-networkx",
@@ -2297,7 +2365,8 @@
     "ci_builds_codon": false
    },
    "confidence": "medium",
-   "source_file": "data/entries/010-jit-and-mention-lane.json"
+   "source_file": "data/entries/010-jit-and-mention-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-codontest-0num4",
@@ -2327,7 +2396,8 @@
    },
    "note": "One of the few entries recording a failure. Worth keeping: an index of successful uses would misrepresent what adopting Codon is like.",
    "confidence": "high",
-   "source_file": "data/entries/013-round2-substantive.json"
+   "source_file": "data/entries/013-round2-substantive.json",
+   "kind": "repo"
   },
   {
    "id": "repo-compiler-explorer-infra",
@@ -2354,7 +2424,8 @@
     "ci_builds_codon": false
    },
    "confidence": "high",
-   "source_file": "data/entries/014-packaging-lane.json"
+   "source_file": "data/entries/014-packaging-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-csc427-chase2512",
@@ -2385,7 +2456,8 @@
    },
    "note": "Codon source in .py files. Found only via the codon.jit lane; extension:codon misses it entirely. See docs/gaps.md.",
    "confidence": "high",
-   "source_file": "data/entries/009-coursework-lane.json"
+   "source_file": "data/entries/009-coursework-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-csc427-kaceythai",
@@ -2417,7 +2489,8 @@
     ]
    },
    "confidence": "high",
-   "source_file": "data/entries/016-coursework-round2.json"
+   "source_file": "data/entries/016-coursework-round2.json",
+   "kind": "repo"
   },
   {
    "id": "repo-csc427-marlodenis",
@@ -2448,7 +2521,8 @@
     ]
    },
    "confidence": "high",
-   "source_file": "data/entries/016-coursework-round2.json"
+   "source_file": "data/entries/016-coursework-round2.json",
+   "kind": "repo"
   },
   {
    "id": "repo-csc427-oliwhitla",
@@ -2479,7 +2553,8 @@
     ]
    },
    "confidence": "high",
-   "source_file": "data/entries/016-coursework-round2.json"
+   "source_file": "data/entries/016-coursework-round2.json",
+   "kind": "repo"
   },
   {
    "id": "repo-csc427-yushannn",
@@ -2511,7 +2586,8 @@
     ]
    },
    "confidence": "high",
-   "source_file": "data/entries/016-coursework-round2.json"
+   "source_file": "data/entries/016-coursework-round2.json",
+   "kind": "repo"
   },
   {
    "id": "repo-eplusplus",
@@ -2538,7 +2614,8 @@
    },
    "note": "Second project after codonx to wrap Codon in a tool written in another language, and the more ambitious of the two: it presents Codon as its own language.",
    "confidence": "high",
-   "source_file": "data/entries/013-round2-substantive.json"
+   "source_file": "data/entries/013-round2-substantive.json",
+   "kind": "repo"
   },
   {
    "id": "repo-evolove",
@@ -2566,7 +2643,8 @@
    },
    "note": "Reclassified out of the source class after reading the file. The repo names its notation codon-lang, which is a naming collision with the compiler, not a use of it.",
    "confidence": "high",
-   "source_file": "data/entries/008-false-positives.json"
+   "source_file": "data/entries/008-false-positives.json",
+   "kind": "repo"
   },
   {
    "id": "repo-exaloop-io",
@@ -2593,7 +2671,8 @@
    },
    "note": "First-party, not a third-party mirror. Should probably sit with the anchors rather than in the mirror class.",
    "confidence": "medium",
-   "source_file": "data/entries/011-vendored-and-mirrors.json"
+   "source_file": "data/entries/011-vendored-and-mirrors.json",
+   "kind": "repo"
   },
   {
    "id": "repo-example-codon-plugin",
@@ -2621,7 +2700,8 @@
    },
    "note": "First-party. Arguably belongs with the anchors rather than in the entry set; recorded here with a first_party flag pending his call.",
    "confidence": "high",
-   "source_file": "data/entries/013-round2-substantive.json"
+   "source_file": "data/entries/013-round2-substantive.json",
+   "kind": "repo"
   },
   {
    "id": "repo-fragannot",
@@ -2647,7 +2727,8 @@
     "ci_builds_codon": false
    },
    "confidence": "medium",
-   "source_file": "data/entries/010-jit-and-mention-lane.json"
+   "source_file": "data/entries/010-jit-and-mention-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-genetic-engine",
@@ -2674,7 +2755,8 @@
    },
    "note": "Codon source is .py; found through the invocation lane, not extension:codon.",
    "confidence": "high",
-   "source_file": "data/entries/013-round2-substantive.json"
+   "source_file": "data/entries/013-round2-substantive.json",
+   "kind": "repo"
   },
   {
    "id": "repo-girip11-aoc",
@@ -2700,7 +2782,8 @@
     "ci_builds_codon": false
    },
    "confidence": "medium",
-   "source_file": "data/entries/010-jit-and-mention-lane.json"
+   "source_file": "data/entries/010-jit-and-mention-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-hidehic0-atcoder",
@@ -2728,7 +2811,8 @@
    },
    "note": "Fourth competitive-programming entry, after takechi-scratch/atcoder, liebe-magi/atcoder-codon and Jutge.org.",
    "confidence": "high",
-   "source_file": "data/entries/014-packaging-lane.json"
+   "source_file": "data/entries/014-packaging-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-kapibara-robot",
@@ -2754,7 +2838,8 @@
     "ci_builds_codon": false
    },
    "confidence": "medium",
-   "source_file": "data/entries/010-jit-and-mention-lane.json"
+   "source_file": "data/entries/010-jit-and-mention-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-kpu-sim",
@@ -2781,7 +2866,8 @@
    },
    "note": "Worth watching rather than counting: an accelerator vendor designing a Codon front end is a different kind of signal from a user, but nothing is implemented yet.",
    "confidence": "medium",
-   "source_file": "data/entries/010-jit-and-mention-lane.json"
+   "source_file": "data/entries/010-jit-and-mention-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-language-reactor",
@@ -2808,7 +2894,8 @@
    },
    "note": "Codon source is .py; found through the invocation lane.",
    "confidence": "high",
-   "source_file": "data/entries/013-round2-substantive.json"
+   "source_file": "data/entries/013-round2-substantive.json",
+   "kind": "repo"
   },
   {
    "id": "repo-llmref",
@@ -2834,7 +2921,8 @@
     "ci_builds_codon": false
    },
    "confidence": "medium",
-   "source_file": "data/entries/010-jit-and-mention-lane.json"
+   "source_file": "data/entries/010-jit-and-mention-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-mect-1ano",
@@ -2861,7 +2949,8 @@
    },
    "note": "Second course found using Codon, distinct from UVic CSC427 and taught in Portuguese.",
    "confidence": "high",
-   "source_file": "data/entries/011-vendored-and-mirrors.json"
+   "source_file": "data/entries/011-vendored-and-mirrors.json",
+   "kind": "repo"
   },
   {
    "id": "repo-mpearrow-codon-docs",
@@ -2888,7 +2977,8 @@
     "ci_builds_codon": false
    },
    "confidence": "medium",
-   "source_file": "data/entries/011-vendored-and-mirrors.json"
+   "source_file": "data/entries/011-vendored-and-mirrors.json",
+   "kind": "repo"
   },
   {
    "id": "repo-mpearrow-codon-md",
@@ -2916,7 +3006,8 @@
    },
    "note": "The three mpearrow repos are one effort in three output formats. Counting them as three mirrors overstates independent interest.",
    "confidence": "medium",
-   "source_file": "data/entries/011-vendored-and-mirrors.json"
+   "source_file": "data/entries/011-vendored-and-mirrors.json",
+   "kind": "repo"
   },
   {
    "id": "repo-mpearrow-codon-site",
@@ -2943,7 +3034,8 @@
     "ci_builds_codon": false
    },
    "confidence": "medium",
-   "source_file": "data/entries/011-vendored-and-mirrors.json"
+   "source_file": "data/entries/011-vendored-and-mirrors.json",
+   "kind": "repo"
   },
   {
    "id": "repo-n-queens",
@@ -2975,7 +3067,8 @@
    },
    "note": "Codon in .py files, found via the codon-import lane rather than extension:codon. See docs/gaps.md. Scale reads zero because the counters key on the .codon extension; the code is real.",
    "confidence": "medium",
-   "source_file": "data/entries/010-jit-and-mention-lane.json"
+   "source_file": "data/entries/010-jit-and-mention-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-oop-python-nycu",
@@ -3003,7 +3096,8 @@
    },
    "note": "The chapter links ARG-NCTU/codon, a fork of the compiler held by the same group. Not yet opened; a candidate for the next pass.",
    "confidence": "high",
-   "source_file": "data/entries/016-coursework-round2.json"
+   "source_file": "data/entries/016-coursework-round2.json",
+   "kind": "repo"
   },
   {
    "id": "repo-oop-python-nycu-main",
@@ -3031,7 +3125,8 @@
     "ci_builds_codon": false
    },
    "confidence": "medium",
-   "source_file": "data/entries/016-coursework-round2.json"
+   "source_file": "data/entries/016-coursework-round2.json",
+   "kind": "repo"
   },
   {
    "id": "repo-pisp-dsl",
@@ -3057,7 +3152,8 @@
     "ci_builds_codon": false
    },
    "confidence": "medium",
-   "source_file": "data/entries/013-round2-substantive.json"
+   "source_file": "data/entries/013-round2-substantive.json",
+   "kind": "repo"
   },
   {
    "id": "repo-practica-ap3",
@@ -3084,7 +3180,8 @@
    },
    "note": "Fifth course found using Codon.",
    "confidence": "high",
-   "source_file": "data/entries/013-round2-substantive.json"
+   "source_file": "data/entries/013-round2-substantive.json",
+   "kind": "repo"
   },
   {
    "id": "repo-python-optimizers-demo",
@@ -3110,7 +3207,8 @@
     "ci_builds_codon": false
    },
    "confidence": "medium",
-   "source_file": "data/entries/010-jit-and-mention-lane.json"
+   "source_file": "data/entries/010-jit-and-mention-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-riokkh-ml",
@@ -3136,7 +3234,8 @@
     "ci_builds_codon": false
    },
    "confidence": "high",
-   "source_file": "data/entries/013-round2-substantive.json"
+   "source_file": "data/entries/013-round2-substantive.json",
+   "kind": "repo"
   },
   {
    "id": "repo-scientificcoder",
@@ -3162,7 +3261,8 @@
     "ci_builds_codon": false
    },
    "confidence": "medium",
-   "source_file": "data/entries/010-jit-and-mention-lane.json"
+   "source_file": "data/entries/010-jit-and-mention-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-sdsaati-tools",
@@ -3189,7 +3289,8 @@
    },
    "note": "An accidental entry in the strict sense -- the install was swept into a dotfiles repo. Kept under ruling 3, which admits vendored installs, and scored at its true own-source size of zero.",
    "confidence": "high",
-   "source_file": "data/entries/011-vendored-and-mirrors.json"
+   "source_file": "data/entries/011-vendored-and-mirrors.json",
+   "kind": "repo"
   },
   {
    "id": "repo-suzukiiichiro-blog",
@@ -3216,7 +3317,8 @@
     "ci_builds_codon": false
    },
    "confidence": "high",
-   "source_file": "data/entries/017-mention-lane-round2.json"
+   "source_file": "data/entries/017-mention-lane-round2.json",
+   "kind": "repo"
   },
   {
    "id": "repo-termux-packages",
@@ -3244,7 +3346,8 @@
    },
    "note": "Upstream of roughly twenty forks and copies in the round-2 candidate set, all carrying this same build.sh. Those are recorded as a fork list rather than as entries.",
    "confidence": "high",
-   "source_file": "data/entries/014-packaging-lane.json"
+   "source_file": "data/entries/014-packaging-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-toolmaker-berlin-init",
@@ -3271,7 +3374,8 @@
    },
    "note": "Shows a user treating .codon and .py as interchangeable inputs, running both forms of the same program in adjacent lines. A small piece of evidence for why the extension search misses so much -- see docs/gaps.md.",
    "confidence": "high",
-   "source_file": "data/entries/017-mention-lane-round2.json"
+   "source_file": "data/entries/017-mention-lane-round2.json",
+   "kind": "repo"
   },
   {
    "id": "repo-udemy-python-pro",
@@ -3297,7 +3401,8 @@
     "ci_builds_codon": false
    },
    "confidence": "medium",
-   "source_file": "data/entries/010-jit-and-mention-lane.json"
+   "source_file": "data/entries/010-jit-and-mention-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-ultrahiroo-nixos-config",
@@ -3324,7 +3429,8 @@
     "ci_builds_codon": false
    },
    "confidence": "high",
-   "source_file": "data/entries/014-packaging-lane.json"
+   "source_file": "data/entries/014-packaging-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-unifyweaver",
@@ -3351,7 +3457,8 @@
    },
    "note": "A code generator that EMITS Codon. Neither an ordinary user nor a compiler plugin; the emitted code lives in generated output, not in the repo.",
    "confidence": "medium",
-   "source_file": "data/entries/010-jit-and-mention-lane.json"
+   "source_file": "data/entries/010-jit-and-mention-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-velvetc",
@@ -3383,7 +3490,8 @@
    },
    "note": "The most substantial piece of CSC427 work found, and the only one carrying a poster and a written report. Named differently from the other student repos, so it would be missed by a name-based sweep of the course.",
    "confidence": "high",
-   "source_file": "data/entries/016-coursework-round2.json"
+   "source_file": "data/entries/016-coursework-round2.json",
+   "kind": "repo"
   },
   {
    "id": "repo-version-checker",
@@ -3410,7 +3518,8 @@
     "ci_builds_codon": false
    },
    "confidence": "high",
-   "source_file": "data/entries/014-packaging-lane.json"
+   "source_file": "data/entries/014-packaging-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-vsources",
@@ -3437,7 +3546,8 @@
    },
    "note": "Records macOS arm64 and x86_64 builds as far back as 0.15.1, so it doubles as a release-history source.",
    "confidence": "high",
-   "source_file": "data/entries/014-packaging-lane.json"
+   "source_file": "data/entries/014-packaging-lane.json",
+   "kind": "repo"
   },
   {
    "id": "repo-word-counter",
@@ -3464,7 +3574,8 @@
    },
    "note": "Codon source is .py. Also carries a Nix flake referencing the Codon release, so it appears in both round-2 signals.",
    "confidence": "high",
-   "source_file": "data/entries/013-round2-substantive.json"
+   "source_file": "data/entries/013-round2-substantive.json",
+   "kind": "repo"
   },
   {
    "id": "repo-zee-observatory",
@@ -3492,7 +3603,213 @@
    },
    "note": "Reclassified out of the source class after reading the file. Detection signal: zero recognised Codon features and no Python-like syntax.",
    "confidence": "high",
-   "source_file": "data/entries/008-false-positives.json"
+   "source_file": "data/entries/008-false-positives.json",
+   "kind": "repo"
+  },
+  {
+   "id": "paper-poppy-2026",
+   "url": "https://doi.org/10.48550/arXiv.2605.18697",
+   "name": "PopPy: Opportunistically Exploiting Parallelism in Python Compound AI Applications",
+   "venue": "arXiv",
+   "year": 2026,
+   "doi": "10.48550/arXiv.2605.18697",
+   "summary": "A system that finds parallelism in Python applications whose runtime is dominated by calls out to machine-learning models, on the argument that traditional optimizing compilers cannot help when execution time sits in external components. Codon is cited once, in the related-work paragraph on Python optimization, grouped with other systems that speed up bottleneck fragments of internal Python computation -- precisely the class of approach the paper argues is insufficient for compound AI workloads. Codon is never run.",
+   "codon_relation": "prior_art",
+   "codon_role": "exploration",
+   "why_codon": "The full text cites Codon in a single related-work list of systems that optimize bottleneck fragments of Python, with no experiment involving it.",
+   "why_codon_source": "stated",
+   "provenance": "preprint",
+   "cites_anchors": [
+    "codon-cc-2023"
+   ],
+   "found_in": "openalex",
+   "note": "Resolved from the full text under ruling 8: the arXiv PDF has exactly one inline citation of the Codon reference, in the Python optimization paragraph of related work.",
+   "confidence": "high",
+   "source_file": "data/papers/001-pilot.json",
+   "kind": "paper"
+  },
+  {
+   "id": "paper-pyls-2026",
+   "url": "https://doi.org/10.1109/cgo68049.2026.11394843",
+   "name": "Pyls: Enabling Python Hardware Synthesis with Dynamic Polymorphism via LCRS Encoding",
+   "venue": "CGO 2026",
+   "year": 2026,
+   "doi": "10.1109/cgo68049.2026.11394843",
+   "summary": "A high-level synthesis framework that compiles dynamically polymorphic Python into monolithic hardware by representing every object as a Left-Child Right-Sibling tree, generating XLS IR and resolving types at runtime through a tree memory architecture, reporting large speedups over CPU and soft-core baselines on FPGA. Its own pipeline is XLS rather than Codon; whether Codon is cited as prior art or run as a comparison is not yet established, because the paper is closed access.",
+   "codon_role": "exploration",
+   "why_codon": "Not established. The abstract describes an XLS IR pipeline and positions the work against existing solutions that support only static subsets of Python, but the citation context has not been read.",
+   "why_codon_source": "inferred",
+   "provenance": "published",
+   "cites_anchors": [
+    "codon-cc-2023"
+   ],
+   "found_in": "openalex",
+   "needs": "codon_relation NOT SET, pending full text. OpenAlex reports oa_status closed with no PDF anywhere, so this needs an institutional login. First blocked work in the paper lane.",
+   "confidence": "low",
+   "source_file": "data/papers/001-pilot.json",
+   "kind": "paper"
+  },
+  {
+   "id": "paper-secure-mice-2026",
+   "url": "https://doi.org/10.1038/s41746-025-02271-0",
+   "name": "Secure distributed multiple imputation enables missing data inference for private datasets",
+   "venue": "npj Digital Medicine",
+   "year": 2026,
+   "doi": "10.1038/s41746-025-02271-0",
+   "summary": "Multiple imputation by chained equations carried out across parties that cannot share their data, implemented twice -- once over secure multiparty computation and once over multiparty homomorphic encryption -- in under 550 lines of Pythonic code. The work extends the Codon stack twice over: it is written in Sequre, itself Codon-based, and the authors added distributed data types and new compiler optimization passes to Sequre to make the MHE path compile, then reimplemented Lattigo's distributed CKKS scheme in Codon so the encryption, rotation and collective bootstrapping primitives exist there at all.",
+   "codon_relation": "extends",
+   "codon_role": "implementation",
+   "why_codon": "The paper states both variants were implemented in Sequre, described there as a Codon-based Pythonic DSL, that Sequre was extended with distributed data types and compiler optimization passes, and that Lattigo's distributed CKKS scheme was reimplemented in Codon.",
+   "why_codon_source": "stated",
+   "provenance": "published",
+   "cites_anchors": [
+    "codon-cc-2023",
+    "sequre-gb-2023",
+    "sequre-ipdpsw-2022"
+   ],
+   "found_in": "openalex",
+   "related_repo": "repo-secure-mice",
+   "note": "First paper-to-repository join in the index: this is the published account of 0xTCG/secure-mice, whose four .codon files the repository lane recorded as reaching Codon through Sequre. The paper confirms that reading and goes further -- the Codon layer itself was extended, which the repository alone did not show.",
+   "confidence": "high",
+   "source_file": "data/papers/002-batch.json",
+   "kind": "paper"
+  },
+  {
+   "id": "paper-seqproc-2026",
+   "url": "https://doi.org/10.64898/2026.07.28.741211",
+   "name": "seqproc: An efficient, flexible, and concise tool for sequence geometry description",
+   "venue": "bioRxiv",
+   "year": 2026,
+   "doi": "10.64898/2026.07.28.741211",
+   "summary": "A tool for describing the geometry of sequencing reads -- where barcodes, UMIs and biological sequence sit within a read -- so that pre-processing can be specified declaratively and left to a backend. Seq is discussed in the related-work section on domain-specific languages for sequence analysis, credited with extending Python with genomics primitives and compiler optimizations for sequence pipelines, and set alongside SARVAVID and BioJulia as prior systems addressing sequence processing. seqproc does not build on it.",
+   "codon_relation": "prior_art",
+   "codon_role": "exploration",
+   "why_codon": "The full text cites Seq once, in the survey of DSLs and specialized libraries applied to sequence analysis, and runs nothing.",
+   "why_codon_source": "stated",
+   "provenance": "preprint",
+   "cites_anchors": [
+    "seq-oopsla-2019"
+   ],
+   "found_in": "openalex",
+   "note": "Seq is cited here as a peer of BioJulia and SARVAVID rather than as an ancestor. The bioRxiv pdf path in OpenAlex 404s; the /content/<doi>v1.full.pdf form served it.",
+   "confidence": "high",
+   "source_file": "data/papers/002-batch.json",
+   "kind": "paper"
+  },
+  {
+   "id": "paper-unite-2026",
+   "url": "https://doi.org/10.1145/3787218",
+   "name": "UniTe: A Universal Tensor Abstraction for Capturing Spatial Relationships",
+   "venue": "ACM TACO",
+   "year": 2026,
+   "doi": "10.1145/3787218",
+   "summary": "An abstraction for spatial relationships between tensors defined against a common coordinate system, realised twice: as CoLa, a compression DSL built inside Codon, and as SHiM, a staged C++ DSL over BuildIt. The Codon half is a compiler modification, not a library -- CoLa's frontend is roughly 700 lines of Codon while its backend adds about 7,500 lines of C++ to Codon's own compiler, contributing view access propagation and location propagation passes. The paper also uses unmodified Codon as its baseline, reporting that CoLa as a pure library runs up to 65x slower than reference C before those passes, and reaches parity with the JPEG and H.264 reference implementations after them.",
+   "codon_relation": "extends",
+   "codon_role": "implementation",
+   "why_codon": "The paper states CoLa implements UniTe within the Pythonic language Codon, that the authors modified Codon's compiler to add CoLa-specific transformation passes, and that unoptimized CoLa performance is equivalent to executing with Codon-proper.",
+   "why_codon_source": "stated",
+   "provenance": "published",
+   "cites_anchors": [
+    "codon-cc-2023"
+   ],
+   "found_in": "openalex",
+   "note": "Resolved from the full text under ruling 8, via an open copy in DSpace@MIT where the publisher page carries no PDF. First work found that both extends Codon and benchmarks against Codon-proper in the same evaluation. Jessica Ray is a co-author of the Codon paper.",
+   "confidence": "high",
+   "source_file": "data/papers/001-pilot.json",
+   "kind": "paper"
+  },
+  {
+   "id": "paper-compiled-python-energy-2025",
+   "url": "https://doi.org/10.1145/3756681.3756972",
+   "name": "An Empirical Study on the Performance and Energy Usage of Compiled Python Code",
+   "venue": "EASE 2025",
+   "year": 2025,
+   "doi": "10.1145/3756681.3756972",
+   "summary": "A measurement study of what compiling Python actually buys, running seven benchmarks through eight tools -- PyPy, Numba, Nuitka, Mypyc, Codon, Cython, Pyston-lite and the experimental 3.13 build -- against CPython on two machines, recording energy, execution time and memory while varying CPU frequency and core count. Codon is one of the eight subjects, so the paper measures it rather than using or extending it, and it is the only work in the corpus that reports Codon's energy consumption as well as its speed.",
+   "codon_relation": "evaluates",
+   "codon_role": "benchmark",
+   "why_codon": "The paper states its subject is comparing the performance and energy efficiency of Python compilers, and names Codon among the eight it compiles with.",
+   "why_codon_source": "stated",
+   "provenance": "published",
+   "cites_anchors": [
+    "codon-cc-2023",
+    "seq-oopsla-2019"
+   ],
+   "found_in": "openalex",
+   "note": "The natural companion to the repository-side benchmark entries. Where mce-sandbox and word-counter time Codon informally, this does it as a controlled study.",
+   "confidence": "medium",
+   "source_file": "data/papers/001-pilot.json",
+   "kind": "paper"
+  },
+  {
+   "id": "paper-distributed-arrays-2025",
+   "url": "https://doi.org/10.1109/hpec67600.2025.11196478",
+   "name": "Easy Acceleration with Distributed Arrays",
+   "venue": "IEEE HPEC 2025",
+   "year": 2025,
+   "doi": "10.1109/hpec67600.2025.11196478",
+   "summary": "An argument for distributed arrays, in the partitioned global address space sense, as a route to both horizontal and vertical scaling without exposing threading and message passing to the user. Codon is cited once, in a list of high-level languages in which distributed arrays have been implemented effectively, beside Matlab, Octave and Python. It is a pointer to Python-family tooling rather than an engagement with the compiler.",
+   "codon_relation": "prior_art",
+   "codon_role": "exploration",
+   "why_codon": "The full text carries one bracketed citation of the Codon reference, in the sentence listing high-level languages where distributed arrays can be implemented effectively.",
+   "why_codon_source": "stated",
+   "provenance": "published",
+   "cites_anchors": [
+    "codon-cc-2023"
+   ],
+   "found_in": "openalex",
+   "note": "Resolved through the arXiv copy at 2508.17493, which OpenAlex listed as a green location while the IEEE page carries no PDF.",
+   "confidence": "high",
+   "source_file": "data/papers/002-batch.json",
+   "kind": "paper"
+  },
+  {
+   "id": "paper-pytrf-2025",
+   "url": "https://doi.org/10.1186/s12859-025-06168-3",
+   "name": "Pytrf: a python package for finding tandem repeats from genomic sequences",
+   "venue": "BMC Bioinformatics",
+   "year": 2025,
+   "doi": "10.1186/s12859-025-06168-3",
+   "summary": "A Python package for identifying tandem repeats genome-wide, written to fill what the authors describe as a gap: no efficient tandem-repeat tool integrates cleanly with the Python ecosystem. The Nature Biotechnology Seq paper is cited in support of the claim that Python has become the common language for genomic data analysis, so it appears as evidence for the premise rather than as a technology the work uses.",
+   "codon_relation": "prior_art",
+   "codon_role": "exploration",
+   "why_codon": "The single inline citation supports the sentence that Python has emerged as the most commonly used language for deciphering genomic data. Nothing is run.",
+   "why_codon_source": "stated",
+   "provenance": "published",
+   "cites_anchors": [
+    "seq-nbt-2021"
+   ],
+   "found_in": "openalex",
+   "note": "A citation of the Nature Biotechnology paper as evidence about Python's popularity, not about Codon or Seq. The venue choice of that paper gives it a reach the compiler papers do not have, and this is what that reach looks like in practice.",
+   "confidence": "high",
+   "source_file": "data/papers/002-batch.json",
+   "kind": "paper"
+  },
+  {
+   "id": "paper-shechi-2025",
+   "url": "https://www.usenix.org/conference/usenixsecurity25/presentation/smajlovic",
+   "name": "Shechi: A Secure Distributed Computation Compiler Based on Multiparty Homomorphic Encryption",
+   "venue": "USENIX Security 2025",
+   "year": 2025,
+   "doi": null,
+   "summary": "A compiler for multiparty homomorphic encryption pipelines, written by the Sequre authors and built as a Codon extension: the artifact carries Codon IR helpers in C++ alongside 88 .codon files, 87 of whose paths it shares with Sequre. Codon is the substrate the whole system compiles through, and Shechi is the most recent work in the Codon lineage that extends the compiler rather than calling it.",
+   "codon_relation": "extends",
+   "codon_role": "implementation",
+   "why_codon": "The work is a compiler built on Codon's IR, by the group that also wrote Sequre and co-authored the Codon paper.",
+   "why_codon_source": "stated",
+   "provenance": "published",
+   "cites_anchors": [
+    "codon-cc-2023",
+    "seq-nbt-2021",
+    "seq-oopsla-2019",
+    "sequre-gb-2023"
+   ],
+   "found_in": "semantic_scholar_only",
+   "related_repo": "repo-shechi",
+   "note": "The only work in the corpus citing four anchors. Has no paper DOI; six Zenodo artifact DOIs exist instead.",
+   "confidence": "high",
+   "source_file": "data/papers/001-pilot.json",
+   "kind": "paper"
   }
  ],
  "sidecars": [
