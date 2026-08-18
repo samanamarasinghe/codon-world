@@ -1,0 +1,1212 @@
+{
+ "generated": "2026-08-18",
+ "note": "Stars from the GitHub API; citations from OpenAlex, falling back to Semantic Scholar. Both numbers move, so each record carries its own fetched date and its source. Every index of citations undercounts against Google Scholar; read a citation count as a floor.",
+ "repos": {
+  "repo-sequre": {
+   "slug": "0xTCG/sequre",
+   "stars": 27,
+   "forks": 4,
+   "pushed_at": "2026-08-17T14:32:14Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-shechi": {
+   "slug": "anon-conf-subm/shechi",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2024-09-05T06:45:37Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-biser": {
+   "slug": "0xTCG/biser",
+   "stars": 60,
+   "forks": 1,
+   "pushed_at": "2025-07-19T22:14:50Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-decor": {
+   "slug": "hcholab/decor",
+   "stars": 2,
+   "forks": 0,
+   "pushed_at": "2026-03-11T19:57:11Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-secure-mice": {
+   "slug": "0xTCG/secure-mice",
+   "stars": 3,
+   "forks": 0,
+   "pushed_at": "2026-07-07T03:43:28Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-scatac-seq": {
+   "slug": "obenno/scATAC-seq",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2025-01-05T14:01:40Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-single-cell-toolkit": {
+   "slug": "aertslab/single_cell_toolkit",
+   "stars": 29,
+   "forks": 4,
+   "pushed_at": "2026-08-12T13:14:24Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-scpreproc": {
+   "slug": "AAnnan/scPreproc",
+   "stars": 1,
+   "forks": 0,
+   "pushed_at": "2024-10-14T12:11:37Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-rdi": {
+   "slug": "curtisupshall/rdi",
+   "stars": 3,
+   "forks": 0,
+   "pushed_at": "2025-01-03T18:11:00Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-triton-seq": {
+   "slug": "shuochen0113/Triton-Seq",
+   "stars": 2,
+   "forks": 0,
+   "pushed_at": "2026-08-16T20:36:56Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-fastcodon": {
+   "slug": "avijitbhuin21/fastcodon",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2026-06-07T21:47:35Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-turbox-sir-george2500": {
+   "slug": "sir-george2500/turboX",
+   "stars": 1,
+   "forks": 0,
+   "pushed_at": "2025-12-01T00:36:21Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-turbox-cruso003": {
+   "slug": "cruso003/TurboX",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2025-10-29T10:00:42Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-mce-sandbox": {
+   "slug": "marioroy/mce-sandbox",
+   "stars": 3,
+   "forks": 1,
+   "pushed_at": "2026-06-10T22:29:21Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-mojo-benchmarks": {
+   "slug": "RedKinda/mojo-benchmarks",
+   "stars": 0,
+   "forks": 1,
+   "pushed_at": "2024-07-07T13:30:55Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-awesome-mojo": {
+   "slug": "ego/awesome-mojo",
+   "stars": 232,
+   "forks": 10,
+   "pushed_at": "2025-11-01T21:51:35Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-hello-pythran": {
+   "slug": "sco3/hello-pythran",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2025-04-09T16:32:31Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-markhend-aoc": {
+   "slug": "markhend/aoc",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2025-12-26T00:45:50Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-takechi-atcoder": {
+   "slug": "takechi-scratch/atcoder",
+   "stars": 2,
+   "forks": 0,
+   "pushed_at": "2026-08-15T11:56:38Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-tsp-solver": {
+   "slug": "shunji-umetani/tsp-solver",
+   "stars": 20,
+   "forks": 6,
+   "pushed_at": "2023-08-03T09:07:51Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-codon-numpy": {
+   "slug": "hsmajlovic/codon-numpy",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2023-11-16T02:00:21Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-codon-light": {
+   "slug": "dalibor-drgon/codon-light",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2026-03-03T21:50:50Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-codon-wasm": {
+   "slug": "coco875/codon-wasm",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2024-11-27T14:29:48Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-tresflow": {
+   "slug": "CSOgroup/TrESFlow",
+   "stars": 2,
+   "forks": 0,
+   "pushed_at": "2026-08-18T15:25:30Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-graphmemory-ide": {
+   "slug": "elementalcollision/GraphMemory-IDE",
+   "stars": 14,
+   "forks": 2,
+   "pushed_at": "2026-06-21T13:45:00Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-yogi": {
+   "slug": "jutge-org/yogi",
+   "stars": 2,
+   "forks": 1,
+   "pushed_at": "2024-07-02T07:23:21Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-jutge-tests": {
+   "slug": "jutge-org/jutge-tests",
+   "stars": 1,
+   "forks": 2,
+   "pushed_at": "2025-11-06T20:47:58Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-codonx": {
+   "slug": "lmx-4/codonx",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2026-05-21T14:54:10Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-jaegeryan-bioinformatics": {
+   "slug": "jaegeryan/bioinformatics",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2024-12-13T06:57:17Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-scalce-codon": {
+   "slug": "joelrussellcohen/scalce_codon",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2023-12-15T06:17:39Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-md5-codon": {
+   "slug": "salvatore-abello/md5-codon",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2025-01-31T17:54:22Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-strings-codon": {
+   "slug": "salvatore-abello/strings.codon",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2025-05-06T08:46:43Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-xxd-codon": {
+   "slug": "salvatore-abello/xxd.codon",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2025-05-09T22:21:22Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-ds-tools": {
+   "slug": "apahl/ds_tools",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2025-02-19T19:37:41Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-pyext": {
+   "slug": "river-walras/pyext",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2024-11-09T12:21:41Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-r-packages-archives": {
+   "slug": "paithiov909/r-packages-archives",
+   "stars": 1,
+   "forks": 0,
+   "pushed_at": "2026-03-29T20:03:41Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-phase-project": {
+   "slug": "Boris00035/phaseProject",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2025-12-10T13:50:39Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-llama2-hack": {
+   "slug": "thamada/tmp.hack-llm-models",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2024-08-01T06:35:58Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-hcc-conda-recipes": {
+   "slug": "unlhcc/hcc-conda-recipes",
+   "stars": 7,
+   "forks": 6,
+   "pushed_at": "2026-08-12T22:24:52Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-pl-ultimate-llm": {
+   "slug": "acherm/PL-ultimate-llm",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2026-06-12T11:46:11Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-zee-observatory": {
+   "slug": "innerpixel/zee-observatory",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2026-08-03T05:28:45Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-evolove": {
+   "slug": "aidenhecker/Evolove",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2026-08-13T00:20:54Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-csc427-exophobias": {
+   "slug": "Exophobias/fall25-csc-bioinf",
+   "stars": 0,
+   "forks": 1,
+   "pushed_at": "2025-12-06T03:23:00Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-csc427-kellofoggs": {
+   "slug": "kellofoggs/fall25-csc-bioinf",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2025-11-21T08:15:25Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-csc427-milorph": {
+   "slug": "Milorph/fall25-csc-bioinf",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2025-11-21T06:03:23Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-csc427-liamsquires": {
+   "slug": "liamsquires/fall25-csc-bioinf",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2025-11-17T07:39:11Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-csc427-reedbryan": {
+   "slug": "reedbryan/fall25-csc-bioinf",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2025-11-22T03:19:47Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-csc427-tristancornwell": {
+   "slug": "tristancornwell/fall25-csc-bioinf",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2025-11-21T09:41:44Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-csc427-rachel-wenhui-ma": {
+   "slug": "rachel-wenhui-ma/fall25-csc-bioinf",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2025-11-18T07:18:47Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-csc427-chase2512": {
+   "slug": "chase2512/fall25-csc-bioinf",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2025-10-16T01:12:18Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-fragannot": {
+   "slug": "arthur-grimaud/fragannot",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2024-01-24T16:53:33Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-kapibara-robot": {
+   "slug": "pperonski/KapiBara_ROS2_Robot",
+   "stars": 3,
+   "forks": 0,
+   "pushed_at": "2026-03-10T15:08:59Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-arquimundo-api": {
+   "slug": "AldoNunes001/ArquiMundo-API",
+   "stars": 0,
+   "forks": 1,
+   "pushed_at": "2023-06-05T19:54:03Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-udemy-python-pro": {
+   "slug": "franneck94/UdemyPythonPro",
+   "stars": 13,
+   "forks": 18,
+   "pushed_at": "2024-07-27T06:12:13Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-python-optimizers-demo": {
+   "slug": "Legume1728/python-optimizers-demo",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2024-07-03T21:05:51Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-girip11-aoc": {
+   "slug": "girip11/advent_of_code",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2026-01-12T02:16:58Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-codon-networkx": {
+   "slug": "rostam/CodonNetworkx",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2023-07-17T11:12:43Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-n-queens": {
+   "slug": "suzukiiichiro/N-Queens",
+   "stars": 3,
+   "forks": 1,
+   "pushed_at": "2026-08-18T08:51:20Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-unifyweaver": {
+   "slug": "s243a/UnifyWeaver",
+   "stars": 6,
+   "forks": 1,
+   "pushed_at": "2026-08-12T05:49:45Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-kpu-sim": {
+   "slug": "stillwater-sc/kpu-sim",
+   "stars": 2,
+   "forks": 2,
+   "pushed_at": "2026-07-22T15:44:14Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-agent-engineering-handbook": {
+   "slug": "d-padmanabhan/agent-engineering-handbook",
+   "stars": 15,
+   "forks": 2,
+   "pushed_at": "2026-08-18T17:44:22Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-scientificcoder": {
+   "slug": "matthijscox/scientificcoder",
+   "stars": 2,
+   "forks": 0,
+   "pushed_at": "2025-01-13T10:24:39Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-llmref": {
+   "slug": "reclear-io/llmref",
+   "stars": 5,
+   "forks": 0,
+   "pushed_at": "2026-07-16T14:44:00Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-sdsaati-tools": {
+   "slug": "sdsaati/tools",
+   "stars": 2,
+   "forks": 0,
+   "pushed_at": "2026-05-28T09:04:59Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-mect-1ano": {
+   "slug": "joaogasparp/mect_1ano",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2026-06-13T13:53:00Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-mpearrow-codon-site": {
+   "slug": "mpearrow/codon-site",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2025-07-07T17:33:34Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-mpearrow-codon-docs": {
+   "slug": "mpearrow/codon-docs",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2025-05-13T22:11:24Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-mpearrow-codon-md": {
+   "slug": "mpearrow/codon-md",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2025-05-14T01:42:25Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-exaloop-io": {
+   "slug": "exaloop/exaloop.io",
+   "stars": 0,
+   "forks": 2,
+   "pushed_at": "2023-03-27T06:22:39Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-codeboarding-architecture-mds": {
+   "slug": "CodeBoarding/awesome-architecture-mds",
+   "stars": 160,
+   "forks": 9,
+   "pushed_at": "2026-05-31T12:53:37Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-example-codon-plugin": {
+   "slug": "exaloop/example-codon-plugin",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2025-03-24T21:52:48Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-genetic-engine": {
+   "slug": "alcides/GeneticEngine",
+   "stars": 51,
+   "forks": 11,
+   "pushed_at": "2026-08-17T23:34:18Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-language-reactor": {
+   "slug": "ibra-kdbra/Language_Reactor",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2026-03-01T22:21:01Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-word-counter": {
+   "slug": "yosephbernandus/word-counter",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2026-01-15T15:11:49Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-atcoder-codon": {
+   "slug": "liebe-magi/atcoder-codon",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2025-12-09T23:19:49Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-eplusplus": {
+   "slug": "AIRAS-The-Innovations-Of-New-Era/EPlusPlus",
+   "stars": 6,
+   "forks": 0,
+   "pushed_at": "2025-06-29T11:46:00Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-university-breno": {
+   "slug": "BrenoFariasdaSilva/University",
+   "stars": 4,
+   "forks": 0,
+   "pushed_at": "2026-03-16T14:25:33Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-riokkh-ml": {
+   "slug": "RioKKH/MachineLearning",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2026-07-29T16:12:02Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-practica-ap3": {
+   "slug": "Jan1011000110/Practica-AP3",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2026-01-04T09:25:57Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-codontest-0num4": {
+   "slug": "0num4/codontest",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2024-09-06T16:39:04Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-pisp-dsl": {
+   "slug": "Viitrexx/PisP-dsl",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2023-07-05T09:39:11Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-ctfcup24-school-ad": {
+   "slug": "acisoru/ctfcup24-school-ad",
+   "stars": 2,
+   "forks": 1,
+   "pushed_at": "2024-12-24T09:06:09Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-akleemans-aoc-2022": {
+   "slug": "akleemans/aoc-2022",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2023-01-10T19:03:55Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-akleemans-aoc-2023": {
+   "slug": "akleemans/aoc-2023",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2023-12-28T19:35:54Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-termux-packages": {
+   "slug": "termux/termux-packages",
+   "stars": 16809,
+   "forks": 4324,
+   "pushed_at": "2026-08-18T18:48:53Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-chromebrew": {
+   "slug": "chromebrew/chromebrew",
+   "stars": 2501,
+   "forks": 421,
+   "pushed_at": "2026-08-18T08:49:00Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-chaotic-aur": {
+   "slug": "chaotic-aur/packages",
+   "stars": 424,
+   "forks": 24,
+   "pushed_at": "2026-08-18T22:06:27Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-compiler-explorer-infra": {
+   "slug": "compiler-explorer/infra",
+   "stars": 429,
+   "forks": 422,
+   "pushed_at": "2026-08-18T17:14:27Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-vsources": {
+   "slug": "gvcgo/vsources",
+   "stars": 4,
+   "forks": 4,
+   "pushed_at": "2026-08-11T12:39:19Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-version-checker": {
+   "slug": "designinlife/version-checker",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2026-08-18T16:04:21Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-cli-tools-ngruenwald": {
+   "slug": "ngruenwald/cli-tools",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2026-08-18T16:51:55Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-ultrahiroo-nixos-config": {
+   "slug": "ultrahiroo/nixos-config",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2026-02-10T01:08:12Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-hidehic0-atcoder": {
+   "slug": "hidehic0/atcoder",
+   "stars": 1,
+   "forks": 0,
+   "pushed_at": "2026-08-12T00:40:10Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-velvetc": {
+   "slug": "ashleyosuna/velvetc",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2025-12-05T06:48:09Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-csc427-oliwhitla": {
+   "slug": "oliwhitla/fall25-csc-bioinf",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2025-11-24T07:59:13Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-csc427-yushannn": {
+   "slug": "yushannn/fall25-csc-bioinf",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2025-10-02T23:59:57Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-csc427-kaceythai": {
+   "slug": "kaceythai/fall25-csc-bioinf",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2025-12-07T18:59:57Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-csc427-marlodenis": {
+   "slug": "marlodenis/fall25-csc-bioinf",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2025-09-18T07:05:19Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-oop-python-nycu": {
+   "slug": "ARG-NCTU/oop-python-nycu",
+   "stars": 17,
+   "forks": 211,
+   "pushed_at": "2026-06-23T08:48:59Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-oop-python-nycu-main": {
+   "slug": "iamkyleh/oop-python-nycu-main",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2025-12-08T06:13:50Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-suzukiiichiro-blog": {
+   "slug": "suzukiiichiro/suzukiiichiro.github.io",
+   "stars": 2,
+   "forks": 0,
+   "pushed_at": "2026-08-18T23:21:09Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-branden-kang-python-practice": {
+   "slug": "Branden-Kang/Python-practice",
+   "stars": 6,
+   "forks": 6,
+   "pushed_at": "2026-08-11T14:15:06Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-toolmaker-berlin-init": {
+   "slug": "toolmaker-berlin/init",
+   "stars": 0,
+   "forks": 0,
+   "pushed_at": "2025-09-29T20:48:03Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-ariesq-stars": {
+   "slug": "AriESQ/stars",
+   "stars": 2,
+   "forks": 2,
+   "pushed_at": "2026-08-18T09:14:20Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-cainiaoprogram-blog": {
+   "slug": "cainiaoprogram/cainiaoprogram.github.io",
+   "stars": 3,
+   "forks": 0,
+   "pushed_at": "2024-01-12T15:05:04Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-vectron": {
+   "slug": "0xTCG/vectron",
+   "stars": 5,
+   "forks": 0,
+   "pushed_at": "2025-12-14T05:58:26Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-flox": {
+   "slug": "FLOX-Foundation/flox",
+   "stars": 221,
+   "forks": 38,
+   "pushed_at": "2026-08-16T09:43:28Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  },
+  "repo-conduit": {
+   "slug": "cruso003/conduit",
+   "stars": 2,
+   "forks": 1,
+   "pushed_at": "2026-05-05T09:07:52Z",
+   "archived": false,
+   "source": "github",
+   "fetched": "2026-08-18"
+  }
+ },
+ "papers": {
+  "paper-unite-2026": {
+   "doi": "10.1145/3787218",
+   "citations": 0,
+   "source": "openalex",
+   "fetched": "2026-08-18"
+  },
+  "paper-compiled-python-energy-2025": {
+   "doi": "10.1145/3756681.3756972",
+   "citations": 2,
+   "source": "openalex",
+   "fetched": "2026-08-18"
+  },
+  "paper-poppy-2026": {
+   "doi": "10.48550/arxiv.2605.18697",
+   "citations": 0,
+   "source": "openalex",
+   "fetched": "2026-08-18"
+  },
+  "paper-pyls-2026": {
+   "doi": "10.1109/cgo68049.2026.11394843",
+   "citations": 0,
+   "source": "openalex",
+   "fetched": "2026-08-18"
+  },
+  "paper-secure-mice-2026": {
+   "doi": "10.1038/s41746-025-02271-0",
+   "citations": 0,
+   "source": "openalex",
+   "fetched": "2026-08-18"
+  },
+  "paper-seqproc-2026": {
+   "doi": "10.64898/2026.07.28.741211",
+   "citations": 0,
+   "source": "openalex",
+   "fetched": "2026-08-18"
+  },
+  "paper-pytrf-2025": {
+   "doi": "10.1186/s12859-025-06168-3",
+   "citations": 4,
+   "source": "openalex",
+   "fetched": "2026-08-18"
+  },
+  "paper-distributed-arrays-2025": {
+   "doi": "10.1109/hpec67600.2025.11196478",
+   "citations": 0,
+   "source": "openalex",
+   "fetched": "2026-08-18"
+  },
+  "paper-vector-register-usage-2026": {
+   "doi": "10.48550/arxiv.2604.10648",
+   "citations": 0,
+   "source": "openalex",
+   "fetched": "2026-08-18"
+  },
+  "paper-spdz-llvm-pipeline-2025": {
+   "doi": "10.48550/arxiv.2512.11112",
+   "citations": 0,
+   "source": "openalex",
+   "fetched": "2026-08-18"
+  },
+  "paper-eqsat-julia-2025": {
+   "doi": "10.1145/3795883",
+   "citations": 0,
+   "source": "openalex",
+   "fetched": "2026-08-18"
+  },
+  "paper-biser-2022": {
+   "doi": "10.1186/s13015-022-00210-2",
+   "citations": 91,
+   "source": "openalex",
+   "fetched": "2026-08-18"
+  },
+  "paper-secret-gwas-2024": {
+   "doi": "10.1101/2024.04.24.590989",
+   "citations": 0,
+   "source": "openalex",
+   "fetched": "2026-08-18"
+  },
+  "paper-tardis-fl-paradigm-2023": {
+   "doi": "10.48550/arxiv.2310.05102",
+   "citations": 0,
+   "source": "openalex",
+   "fetched": "2026-08-18"
+  },
+  "paper-gwas-privacy-taxonomy-2024": {
+   "doi": "10.1093/bib/bbae356",
+   "citations": 7,
+   "source": "openalex",
+   "fetched": "2026-08-18"
+  },
+  "paper-attune-share-2026": {
+   "doi": "10.1007/s10207-026-01223-3",
+   "citations": 0,
+   "source": "openalex",
+   "fetched": "2026-08-18"
+  },
+  "paper-federated-graph-querying-2025": {
+   "doi": "10.1007/s42979-025-04503-2",
+   "citations": 1,
+   "source": "openalex",
+   "fetched": "2026-08-18"
+  },
+  "paper-anonify-2024": {
+   "doi": "10.56553/popets-2024-0069",
+   "citations": 2,
+   "source": "openalex",
+   "fetched": "2026-08-18"
+  },
+  "paper-genomic-inference-attacks-2025": {
+   "doi": "10.48550/arxiv.2505.07188",
+   "citations": 0,
+   "source": "openalex",
+   "fetched": "2026-08-18"
+  },
+  "paper-gentt-2025": {
+   "doi": "10.48550/arxiv.2506.03686",
+   "citations": 0,
+   "source": "openalex",
+   "fetched": "2026-08-18"
+  },
+  "paper-neurosimo-2025": {
+   "doi": "10.1101/2025.04.05.647342",
+   "citations": 3,
+   "source": "openalex",
+   "fetched": "2026-08-18"
+  },
+  "paper-collagene-2023": {
+   "doi": "10.1186/s13059-023-03039-z",
+   "citations": 16,
+   "source": "openalex",
+   "fetched": "2026-08-18"
+  },
+  "paper-d2x-2023": {
+   "doi": "10.1145/3579990.3580014",
+   "citations": 5,
+   "source": "openalex",
+   "fetched": "2026-08-18"
+  },
+  "paper-opencilk-2023": {
+   "doi": "10.1145/3572848.3577509",
+   "citations": 30,
+   "source": "openalex",
+   "fetched": "2026-08-18"
+  },
+  "paper-graphit-zoo-2021": {
+   "doi": "10.1109/isca52012.2021.00041",
+   "citations": 12,
+   "source": "openalex",
+   "fetched": "2026-08-18"
+  },
+  "paper-nelli-2023": {
+   "doi": "10.48550/arxiv.2307.16080",
+   "citations": 1,
+   "source": "openalex",
+   "fetched": "2026-08-18"
+  },
+  "paper-asnl-ir-design-2023": {
+   "doi": "10.48550/arxiv.2307.06983",
+   "citations": 1,
+   "source": "openalex",
+   "fetched": "2026-08-18"
+  },
+  "paper-new-language-survey-2022": {
+   "doi": "10.22214/ijraset.2022.40949",
+   "citations": 0,
+   "source": "openalex",
+   "fetched": "2026-08-18"
+  },
+  "paper-mapquik-2022": {
+   "doi": "10.1101/2022.12.23.521809",
+   "citations": 2,
+   "source": "openalex",
+   "fetched": "2026-08-18"
+  },
+  "paper-mdbg-2021": {
+   "doi": "10.1016/j.cels.2021.08.009",
+   "citations": 126,
+   "source": "openalex",
+   "fetched": "2026-08-18"
+  },
+  "paper-decor-2026": {
+   "doi": "10.1109/sp63933.2026.00256",
+   "citations": 0,
+   "source": "openalex",
+   "fetched": "2026-08-18"
+  },
+  "paper-fcfuzzer-2023": {
+   "doi": "10.1109/issre59848.2023.00066",
+   "citations": 0,
+   "source": "openalex",
+   "fetched": "2026-08-18"
+  },
+  "paper-streamlining-c-compilation-2025": {
+   "doi": "10.1109/assic64892.2025.11158099",
+   "citations": 1,
+   "source": "openalex",
+   "fetched": "2026-08-18"
+  },
+  "paper-jacc-2024": {
+   "doi": "10.1109/scw63240.2024.00245",
+   "citations": 3,
+   "source": "openalex",
+   "fetched": "2026-08-18"
+  },
+  "paper-graphblas-opportunities-2025": {
+   "doi": "10.1109/hpec67600.2025.11196667",
+   "citations": 0,
+   "source": "openalex",
+   "fetched": "2026-08-18"
+  },
+  "paper-green-side-lua-2026": {
+   "doi": "10.1109/saner-c67878.2026.00033",
+   "citations": 1,
+   "source": "openalex",
+   "fetched": "2026-08-18"
+  },
+  "paper-iridescent-2025": {
+   "doi": "10.48550/arxiv.2508.16690",
+   "citations": 1,
+   "source": "semanticscholar",
+   "fetched": "2026-08-18"
+  }
+ },
+ "missing": {
+  "repos": [],
+  "papers": [
+   {
+    "id": "paper-shechi-2025",
+    "doi": null,
+    "reason": "no doi"
+   }
+  ]
+ }
+}

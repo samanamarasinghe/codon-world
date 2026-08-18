@@ -77,7 +77,16 @@
    },
    "confidence": "high",
    "source_file": "data/entries/002-numanagic-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "0xTCG/sequre",
+    "stars": 27,
+    "forks": 4,
+    "pushed_at": "2026-08-17T14:32:14Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-shechi",
@@ -134,7 +143,16 @@
    },
    "confidence": "high",
    "source_file": "data/entries/002-numanagic-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "anon-conf-subm/shechi",
+    "stars": 0,
+    "forks": 0,
+    "pushed_at": "2024-09-05T06:45:37Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-vectron",
@@ -186,7 +204,16 @@
    },
    "confidence": "high",
    "source_file": "data/pilot/001-pilot.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "0xTCG/vectron",
+    "stars": 5,
+    "forks": 0,
+    "pushed_at": "2025-12-14T05:58:26Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-conduit",
@@ -233,7 +260,16 @@
    "note": "README carries an MIT license badge linking to LICENSE, but the repo contains no LICENSE file.",
    "confidence": "high",
    "source_file": "data/pilot/001-pilot.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "cruso003/conduit",
+    "stars": 2,
+    "forks": 1,
+    "pushed_at": "2026-05-05T09:07:52Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-flox",
@@ -274,7 +310,16 @@
    },
    "confidence": "high",
    "source_file": "data/pilot/001-pilot.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "FLOX-Foundation/flox",
+    "stars": 221,
+    "forks": 38,
+    "pushed_at": "2026-08-16T09:43:28Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-scatac-seq",
@@ -324,7 +369,16 @@
    "note": "Vendors more than an install: codon/include/codon/parser/ headers and codon/python/codon/decorator.py are present, so the Codon source tree and the jit package are both committed.",
    "confidence": "high",
    "source_file": "data/entries/003-bioinformatics-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "obenno/scATAC-seq",
+    "stars": 0,
+    "forks": 0,
+    "pushed_at": "2025-01-05T14:01:40Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-fastcodon",
@@ -360,7 +414,16 @@
    "note": "Writes its own crypto and socket layers in Codon rather than binding a C library, so it exercises the language more broadly than its single recorded feature suggests.",
    "confidence": "high",
    "source_file": "data/entries/004-web-frameworks-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "avijitbhuin21/fastcodon",
+    "stars": 0,
+    "forks": 0,
+    "pushed_at": "2026-06-07T21:47:35Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-csc427-exophobias",
@@ -405,7 +468,16 @@
    },
    "confidence": "high",
    "source_file": "data/entries/009-coursework-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "Exophobias/fall25-csc-bioinf",
+    "stars": 0,
+    "forks": 1,
+    "pushed_at": "2025-12-06T03:23:00Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-csc427-kellofoggs",
@@ -451,7 +523,16 @@
    },
    "confidence": "high",
    "source_file": "data/entries/009-coursework-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "kellofoggs/fall25-csc-bioinf",
+    "stars": 0,
+    "forks": 0,
+    "pushed_at": "2025-11-21T08:15:25Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-csc427-liamsquires",
@@ -496,7 +577,16 @@
    },
    "confidence": "high",
    "source_file": "data/entries/009-coursework-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "liamsquires/fall25-csc-bioinf",
+    "stars": 0,
+    "forks": 0,
+    "pushed_at": "2025-11-17T07:39:11Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-csc427-milorph",
@@ -537,7 +627,16 @@
    },
    "confidence": "high",
    "source_file": "data/entries/009-coursework-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "Milorph/fall25-csc-bioinf",
+    "stars": 0,
+    "forks": 0,
+    "pushed_at": "2025-11-21T06:03:23Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-single-cell-toolkit",
@@ -581,7 +680,16 @@
    },
    "confidence": "high",
    "source_file": "data/entries/003-bioinformatics-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "aertslab/single_cell_toolkit",
+    "stars": 29,
+    "forks": 4,
+    "pushed_at": "2026-08-12T13:14:24Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-decor",
@@ -634,7 +742,16 @@
    },
    "confidence": "high",
    "source_file": "data/entries/002-numanagic-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "hcholab/decor",
+    "stars": 2,
+    "forks": 0,
+    "pushed_at": "2026-03-11T19:57:11Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-codon-numpy",
@@ -679,7 +796,16 @@
    "note": "Possible lineage worth checking with him: the author is a co-author on the Codon and Sequre papers, this repo stopped in 2023, and Codon's own stdlib now carries a numpy package whose module names overlap (ndarray, create, reductions, linalg). Recorded as an observation, not a causal claim.",
    "confidence": "high",
    "source_file": "data/entries/006-tooling-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "hsmajlovic/codon-numpy",
+    "stars": 0,
+    "forks": 0,
+    "pushed_at": "2023-11-16T02:00:21Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-csc427-reedbryan",
@@ -711,7 +837,16 @@
    },
    "confidence": "high",
    "source_file": "data/entries/009-coursework-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "reedbryan/fall25-csc-bioinf",
+    "stars": 0,
+    "forks": 0,
+    "pushed_at": "2025-11-22T03:19:47Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-csc427-tristancornwell",
@@ -756,7 +891,16 @@
    },
    "confidence": "high",
    "source_file": "data/entries/009-coursework-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "tristancornwell/fall25-csc-bioinf",
+    "stars": 0,
+    "forks": 0,
+    "pushed_at": "2025-11-21T09:41:44Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-tresflow",
@@ -800,7 +944,16 @@
    },
    "confidence": "high",
    "source_file": "data/entries/006-tooling-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "CSOgroup/TrESFlow",
+    "stars": 2,
+    "forks": 0,
+    "pushed_at": "2026-08-18T15:25:30Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-biser",
@@ -849,7 +1002,16 @@
    },
    "confidence": "high",
    "source_file": "data/entries/002-numanagic-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "0xTCG/biser",
+    "stars": 60,
+    "forks": 1,
+    "pushed_at": "2025-07-19T22:14:50Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-mce-sandbox",
@@ -893,7 +1055,16 @@
    },
    "confidence": "high",
    "source_file": "data/entries/005-benchmark-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "marioroy/mce-sandbox",
+    "stars": 3,
+    "forks": 1,
+    "pushed_at": "2026-06-10T22:29:21Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-jaegeryan-bioinformatics",
@@ -930,7 +1101,16 @@
    },
    "confidence": "high",
    "source_file": "data/entries/007-tail-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "jaegeryan/bioinformatics",
+    "stars": 0,
+    "forks": 0,
+    "pushed_at": "2024-12-13T06:57:17Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-csc427-rachel-wenhui-ma",
@@ -975,7 +1155,16 @@
    },
    "confidence": "high",
    "source_file": "data/entries/009-coursework-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "rachel-wenhui-ma/fall25-csc-bioinf",
+    "stars": 0,
+    "forks": 0,
+    "pushed_at": "2025-11-18T07:18:47Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-secure-mice",
@@ -1015,7 +1204,16 @@
    },
    "confidence": "high",
    "source_file": "data/entries/002-numanagic-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "0xTCG/secure-mice",
+    "stars": 3,
+    "forks": 0,
+    "pushed_at": "2026-07-07T03:43:28Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-turbox-sir-george2500",
@@ -1052,7 +1250,16 @@
    "note": "Shares a name with cruso003/TurboX and nothing else: the two have zero .codon paths in common and different layouts. Not a fork.",
    "confidence": "high",
    "source_file": "data/entries/004-web-frameworks-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "sir-george2500/turboX",
+    "stars": 1,
+    "forks": 0,
+    "pushed_at": "2025-12-01T00:36:21Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-rdi",
@@ -1092,7 +1299,16 @@
    },
    "confidence": "high",
    "source_file": "data/entries/003-bioinformatics-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "curtisupshall/rdi",
+    "stars": 3,
+    "forks": 0,
+    "pushed_at": "2025-01-03T18:11:00Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-graphmemory-ide",
@@ -1127,7 +1343,16 @@
    },
    "confidence": "high",
    "source_file": "data/entries/006-tooling-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "elementalcollision/GraphMemory-IDE",
+    "stars": 14,
+    "forks": 2,
+    "pushed_at": "2026-06-21T13:45:00Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-triton-seq",
@@ -1175,7 +1400,16 @@
    },
    "confidence": "high",
    "source_file": "data/entries/003-bioinformatics-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "shuochen0113/Triton-Seq",
+    "stars": 2,
+    "forks": 0,
+    "pushed_at": "2026-08-16T20:36:56Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-codon-light",
@@ -1211,7 +1445,16 @@
    },
    "confidence": "high",
    "source_file": "data/entries/006-tooling-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "dalibor-drgon/codon-light",
+    "stars": 0,
+    "forks": 0,
+    "pushed_at": "2026-03-03T21:50:50Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-scpreproc",
@@ -1255,7 +1498,16 @@
    },
    "confidence": "high",
    "source_file": "data/entries/003-bioinformatics-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "AAnnan/scPreproc",
+    "stars": 1,
+    "forks": 0,
+    "pushed_at": "2024-10-14T12:11:37Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-scalce-codon",
@@ -1291,7 +1543,16 @@
    },
    "confidence": "high",
    "source_file": "data/entries/007-tail-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "joelrussellcohen/scalce_codon",
+    "stars": 0,
+    "forks": 0,
+    "pushed_at": "2023-12-15T06:17:39Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-turbox-cruso003",
@@ -1330,7 +1591,16 @@
    "note": "README carries an MIT license badge linking to LICENSE, but the repo contains no LICENSE file. Conduit, by the same author, has the same discrepancy.",
    "confidence": "high",
    "source_file": "data/entries/004-web-frameworks-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "cruso003/TurboX",
+    "stars": 0,
+    "forks": 0,
+    "pushed_at": "2025-10-29T10:00:42Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-tsp-solver",
@@ -1358,7 +1628,16 @@
    "note": "Filed exploration rather than benchmark: a Python counterpart exists, but the repo publishes no comparison.",
    "confidence": "high",
    "source_file": "data/entries/005-benchmark-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "shunji-umetani/tsp-solver",
+    "stars": 20,
+    "forks": 6,
+    "pushed_at": "2023-08-03T09:07:51Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-md5-codon",
@@ -1398,7 +1677,16 @@
    },
    "confidence": "high",
    "source_file": "data/entries/007-tail-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "salvatore-abello/md5-codon",
+    "stars": 0,
+    "forks": 0,
+    "pushed_at": "2025-01-31T17:54:22Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-mojo-benchmarks",
@@ -1431,7 +1719,16 @@
    "note": "Bachelor's thesis work rather than a taught-course exercise; filed as coursework because no separate thesis value exists in the vocabulary.",
    "confidence": "high",
    "source_file": "data/entries/005-benchmark-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "RedKinda/mojo-benchmarks",
+    "stars": 0,
+    "forks": 1,
+    "pushed_at": "2024-07-07T13:30:55Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-phase-project",
@@ -1463,7 +1760,16 @@
    },
    "confidence": "high",
    "source_file": "data/entries/007-tail-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "Boris00035/phaseProject",
+    "stars": 0,
+    "forks": 0,
+    "pushed_at": "2025-12-10T13:50:39Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-takechi-atcoder",
@@ -1495,7 +1801,16 @@
    },
    "confidence": "high",
    "source_file": "data/entries/005-benchmark-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "takechi-scratch/atcoder",
+    "stars": 2,
+    "forks": 0,
+    "pushed_at": "2026-08-15T11:56:38Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-ds-tools",
@@ -1522,7 +1837,16 @@
    },
    "confidence": "high",
    "source_file": "data/entries/007-tail-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "apahl/ds_tools",
+    "stars": 0,
+    "forks": 0,
+    "pushed_at": "2025-02-19T19:37:41Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-strings-codon",
@@ -1554,7 +1878,16 @@
    },
    "confidence": "high",
    "source_file": "data/entries/007-tail-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "salvatore-abello/strings.codon",
+    "stars": 0,
+    "forks": 0,
+    "pushed_at": "2025-05-06T08:46:43Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-markhend-aoc",
@@ -1581,7 +1914,16 @@
    },
    "confidence": "high",
    "source_file": "data/entries/005-benchmark-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "markhend/aoc",
+    "stars": 0,
+    "forks": 0,
+    "pushed_at": "2025-12-26T00:45:50Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-yogi",
@@ -1609,7 +1951,16 @@
    },
    "confidence": "high",
    "source_file": "data/entries/006-tooling-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "jutge-org/yogi",
+    "stars": 2,
+    "forks": 1,
+    "pushed_at": "2024-07-02T07:23:21Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-awesome-mojo",
@@ -1641,7 +1992,16 @@
    },
    "confidence": "high",
    "source_file": "data/entries/005-benchmark-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "ego/awesome-mojo",
+    "stars": 232,
+    "forks": 10,
+    "pushed_at": "2025-11-01T21:51:35Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-xxd-codon",
@@ -1669,7 +2029,16 @@
    },
    "confidence": "high",
    "source_file": "data/entries/007-tail-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "salvatore-abello/xxd.codon",
+    "stars": 0,
+    "forks": 0,
+    "pushed_at": "2025-05-09T22:21:22Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-r-packages-archives",
@@ -1709,7 +2078,16 @@
    },
    "confidence": "high",
    "source_file": "data/entries/007-tail-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "paithiov909/r-packages-archives",
+    "stars": 1,
+    "forks": 0,
+    "pushed_at": "2026-03-29T20:03:41Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-university-breno",
@@ -1737,7 +2115,16 @@
    "note": "Fourth course found using Codon.",
    "confidence": "high",
    "source_file": "data/entries/013-round2-substantive.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "BrenoFariasdaSilva/University",
+    "stars": 4,
+    "forks": 0,
+    "pushed_at": "2026-03-16T14:25:33Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-pyext",
@@ -1765,7 +2152,16 @@
    },
    "confidence": "high",
    "source_file": "data/entries/007-tail-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "river-walras/pyext",
+    "stars": 0,
+    "forks": 0,
+    "pushed_at": "2024-11-09T12:21:41Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-llama2-hack",
@@ -1792,7 +2188,16 @@
    },
    "confidence": "high",
    "source_file": "data/entries/007-tail-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "thamada/tmp.hack-llm-models",
+    "stars": 0,
+    "forks": 0,
+    "pushed_at": "2024-08-01T06:35:58Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-codon-wasm",
@@ -1824,7 +2229,16 @@
    },
    "confidence": "high",
    "source_file": "data/entries/006-tooling-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "coco875/codon-wasm",
+    "stars": 0,
+    "forks": 0,
+    "pushed_at": "2024-11-27T14:29:48Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-ctfcup24-school-ad",
@@ -1853,7 +2267,16 @@
    "note": "The only security-competition entry, and the only one where Codon appears in an exploit as well as in a service.",
    "confidence": "high",
    "source_file": "data/entries/013-round2-substantive.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "acisoru/ctfcup24-school-ad",
+    "stars": 2,
+    "forks": 1,
+    "pushed_at": "2024-12-24T09:06:09Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-hello-pythran",
@@ -1880,7 +2303,16 @@
    },
    "confidence": "high",
    "source_file": "data/entries/005-benchmark-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "sco3/hello-pythran",
+    "stars": 0,
+    "forks": 0,
+    "pushed_at": "2025-04-09T16:32:31Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-pl-ultimate-llm",
@@ -1909,7 +2341,16 @@
    "note": "Machine-authored Codon: a language model chose the language at random and wrote the program. Flagged per ruling 6, kept as an ordinary entry.",
    "confidence": "high",
    "source_file": "data/entries/007-tail-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "acherm/PL-ultimate-llm",
+    "stars": 0,
+    "forks": 0,
+    "pushed_at": "2026-06-12T11:46:11Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-jutge-tests",
@@ -1938,7 +2379,16 @@
    "note": "Highest file-count-to-LOC ratio in the index: 10 files, 15 lines. A reminder that file counts alone rank this above repos a hundred times its size.",
    "confidence": "high",
    "source_file": "data/entries/006-tooling-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "jutge-org/jutge-tests",
+    "stars": 1,
+    "forks": 2,
+    "pushed_at": "2025-11-06T20:47:58Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-codonx",
@@ -1971,7 +2421,16 @@
    "note": "Tooling ABOUT Codon written outside Codon. The .codon LOC understates it badly; the substance is Rust.",
    "confidence": "high",
    "source_file": "data/entries/006-tooling-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "lmx-4/codonx",
+    "stars": 0,
+    "forks": 0,
+    "pushed_at": "2026-05-21T14:54:10Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-hcc-conda-recipes",
@@ -1998,7 +2457,16 @@
    },
    "confidence": "high",
    "source_file": "data/entries/007-tail-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "unlhcc/hcc-conda-recipes",
+    "stars": 7,
+    "forks": 6,
+    "pushed_at": "2026-08-12T22:24:52Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-agent-engineering-handbook",
@@ -2026,7 +2494,16 @@
    "note": "Guidance aimed at coding agents rather than people. A distinct channel by which Codon reaches new code.",
    "confidence": "medium",
    "source_file": "data/entries/010-jit-and-mention-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "d-padmanabhan/agent-engineering-handbook",
+    "stars": 15,
+    "forks": 2,
+    "pushed_at": "2026-08-18T17:44:22Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-akleemans-aoc-2022",
@@ -2054,7 +2531,16 @@
    },
    "confidence": "medium",
    "source_file": "data/entries/013-round2-substantive.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "akleemans/aoc-2022",
+    "stars": 0,
+    "forks": 0,
+    "pushed_at": "2023-01-10T19:03:55Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-akleemans-aoc-2023",
@@ -2083,7 +2569,16 @@
    "note": "The pair is the only two-year longitudinal case in the index: the same author's Codon usage grew between 2022 and 2023.",
    "confidence": "medium",
    "source_file": "data/entries/013-round2-substantive.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "akleemans/aoc-2023",
+    "stars": 0,
+    "forks": 0,
+    "pushed_at": "2023-12-28T19:35:54Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-ariesq-stars",
@@ -2111,7 +2606,16 @@
    "note": "The weakest entry in the index. Kept because the mention lane is a real channel, but it carries no information about Codon beyond the fact of a star.",
    "confidence": "high",
    "source_file": "data/entries/017-mention-lane-round2.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "AriESQ/stars",
+    "stars": 2,
+    "forks": 2,
+    "pushed_at": "2026-08-18T09:14:20Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-arquimundo-api",
@@ -2138,7 +2642,16 @@
    },
    "confidence": "medium",
    "source_file": "data/entries/010-jit-and-mention-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "AldoNunes001/ArquiMundo-API",
+    "stars": 0,
+    "forks": 1,
+    "pushed_at": "2023-06-05T19:54:03Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-atcoder-codon",
@@ -2169,7 +2682,16 @@
    "note": "Third competitive-programming entry after takechi-scratch/atcoder and Jutge.org, and the only one that packages an environment for others.",
    "confidence": "high",
    "source_file": "data/entries/013-round2-substantive.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "liebe-magi/atcoder-codon",
+    "stars": 0,
+    "forks": 0,
+    "pushed_at": "2025-12-09T23:19:49Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-branden-kang-python-practice",
@@ -2197,7 +2719,16 @@
    "note": "The multithreading framing is the only place in the index where Codon is presented primarily as an escape from the GIL rather than as an optimizing compiler.",
    "confidence": "high",
    "source_file": "data/entries/017-mention-lane-round2.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "Branden-Kang/Python-practice",
+    "stars": 6,
+    "forks": 6,
+    "pushed_at": "2026-08-11T14:15:06Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-cainiaoprogram-blog",
@@ -2225,7 +2756,16 @@
    "note": "With the Japanese N-Queens blog and the German notes, the mention lane spans four languages. Codon's documentation reaches beyond English writing even where its code does not.",
    "confidence": "medium",
    "source_file": "data/entries/017-mention-lane-round2.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "cainiaoprogram/cainiaoprogram.github.io",
+    "stars": 3,
+    "forks": 0,
+    "pushed_at": "2024-01-12T15:05:04Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-chaotic-aur",
@@ -2253,7 +2793,16 @@
    },
    "confidence": "high",
    "source_file": "data/entries/014-packaging-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "chaotic-aur/packages",
+    "stars": 424,
+    "forks": 24,
+    "pushed_at": "2026-08-18T22:06:27Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-chromebrew",
@@ -2282,7 +2831,16 @@
    "note": "Two copies of this repo appear in the round-2 fork list.",
    "confidence": "high",
    "source_file": "data/entries/014-packaging-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "chromebrew/chromebrew",
+    "stars": 2501,
+    "forks": 421,
+    "pushed_at": "2026-08-18T08:49:00Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-cli-tools-ngruenwald",
@@ -2310,7 +2868,16 @@
    },
    "confidence": "high",
    "source_file": "data/entries/014-packaging-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "ngruenwald/cli-tools",
+    "stars": 0,
+    "forks": 0,
+    "pushed_at": "2026-08-18T16:51:55Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-codeboarding-architecture-mds",
@@ -2339,7 +2906,16 @@
    "note": "Machine-authored documentation about Codon, flagged under ruling 6. Second machine-authored entry after PL-ultimate-llm, and the second channel by which Codon reaches model-generated material, alongside llmref.",
    "confidence": "medium",
    "source_file": "data/entries/011-vendored-and-mirrors.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "CodeBoarding/awesome-architecture-mds",
+    "stars": 160,
+    "forks": 9,
+    "pushed_at": "2026-05-31T12:53:37Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-codon-networkx",
@@ -2366,7 +2942,16 @@
    },
    "confidence": "medium",
    "source_file": "data/entries/010-jit-and-mention-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "rostam/CodonNetworkx",
+    "stars": 0,
+    "forks": 0,
+    "pushed_at": "2023-07-17T11:12:43Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-codontest-0num4",
@@ -2397,7 +2982,16 @@
    "note": "One of the few entries recording a failure. Worth keeping: an index of successful uses would misrepresent what adopting Codon is like.",
    "confidence": "high",
    "source_file": "data/entries/013-round2-substantive.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "0num4/codontest",
+    "stars": 0,
+    "forks": 0,
+    "pushed_at": "2024-09-06T16:39:04Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-compiler-explorer-infra",
@@ -2425,7 +3019,16 @@
    },
    "confidence": "high",
    "source_file": "data/entries/014-packaging-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "compiler-explorer/infra",
+    "stars": 429,
+    "forks": 422,
+    "pushed_at": "2026-08-18T17:14:27Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-csc427-chase2512",
@@ -2457,7 +3060,16 @@
    "note": "Codon source in .py files. Found only via the codon.jit lane; extension:codon misses it entirely. See docs/gaps.md.",
    "confidence": "high",
    "source_file": "data/entries/009-coursework-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "chase2512/fall25-csc-bioinf",
+    "stars": 0,
+    "forks": 0,
+    "pushed_at": "2025-10-16T01:12:18Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-csc427-kaceythai",
@@ -2490,7 +3102,16 @@
    },
    "confidence": "high",
    "source_file": "data/entries/016-coursework-round2.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "kaceythai/fall25-csc-bioinf",
+    "stars": 0,
+    "forks": 0,
+    "pushed_at": "2025-12-07T18:59:57Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-csc427-marlodenis",
@@ -2522,7 +3143,16 @@
    },
    "confidence": "high",
    "source_file": "data/entries/016-coursework-round2.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "marlodenis/fall25-csc-bioinf",
+    "stars": 0,
+    "forks": 0,
+    "pushed_at": "2025-09-18T07:05:19Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-csc427-oliwhitla",
@@ -2554,7 +3184,16 @@
    },
    "confidence": "high",
    "source_file": "data/entries/016-coursework-round2.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "oliwhitla/fall25-csc-bioinf",
+    "stars": 0,
+    "forks": 0,
+    "pushed_at": "2025-11-24T07:59:13Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-csc427-yushannn",
@@ -2587,7 +3226,16 @@
    },
    "confidence": "high",
    "source_file": "data/entries/016-coursework-round2.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "yushannn/fall25-csc-bioinf",
+    "stars": 0,
+    "forks": 0,
+    "pushed_at": "2025-10-02T23:59:57Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-eplusplus",
@@ -2615,7 +3263,16 @@
    "note": "Second project after codonx to wrap Codon in a tool written in another language, and the more ambitious of the two: it presents Codon as its own language.",
    "confidence": "high",
    "source_file": "data/entries/013-round2-substantive.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "AIRAS-The-Innovations-Of-New-Era/EPlusPlus",
+    "stars": 6,
+    "forks": 0,
+    "pushed_at": "2025-06-29T11:46:00Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-evolove",
@@ -2644,7 +3301,16 @@
    "note": "Reclassified out of the source class after reading the file. The repo names its notation codon-lang, which is a naming collision with the compiler, not a use of it.",
    "confidence": "high",
    "source_file": "data/entries/008-false-positives.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "aidenhecker/Evolove",
+    "stars": 0,
+    "forks": 0,
+    "pushed_at": "2026-08-13T00:20:54Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-exaloop-io",
@@ -2672,7 +3338,16 @@
    "note": "First-party, not a third-party mirror. Should probably sit with the anchors rather than in the mirror class.",
    "confidence": "medium",
    "source_file": "data/entries/011-vendored-and-mirrors.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "exaloop/exaloop.io",
+    "stars": 0,
+    "forks": 2,
+    "pushed_at": "2023-03-27T06:22:39Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-example-codon-plugin",
@@ -2701,7 +3376,16 @@
    "note": "First-party. Arguably belongs with the anchors rather than in the entry set; recorded here with a first_party flag pending his call.",
    "confidence": "high",
    "source_file": "data/entries/013-round2-substantive.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "exaloop/example-codon-plugin",
+    "stars": 0,
+    "forks": 0,
+    "pushed_at": "2025-03-24T21:52:48Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-fragannot",
@@ -2728,7 +3412,16 @@
    },
    "confidence": "medium",
    "source_file": "data/entries/010-jit-and-mention-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "arthur-grimaud/fragannot",
+    "stars": 0,
+    "forks": 0,
+    "pushed_at": "2024-01-24T16:53:33Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-genetic-engine",
@@ -2756,7 +3449,16 @@
    "note": "Codon source is .py; found through the invocation lane, not extension:codon.",
    "confidence": "high",
    "source_file": "data/entries/013-round2-substantive.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "alcides/GeneticEngine",
+    "stars": 51,
+    "forks": 11,
+    "pushed_at": "2026-08-17T23:34:18Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-girip11-aoc",
@@ -2783,7 +3485,16 @@
    },
    "confidence": "medium",
    "source_file": "data/entries/010-jit-and-mention-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "girip11/advent_of_code",
+    "stars": 0,
+    "forks": 0,
+    "pushed_at": "2026-01-12T02:16:58Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-hidehic0-atcoder",
@@ -2812,7 +3523,16 @@
    "note": "Fourth competitive-programming entry, after takechi-scratch/atcoder, liebe-magi/atcoder-codon and Jutge.org.",
    "confidence": "high",
    "source_file": "data/entries/014-packaging-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "hidehic0/atcoder",
+    "stars": 1,
+    "forks": 0,
+    "pushed_at": "2026-08-12T00:40:10Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-kapibara-robot",
@@ -2839,7 +3559,16 @@
    },
    "confidence": "medium",
    "source_file": "data/entries/010-jit-and-mention-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "pperonski/KapiBara_ROS2_Robot",
+    "stars": 3,
+    "forks": 0,
+    "pushed_at": "2026-03-10T15:08:59Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-kpu-sim",
@@ -2867,7 +3596,16 @@
    "note": "Worth watching rather than counting: an accelerator vendor designing a Codon front end is a different kind of signal from a user, but nothing is implemented yet.",
    "confidence": "medium",
    "source_file": "data/entries/010-jit-and-mention-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "stillwater-sc/kpu-sim",
+    "stars": 2,
+    "forks": 2,
+    "pushed_at": "2026-07-22T15:44:14Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-language-reactor",
@@ -2895,7 +3633,16 @@
    "note": "Codon source is .py; found through the invocation lane.",
    "confidence": "high",
    "source_file": "data/entries/013-round2-substantive.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "ibra-kdbra/Language_Reactor",
+    "stars": 0,
+    "forks": 0,
+    "pushed_at": "2026-03-01T22:21:01Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-llmref",
@@ -2922,7 +3669,16 @@
    },
    "confidence": "medium",
    "source_file": "data/entries/010-jit-and-mention-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "reclear-io/llmref",
+    "stars": 5,
+    "forks": 0,
+    "pushed_at": "2026-07-16T14:44:00Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-mect-1ano",
@@ -2950,7 +3706,16 @@
    "note": "Second course found using Codon, distinct from UVic CSC427 and taught in Portuguese.",
    "confidence": "high",
    "source_file": "data/entries/011-vendored-and-mirrors.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "joaogasparp/mect_1ano",
+    "stars": 0,
+    "forks": 0,
+    "pushed_at": "2026-06-13T13:53:00Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-mpearrow-codon-docs",
@@ -2978,7 +3743,16 @@
    },
    "confidence": "medium",
    "source_file": "data/entries/011-vendored-and-mirrors.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "mpearrow/codon-docs",
+    "stars": 0,
+    "forks": 0,
+    "pushed_at": "2025-05-13T22:11:24Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-mpearrow-codon-md",
@@ -3007,7 +3781,16 @@
    "note": "The three mpearrow repos are one effort in three output formats. Counting them as three mirrors overstates independent interest.",
    "confidence": "medium",
    "source_file": "data/entries/011-vendored-and-mirrors.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "mpearrow/codon-md",
+    "stars": 0,
+    "forks": 0,
+    "pushed_at": "2025-05-14T01:42:25Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-mpearrow-codon-site",
@@ -3035,7 +3818,16 @@
    },
    "confidence": "medium",
    "source_file": "data/entries/011-vendored-and-mirrors.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "mpearrow/codon-site",
+    "stars": 0,
+    "forks": 0,
+    "pushed_at": "2025-07-07T17:33:34Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-n-queens",
@@ -3068,7 +3860,16 @@
    "note": "Codon in .py files, found via the codon-import lane rather than extension:codon. See docs/gaps.md. Scale reads zero because the counters key on the .codon extension; the code is real.",
    "confidence": "medium",
    "source_file": "data/entries/010-jit-and-mention-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "suzukiiichiro/N-Queens",
+    "stars": 3,
+    "forks": 1,
+    "pushed_at": "2026-08-18T08:51:20Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-oop-python-nycu",
@@ -3097,7 +3898,16 @@
    "note": "The chapter links ARG-NCTU/codon, a fork of the compiler held by the same group. Not yet opened; a candidate for the next pass.",
    "confidence": "high",
    "source_file": "data/entries/016-coursework-round2.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "ARG-NCTU/oop-python-nycu",
+    "stars": 17,
+    "forks": 211,
+    "pushed_at": "2026-06-23T08:48:59Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-oop-python-nycu-main",
@@ -3126,7 +3936,16 @@
    },
    "confidence": "medium",
    "source_file": "data/entries/016-coursework-round2.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "iamkyleh/oop-python-nycu-main",
+    "stars": 0,
+    "forks": 0,
+    "pushed_at": "2025-12-08T06:13:50Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-pisp-dsl",
@@ -3153,7 +3972,16 @@
    },
    "confidence": "medium",
    "source_file": "data/entries/013-round2-substantive.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "Viitrexx/PisP-dsl",
+    "stars": 0,
+    "forks": 0,
+    "pushed_at": "2023-07-05T09:39:11Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-practica-ap3",
@@ -3181,7 +4009,16 @@
    "note": "Fifth course found using Codon.",
    "confidence": "high",
    "source_file": "data/entries/013-round2-substantive.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "Jan1011000110/Practica-AP3",
+    "stars": 0,
+    "forks": 0,
+    "pushed_at": "2026-01-04T09:25:57Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-python-optimizers-demo",
@@ -3208,7 +4045,16 @@
    },
    "confidence": "medium",
    "source_file": "data/entries/010-jit-and-mention-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "Legume1728/python-optimizers-demo",
+    "stars": 0,
+    "forks": 0,
+    "pushed_at": "2024-07-03T21:05:51Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-riokkh-ml",
@@ -3235,7 +4081,16 @@
    },
    "confidence": "high",
    "source_file": "data/entries/013-round2-substantive.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "RioKKH/MachineLearning",
+    "stars": 0,
+    "forks": 0,
+    "pushed_at": "2026-07-29T16:12:02Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-scientificcoder",
@@ -3262,7 +4117,16 @@
    },
    "confidence": "medium",
    "source_file": "data/entries/010-jit-and-mention-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "matthijscox/scientificcoder",
+    "stars": 2,
+    "forks": 0,
+    "pushed_at": "2025-01-13T10:24:39Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-sdsaati-tools",
@@ -3290,7 +4154,16 @@
    "note": "An accidental entry in the strict sense -- the install was swept into a dotfiles repo. Kept under ruling 3, which admits vendored installs, and scored at its true own-source size of zero.",
    "confidence": "high",
    "source_file": "data/entries/011-vendored-and-mirrors.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "sdsaati/tools",
+    "stars": 2,
+    "forks": 0,
+    "pushed_at": "2026-05-28T09:04:59Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-suzukiiichiro-blog",
@@ -3318,7 +4191,16 @@
    },
    "confidence": "high",
    "source_file": "data/entries/017-mention-lane-round2.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "suzukiiichiro/suzukiiichiro.github.io",
+    "stars": 2,
+    "forks": 0,
+    "pushed_at": "2026-08-18T23:21:09Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-termux-packages",
@@ -3347,7 +4229,16 @@
    "note": "Upstream of roughly twenty forks and copies in the round-2 candidate set, all carrying this same build.sh. Those are recorded as a fork list rather than as entries.",
    "confidence": "high",
    "source_file": "data/entries/014-packaging-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "termux/termux-packages",
+    "stars": 16809,
+    "forks": 4324,
+    "pushed_at": "2026-08-18T18:48:53Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-toolmaker-berlin-init",
@@ -3375,7 +4266,16 @@
    "note": "Shows a user treating .codon and .py as interchangeable inputs, running both forms of the same program in adjacent lines. A small piece of evidence for why the extension search misses so much -- see docs/gaps.md.",
    "confidence": "high",
    "source_file": "data/entries/017-mention-lane-round2.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "toolmaker-berlin/init",
+    "stars": 0,
+    "forks": 0,
+    "pushed_at": "2025-09-29T20:48:03Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-udemy-python-pro",
@@ -3402,7 +4302,16 @@
    },
    "confidence": "medium",
    "source_file": "data/entries/010-jit-and-mention-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "franneck94/UdemyPythonPro",
+    "stars": 13,
+    "forks": 18,
+    "pushed_at": "2024-07-27T06:12:13Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-ultrahiroo-nixos-config",
@@ -3430,7 +4339,16 @@
    },
    "confidence": "high",
    "source_file": "data/entries/014-packaging-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "ultrahiroo/nixos-config",
+    "stars": 0,
+    "forks": 0,
+    "pushed_at": "2026-02-10T01:08:12Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-unifyweaver",
@@ -3458,7 +4376,16 @@
    "note": "A code generator that EMITS Codon. Neither an ordinary user nor a compiler plugin; the emitted code lives in generated output, not in the repo.",
    "confidence": "medium",
    "source_file": "data/entries/010-jit-and-mention-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "s243a/UnifyWeaver",
+    "stars": 6,
+    "forks": 1,
+    "pushed_at": "2026-08-12T05:49:45Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-velvetc",
@@ -3491,7 +4418,16 @@
    "note": "The most substantial piece of CSC427 work found, and the only one carrying a poster and a written report. Named differently from the other student repos, so it would be missed by a name-based sweep of the course.",
    "confidence": "high",
    "source_file": "data/entries/016-coursework-round2.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "ashleyosuna/velvetc",
+    "stars": 0,
+    "forks": 0,
+    "pushed_at": "2025-12-05T06:48:09Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-version-checker",
@@ -3519,7 +4455,16 @@
    },
    "confidence": "high",
    "source_file": "data/entries/014-packaging-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "designinlife/version-checker",
+    "stars": 0,
+    "forks": 0,
+    "pushed_at": "2026-08-18T16:04:21Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-vsources",
@@ -3547,7 +4492,16 @@
    "note": "Records macOS arm64 and x86_64 builds as far back as 0.15.1, so it doubles as a release-history source.",
    "confidence": "high",
    "source_file": "data/entries/014-packaging-lane.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "gvcgo/vsources",
+    "stars": 4,
+    "forks": 4,
+    "pushed_at": "2026-08-11T12:39:19Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-word-counter",
@@ -3575,7 +4529,16 @@
    "note": "Codon source is .py. Also carries a Nix flake referencing the Codon release, so it appears in both round-2 signals.",
    "confidence": "high",
    "source_file": "data/entries/013-round2-substantive.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "yosephbernandus/word-counter",
+    "stars": 0,
+    "forks": 0,
+    "pushed_at": "2026-01-15T15:11:49Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "repo-zee-observatory",
@@ -3604,7 +4567,16 @@
    "note": "Reclassified out of the source class after reading the file. Detection signal: zero recognised Codon features and no Python-like syntax.",
    "confidence": "high",
    "source_file": "data/entries/008-false-positives.json",
-   "kind": "repo"
+   "kind": "repo",
+   "popularity": {
+    "slug": "innerpixel/zee-observatory",
+    "stars": 0,
+    "forks": 0,
+    "pushed_at": "2026-08-03T05:28:45Z",
+    "archived": false,
+    "source": "github",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "paper-attune-share-2026",
@@ -3626,6 +4598,12 @@
    "confidence": "high",
    "source_file": "data/papers/004-batch.json",
    "kind": "paper",
+   "popularity": {
+    "doi": "10.1007/s10207-026-01223-3",
+    "citations": 0,
+    "source": "openalex",
+    "fetched": "2026-08-18"
+   },
    "codon_mentions": {
     "count": 1,
     "inline": 1,
@@ -3656,6 +4634,12 @@
    "confidence": "high",
    "source_file": "data/papers/006-batch.json",
    "kind": "paper",
+   "popularity": {
+    "doi": "10.1109/sp63933.2026.00256",
+    "citations": 0,
+    "source": "openalex",
+    "fetched": "2026-08-18"
+   },
    "codon_mentions": {
     "count": 4,
     "inline": 3,
@@ -3684,6 +4668,12 @@
    "confidence": "high",
    "source_file": "data/papers/006-batch.json",
    "kind": "paper",
+   "popularity": {
+    "doi": "10.1109/saner-c67878.2026.00033",
+    "citations": 1,
+    "source": "openalex",
+    "fetched": "2026-08-18"
+   },
    "codon_mentions": {
     "count": 2,
     "inline": 1,
@@ -3712,6 +4702,12 @@
    "confidence": "high",
    "source_file": "data/papers/001-pilot.json",
    "kind": "paper",
+   "popularity": {
+    "doi": "10.48550/arxiv.2605.18697",
+    "citations": 0,
+    "source": "openalex",
+    "fetched": "2026-08-18"
+   },
    "codon_mentions": {
     "count": 1,
     "inline": 1,
@@ -3740,6 +4736,12 @@
    "confidence": "high",
    "source_file": "data/papers/001-pilot.json",
    "kind": "paper",
+   "popularity": {
+    "doi": "10.1109/cgo68049.2026.11394843",
+    "citations": 0,
+    "source": "openalex",
+    "fetched": "2026-08-18"
+   },
    "codon_mentions": {
     "count": 3,
     "inline": 1,
@@ -3771,6 +4773,12 @@
    "confidence": "high",
    "source_file": "data/papers/002-batch.json",
    "kind": "paper",
+   "popularity": {
+    "doi": "10.1038/s41746-025-02271-0",
+    "citations": 0,
+    "source": "openalex",
+    "fetched": "2026-08-18"
+   },
    "codon_mentions": {
     "count": 0,
     "inline": 0,
@@ -3798,7 +4806,13 @@
    "note": "Seq is cited here as a peer of BioJulia and SARVAVID rather than as an ancestor. The bioRxiv pdf path in OpenAlex 404s; the /content/<doi>v1.full.pdf form served it.",
    "confidence": "high",
    "source_file": "data/papers/002-batch.json",
-   "kind": "paper"
+   "kind": "paper",
+   "popularity": {
+    "doi": "10.64898/2026.07.28.741211",
+    "citations": 0,
+    "source": "openalex",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "paper-unite-2026",
@@ -3821,6 +4835,12 @@
    "confidence": "high",
    "source_file": "data/papers/001-pilot.json",
    "kind": "paper",
+   "popularity": {
+    "doi": "10.1145/3787218",
+    "citations": 0,
+    "source": "openalex",
+    "fetched": "2026-08-18"
+   },
    "codon_mentions": {
     "count": 12,
     "inline": 0,
@@ -3849,6 +4869,12 @@
    "confidence": "high",
    "source_file": "data/papers/003-batch.json",
    "kind": "paper",
+   "popularity": {
+    "doi": "10.48550/arxiv.2604.10648",
+    "citations": 0,
+    "source": "openalex",
+    "fetched": "2026-08-18"
+   },
    "codon_mentions": {
     "count": 1,
     "inline": 1,
@@ -3877,7 +4903,13 @@
    "note": "The natural companion to the repository-side benchmark entries. Where mce-sandbox and word-counter time Codon informally, this does it as a controlled study.",
    "confidence": "medium",
    "source_file": "data/papers/001-pilot.json",
-   "kind": "paper"
+   "kind": "paper",
+   "popularity": {
+    "doi": "10.1145/3756681.3756972",
+    "citations": 2,
+    "source": "openalex",
+    "fetched": "2026-08-18"
+   }
   },
   {
    "id": "paper-distributed-arrays-2025",
@@ -3900,6 +4932,12 @@
    "confidence": "high",
    "source_file": "data/papers/002-batch.json",
    "kind": "paper",
+   "popularity": {
+    "doi": "10.1109/hpec67600.2025.11196478",
+    "citations": 0,
+    "source": "openalex",
+    "fetched": "2026-08-18"
+   },
    "codon_mentions": {
     "count": 1,
     "inline": 1,
@@ -3928,6 +4966,12 @@
    "confidence": "high",
    "source_file": "data/papers/003-batch.json",
    "kind": "paper",
+   "popularity": {
+    "doi": "10.1145/3795883",
+    "citations": 0,
+    "source": "openalex",
+    "fetched": "2026-08-18"
+   },
    "codon_mentions": {
     "count": 1,
     "inline": 1,
@@ -3956,6 +5000,12 @@
    "confidence": "high",
    "source_file": "data/papers/004-batch.json",
    "kind": "paper",
+   "popularity": {
+    "doi": "10.1007/s42979-025-04503-2",
+    "citations": 1,
+    "source": "openalex",
+    "fetched": "2026-08-18"
+   },
    "codon_mentions": {
     "count": 4,
     "inline": 1,
@@ -3984,6 +5034,12 @@
    "confidence": "high",
    "source_file": "data/papers/004-batch.json",
    "kind": "paper",
+   "popularity": {
+    "doi": "10.48550/arxiv.2505.07188",
+    "citations": 0,
+    "source": "openalex",
+    "fetched": "2026-08-18"
+   },
    "codon_mentions": {
     "count": 1,
     "inline": 1,
@@ -4012,6 +5068,12 @@
    "confidence": "high",
    "source_file": "data/papers/004-batch.json",
    "kind": "paper",
+   "popularity": {
+    "doi": "10.48550/arxiv.2506.03686",
+    "citations": 0,
+    "source": "openalex",
+    "fetched": "2026-08-18"
+   },
    "codon_mentions": {
     "count": 1,
     "inline": 1,
@@ -4039,6 +5101,12 @@
    "confidence": "high",
    "source_file": "data/papers/006-batch.json",
    "kind": "paper",
+   "popularity": {
+    "doi": "10.1109/hpec67600.2025.11196667",
+    "citations": 0,
+    "source": "openalex",
+    "fetched": "2026-08-18"
+   },
    "codon_mentions": {
     "count": 1,
     "inline": 1,
@@ -4066,6 +5134,12 @@
    "confidence": "high",
    "source_file": "data/papers/003-batch.json",
    "kind": "paper",
+   "popularity": {
+    "doi": "10.48550/arxiv.2508.16690",
+    "citations": 1,
+    "source": "semanticscholar",
+    "fetched": "2026-08-18"
+   },
    "codon_mentions": {
     "count": 1,
     "inline": 1,
@@ -4094,6 +5168,12 @@
    "confidence": "high",
    "source_file": "data/papers/004-batch.json",
    "kind": "paper",
+   "popularity": {
+    "doi": "10.1101/2025.04.05.647342",
+    "citations": 3,
+    "source": "openalex",
+    "fetched": "2026-08-18"
+   },
    "codon_mentions": {
     "count": 1,
     "inline": 1,
@@ -4122,6 +5202,12 @@
    "confidence": "high",
    "source_file": "data/papers/002-batch.json",
    "kind": "paper",
+   "popularity": {
+    "doi": "10.1186/s12859-025-06168-3",
+    "citations": 4,
+    "source": "openalex",
+    "fetched": "2026-08-18"
+   },
    "codon_mentions": {
     "count": 1,
     "inline": 1,
@@ -4176,6 +5262,12 @@
    "confidence": "high",
    "source_file": "data/papers/003-batch.json",
    "kind": "paper",
+   "popularity": {
+    "doi": "10.48550/arxiv.2512.11112",
+    "citations": 0,
+    "source": "openalex",
+    "fetched": "2026-08-18"
+   },
    "codon_mentions": {
     "count": 2,
     "inline": 1,
@@ -4204,6 +5296,12 @@
    "confidence": "high",
    "source_file": "data/papers/006-batch.json",
    "kind": "paper",
+   "popularity": {
+    "doi": "10.1109/assic64892.2025.11158099",
+    "citations": 1,
+    "source": "openalex",
+    "fetched": "2026-08-18"
+   },
    "codon_mentions": {
     "count": 4,
     "inline": 1,
@@ -4231,6 +5329,12 @@
    "confidence": "high",
    "source_file": "data/papers/004-batch.json",
    "kind": "paper",
+   "popularity": {
+    "doi": "10.56553/popets-2024-0069",
+    "citations": 2,
+    "source": "openalex",
+    "fetched": "2026-08-18"
+   },
    "codon_mentions": {
     "count": 1,
     "inline": 1,
@@ -4259,6 +5363,12 @@
    "confidence": "high",
    "source_file": "data/papers/004-batch.json",
    "kind": "paper",
+   "popularity": {
+    "doi": "10.1093/bib/bbae356",
+    "citations": 7,
+    "source": "openalex",
+    "fetched": "2026-08-18"
+   },
    "codon_mentions": {
     "count": 4,
     "inline": 2,
@@ -4287,6 +5397,12 @@
    "confidence": "high",
    "source_file": "data/papers/006-batch.json",
    "kind": "paper",
+   "popularity": {
+    "doi": "10.1109/scw63240.2024.00245",
+    "citations": 3,
+    "source": "openalex",
+    "fetched": "2026-08-18"
+   },
    "codon_mentions": {
     "count": 2,
     "inline": 1,
@@ -4315,6 +5431,12 @@
    "confidence": "high",
    "source_file": "data/papers/004-batch.json",
    "kind": "paper",
+   "popularity": {
+    "doi": "10.1101/2024.04.24.590989",
+    "citations": 0,
+    "source": "openalex",
+    "fetched": "2026-08-18"
+   },
    "codon_mentions": {
     "count": 2,
     "inline": 1,
@@ -4343,6 +5465,12 @@
    "confidence": "high",
    "source_file": "data/papers/005-batch.json",
    "kind": "paper",
+   "popularity": {
+    "doi": "10.48550/arxiv.2307.06983",
+    "citations": 1,
+    "source": "openalex",
+    "fetched": "2026-08-18"
+   },
    "codon_mentions": {
     "count": 1,
     "inline": 1,
@@ -4371,6 +5499,12 @@
    "confidence": "high",
    "source_file": "data/papers/005-batch.json",
    "kind": "paper",
+   "popularity": {
+    "doi": "10.1186/s13059-023-03039-z",
+    "citations": 16,
+    "source": "openalex",
+    "fetched": "2026-08-18"
+   },
    "codon_mentions": {
     "count": 5,
     "inline": 1,
@@ -4399,6 +5533,12 @@
    "confidence": "high",
    "source_file": "data/papers/005-batch.json",
    "kind": "paper",
+   "popularity": {
+    "doi": "10.1145/3579990.3580014",
+    "citations": 5,
+    "source": "openalex",
+    "fetched": "2026-08-18"
+   },
    "codon_mentions": {
     "count": 1,
     "inline": 1,
@@ -4427,6 +5567,12 @@
    "confidence": "high",
    "source_file": "data/papers/006-batch.json",
    "kind": "paper",
+   "popularity": {
+    "doi": "10.1109/issre59848.2023.00066",
+    "citations": 0,
+    "source": "openalex",
+    "fetched": "2026-08-18"
+   },
    "codon_mentions": {
     "count": 8,
     "inline": 1,
@@ -4454,6 +5600,12 @@
    "confidence": "high",
    "source_file": "data/papers/005-batch.json",
    "kind": "paper",
+   "popularity": {
+    "doi": "10.48550/arxiv.2307.16080",
+    "citations": 1,
+    "source": "openalex",
+    "fetched": "2026-08-18"
+   },
    "codon_mentions": {
     "count": 1,
     "inline": 1,
@@ -4482,6 +5634,12 @@
    "confidence": "high",
    "source_file": "data/papers/005-batch.json",
    "kind": "paper",
+   "popularity": {
+    "doi": "10.1145/3572848.3577509",
+    "citations": 30,
+    "source": "openalex",
+    "fetched": "2026-08-18"
+   },
    "codon_mentions": {
     "count": 4,
     "inline": 2,
@@ -4510,6 +5668,12 @@
    "confidence": "high",
    "source_file": "data/papers/004-batch.json",
    "kind": "paper",
+   "popularity": {
+    "doi": "10.48550/arxiv.2310.05102",
+    "citations": 0,
+    "source": "openalex",
+    "fetched": "2026-08-18"
+   },
    "codon_mentions": {
     "count": 4,
     "inline": 1,
@@ -4540,6 +5704,12 @@
    "confidence": "high",
    "source_file": "data/papers/004-batch.json",
    "kind": "paper",
+   "popularity": {
+    "doi": "10.1186/s13015-022-00210-2",
+    "citations": 91,
+    "source": "openalex",
+    "fetched": "2026-08-18"
+   },
    "codon_mentions": {
     "count": 2,
     "inline": 2,
@@ -4568,6 +5738,12 @@
    "confidence": "high",
    "source_file": "data/papers/005-batch.json",
    "kind": "paper",
+   "popularity": {
+    "doi": "10.1101/2022.12.23.521809",
+    "citations": 2,
+    "source": "openalex",
+    "fetched": "2026-08-18"
+   },
    "codon_mentions": {
     "count": 1,
     "inline": 1,
@@ -4596,6 +5772,12 @@
    "confidence": "high",
    "source_file": "data/papers/005-batch.json",
    "kind": "paper",
+   "popularity": {
+    "doi": "10.22214/ijraset.2022.40949",
+    "citations": 0,
+    "source": "openalex",
+    "fetched": "2026-08-18"
+   },
    "codon_mentions": {
     "count": 1,
     "inline": 1,
@@ -4624,6 +5806,12 @@
    "confidence": "high",
    "source_file": "data/papers/005-batch.json",
    "kind": "paper",
+   "popularity": {
+    "doi": "10.1109/isca52012.2021.00041",
+    "citations": 12,
+    "source": "openalex",
+    "fetched": "2026-08-18"
+   },
    "codon_mentions": {
     "count": 1,
     "inline": 1,
@@ -4653,6 +5841,12 @@
    "confidence": "high",
    "source_file": "data/papers/005-batch.json",
    "kind": "paper",
+   "popularity": {
+    "doi": "10.1016/j.cels.2021.08.009",
+    "citations": 126,
+    "source": "openalex",
+    "fetched": "2026-08-18"
+   },
    "codon_mentions": {
     "count": 0,
     "inline": 0,
@@ -4859,8 +6053,8 @@
   }
  ],
  "popularity_counts": {
-  "repos_with_stars": 0,
-  "papers_with_citations": 0,
+  "repos_with_stars": 108,
+  "papers_with_citations": 37,
   "papers_with_mentions": 35
  }
 }
