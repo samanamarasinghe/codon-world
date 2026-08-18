@@ -1,4 +1,4 @@
-# Repo entry schema (draft 2)
+# Repo entry schema (draft 3)
 
 Codon-world goes deeper per entry than the SDV index did, because the population is
 smaller. Every repo entry carries the SDV fields (url, summary, authors, use case)
@@ -18,6 +18,26 @@ One value, decided by what the repo actually contains:
 | `docs_mirror` | a copy of the Codon documentation |
 | `mention_only` | names Codon in prose, runs none of it |
 | `false_positive` | `.codon` files that are codon-usage tables or codeml alignments |
+
+## How Codon is reached
+
+`codon_via` records whether Codon is used directly or through something else:
+
+| value | test |
+|---|---|
+| `direct` | the repo invokes Codon itself |
+| `plugin` | the repo runs `codon run -plugin X`, loading another project's Codon plugin |
+| `framework` | the repo is written against a Codon framework and never names Codon |
+
+The Numanagic cluster forced this. Decor pins Codon v0.17.0 and loads Sequre as a
+Codon plugin; Secure MICE says only that it is part of Sequre. Both are real Codon
+code, and neither would read that way from `integration_mode` alone.
+
+A repo may also carry `integration_mode_secondary` where it does two things at once
+-- Sequre and Shechi are both `source` and `ir_plugin`, shipping a compiler pass
+alongside the library.
+
+`codon_version_pinned` records an exact version where the repo pins one.
 
 ## Codon features exercised
 
