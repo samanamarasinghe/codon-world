@@ -1,0 +1,122 @@
+[
+  {
+    "id": "repo-sequre",
+    "url": "https://github.com/0xTCG/sequre",
+    "name": "Sequre",
+    "summary": "A statically compiled Pythonic framework for secure computation pipelines, combining secure multiparty computation, homomorphic encryption and multiparty homomorphic encryption in one system, with built-in linear algebra, statistics and machine learning. Codon is both the compilation target and an extension point: 130 .codon files compile to native code through Codon with no interpreter, and the repo additionally carries C++ sources against Codon's IR (ir/helpers/bet.h, ir/helpers/utils.cpp), so Sequre ships a compiler pass as well as a library.",
+    "integration_mode": "source",
+    "integration_mode_secondary": "ir_plugin",
+    "codon_via": "direct",
+    "codon_features": {
+      "static_typing": {"occurrences": 299, "files": 35},
+      "llvm_inline": {"occurrences": 73, "files": 8},
+      "c_interop": {"occurrences": 64, "files": 11},
+      "par": {"occurrences": 42, "files": 5},
+      "tuple": {"occurrences": 8, "files": 5},
+      "python_interop": {"occurrences": 6, "files": 3},
+      "numpy": {"occurrences": 1, "files": 1}
+    },
+    "scale": {"own_codon_files": 130, "own_codon_loc": 41790, "vendored_stdlib_files": 0},
+    "why_codon": "README states programs compile to native machine code via Codon with no runtime interpreter overhead, and that the result outperforms interpreter-based MPC frameworks by orders of magnitude.",
+    "why_codon_source": "stated",
+    "provenance": "paper_backed",
+    "paper": [
+      {"doi": "10.1109/IPDPSW55747.2022.00040", "venue": "IPDPSW 2022"},
+      {"doi": "10.1186/s13059-022-02841-5", "venue": "Genome Biology 2023"}
+    ],
+    "health": {"last_commit": "2026-07-04", "license": "LICENSE.md", "ci_builds_codon": true, "workflows": [".github/workflows/ci.yml"]},
+    "confidence": "high"
+  },
+  {
+    "id": "repo-shechi",
+    "url": "https://github.com/anon-conf-subm/shechi",
+    "name": "Shechi",
+    "summary": "An end-to-end statically compiled Pythonic framework for multiparty homomorphic encryption pipelines, distributed as an anonymous conference artifact with a prepared container image. The codebase is a snapshot of Sequre: 87 of its 88 .codon files share paths with 0xTCG/sequre and 20 are byte-identical, its container mounts a /sequre working directory, and it carries the same Codon IR C++ helpers. Codon is the compilation target throughout.",
+    "integration_mode": "source",
+    "integration_mode_secondary": "ir_plugin",
+    "codon_via": "direct",
+    "codon_features": {
+      "static_typing": {"occurrences": 264, "files": 31},
+      "llvm_inline": {"occurrences": 50, "files": 6},
+      "par": {"occurrences": 39, "files": 4},
+      "c_interop": {"occurrences": 33, "files": 8},
+      "tuple": {"occurrences": 8, "files": 5}
+    },
+    "scale": {"own_codon_files": 88, "own_codon_loc": 32281, "vendored_stdlib_files": 0},
+    "why_codon": "README claims a statically compiled, performance-engineered framework; no Codon-specific benchmark claim is made in the repo itself.",
+    "why_codon_source": "stated",
+    "provenance": "paper_backed",
+    "paper": [{"doi": null, "venue": "USENIX Security 2025", "note": "no paper DOI; six Zenodo artifact DOIs exist"}],
+    "derived_from": "repo-sequre",
+    "health": {"last_commit": "2024-09-04", "license": "LICENSE.md", "ci_builds_codon": false},
+    "needs": "Ruling: Shechi is a distinct paper on a shared codebase. Keep as its own entry with derived_from, or fold into Sequre? Recorded as a separate entry pending his call.",
+    "confidence": "high"
+  },
+  {
+    "id": "repo-biser",
+    "url": "https://github.com/0xTCG/biser",
+    "name": "BISER",
+    "summary": "A tool for detecting and decomposing segmental duplications in one genome or across many, successor to SEDEF, distributed on PyPI. It is the only repo in the index so far that exercises the Seq plugin: all six of its bio-import sites sit in its eight .codon files, and building from source requires Codon together with the Seq plugin.",
+    "integration_mode": "source",
+    "codon_via": "direct",
+    "codon_features": {
+      "seq_plugin": {"occurrences": 6, "files": 6},
+      "static_typing": {"occurrences": 2, "files": 2},
+      "tuple": {"occurrences": 1, "files": 1}
+    },
+    "scale": {"own_codon_files": 8, "own_codon_loc": 1877, "vendored_stdlib_files": 0},
+    "why_codon": "README makes no Codon performance claim; it names Codon plus the Seq plugin as the from-source build requirement. Inferred from the Seq plugin dependency that Codon is used for the sequence-processing core.",
+    "why_codon_source": "inferred",
+    "provenance": "paper_backed",
+    "paper": [
+      {"doi": "10.4230/LIPIcs.WABI.2021.15", "venue": "WABI 2021"},
+      {"doi": "10.1186/s13015-022-00210-2", "venue": "Algorithms for Molecular Biology 2022"}
+    ],
+    "health": {"last_commit": "2025-07-20", "license": "LICENSE", "ci_builds_codon": false},
+    "confidence": "high"
+  },
+  {
+    "id": "repo-decor",
+    "url": "https://github.com/hcholab/decor",
+    "name": "Decor",
+    "summary": "A framework for evaluating non-linear functions inside secure multiparty computation, covering Chebyshev approximation, logistic regression, neural network layers and GWAS, MNIST and SIREN applications. Codon is reached through Sequre rather than directly: installation pins Codon v0.17.0, drops the Sequre release into the Codon plugin directory, and runs every program as codon run -plugin sequre.",
+    "integration_mode": "source",
+    "codon_via": "plugin",
+    "codon_features": {
+      "static_typing": {"occurrences": 211, "files": 17},
+      "python_interop": {"occurrences": 7, "files": 4},
+      "llvm_inline": {"occurrences": 7, "files": 2},
+      "numpy": {"occurrences": 3, "files": 3},
+      "c_interop": {"occurrences": 2, "files": 2},
+      "par": {"occurrences": 1, "files": 1}
+    },
+    "scale": {"own_codon_files": 19, "own_codon_loc": 3189, "vendored_stdlib_files": 0},
+    "why_codon": "README makes no performance claim for Codon; it pins Codon v0.17.0 as the runtime and loads Sequre as a Codon plugin. Inferred from the install recipe that Codon is the execution substrate.",
+    "why_codon_source": "inferred",
+    "provenance": "research_prototype",
+    "paper": null,
+    "codon_version_pinned": "0.17.0",
+    "health": {"last_commit": "2026-03-11", "license": "LICENSE", "ci_builds_codon": false},
+    "confidence": "high"
+  },
+  {
+    "id": "repo-secure-mice",
+    "url": "https://github.com/0xTCG/secure-mice",
+    "name": "Secure MICE",
+    "summary": "An implementation of secure multiple imputation with chained equations, benchmarked against non-secure baselines from a companion notebook. The repo states it is implemented as an integral part of the Sequre framework, so Codon is reached through Sequre: four .codon files hold the application, and the benchmark container carries Codon debug settings rather than invoking Codon directly.",
+    "integration_mode": "source",
+    "codon_via": "framework",
+    "codon_features": {
+      "static_typing": {"occurrences": 18, "files": 3},
+      "python_interop": {"occurrences": 3, "files": 1},
+      "numpy": {"occurrences": 1, "files": 1}
+    },
+    "scale": {"own_codon_files": 4, "own_codon_loc": 1175, "vendored_stdlib_files": 0},
+    "why_codon": "README makes no Codon claim at all; it positions the work inside Sequre. Inferred from the Sequre dependency and the CODON_DEBUG setting in the benchmark command that Codon is the compilation substrate.",
+    "why_codon_source": "inferred",
+    "provenance": "research_prototype",
+    "paper": null,
+    "health": {"last_commit": "2026-07-06", "license": "LICENSE", "ci_builds_codon": false},
+    "confidence": "high"
+  }
+]
