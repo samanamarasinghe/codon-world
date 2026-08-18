@@ -1,9 +1,9 @@
 {
  "generated_from": "data/entries/*.json + data/pilot/*.json + data/papers/*.json",
- "entry_count": 117,
+ "entry_count": 121,
  "kind_counts": {
   "repo": 108,
-  "paper": 9
+  "paper": 13
  },
  "sidecar_counts": {
   "false_positive/genetics": 11,
@@ -3719,6 +3719,28 @@
    "kind": "paper"
   },
   {
+   "id": "paper-vector-register-usage-2026",
+   "url": "https://doi.org/10.48550/arXiv.2604.10648",
+   "name": "Analyzing Vector Register Usage in Linux Packages to Understand Real-World Impact",
+   "venue": "arXiv",
+   "year": 2026,
+   "doi": "10.48550/arXiv.2604.10648",
+   "summary": "A survey of how far vector registers are actually used across shipped Linux packages, motivated by the observation that on x86_64 even scalar floating point touches vector registers and that most vector instructions are emitted by compilers rather than written by programmers. Vectron is cited in the survey of autovectorization work, described there as an autovectorization framework for dynamic programming code written in Python. Nothing is run.",
+   "codon_relation": "prior_art",
+   "codon_role": "exploration",
+   "why_codon": "The full text cites Vectron once, in the paragraph listing compiler autovectorization work, alongside studies quantifying autovectorization ability. No experiment involves it.",
+   "why_codon_source": "stated",
+   "provenance": "preprint",
+   "cites_anchors": [
+    "vectron-cgo-2025"
+   ],
+   "found_in": "openalex",
+   "note": "The first citation of Vectron found from outside the Codon family, and it lands in a security-adjacent measurement paper rather than a compiler one.",
+   "confidence": "high",
+   "source_file": "data/papers/003-batch.json",
+   "kind": "paper"
+  },
+  {
    "id": "paper-compiled-python-energy-2025",
    "url": "https://doi.org/10.1145/3756681.3756972",
    "name": "An Empirical Study on the Performance and Energy Usage of Compiled Python Code",
@@ -3761,6 +3783,49 @@
    "note": "Resolved through the arXiv copy at 2508.17493, which OpenAlex listed as a green location while the IEEE page carries no PDF.",
    "confidence": "high",
    "source_file": "data/papers/002-batch.json",
+   "kind": "paper"
+  },
+  {
+   "id": "paper-eqsat-julia-2025",
+   "url": "https://doi.org/10.1145/3795883",
+   "name": "Equality Saturation for Optimizing High-Level Julia IR",
+   "venue": "ACM (Proc. OOPSLA-class)",
+   "year": 2025,
+   "doi": "10.1145/3795883",
+   "summary": "An equality-saturation optimizer working on Julia's high-level intermediate representation, contrasted against greedy destructive rewriting and its phase-ordering problem. Codon appears in the related-work discussion of extensible high-level IRs designed to express domain-specific programs directly, which is the design space its own work sits in. Codon is not part of the implementation.",
+   "codon_relation": "prior_art",
+   "codon_role": "exploration",
+   "why_codon": "The full text cites Codon in the related-work paragraph on extensible high-level IRs for domain-specific optimization. Nothing is run.",
+   "why_codon_source": "stated",
+   "provenance": "published",
+   "cites_anchors": [
+    "codon-cc-2023"
+   ],
+   "found_in": "openalex",
+   "note": "Cited for its extensible IR rather than its performance, which is the framing the Codon paper itself leads with. The compiler literature picks up the DSL-framework claim; the application literature picks up the speed claim.",
+   "confidence": "high",
+   "source_file": "data/papers/003-batch.json",
+   "kind": "paper"
+  },
+  {
+   "id": "paper-iridescent-2025",
+   "url": "https://doi.org/10.48550/arXiv.2508.16690",
+   "name": "Iridescent: A Framework Enabling Online System Implementation Specialization",
+   "venue": "arXiv",
+   "year": 2025,
+   "doi": "10.48550/arXiv.2508.16690",
+   "summary": "A framework for specializing system implementations at runtime rather than ahead of time, which classifies the offline alternatives it improves on into four categories. Vectron is cited under specialized compiler optimization passes that generate code for specific hardware features such as vectorization. Iridescent runs neither Codon nor Vectron.",
+   "codon_relation": "prior_art",
+   "codon_role": "exploration",
+   "why_codon": "The full text cites Vectron once, in the taxonomy of offline specialization techniques under specialized compiler passes. No experiment involves it.",
+   "why_codon_source": "stated",
+   "provenance": "preprint",
+   "cites_anchors": [
+    "vectron-cgo-2025"
+   ],
+   "found_in": "openalex",
+   "confidence": "high",
+   "source_file": "data/papers/003-batch.json",
    "kind": "paper"
   },
   {
@@ -3809,6 +3874,28 @@
    "note": "The only work in the corpus citing four anchors. Has no paper DOI; six Zenodo artifact DOIs exist instead.",
    "confidence": "high",
    "source_file": "data/papers/001-pilot.json",
+   "kind": "paper"
+  },
+  {
+   "id": "paper-spdz-llvm-pipeline-2025",
+   "url": "https://doi.org/10.48550/arXiv.2512.11112",
+   "name": "An LLVM-Based Optimization Pipeline for SPDZ",
+   "venue": "arXiv",
+   "year": 2025,
+   "doi": "10.48550/arXiv.2512.11112",
+   "summary": "A compilation pipeline that lowers secure multiparty computation programs through LLVM, surveying how existing MPC compilers represent data-oblivious control flow and vectorization. Sequre is placed in that survey as a Python-like DSL compiling through a custom intermediate form before lowering to LLVM and native code -- a characterisation of the Codon path, arrived at without naming Codon. The pipeline itself is separate work.",
+   "codon_relation": "prior_art",
+   "codon_role": "exploration",
+   "why_codon": "The related-work section describes Sequre's compilation path and positions the paper's own IR against it. No Codon or Sequre code is run.",
+   "why_codon_source": "stated",
+   "provenance": "preprint",
+   "cites_anchors": [
+    "sequre-gb-2023"
+   ],
+   "found_in": "openalex",
+   "note": "Illustrates a pattern in the Sequre-only citation group: the MPC literature engages with Sequre's compiler design while treating Codon underneath it as an implementation detail, so these citations reach Codon at one remove.",
+   "confidence": "high",
+   "source_file": "data/papers/003-batch.json",
    "kind": "paper"
   }
  ],
