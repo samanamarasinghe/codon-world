@@ -6,12 +6,20 @@
 body { margin: 0 auto; padding: 1.5rem 1.25rem 4rem; max-width: 60rem;
   font: 15px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
   color: var(--fg); background: var(--bg); }
-h1 { margin: 0 0 .25rem; font-size: 1.6rem; letter-spacing: -.01em; }
+h1 { margin: 0; font-size: 1.6rem; letter-spacing: -.01em; }
+.brand { display: flex; align-items: center; justify-content: space-between;
+  gap: 1rem; margin-bottom: .35rem; }
+.brand-logo { display: block; line-height: 0; opacity: .9; }
+.brand-logo img { height: 1.45rem; width: auto; display: block; }
 .sub { margin: 0 0 1.25rem; color: var(--dim); max-width: 46rem; }
 a { color: var(--accent); }
 
 #controls { border: 1px solid var(--line); border-radius: 6px; padding: .9rem 1rem 1rem; }
 .row { display: flex; flex-wrap: wrap; gap: .9rem; align-items: flex-end; margin-bottom: .9rem; }
+.row-search { margin-bottom: .7rem; padding-bottom: .7rem; border-bottom: 1px solid var(--line); }
+.ctl-wide { width: 100%; max-width: 32rem; }
+.ctl-wide input { width: 100%; }
+.ctl-line { display: flex; align-items: center; gap: .4rem; }
 .ctl { display: flex; flex-direction: column; font-size: .8rem; color: var(--dim); gap: .2rem; }
 .ctl input, .ctl select { font-size: .9rem; padding: .28rem .35rem; color: var(--fg);
   border: 1px solid var(--line); border-radius: 4px; background: #fff; }
@@ -20,10 +28,13 @@ button { font-size: .85rem; padding: .38rem .7rem; border: 1px solid var(--line)
   border-radius: 4px; background: #fafafa; cursor: pointer; color: var(--fg); }
 button:hover { background: #f0f0f0; }
 
-.facets { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: .9rem; }
-.facet-label { font-weight: 600; font-size: .8rem; margin-bottom: .3rem; }
+.facets { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: .7rem; }
+.facet { border: 1px solid var(--line); border-radius: 5px; padding: .55rem .6rem .5rem;
+  background: #fcfcfc; }
+.facet-label { font-weight: 600; font-size: .8rem; margin-bottom: .35rem;
+  padding-bottom: .3rem; border-bottom: 1px solid var(--line); }
 .facet-count { font-weight: 400; opacity: .6; }
-.facet-body { display: flex; flex-direction: column; gap: .1rem;
+.facet-body { display: flex; flex-direction: column; gap: .12rem;
   max-height: 11rem; overflow-y: auto; }
 .facet-item { font-size: .82rem; display: flex; align-items: center; gap: .35rem; cursor: pointer; }
 .hint { display: inline-block; width: 1rem; height: 1rem; line-height: 1rem; text-align: center;
