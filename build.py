@@ -4,9 +4,11 @@
 Usage:  python3 build.py            # dry run, reports counts
         python3 build.py --write    # writes data/codon-index.json
 
-Entry files are data/entries/*.json and data/pilot/*.json.
+Repository entries come from data/entries/ and data/pilot/, paper entries from
+data/papers/. Every entry is tagged with a "kind" of repo or paper, which is what
+the site's Kind facet filters on.
 
-Most of them are plain lists of entries. Two are SIDECARS: a single wrapper
+Most files are plain lists of entries. Two are SIDECARS: a single wrapper
 object carrying a _class key and a repos list, used for repositories that are
 recorded so a later pass does not rediscover them, but that are not entries.
 Those are kept in their own section, keyed by _class, and never merged into the
@@ -21,8 +23,10 @@ OUT = "data/codon-index.json"
 
 def load():
     entries, sidecars = [], {}
-    files = sorted(glob.glob("data/entries/*.json")) + sorted(glob.glob("data/pilot/*.json"))
-    for f in files:
+    files = ([("repo", f) for f in sorted(glob.glob("data/entries/*.json"))]
+             + [("repo", f) for f in sorted(glob.glob("data/pilot/*.json"))]
+             + [("paper", f) for f in sorted(glob.glob("data/papers/*.json"))])
+    for kind, f in files:
         d = json.load(open(f))
         if d and isinstance(d[0], dict) and "_class" in d[0]:
             cls = d[0]["_class"]
@@ -31,7 +35,7 @@ def load():
             bucket["repos"].extend(d[0]["repos"])
             continue
         for r in d:
-            entries.append(dict(r, source_file=f))
+            entries.append(dict(r, source_file=f, kind=kind))
     return entries, sidecars
 
 
@@ -43,15 +47,21 @@ def main():
     if len(ids) != len(set(ids)):
         dupes = {i for i in ids if ids.count(i) > 1}
         sys.exit("duplicate ids: %s" % sorted(dupes))
-    entries.sort(key=lambda e: (-(e.get("scale", {}).get("own_codon_loc") or 0), e["id"]))
+    # Repositories sort by Codon volume, papers by year. Neither measure applies to
+    # the other, so entries without one fall to the end of their own group.
+    entries.sort(key=lambda e: (e["kind"] != "repo",
+                                -((e.get("scale") or {}).get("own_codon_loc") or 0),
+                                -(e.get("year") or 0),
+                                e["id"]))
     out = {
-        "generated_from": "data/entries/*.json + data/pilot/*.json",
+        "generated_from": "data/entries/*.json + data/pilot/*.json + data/papers/*.json",
         "entry_count": len(entries),
+        "kind_counts": {k: sum(1 for e in entries if e["kind"] == k) for k in ("repo", "paper")},
         "sidecar_counts": {c: len(b["repos"]) for c, b in sorted(sidecars.items())},
         "entries": entries,
         "sidecars": [sidecars[c] for c in sorted(sidecars)],
     }
-    line = "%d entries; sidecars %s" % (len(entries), out["sidecar_counts"])
+    line = "%d entries (%s); sidecars %s" % (len(entries), out["kind_counts"], out["sidecar_counts"])
     if "--write" in sys.argv:
         json.dump(out, open(OUT, "w"), indent=1)
         print("wrote %s: %s" % (OUT, line))
