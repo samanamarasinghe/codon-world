@@ -96,7 +96,7 @@
     "summary": "A GPU framework for Smith-Waterman sequence alignment built on Triton kernels with custom MLIR compiler passes for shared-memory optimization. Codon is not the implementation: it is one of six alternatives the project evaluates alongside Triton, TileLang, ThunderKittens, CuTile and native CUDA, and its nine .codon files sit under experiments/codon and experiments/dsl_comparison. They are nonetheless the only GPU-annotated Codon code found in the index so far.",
     "integration_mode": "source",
     "codon_via": "direct",
-    "codon_role": "evaluated_alternative",
+    "codon_role": "benchmark",
     "codon_features": {
       "gpu": {"occurrences": 6, "files": 3},
       "c_interop": {"occurrences": 4, "files": 1},
