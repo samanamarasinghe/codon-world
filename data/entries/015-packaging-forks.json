@@ -1,0 +1,32 @@
+[
+  {
+    "_comment": "Forks and copies of a packaging definition already indexed upstream. Each carries the same recipe as its parent and adds nothing, so they are recorded here as a fork list rather than as entries -- the same treatment the genetics false positives get, and for the same reason: counting them would inflate the population with copies of one artifact.",
+    "_class": "fork_of_packaging",
+    "repos": [
+      {"id": "fork-leegao-termux", "url": "https://github.com/leegao/vulkan_wrapper_termux-packages", "upstream": "repo-termux-packages"},
+      {"id": "fork-zhixianio-botdrop", "url": "https://github.com/zhixianio/botdrop-packages", "upstream": "repo-termux-packages"},
+      {"id": "fork-bapugyt-tmx", "url": "https://github.com/BapuGYT/tmx-pkgs", "upstream": "repo-termux-packages"},
+      {"id": "fork-mh1775089-pythom", "url": "https://github.com/mh1775089-lgtm/Pythom-termux-", "upstream": "repo-termux-packages"},
+      {"id": "fork-ndrancs-termux", "url": "https://github.com/ndrancs/termux-packages-Mart-01-oss", "upstream": "repo-termux-packages"},
+      {"id": "fork-haiyutian25-termux", "url": "https://github.com/haiyutian25/termux-packages", "upstream": "repo-termux-packages"},
+      {"id": "fork-ahmed762-neovim", "url": "https://github.com/Ahmed-762/neovim-armv7", "upstream": "repo-termux-packages"},
+      {"id": "fork-nikhilroy22-termux", "url": "https://github.com/Nikhilroy22/termux-pkg-build-system", "upstream": "repo-termux-packages"},
+      {"id": "fork-renzceee-bootstrap", "url": "https://github.com/renzceee/bootstrap-builder", "upstream": "repo-termux-packages"},
+      {"id": "fork-termux-pacman", "url": "https://github.com/termux-pacman/termux-packages", "upstream": "repo-termux-packages"},
+      {"id": "fork-zrsx-termux-ng", "url": "https://github.com/zrsx/termux-ng", "upstream": "repo-termux-packages"},
+      {"id": "fork-vhqtvn-termux", "url": "https://github.com/vhqtvn/termux-packages-copy", "upstream": "repo-termux-packages"},
+      {"id": "fork-nssuwan186-termux", "url": "https://github.com/nssuwan186-dev/termux-packages", "upstream": "repo-termux-packages"},
+      {"id": "fork-shanthropic-kothacode", "url": "https://github.com/shanthropic/kothacode-packages", "upstream": "repo-termux-packages"},
+      {"id": "fork-nastorehub-nasux", "url": "https://github.com/nastorehub/NasUX-Packages", "upstream": "repo-termux-packages"},
+      {"id": "fork-jjoblab-codeide", "url": "https://github.com/jjoblab/codeide-terminal-pkg", "upstream": "repo-termux-packages"},
+      {"id": "fork-asklo339-g-package", "url": "https://github.com/asklo339/g-package", "upstream": "repo-termux-packages"},
+      {"id": "fork-ali963git-digital-warrior", "url": "https://github.com/ali963git/THE-DIGITAL-WARRIOR---VULNERABILITY-ELIMINATION-SCRIPT", "upstream": "repo-termux-packages"},
+      {"id": "fork-laraholand-mobile", "url": "https://github.com/laraholand/Mobile_No_Problem", "upstream": "repo-termux-packages"},
+      {"id": "fork-decdec-decbrew", "url": "https://github.com/Decdec-codelover/Decbrew", "upstream": "repo-chromebrew"},
+      {"id": "fork-punksm4ck-chromebrew", "url": "https://github.com/punksm4ck/chromebrew", "upstream": "repo-chromebrew"},
+      {"id": "fork-markwalters-aur", "url": "https://github.com/MarkWalters-dev/aur", "upstream": "repo-chaotic-aur"},
+      {"id": "fork-jg00da-aur-git", "url": "https://github.com/j-g00da/aur-git-looking-glass", "upstream": "repo-chaotic-aur"}
+    ],
+    "note": "[stated] He excluded these from the deep pass. Twenty-three repositories, three upstreams. The pattern matches the genetics false positives, where six of eleven repos carried one nematode gene-finder table: a raw repository count of a search signal measures redistribution, not adoption."
+  }
+]
