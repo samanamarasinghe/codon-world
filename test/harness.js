@@ -113,6 +113,40 @@ setTimeout(() => {
 
   check('back to default', shown(), E.length);
 
+  // A sort that applies to one kind is offered only when that kind is the one
+  // shown, and narrowing away from it must not leave the list on a dead key.
+  const names = () => api.availableSorts().map(s => s[0]);
+  check('mixed kinds offer only the kind-neutral sorts', names().join(','), 'loc,recent,name');
+
+  api.state.sel['kind']['repo'] = true; api.render();
+  check('kind=repo adds stars', names().join(','), 'loc,recent,name,stars');
+  api.state.sort = 'stars'; api.render();
+  const byStars = api.sortEntries(api.visible());
+  const maxStars = Math.max(...E.filter(e => e.kind === 'repo')
+                             .map(e => (e.popularity || {}).stars == null ? -1 : e.popularity.stars));
+  check('stars sort leads with the most-starred repo',
+        (byStars[0].popularity || {}).stars == null ? -1 : byStars[0].popularity.stars, maxStars);
+  api.state.sel['kind']['repo'] = false; api.render();
+  check('dropping the kind drops the sort with it', api.state.sort, 'loc');
+
+  api.state.sel['kind']['paper'] = true; api.render();
+  check('kind=paper adds citations and mentions', names().join(','),
+        'loc,recent,name,citations,mentions');
+  api.state.sort = 'citations'; api.render();
+  const byCites = api.sortEntries(api.visible());
+  const maxCites = Math.max(...E.filter(e => e.kind === 'paper')
+                             .map(e => (e.popularity || {}).citations == null ? -1 : e.popularity.citations));
+  check('citations sort leads with the most-cited paper',
+        (byCites[0].popularity || {}).citations == null ? -1 : byCites[0].popularity.citations, maxCites);
+  api.state.sort = 'mentions'; api.render();
+  const byMentions = api.sortEntries(api.visible());
+  const maxMentions = Math.max(...E.filter(e => e.kind === 'paper')
+                                .map(e => (e.codon_mentions || {}).count == null ? -1 : e.codon_mentions.count));
+  check('mentions sort leads with the most-mentioning paper',
+        (byMentions[0].codon_mentions || {}).count == null ? -1 : byMentions[0].codon_mentions.count,
+        maxMentions);
+  api.state.sel['kind']['paper'] = false; api.state.sort = 'loc'; api.render();
+
   console.log(failures ? '\n' + failures + ' FAILURES' : '\nall checks passed');
   process.exit(failures ? 1 : 0);
 }, 50);
