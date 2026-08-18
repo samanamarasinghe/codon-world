@@ -39,9 +39,6 @@ recorded rather than inferred away. `codon_role` closes as three values:
 | `benchmark` | Codon is measured against alternatives, or used to run the measurement |
 | `exploration` | Codon is tried out with no comparison published |
 
-This replaces the provisional `evaluated_alternative`, which was renamed to
-`benchmark` across all existing entries.
-
 The `benchmark` / `exploration` line is drawn on whether a comparison is actually
 published, not on whether one could be made. tsp-solver has a Python counterpart to
 its single Codon file and reports no timings, so it is `exploration`; mce-sandbox
@@ -52,14 +49,26 @@ exercises, so it is `benchmark`.
 
 `machine_authored: true` marks code a model wrote rather than a person. The entry
 stays in the index and keeps its ordinary role and provenance; the flag records how
-the code came to exist. First and so far only case: PL-ultimate-llm, where a model
-chose Codon at random and wrote an eighteen-line Fibonacci program.
+the code came to exist. Two cases: PL-ultimate-llm, where a model chose Codon at
+random, and CodeBoarding's generated architecture write-ups.
+
+## 7. Papers share codon_role and get one field of their own
+
+Asked whether papers should reuse `codon_role`, adopt an SDV-style importance ladder,
+or take a paper-specific vocabulary, he took the first and third and rejected the
+second: **the corpus is too small for a graded importance scale.**
+
+So `codon_role` applies to papers unchanged, and papers additionally carry
+`codon_relation` -- `extends`, `uses`, `evaluates`, `prior_art` -- as the paper-side
+counterpart of `integration_mode`. No importance score is recorded anywhere in this
+index, for repositories or for papers. Full shape in `docs/paper-schema.md`.
 
 ## Open, awaiting a ruling
 
-- **A `thesis` provenance value.** RedKinda/mojo-benchmarks is 2024 Bachelor's
-  thesis work, currently filed `coursework` because nothing closer exists.
+- **A `thesis` provenance value for repositories.** RedKinda/mojo-benchmarks is 2024
+  Bachelor's thesis work, currently filed `coursework`. Note that `thesis` is already
+  a provenance value on the paper side.
 
-- **Whether to run the `.py` closing pass.** Codon compiles `.py` directly, so the
-  `extension:codon` enumeration has a blind spot. See `docs/gaps.md`; one repo
-  already in the index was caught only by accident.
+- **Whether the first-party repositories move to the anchors.**
+  `exaloop/example-codon-plugin` and `exaloop/exaloop.io` are Exaloop's own and are
+  currently ordinary entries carrying first-party markers.
