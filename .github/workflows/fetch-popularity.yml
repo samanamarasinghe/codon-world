@@ -1,0 +1,63 @@
+name: Fetch popularity
+
+# Manual. Reads the two reception numbers the index cannot compute for itself:
+# stars for repository entries, citation counts for paper entries, into
+# data/popularity.json.
+#
+# The repository half needs a token. The unauthenticated GitHub API refuses
+# these calls outright, so this cannot run outside Actions without one.
+#
+# Both numbers move. Every record carries the date it was read, and the page
+# says so. Re-run this whenever the numbers should be refreshed; the two halves
+# are independent, so running one never clears the other.
+
+on:
+  workflow_dispatch:
+    inputs:
+      halves:
+        description: 'Which numbers to refresh'
+        required: false
+        type: choice
+        options: ['both', 'repos', 'papers']
+        default: 'both'
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Fetch stars and citations
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          case "${{ inputs.halves }}" in
+            repos)  FLAGS="--repos" ;;
+            papers) FLAGS="--papers" ;;
+            *)      FLAGS="--repos --papers" ;;
+          esac
+          python3 -u harvest/fetch_popularity.py $FLAGS --write
+
+      - name: Rebuild the site data
+        run: python3 build.py --write
+
+      - name: Check the site against the data
+        run: node test/harness.js
+
+      - name: Commit
+        if: always()
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/popularity.json data/codon-index.json || true
+          if ! git diff --cached --quiet; then
+            git commit -m "CI: refresh popularity (${{ inputs.halves }})"
+            git pull --rebase
+            git push
+          else
+            echo "no change"
+          fi
