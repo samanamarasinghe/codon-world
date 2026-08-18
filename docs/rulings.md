@@ -47,3 +47,14 @@ published, not on whether one could be made. tsp-solver has a Python counterpart
 its single Codon file and reports no timings, so it is `exploration`; mce-sandbox
 names its three implementation technologies and labels what each Codon variant
 exercises, so it is `benchmark`.
+
+## Open, awaiting a ruling
+
+- **Machine-authored Codon.** PL-ultimate-llm stores an eighteen-line Fibonacci
+  program that a language model wrote after choosing Codon at random. It is real
+  Codon and it compiles, but no human decided to use the language. Currently filed
+  as an ordinary `exploration` entry with a note. Options: leave it, add a
+  `machine_authored` flag, or exclude generated code.
+
+- **A `thesis` provenance value.** RedKinda/mojo-benchmarks is 2024 Bachelor's
+  thesis work, currently filed `coursework` because nothing closer exists.

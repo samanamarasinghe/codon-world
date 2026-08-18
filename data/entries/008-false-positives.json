@@ -1,0 +1,40 @@
+[
+  {
+    "id": "repo-zee-observatory",
+    "url": "https://github.com/innerpixel/zee-observatory",
+    "name": "The Observatory",
+    "summary": "A creative writing and web project. Its project.seed.codon is a markdown document with YAML frontmatter -- an agent continuation seed carrying identity and state notation, not source code. The .codon extension here has nothing to do with the language.",
+    "integration_mode": "false_positive",
+    "false_positive_class": "agent_notation",
+    "codon_via": null,
+    "codon_role": null,
+    "codon_features": {},
+    "scale": {"own_codon_files": 0, "own_codon_loc": 0, "vendored_stdlib_files": 0},
+    "why_codon": null,
+    "why_codon_source": null,
+    "provenance": "excluded",
+    "paper": null,
+    "health": {"last_commit": "2026-08-03", "license": null, "ci_builds_codon": false},
+    "note": "Reclassified out of the source class after reading the file. Detection signal: zero recognised Codon features and no Python-like syntax.",
+    "confidence": "high"
+  },
+  {
+    "id": "repo-evolove",
+    "url": "https://github.com/aidenhecker/Evolove",
+    "name": "EVOLOVE",
+    "summary": "A Python harness for evaluating language model outputs across two sampling settings. Its SEED/02_SESSION.codon is prose: a working session written in what the repo calls codon-lang, a private notation defined by its own 01_LEGEND.md and unrelated to the Codon compiler.",
+    "integration_mode": "false_positive",
+    "false_positive_class": "agent_notation",
+    "codon_via": null,
+    "codon_role": null,
+    "codon_features": {},
+    "scale": {"own_codon_files": 0, "own_codon_loc": 0, "vendored_stdlib_files": 0},
+    "why_codon": null,
+    "why_codon_source": null,
+    "provenance": "excluded",
+    "paper": null,
+    "health": {"last_commit": "2026-08-13", "license": "LICENSE", "ci_builds_codon": false},
+    "note": "Reclassified out of the source class after reading the file. The repo names its notation codon-lang, which is a naming collision with the compiler, not a use of it.",
+    "confidence": "high"
+  }
+]
