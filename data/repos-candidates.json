@@ -1,0 +1,151 @@
+{
+ "generated": "2026-08-18",
+ "method": "GitHub code search on extension:codon, sharded by NOT repo: exclusion rounds and by file size, plus the codon.jit and 'exaloop/codon' string lanes. Discovery saturated: the size:<400 shard returned complete (98 of a possible 100) with no new repositories.",
+ "anchors_excluded": [
+  "exaloop/codon",
+  "exaloop/seq"
+ ],
+ "caveat": "integration_mode and provenance below are PROVISIONAL at low confidence for every class except false_positive, which was verified. Each repo needs the deep pass in docs/schema.md before its record is trustworthy.",
+ "counts": {
+  "total": 84,
+  "source": 44,
+  "vendored_install": 3,
+  "coursework": 8,
+  "jit_decorator": 13,
+  "docs_mirror": 5,
+  "false_positive": 11
+ },
+ "classes": [
+  {
+   "integration_mode": "source",
+   "provenance": "unclassified",
+   "confidence": "low",
+   "repos": [
+    "FLOX-Foundation/flox",
+    "0xTCG/sequre",
+    "0xTCG/biser",
+    "0xTCG/vectron",
+    "0xTCG/secure-mice",
+    "anon-conf-subm/shechi",
+    "hcholab/decor",
+    "curtisupshall/rdi",
+    "cruso003/conduit",
+    "cruso003/TurboX",
+    "sir-george2500/turboX",
+    "avijitbhuin21/fastcodon",
+    "aertslab/single_cell_toolkit",
+    "AAnnan/scPreproc",
+    "shuochen0113/Triton-Seq",
+    "hsmajlovic/codon-numpy",
+    "dalibor-drgon/codon-light",
+    "elementalcollision/GraphMemory-IDE",
+    "marioroy/mce-sandbox",
+    "jutge-org/yogi",
+    "jutge-org/jutge-tests",
+    "shunji-umetani/tsp-solver",
+    "salvatore-abello/md5-codon",
+    "salvatore-abello/strings.codon",
+    "salvatore-abello/xxd.codon",
+    "lmx-4/codonx",
+    "coco875/codon-wasm",
+    "takechi-scratch/atcoder",
+    "markhend/aoc",
+    "RedKinda/mojo-benchmarks",
+    "sco3/hello-pythran",
+    "apahl/ds_tools",
+    "CSOgroup/TrESFlow",
+    "jaegeryan/bioinformatics",
+    "aidenhecker/Evolove",
+    "Boris00035/phaseProject",
+    "joelrussellcohen/scalce_codon",
+    "river-walras/pyext",
+    "innerpixel/zee-observatory",
+    "thamada/tmp.hack-llm-models",
+    "ego/awesome-mojo",
+    "acherm/PL-ultimate-llm",
+    "paithiov909/r-packages-archives",
+    "unlhcc/hcc-conda-recipes"
+   ]
+  },
+  {
+   "integration_mode": "vendored_install",
+   "provenance": "unclassified",
+   "confidence": "low",
+   "note": "ships a Codon installation; own source must be separated from the vendored stdlib before scale is reported. INCLUDED per ruling.",
+   "repos": [
+    "obenno/scATAC-seq",
+    "sdsaati/tools",
+    "joaogasparp/mect_1ano"
+   ]
+  },
+  {
+   "integration_mode": "source",
+   "provenance": "coursework",
+   "confidence": "low",
+   "note": "one repo per student on the fall25-csc-bioinf course. INCLUDED per ruling.",
+   "repos": [
+    "rachel-wenhui-ma/fall25-csc-bioinf",
+    "Exophobias/fall25-csc-bioinf",
+    "liamsquires/fall25-csc-bioinf",
+    "tristancornwell/fall25-csc-bioinf",
+    "Milorph/fall25-csc-bioinf",
+    "kellofoggs/fall25-csc-bioinf",
+    "reedbryan/fall25-csc-bioinf",
+    "chase2512/fall25-csc-bioinf"
+   ]
+  },
+  {
+   "integration_mode": "jit_decorator",
+   "provenance": "unclassified",
+   "confidence": "low",
+   "note": "found via codon.jit; no .codon files",
+   "repos": [
+    "franneck94/UdemyPythonPro",
+    "arthur-grimaud/fragannot",
+    "AldoNunes001/ArquiMundo-API",
+    "s243a/UnifyWeaver",
+    "Legume1728/python-optimizers-demo",
+    "girip11/advent_of_code",
+    "rostam/CodonNetworkx",
+    "pperonski/KapiBara_ROS2_Robot",
+    "suzukiiichiro/N-Queens",
+    "stillwater-sc/kpu-sim",
+    "d-padmanabhan/agent-engineering-handbook",
+    "matthijscox/scientificcoder",
+    "reclear-io/llmref"
+   ]
+  },
+  {
+   "integration_mode": "docs_mirror",
+   "provenance": "doc_mirror",
+   "confidence": "low",
+   "note": "INCLUDED per ruling.",
+   "repos": [
+    "mpearrow/codon-site",
+    "mpearrow/codon-docs",
+    "mpearrow/codon-md",
+    "exaloop/exaloop.io",
+    "CodeBoarding/awesome-architecture-mds"
+   ]
+  },
+  {
+   "integration_mode": "false_positive",
+   "provenance": "excluded",
+   "confidence": "high",
+   "note": ".codon files are codon-usage tables or codeml alignments, unrelated to the language. The only exclusion.",
+   "repos": [
+    "WormBase/wormbase-pipeline",
+    "WormBase/website-classic",
+    "GMOD/GBrowse",
+    "gitpan/GBrowse",
+    "hitz/gbrowse2-sgd",
+    "hitz/gbrowse-sgd",
+    "NLM-DIR/Magic2",
+    "richarddurbin/acedb",
+    "dohalloran/phylo-node",
+    "RGellerLab/CVB3_full_proteome_DMS",
+    "Bioinfo2015/metaTranscriptomes"
+   ]
+  }
+ ]
+}
