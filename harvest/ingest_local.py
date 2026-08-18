@@ -26,20 +26,19 @@ directory this reads from belongs in `.gitignore`.
 
 IDENTIFYING A FILE
 Filenames from publisher sites are meaningless, so the file is matched to a
-candidate work by its contents, in this order:
-
-  1. a candidate DOI appearing anywhere in the text
-  2. a candidate title appearing in the first part of the text
-
-Anything unmatched, or matching more than one candidate, is reported rather than
-guessed at -- a wrong match would attach one paper's passages to another's entry.
+candidate work by its contents: a candidate doi, failing that a candidate title
+near the start. Anything unmatched, or matching more than one candidate, is
+reported rather than guessed at -- a wrong match would attach one paper's passages
+to another's entry. See identify() for the two rules that decide between dois.
 
 BOOKS AND PARTIAL DOWNLOADS
-Two cases from the first hand-collected batch need the manifest:
+Two shapes from the first hand-collected batch need care:
 
   - A whole book downloaded for one chapter. The book carries many bibliographies,
-    and the extractor takes the last "References" heading in the document, which
-    would be some other chapter's. Give the chapter's page range.
+    and contexts() takes the last "References" heading in the document, which
+    would be some other chapter's. A page range in the manifest is exact and is
+    what to use; failing that the chapter is located by its title, and the run
+    says which of the two happened.
   - An article available only as html and printed to pdf. These often stop before
     the bibliography, so the reference-number route has nothing to work from. The
     body scan still finds passages naming Codon outright, and the report says when
@@ -52,7 +51,12 @@ Manifest format, all fields but `file` optional:
       {"file": "printed-page.pdf", "doi": "10.1016/j.jlamp.2024.101032"}
     ]
 """
-import json, os, re, sys, io
+import json, os, re, sys, io, logging
+
+# pypdf narrates malformed cross-reference tables ("Ignoring wrong pointing
+# object N") on every page of a browser-printed pdf, which buries the report.
+# The pages still extract; the complaint is not actionable.
+logging.getLogger("pypdf").setLevel(logging.ERROR)
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from fetch_contexts import contexts, BIB_HIT
@@ -71,11 +75,12 @@ def require_pypdf():
     except ImportError:
         sys.exit(
             "pypdf is not installed, and it is what reads the pdfs.\n\n"
-            "    python3 -m pip install pypdf\n\n"
-            "If pip refuses because the environment is externally managed, either\n"
-            "    python3 -m pip install --break-system-packages pypdf\n"
-            "or work in a virtual environment:\n"
-            "    python3 -m venv .venv && . .venv/bin/activate && pip install pypdf")
+            "    python3 -m venv .venv\n"
+            "    source .venv/bin/activate\n"
+            "    pip install pypdf\n\n"
+            "A plain `pip install` fails on a homebrew python under PEP 668, and\n"
+            "homebrew warns that --break-system-packages can break the install, so\n"
+            "the virtual environment is the route to take.")
 
 
 # A document this long is a book or proceedings volume, not an article. It will
@@ -83,6 +88,15 @@ def require_pypdf():
 # the document -- which in a book belongs to some other chapter. Saying so is the
 # difference between a wrong reference number and a question.
 BOOK_CHARS = 400000
+
+# How close two dois must be, both appearing before the bibliography, before the
+# document is judged not to distinguish them.
+FRONT_MATTER = 5000
+
+# A chapter's own bibliography follows its body. Twenty thousand characters is
+# generous for one chapter's references and short enough not to swallow the next
+# chapter's body.
+CHAPTER_BIB = 20000
 
 CAND = "data/papers-candidates.json"
 OUT = "data/local-contexts.json"
@@ -118,17 +132,91 @@ def text_of_file(path, pages=None):
 
 
 def identify(text, works):
-    """Return (matches, how). matches is a list of candidate rows."""
-    head = text[:6000]
-    hits = [w for w in works if w[2] and w[2].lower() in text.lower()]
-    if hits:
-        return hits, "doi"
-    nhead = norm(head)
-    hits = [w for w in works if w[1] and len(norm(w[1])) > 25
-            and norm(w[1])[:60] in nhead]
+    """Return (matches, how). matches is a list of candidate rows.
+
+    Two rules here were both learned from the first real directory of 33 papers.
+
+    Candidates are collapsed by doi before anything is called ambiguous. The
+    harvest holds five works twice, differing only by a trailing period or a
+    capital letter in the title, and its dedup key is the normalised title. Two
+    rows describing one doi are not two candidates, and reporting them as an
+    ambiguity sent three perfectly identifiable papers back to be pinned by hand.
+
+    Where two DIFFERENT dois really do appear, the bibliography decides. A doi
+    printed after the references heading is one the paper CITES; only a doi before
+    it can be the paper's own. The Oxford paper bbae356 carries the SECRET-GWAS
+    preprint doi in its bibliography and was reported ambiguous against it.
+
+    The first attempt at this ruled by absolute position -- a doi within the first
+    few thousand characters was "front matter" -- and it passed a synthetic test
+    only because the synthetic paper was four thousand characters long. Real papers
+    are ten times that, so the rule was never exercised. Splitting on the
+    bibliography instead is independent of length, which is the property that
+    matters. Ambiguity now means two distinct dois before the references heading
+    and close together, where nothing in the document separates them.
+    """
+    low = text.lower()
+    found = {}
+    for w in works:
+        if not w[2]:
+            continue
+        key = w[2].lower()
+        pos = low.find(key)
+        if pos >= 0 and (key not in found or pos < found[key][1]):
+            found[key] = (w, pos)
+    if found:
+        m = re.search(r"\n\s*(REFERENCES|References|BIBLIOGRAPHY|Bibliography)\s*\n",
+                      text)
+        cut = m.start() if m else len(text)
+        own = sorted((v for v in found.values() if v[1] < cut), key=lambda t: t[1])
+        ordered = own or sorted(found.values(), key=lambda t: t[1])
+        if len(ordered) > 1 and ordered[1][1] - ordered[0][1] < FRONT_MATTER:
+            return [o[0] for o in ordered], "doi"
+        return [ordered[0][0]], "doi"
+    nhead = norm(text[:6000])
+    by_doi, untitled = {}, []
+    for w in works:
+        if not w[1] or len(norm(w[1])) <= 25 or norm(w[1])[:60] not in nhead:
+            continue
+        (by_doi.setdefault(w[2].lower(), w) if w[2] else untitled.append(w))
+    hits = list(by_doi.values()) + untitled
     if hits:
         return hits, "title"
     return [], "none"
+
+
+def scope_chapter(text, title):
+    """Narrow a book to one chapter: its title through its own bibliography.
+
+    Five of the collected files are whole volumes downloaded for a single chapter.
+    contexts() reads the LAST references heading in a document, which in a book
+    belongs to whatever chapter comes last, so a reference number taken from a
+    whole volume is meaningless. Page ranges in the manifest are exact and are
+    preferred; this is what happens when none was given and the chapter can be
+    located by its title.
+
+    Returns (slice, note). The slice is the original text when the title cannot
+    be found, because a wrong window is worse than a wide one.
+    """
+    n = norm(title)[:60]
+    if len(n) < 25:
+        return text, "chapter title too short to locate"
+    # walk the text in normalised space to find where the chapter opens
+    flat, index = [], []
+    for i, ch in enumerate(text.lower()):
+        if ch.isalnum():
+            flat.append(ch)
+            index.append(i)
+    at = "".join(flat).find(n)
+    if at < 0:
+        return text, "chapter title not found in the volume"
+    start = index[at]
+    tail = text[start:]
+    m = re.search(r"\n\s*(REFERENCES|References|BIBLIOGRAPHY|Bibliography)\s*\n", tail)
+    if not m:
+        return text, "no bibliography follows the chapter title"
+    end = start + m.end() + CHAPTER_BIB
+    return text[start:end], "scoped to the chapter by title"
 
 
 def has_bibliography(text):
@@ -202,29 +290,45 @@ def main():
             continue
 
         year, title, doi, cites, found = hits[0]
+        scoped = None
+        if len(text) > BOOK_CHARS and not row.get("pages"):
+            text, scoped = scope_chapter(text, title)
         cx = contexts(text)
         bib = has_bibliography(text)
         refs = sorted({c["ref"] for c in cx if c["kind"] == "inline"})
         results.append({"year": year, "title": title, "doi": doi, "cites": cites,
                         "chars": len(text), "source_file": name,
                         "matched_by": how, "pages": row.get("pages"),
-                        "bibliography_found": bib, "contexts": cx})
-        booklike = len(text) > BOOK_CHARS and not row.get("pages")
+                        "bibliography_found": bib, "scoped": scoped,
+                        "contexts": cx})
+        booklike = scoped is not None and not scoped.startswith("scoped")
         flag = "" if bib else "  NO-BIBLIOGRAPHY"
-        if booklike:
-            flag += "  BOOK-LENGTH"
+        if scoped:
+            flag += "  BOOK[%s]" % ("auto-scoped" if not booklike else "WHOLE VOLUME")
         print("ok          %-44s %-32s %2d ctx  refs=%s%s"
               % (name[:44], doi[:32], len(cx), ",".join(refs) or "-", flag), flush=True)
         if booklike:
             problems.append((name, "book-length",
-                             "%d chars and no page range; the reference numbers will "
-                             "come from the last bibliography in the volume" % len(text)))
+                             "%s; give a page range in the manifest, or the reference "
+                             "numbers come from the last bibliography in the volume"
+                             % scoped))
         if not bib:
             problems.append((name, "no bibliography",
                              "reference-number route unavailable; body scan only"))
         elif not cx:
             problems.append((name, "no contexts",
                              "bibliography present but nothing matched the Codon family"))
+
+    # Two files resolving to one work is always a mistake -- a duplicate download,
+    # or a printed page whose own doi was missing so it matched a neighbour's.
+    # Silently recording both would double-count the work at curation time.
+    claimed = {}
+    for r in results:
+        claimed.setdefault(r["doi"], []).append(r["source_file"])
+    for doi, names in claimed.items():
+        if len(names) > 1:
+            problems.append((", ".join(names), "same work twice",
+                             "%s is claimed by %d files" % (doi, len(names))))
 
     print("\n%d identified, %d need attention" % (len(results), len(problems)))
     if problems:
