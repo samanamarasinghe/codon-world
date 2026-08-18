@@ -5,6 +5,8 @@
     python3 harvest/fetch_contexts.py --limit 20       # first N undone works
     python3 harvest/fetch_contexts.py --write          # write data/paper-contexts.json
     python3 harvest/fetch_contexts.py --retry-blocked  # also re-attempt past blocks
+    python3 harvest/fetch_contexts.py --refetch        # redo everything, after an
+                                                       # extraction change
 
 This does the mechanical half of the paper lane: find a readable copy, pull the
 text, and cut out the sentences where the work actually cites Codon or Seq. It
@@ -193,18 +195,26 @@ def contexts(text):
     for m in NAME.finditer(text):
         s = max(0, m.start() - 260)
         out.append({"kind": "bibliography", "text": re.sub(r"\s+", " ", text[s:m.start() + 300])})
-        # The reference number sits just before the author list, but not always
-        # flush against it -- "[61] Ariya Shajii" puts a given name in between.
-        head = text[max(0, m.start() - 160):m.start()]
-        bracketed = re.findall(r"\[(\d{1,3})\]", head)
-        if bracketed:
-            numbers.add(bracketed[-1])
-        else:
-            plain = re.findall(r"(?:^|\s)(\d{1,3})\.\s", head)
-            if plain:
-                numbers.add(plain[-1])
-    first = min((m.start() for m in NAME.finditer(text)), default=len(text))
-    body = text[:first]
+    # Reference numbers are read ONLY from the bibliography, located as the last
+    # references heading in the document. Scanning the whole text lets a body
+    # sentence like "efforts such as the work of Numanagic [8]" contribute a
+    # reference number belonging to something else, and one wrong number produces
+    # inline passages about an unrelated citation -- worse than no passage at all.
+    heads = [m.end() for m in re.finditer(
+        r"\n\s*(REFERENCES|References|BIBLIOGRAPHY|Bibliography)\s*\n", text)]
+    bib_start = heads[-1] if heads else None
+    bib = text[bib_start:] if bib_start is not None else ""
+    for m in re.finditer(r"\[(\d{1,3})\][^\[\]]{0,200}?(?:Shajii|Numanagi|Smajlovi)", bib):
+        numbers.add(m.group(1))
+    for m in re.finditer(r"(?:^|\s)(\d{1,3})\.\s[^\[\]]{0,200}?(?:Shajii|Numanagi|Smajlovi)", bib):
+        numbers.add(m.group(1))
+
+    # The body is everything before the bibliography; fall back to "before the
+    # first author-name match" for documents with no detectable references heading.
+    if bib_start is not None:
+        body = text[:bib_start]
+    else:
+        body = text[:min((m.start() for m in NAME.finditer(text)), default=len(text))]
     for n in sorted(numbers):
         for m in re.finditer(r"\[[0-9,\s\-]*%s[,\]\s]" % n, body):
             s = max(0, m.start() - 420)
@@ -273,6 +283,12 @@ def main():
     if "--retry-blocked" in sys.argv:
         deferred = deferred + blocked
         blocked = []
+    # --refetch drops every recorded work so the whole corpus is fetched and
+    # re-extracted. Needed when the extraction logic changes: contexts are stored,
+    # the pdfs are not, so there is nothing to re-run offline.
+    if "--refetch" in sys.argv:
+        print("refetching all %d recorded works" % len(keep), flush=True)
+        keep, done = [], {}
     blocked_dois = {b["doi"] for b in blocked}
     deferred = []   # rebuilt this run; last run's deferrals are all retried above
     limit = int(sys.argv[sys.argv.index("--limit") + 1]) if "--limit" in sys.argv else 10 ** 6
