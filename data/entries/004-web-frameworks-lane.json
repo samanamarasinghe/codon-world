@@ -1,0 +1,65 @@
+[
+  {
+    "id": "repo-fastcodon",
+    "url": "https://github.com/avijitbhuin21/fastcodon",
+    "name": "fastcodon",
+    "summary": "FastAPI rebuilt natively in Codon so that an ASGI-class web framework compiles to machine code, developed bottom-up against a published dependency graph with each layer marked verified as it lands. Sixty-four .codon files carry the stack from non-blocking sockets and a poll-based selector up through pure-Codon SHA-1, SHA-256, HMAC and base64, an HTTP parser, cancel scopes and task groups, chunked streaming and a WebSocket transport. The 57 from-C-import declarations sit in five files and are the platform boundary, covering both Winsock and BSD sockets.",
+    "integration_mode": "source",
+    "codon_via": "direct",
+    "codon_role": "implementation",
+    "codon_features": {
+      "c_interop": {"occurrences": 57, "files": 5}
+    },
+    "scale": {"own_codon_files": 64, "own_codon_loc": 7060, "vendored_stdlib_files": 0},
+    "why_codon": "README states the framework is rebuilt natively in Codon so that it compiles to machine code and runs at native speed.",
+    "why_codon_source": "stated",
+    "provenance": "research_prototype",
+    "paper": null,
+    "health": {"last_commit": "2026-06-08", "license": null, "ci_builds_codon": true, "workflows": [".github/workflows/leaves-ci.yml"]},
+    "note": "Writes its own crypto and socket layers in Codon rather than binding a C library, so it exercises the language more broadly than its single recorded feature suggests.",
+    "confidence": "high"
+  },
+  {
+    "id": "repo-turbox-sir-george2500",
+    "url": "https://github.com/sir-george2500/turboX",
+    "name": "TurboX (sir-george2500)",
+    "summary": "A Python backend framework built on the Codon compiler, layered over a server core called Nucleus that is itself written in Codon with C FFI. Nine .codon files hold the application layer and the server core; the six from-C-import sites are spread one per file rather than concentrated in a binding module.",
+    "integration_mode": "source",
+    "codon_via": "direct",
+    "codon_role": "implementation",
+    "codon_features": {
+      "c_interop": {"occurrences": 6, "files": 6},
+      "tuple": {"occurrences": 6, "files": 6}
+    },
+    "scale": {"own_codon_files": 9, "own_codon_loc": 1087, "vendored_stdlib_files": 0},
+    "why_codon": "README states TurboX leverages Codon to compile Python code to machine code, delivering performance comparable to Rust and C++ without traditional interpreter overhead.",
+    "why_codon_source": "stated",
+    "provenance": "research_prototype",
+    "paper": null,
+    "health": {"last_commit": "2025-12-01", "license": null, "ci_builds_codon": false},
+    "note": "Shares a name with cruso003/TurboX and nothing else: the two have zero .codon paths in common and different layouts. Not a fork.",
+    "confidence": "high"
+  },
+  {
+    "id": "repo-turbox-cruso003",
+    "url": "https://github.com/cruso003/TurboX",
+    "name": "TurboX (cruso003)",
+    "summary": "An alpha web framework built on the Codon compiler with first-class MCP support, pinning Codon 0.16 or later. Sixteen .codon files hold examples and feature tests rather than a large framework body, and the ten from-C-import sites are confined to two files. By the same author as Conduit, which is larger, later and carries the same MCP framing.",
+    "integration_mode": "source",
+    "codon_via": "direct",
+    "codon_role": "implementation",
+    "codon_features": {
+      "c_interop": {"occurrences": 10, "files": 2}
+    },
+    "scale": {"own_codon_files": 16, "own_codon_loc": 477, "vendored_stdlib_files": 0},
+    "why_codon": "README states it compiles Python-like code to native machine code via Codon, claiming performance comparable to Go and Rust and 10-100x faster than CPython.",
+    "why_codon_source": "stated",
+    "provenance": "research_prototype",
+    "paper": null,
+    "codon_version_pinned": "0.16+",
+    "related": "repo-conduit",
+    "health": {"last_commit": "2025-10-29", "license": null, "ci_builds_codon": true, "workflows": [".github/workflows/release.yml", ".github/workflows/test.yml"]},
+    "note": "README carries an MIT license badge linking to LICENSE, but the repo contains no LICENSE file. Conduit, by the same author, has the same discrepancy.",
+    "confidence": "high"
+  }
+]
