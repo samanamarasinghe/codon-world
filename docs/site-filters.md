@@ -28,7 +28,7 @@ that actually exists.
 | SDV control | Here |
 |---|---|
 | Integration | **Integration mode** -- the same idea, a different vocabulary: source, JIT decorator, IR plugin, runtime port, C API frontend, vendored install, packaging, docs mirror, mention only, false positive. |
-| Kind | Repository or paper. Dropped while every entry was a repository; it returned with the paper lane, and it now also gates which sorts are on offer. |
+| Kind | Repository or paper. Dropped while every entry was a repository; it returned with the paper lane, and it now also decides what the sort control offers. |
 | SDV component / SDV concept | Collapsed into one **Codon feature** facet. SDV's split into packages and ideas has no analogue; what exists here is which language features a repo exercises. |
 | Year | **Last active**, from `last_commit`. Not the same question SDV's Year facet asks -- it is staleness, not vintage -- and it earns its place because 18 repositories stopped moving before 2025. 32 have no commit date at all, along with every paper, and group as Not recorded. |
 | Search title & summary | Kept unchanged. Every summary states where Codon is used and for what, so the search reaches the reasoning. |
@@ -47,18 +47,38 @@ that actually exists.
 
 ## Sorting
 
-The default is Codon lines of code descending, with one caution written into the page:
-a `.codon` line count is not a project size. codonx is a Rust tool with a thirteen-line
-fixture; jutge-tests is ten files holding fifteen lines. Sorting by it ranks a
-conformance suite above a trading framework, so the site says so next to the control
-rather than leaving the reader to infer it.
+The default is **Codon impact**, one control over two measures: `.codon` lines for a
+repository, Codon mentions in the full text for a paper. Narrow the Kind facet to one
+kind and the sort is simply that kind's measure, so repositories alone rank by lines
+and papers alone rank by mentions.
 
-Three further sorts appear only when the Kind facet is narrowed to a single kind.
-Stars measure a repository and citations measure a paper; ordering the two against each
-other needs a conversion that does not exist, and rather than invent one the site
-withholds the control until the question is asked of one kind at a time. Deselecting
-the kind puts the list back on Codon lines rather than leaving it ordered by a key no
-longer on offer.
+With both kinds on screen the two have to be put on one scale, and that takes a
+conversion between a line of code and a citation passage, which is a choice and not a
+fact. Lines are divided by two thousand, setting the rate at one mention to two
+thousand lines: Sequre's 41,790 lines score 20.9 against UniTe's 12 mentions. The
+score itself is never printed. Each entry shows its own measure in its own units, and
+the ordering should be read as indicative while those two numbers are the real ones.
+
+What the choice costs is worth stating. Eighteen papers carry exactly one mention,
+most of them a single sentence naming Codon in passing, and thirty-six repositories
+hold between one and 1,999 lines of Codon; at this rate every one of those papers
+outranks every one of those repositories. A smaller divisor shrinks that set and a
+larger one grows it. There is no divisor that makes the comparison true, only ones
+that make it more or less flattering to code.
+
+Neither measure is a size, and both are floors. A `.codon` line count says nothing
+about a project: codonx is a Rust tool with a thirteen-line fixture, jutge-tests is ten
+files holding fifteen lines, and more than half the repositories here write their Codon
+in `.py` files and count zero. The mention count excludes the reference-list entry
+itself, which every citing work has exactly one of, and misses papers that cite by
+superscript entirely. Sixty-one entries therefore score nothing at all -- 56
+repositories with no `.codon` file and five papers with no mentions extracted -- and
+fall into alphabetical order behind everything else. Secure MICE, which extends Sequre
+with distributed data types, is among them.
+
+Two further sorts appear only when the Kind facet is narrowed to a single kind. Unlike
+the impact measures these have no conversion between them at all, so the site withholds
+the control until the question is asked of one kind at a time.
 
 **Stars**, for repositories. The number is real and the ranking it produces is
 misleading, which is why it carries the sharpest caution on the page: nine `packaging`
@@ -72,16 +92,6 @@ otherwise. Of the whole paper, and not of anything Codon did in it -- the most-c
 work in the corpus is cited 126 times and barely mentions Codon. Every such index
 undercounts against Google Scholar, so read the number as a floor, and both numbers
 move, so each entry prints the date it was read.
-
-**Codon mentions**, for papers: the places in the full text that discuss the Codon
-family, counting numbered citation sites and prose mentions and excluding the
-reference-list entry itself, which every citing work has exactly one of. This is the
-paper-side answer to Codon lines -- how much Codon is in the work, saying nothing about
-the work's importance -- and it is a floor rather than a count. Papers that cite by
-superscript are invisible to the inline scan, the extractor keeps at most twelve
-passages per paper, and Secure MICE, which extends Sequre with distributed data types,
-counts zero here. The two papers that genuinely extend Codon sit at opposite ends of
-this sort, which is the measure's own argument against being read as engagement.
 
 ## The count in the header is a floor
 
