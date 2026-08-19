@@ -34,20 +34,25 @@
     ["year", "Last active", "facet-year"]
   ];
 
-  // A sort that means something for only one kind of entry is offered only when
-  // that kind is the one being shown. Stars measure a repository and citations
-  // measure a paper; putting the two in one order would need a conversion that
-  // does not exist, and the site does not invent one.
+  // Codon impact is one control over two measures: .codon lines for a repository,
+  // Codon mentions in the full text for a paper. Under a single kind it is just
+  // that kind's measure. With both on screen the two are put on one scale by
+  // dividing lines by IMPACT_DIVISOR, which is a choice, not a fact: it sets the
+  // rate at one mention to two thousand lines. The score is never displayed --
+  // entries print their own measure, in its own units.
+  var IMPACT_DIVISOR = 2000;
+
+  // Stars and citations are different: there is no conversion between them at
+  // all, so each is offered only when its own kind is the one being shown.
   var SORTS = [
-    ["loc", "Codon lines (most first)", null],
+    ["impact", "Codon impact (most first)", null],
     ["recent", "Most recent", null],
     ["name", "Name (A-Z)", null],
     ["stars", "Stars (most first)", "repo"],
-    ["citations", "Citations (most first)", "paper"],
-    ["mentions", "Codon mentions (most first)", "paper"]
+    ["citations", "Citations (most first)", "paper"]
   ];
 
-  var data = null, state = { sel: {}, q: "", group: "none", sort: "loc", summaries: true };
+  var data = null, state = { sel: {}, q: "", group: "none", sort: "impact", summaries: true };
   FACETS.forEach(function (f) { state.sel[f[0]] = {}; });
 
   function labelFor(v) { return LABEL[v] || v; }
@@ -142,7 +147,7 @@
     // Narrowing the Kind facet can take away the sort in use. Fall back rather
     // than leaving the list ordered by a key that is no longer on offer.
     var ok = avail.some(function (s) { return s[0] === state.sort; });
-    if (!ok) state.sort = "loc";
+    if (!ok) state.sort = "impact";
     sel.textContent = "";
     avail.forEach(function (s) {
       var o = document.createElement("option");
@@ -154,6 +159,11 @@
     sel.value = state.sort;
   }
 
+  function impact(e) {
+    if (e.kind === "paper") return (e.codon_mentions || {}).count || 0;
+    return ((e.scale || {}).own_codon_loc || 0) / IMPACT_DIVISOR;
+  }
+
   function popNumber(e, key) {
     var v = (e.popularity || {})[key];
     return v == null ? -1 : v;   // never read is not the same as zero, and sorts last
@@ -162,18 +172,12 @@
   function sortEntries(list) {
     var s = state.sort;
     return list.slice().sort(function (a, b) {
-      if (s === "loc") {
-        var la = (a.scale || {}).own_codon_loc || 0, lb = (b.scale || {}).own_codon_loc || 0;
-        return lb - la || (a.name || "").localeCompare(b.name || "");
+      if (s === "impact") {
+        return impact(b) - impact(a) || (a.name || "").localeCompare(b.name || "");
       }
       if (s === "stars" || s === "citations") {
         var key = s === "stars" ? "stars" : "citations";
         return popNumber(b, key) - popNumber(a, key) || (a.name || "").localeCompare(b.name || "");
-      }
-      if (s === "mentions") {
-        var ma = (a.codon_mentions || {}).count, mb = (b.codon_mentions || {}).count;
-        ma = ma == null ? -1 : ma; mb = mb == null ? -1 : mb;
-        return mb - ma || (a.name || "").localeCompare(b.name || "");
       }
       if (s === "recent") {
         var da = (a.health || {}).last_commit || String(a.year || ""),
@@ -341,5 +345,5 @@
 
   window._codonIndex = { boot: boot, state: state, render: render,
                          availableSorts: availableSorts, sortEntries: sortEntries,
-                         visible: visible };
+                         visible: visible, impact: impact };
 })();
