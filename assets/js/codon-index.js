@@ -55,6 +55,49 @@
   var data = null, state = { sel: {}, q: "", group: "none", sort: "impact", summaries: true };
   FACETS.forEach(function (f) { state.sel[f[0]] = {}; });
 
+  // ---- instrumentation -------------------------------------------------
+  // umami (cloud.umami.is) is loaded from index.html. It is cookieless and
+  // records no personal data; these events say what was done with the controls,
+  // not who did it. Every call below is a no-op when the script is not there --
+  // blocked, offline, or the node harness -- so instrumentation cannot take the
+  // page down. What each event carries: docs/analytics.md.
+  function track(name, props) {
+    try {
+      var u = typeof window !== "undefined" && window.umami;
+      if (u && typeof u.track === "function") u.track(name, props);
+    } catch (err) { /* analytics never interrupts the page */ }
+  }
+
+  // A keystroke is not a search and a half-typed query is not a miss, so the
+  // query and the empty-result signal are reported once the view settles.
+  var SETTLE_MS = 1200, settleTimer = null, lastQuery = "", lastEmpty = "";
+
+  function facetSignature() {
+    return FACETS.map(function (f) { return f[0] + "=" + selected(f[0]).join("|"); })
+                 .filter(function (s) { return s.indexOf("=") !== s.length - 1; })
+                 .join(";");
+  }
+
+  function settle() {
+    var vis = visible();
+    if (state.q && state.q !== lastQuery) {
+      lastQuery = state.q;
+      track("search", { q: state.q.slice(0, 60), hits: vis.length });
+    }
+    // An empty view is the useful negative: it says the index was asked for
+    // something it does not hold, and names the filters that asked.
+    var sig = facetSignature() + ";q=" + state.q;
+    if (!vis.length && sig !== lastEmpty) {
+      lastEmpty = sig;
+      track("no-results", { q: state.q.slice(0, 60), filters: facetSignature().slice(0, 180) });
+    }
+  }
+
+  function scheduleSettle() {
+    if (settleTimer) clearTimeout(settleTimer);
+    settleTimer = setTimeout(settle, SETTLE_MS);
+  }
+
   function labelFor(v) { return LABEL[v] || v; }
   function el(id) { return document.getElementById(id); }
 
@@ -121,7 +164,11 @@
       var cb = document.createElement("input");
       cb.type = "checkbox";
       cb.checked = !!state.sel[facet][v];
-      cb.onclick = function () { state.sel[facet][v] = cb.checked; render(); };
+      cb.onclick = function () {
+        state.sel[facet][v] = cb.checked;
+        track("facet:" + facet, { value: v, on: cb.checked });
+        render();
+      };
       lab.appendChild(cb);
       lab.appendChild(document.createTextNode(" " + labelFor(v) + " (" + c[v] + ")"));
       holder.appendChild(lab);
@@ -209,6 +256,7 @@
     var a = document.createElement("a");
     a.href = e.url; a.target = "_blank"; a.rel = "noopener";
     a.textContent = e.name || e.id;
+    a.onclick = function () { track("open", { entry: e.id || e.name, kind: e.kind }); };
     h.appendChild(a);
     var sc = (e.scale || {}).own_codon_loc;
     if (sc) h.appendChild(chip(sc.toLocaleString() + " Codon LOC", "chip-scale"));
@@ -315,6 +363,7 @@
         sortEntries(buckets[k]).forEach(function (e) { out.appendChild(renderItem(e)); });
       });
     }
+    scheduleSettle();
   }
 
   function clearAll() {
@@ -327,14 +376,34 @@
   function boot(d) {
     data = d;
     el("q").oninput = function () { state.q = this.value.trim().toLowerCase(); render(); };
-    el("group").onchange = function () { state.group = this.value; render(); };
-    el("sort").onchange = function () { state.sort = this.value; render(); };
-    el("btn-clear").onclick = clearAll;
+    el("group").onchange = function () {
+      state.group = this.value;
+      track("group", { group: state.group });
+      render();
+    };
+    el("sort").onchange = function () {
+      state.sort = this.value;
+      // Which sort was chosen is only readable against the kind on screen: the
+      // same "Codon impact" means lines, mentions, or the combined score.
+      track("sort", { sort: state.sort, kind: soleKind() || "both" });
+      render();
+    };
+    el("btn-clear").onclick = function () { track("clear"); clearAll(); };
     el("btn-summaries").onclick = function () {
       state.summaries = !state.summaries;
       this.textContent = state.summaries ? "Hide summaries" : "Show summaries";
+      track("summaries", { on: state.summaries });
       render();
     };
+    // Which method note gets opened is feedback too. Guarded: the stub document
+    // in test/harness.js has no querySelectorAll.
+    if (document.querySelectorAll) {
+      Array.prototype.forEach.call(document.querySelectorAll("header a, footer a"), function (a) {
+        a.addEventListener("click", function () {
+          track("link", { href: a.getAttribute("href") || "" });
+        });
+      });
+    }
     render();
   }
 
@@ -345,5 +414,5 @@
 
   window._codonIndex = { boot: boot, state: state, render: render,
                          availableSorts: availableSorts, sortEntries: sortEntries,
-                         visible: visible, impact: impact };
+                         visible: visible, impact: impact, track: track };
 })();

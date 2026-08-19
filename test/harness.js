@@ -156,6 +156,19 @@ setTimeout(() => {
         (byCites[0].popularity || {}).citations == null ? -1 : byCites[0].popularity.citations, maxCites);
   api.state.sel['kind']['paper'] = false; api.state.sort = 'impact'; api.render();
 
+  // Instrumentation runs on every interaction, so a throw inside it would take
+  // the controls down with it. It must be silent when the analytics script is
+  // not there -- blocked, offline, or here -- and forward faithfully when it is.
+  check('track is a silent no-op without umami', api.track('smoke', { a: 1 }), undefined);
+
+  const sent = [];
+  global.window.umami = { track: (n, d) => sent.push([n, d]) };
+  api.track('facet:kind', { value: 'paper', on: true });
+  delete global.window.umami;
+  check('track forwards the event name and data to umami',
+        JSON.stringify(sent),
+        JSON.stringify([['facet:kind', { value: 'paper', on: true }]]));
+
   console.log(failures ? '\n' + failures + ' FAILURES' : '\nall checks passed');
   process.exit(failures ? 1 : 0);
 }, 50);
